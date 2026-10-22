@@ -1,0 +1,25 @@
+\begin{table}[!htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrrrr}
+\toprule
+card & engine & code & H$_2$O cold (s) & H$_2$O warm (s) & tamoxifen cold (s) & tamoxifen warm (s) & first-process overhead (s) \\
+\midrule
+A100 & cupy & original & 17.6 & 1.90 & 11.3 & 10.8 & 15.7 \\
+ & cupy & new & 19.2 & 1.84 & 8.67 & 8.58 & 17.3 \\
+ & cutensor & original & 19.6 & 1.94 & 8.36 & 8.14 & 17.7 \\
+ & cutensor & new & 17.5 & 1.81 & 8.37 & 8.55 & 15.7 \\
+V100 & cupy & original & 14.5 & 1.03 & 12.2 & 11.6 & 13.5 \\
+ & cupy & new & 13.4 & 0.91 & 9.19 & 8.47 & 12.5 \\
+ & cutensor & original & 13.0 & 0.86 & 7.56 & 7.37 & 12.2 \\
+ & cutensor & new & 12.6 & 0.89 & 7.63 & 7.59 & 11.7 \\
+P100-16 & cupy & original & 17.8 & 1.21 & 17.2 & 16.7 & 16.6 \\
+ & cupy & new & 17.6 & 1.20 & 12.0 & 12.1 & 16.4 \\
+P100-12 & cupy & original & 23.0 & 1.35 & 28.3 & 25.5 & 21.7 \\
+ & cupy & new & 22.4 & 1.32 & 14.2 & 14.2 & 21.1 \\
+\bottomrule
+\end{tabular}}
+\caption{Cold start: the first process with an empty CuPy kernel cache against a repeat with the cache populated (workflow time inside the process, imports excluded). Only the first process of each pass is truly cold, so the first-process overhead is the H$_2$O cold time minus its warm time; the later, larger cases of the cold pass reuse kernels compiled by H$_2$O.}
+\label{tab:cold}
+\end{table}

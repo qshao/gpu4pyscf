@@ -1,0 +1,57 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage{booktabs,graphicx,amsmath,hyperref,caption,longtable,float,array,xcolor,microtype,enumitem,pdflscape,url}
+\usepackage{placeins}
+\usepackage[T1]{fontenc}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black,
+  pdftitle={Memory-lean density-fitted GPU4PySCF on P100, V100 and A100 GPUs},pdfauthor={Qing Shao}}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{3pt}
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.1}\renewcommand{\floatpagefraction}{0.7}\setcounter{topnumber}{3}\setcounter{totalnumber}{5}
+\emergencystretch=2em
+\graphicspath{{figures/}}
+\input{macros.tex}
+\newcommand{\gnew}{\textsc{new}}
+\newcommand{\gold}{\textsc{orig}}
+
+\title{Memory-lean density-fitted GPU4PySCF on P100, V100 and A100 GPUs:\\ accuracy, speed and capacity against the original code and CPU PySCF}
+\author{Qing Shao\\\small Department of Chemical and Materials Engineering, University of Kentucky\\\small \texttt{qshao@uky.edu}}
+\date{October 2026}
+
+\begin{document}
+\maketitle
+
+\input{sec_abstract.tex}
+
+\noindent\textbf{Keywords:} GPU computing, density functional theory, density fitting, PySCF, GPU4PySCF, benchmarking, quantum chemistry
+
+\input{sec_intro.tex}
+\input{sec_methods.tex}
+\input{sec_results.tex}
+\input{sec_limits.tex}
+\input{sec_conclusions.tex}
+
+\section*{Data and code availability}
+The code changes, the benchmark suite, the campaign drivers, the audited summary data and the sources of this manuscript are available at \url{https://github.com/qshao/gpu4pyscf} (branch \texttt{improve-single-gpu}). The frozen campaign is identified by the SHA-256 digest given in Appendix~\ref{sec:repro}. The raw per-job records (about 66\,GB) are not included in the repository and are available from the authors on request.
+
+\input{sec_appendix.tex}
+
+\begin{thebibliography}{99}\small
+\bibitem{sun2018pyscf} Q.~Sun, T.~C.~Berkelbach, N.~S.~Blunt, G.~H.~Booth, S.~Guo, Z.~Li, J.~Liu, J.~D.~McClain, E.~R.~Sayfutyarova, S.~Sharma, S.~Wouters, G.~K.-L.~Chan, PySCF: the Python-based simulations of chemistry framework, \emph{WIREs Comput.\ Mol.\ Sci.}\ \textbf{8}, e1340 (2018).
+\bibitem{sun2020pyscf} Q.~Sun, X.~Zhang, S.~Banerjee, P.~Bao, M.~Barbry, N.~S.~Blunt, \emph{et al.}, Recent developments in the PySCF program package, \emph{J.\ Chem.\ Phys.}\ \textbf{153}, 024109 (2020).
+\bibitem{li2024gpu4pyscf} R.~Li, Q.~Sun, X.~Zhang, G.~K.-L.~Chan, Introducing GPU-acceleration into the Python-based Simulations of Chemistry Framework, arXiv:2407.09700 (2024).
+\bibitem{wu2024gpu4pyscf} X.~Wu, Q.~Sun, Z.~Pu, T.~Zheng, W.~Ma, W.~Yan, X.~Yu, Z.~Wu, M.~Huo, X.~Li, W.~Ren, S.~Gong, Y.~Zhang, W.~Gao, Enhancing GPU-acceleration in the Python-based Simulations of Chemistry Framework, arXiv:2404.09452 (2024).
+\bibitem{whitten1973} J.~L.~Whitten, Coulombic potential energy integrals and approximations, \emph{J.\ Chem.\ Phys.}\ \textbf{58}, 4496 (1973).
+\bibitem{dunlap1979} B.~I.~Dunlap, J.~W.~D.~Connolly, J.~R.~Sabin, On some approximations in applications of $X\alpha$ theory, \emph{J.\ Chem.\ Phys.}\ \textbf{71}, 3396 (1979).
+\bibitem{vahtras1993} O.~Vahtras, J.~Almlöf, M.~W.~Feyereisen, Integral approximations for LCAO-SCF calculations, \emph{Chem.\ Phys.\ Lett.}\ \textbf{213}, 514 (1993).
+\bibitem{weigend2005} F.~Weigend, R.~Ahlrichs, Balanced basis sets of split valence, triple zeta valence and quadruple zeta valence quality for H to Rn, \emph{Phys.\ Chem.\ Chem.\ Phys.}\ \textbf{7}, 3297 (2005).
+\bibitem{weigend2006} F.~Weigend, Accurate Coulomb-fitting basis sets for H to Rn, \emph{Phys.\ Chem.\ Chem.\ Phys.}\ \textbf{8}, 1057 (2006).
+\bibitem{lehtola2018libxc} S.~Lehtola, C.~Steigemann, M.~J.~T.~Oliveira, M.~A.~L.~Marques, Recent developments in Libxc --- a comprehensive library of functionals for density functional theory, \emph{SoftwareX} \textbf{7}, 1 (2018).
+\bibitem{okuta2017cupy} R.~Okuta, Y.~Unno, D.~Nishino, S.~Hido, C.~Loomis, CuPy: a NumPy-compatible library for NVIDIA GPU calculations, in \emph{Proc.\ Workshop on Machine Learning Systems (LearningSys) at NIPS} (2017).
+\bibitem{cutensor} NVIDIA Corporation, cuTENSOR: a high-performance CUDA library for tensor primitives, \url{https://developer.nvidia.com/cutensor}.
+\bibitem{mardirossian2016} N.~Mardirossian, M.~Head-Gordon, $\omega$B97M-V: a combinatorially optimized, range-separated hybrid, meta-GGA density functional with VV10 nonlocal correlation, \emph{J.\ Chem.\ Phys.}\ \textbf{144}, 214110 (2016).
+\bibitem{grimme2011} S.~Grimme, S.~Ehrlich, L.~Goerigk, Effect of the damping function in dispersion corrected density functional theory, \emph{J.\ Comput.\ Chem.}\ \textbf{32}, 1456 (2011).
+\bibitem{caldeweyher2019} E.~Caldeweyher, S.~Ehlert, A.~Hansen, H.~Neugebauer, S.~Spicher, C.~Bannwarth, S.~Grimme, A generally applicable atomic-charge dependent London dispersion correction, \emph{J.\ Chem.\ Phys.}\ \textbf{150}, 154122 (2019).
+\end{thebibliography}
+
+\end{document}

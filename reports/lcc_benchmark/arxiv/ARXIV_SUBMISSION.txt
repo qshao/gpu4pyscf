@@ -1,0 +1,10 @@
+arXiv submission notes
+======================
+Upload GPU4PySCF_arxiv_source.zip (main.tex + sections, macros, figures/*.pdf, tables/*.tex; bibliography is inline).
+Compiles with pdflatex (TeX Live 2020 tested), no BibTeX run needed.
+
+Verify the reference list against the original papers (page numbers, author lists).
+Suggested categories: physics.chem-ph (primary), cs.DC (cross-list).
+
+Metadata abstract (plain text):
+We benchmark changes to the density-fitted single-GPU path of GPU4PySCF (a bounded fitted-integral build workspace, a new disk tier next to the host-memory tier, cuBLAS contraction fast paths and a lower-memory analytic gradient) against the unmodified upstream code and CPU PySCF 2.14.0. The campaign covers 127 cases (SCF energies and gradients from H2O to Taxol with six functionals, Hessians, TDA/TDDFT, DF-MP2, CCSD, polarizabilities, shielding, solvation, dispersion, effective-core potentials, geometry optimizations and periodic systems) on P100 (12 and 16 GB), V100 (16 and 32 GB) and A100 (80 GB) GPUs, with two contraction engines and three storage tiers, in 14,648 audited records. Where results qualified, the original and new code agree with an independent CPU result within pre-declared gates. With cuTENSOR the new code is as fast as the original; without it, it is up to 2.4 times faster. The new code uses a median 2.1 times (up to 4.8 times) less GPU memory, letting a 12 GB card treat 1542 basis functions and an 80 GB card 3336. A whole-node 48-thread CPU baseline with default BLAS threading was slower than a 24-thread, single-BLAS-thread run in 120 of 127 cases (median 2.0 times, up to 33 times), so GPU-over-CPU speed-ups depend strongly on the baseline.

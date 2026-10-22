@@ -1,0 +1,19 @@
+\begin{table}[!htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrr}
+\toprule
+stratum & outcomes & qualified & accuracy failed & non-converged & resource limited & infrastructure & audited records \\
+\midrule
+A100 & 248 & 223 & 11 & 14 & 0 & 0 & 2384 \\
+V100 & 248 & 224 & 11 & 13 & 0 & 0 & 2399 \\
+A100 CuPy & 248 & 222 & 12 & 14 & 0 & 0 & 2247 \\
+V100 CuPy & 250 & 224 & 10 & 13 & 0 & 3 & 2265 \\
+P100-16 & 248 & 212 & 8 & 14 & 9 & 5 & 2184 \\
+P100-12 & 248 & 215 & 8 & 14 & 6 & 5 & 2193 \\
+\bottomrule
+\end{tabular}}
+\caption{Outcomes of the memory-mode run of each (case, code version) pair on each stratum, and the number of audited records. `Infrastructure' on the P100 cards includes plain CUDA out-of-memory errors that the runner labelled generically (see text).}
+\label{tab:coverage}
+\end{table}

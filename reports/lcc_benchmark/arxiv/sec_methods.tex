@@ -1,0 +1,77 @@
+\section{Experimental design}
+\label{sec:methods}
+
+\subsection{Code versions and the three-way comparison}
+
+Three implementations are compared on identical inputs.
+
+\begin{description}[leftmargin=1.2cm,style=nextline]
+\item[\textbf{CPU}] PySCF~2.14.0~\cite{sun2018pyscf,sun2020pyscf} with density fitting, the matching physical model for every case. It serves as the accuracy oracle and, in a separate lane, as the CPU timing baseline.
+\item[\textbf{G0 (original GPU)}] GPU4PySCF at upstream commit \texttt{9af748a}, with its Python sources unchanged.
+\item[\textbf{G1 (new GPU)}] The reviewed working tree of the \texttt{improve-single-gpu} branch at the time the campaign was frozen. Relative to G0 it changes the density-fitted (DF) fitted-integral storage (a bounded build workspace and a new disk tier; the host-memory tier already exists upstream), the Coulomb and exchange contractions used by the DF Fock build (cuBLAS GEMM, GEMV and SYRK fast paths that bypass \texttt{einsum} when the CuPy contraction engine is active), the DF analytic gradient (bounded temporary workspace, in-place application of the auxiliary metric, a copy-free auxiliary Gram matrix for the CuPy engine, explicit cuBLAS stream binding), a density-evaluation shortcut in the GGA XC quadrature, and the CMake architecture selection. Several further changes were made while preparing the campaign, all verified before the freeze (Section~\ref{sec:deviations}).
+\end{description}
+
+G0 and G1 share one native library stack, built once for compute capabilities 6.0, 7.0, 8.0 and 9.0 with CUDA~12.4 and LibXC~7.1.2~\cite{lehtola2018libxc} compiled from source, so a single build serves every card. No native numerical kernel differs between G0 and G1; the comparison therefore isolates the Python-level algorithms and memory management. The contraction engine is an environment property and is recorded in every record: \textbf{cuTENSOR} (CuPy~13.4.1~\cite{okuta2017cupy} with cuTENSOR~2.2.0~\cite{cutensor}, used wherever installed) or the \textbf{CuPy fallback} (\texttt{CONTRACT\_ENGINE=cupy}, \texttt{einsum}-based). The fallback is the situation on hardware without a usable cuTENSOR, and it was the situation of an earlier single-GPU study of this branch on an NVIDIA GB10; here it is run deliberately on the V100 and A100 and is the only engine used on the P100 cards.
+
+\subsection{Hardware strata}
+
+Every card is a separate stratum and results are never pooled across strata. Every GPU job uses one GPU and eight CPU cores (16 for the capacity study, which also takes the whole node memory).
+
+\begin{table}[!htbp]
+\centering\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllll}
+\toprule
+stratum & GPU & compute cap. & memory & host & engine \\
+\midrule
+A100 & A100 PCIe 80\,GB & 8.0 & 80\,GB & Ice Lake, 56 cores, 256\,GB & cuTENSOR, CuPy \\
+V100 & V100-SXM2 32\,GB & 7.0 & 32\,GB & Skylake, 32 cores, 192\,GB & cuTENSOR, CuPy \\
+V100-16 & V100-SXM2 16\,GB & 7.0 & 16\,GB & Skylake, 32 cores, 192\,GB & cuTENSOR (capacity only) \\
+P100-16 & P100-SXM2 16\,GB & 6.0 & 16\,GB & Haswell, 16 cores, 128\,GB & CuPy \\
+P100-12 & P100-PCIe 12\,GB & 6.0 & 12\,GB & Skylake, 32 cores, 192\,GB & CuPy \\
+CPU & -- & -- & -- & Cascade Lake, 48 cores, 192\,GB & -- \\
+\bottomrule
+\end{tabular}}
+\caption{Hardware strata of the cluster. All GPU nodes ran driver 550.54.14 (CUDA 12.4). The P100 cards have no tensor cores. The measured cuBLAS double-precision matrix-multiply ceiling (an $8192^3$ product) is 16.3~TFLOPS on the A100 and 6.8~TFLOPS on the V100.}
+\label{tab:hardware}
+\end{table}
+
+\subsection{Benchmark cases and settings}
+
+The campaign registry contains \textbf{127 cases}: 60 \emph{core} energy-plus-gradient cases (six systems from H$_2$O to Taxol with six methods; basis-set stress; open shells; charged and diffuse species; non-covalent dimers; two numerical-stress geometries), 56 \emph{extension} cases covering other quantum-chemistry jobs, 6 direct (non-fitted) SCF cases, 4 periodic cases and one open-shell wB97X probe. The extension families are: additional DFT functionals and corrections (wB97M-V~\cite{mardirossian2016} with non-local correlation, effective-core potentials, D3BJ~\cite{grimme2011} and D4~\cite{caldeweyher2019} dispersion, IEF-PCM and SMD solvation; 18 cases), analytic Hessians (8), TDA and TDDFT excitation energies (12), DF-MP2 and unrestricted DF-MP2 (6), CCSD (2), static polarizabilities (3), NMR shielding (3) and geometry optimizations (4). All geometries are fixed inputs identified by SHA-256 hash; the small molecules are deterministic synthetic geometries, not optimized structures.
+
+All DFT cases use a level-3 NWChem-pruned grid, SCF convergence $10^{-10}$~Eh (gradient $10^{-7}$), a MINAO starting guess, FP64, def2-universal-JKfit~\cite{weigend2006} (with the def2 orbital bases~\cite{weigend2005}) as the fitting basis wherever density fitting is used (the CCSD, direct-SCF, polarizability and shielding cases use exact integrals) and, for gradients, auxiliary-basis and grid response. The same atomic starting density (hashed) is used for CPU and both GPU versions.
+
+\subsection{Accuracy criteria}
+
+Criteria were declared before any performance run. A GPU result \emph{qualifies} only if it reproduces the independent CPU result: SCF energy within $10^{-8}$~Eh and every gradient component within $10^{-6}$~Eh/Bohr; Hessian within $10^{-5}$~Eh/Bohr$^2$; excitation energies within $10^{-6}$~Eh per matched root (state matching by transition-vector overlap); MP2 and CCSD energies within $10^{-8}$~Eh; polarizability within $10^{-5}$~a.u.\ and shielding within 0.1~ppm; periodic energies within $10^{-8}$~Eh. Results that fail a gate are kept and reported, and are excluded from equal-accuracy speed ratios; gates were not loosened after seeing results. All statistics are recomputed from the stored arrays by an independent audit (Section~\ref{sec:audit}), which also verifies source and native-library hashes, settings, the requested job identity of every record, and that timing records carry no instrumentation.
+
+\subsection{Timing, memory and CPU protocol}
+
+\paragraph{GPU timing.} Every observation is a fresh process; imports are outside the timer; the same tiny CUDA and BLAS initialization is run first; the timed region is the complete workflow (molecule and SCF construction, starting guess, fitted-integral construction, SCF, and the analytic gradient or other task). Original and new code are measured in a balanced, seeded AB/BA order, with five paired timing observations per case, extended to nine when either median absolute deviation exceeds 3\% or the ratio lies between 0.95 and 1.05. A CuPy kernel cache that persists between processes is used (the first-process penalty is measured separately, Section~\ref{sec:cold}).
+
+\paragraph{Memory.} One separate memory-mode process per case and code version wraps the CuPy allocator and records the peak of live requested GPU storage per phase. It excludes the CuPy pool overhead, library workspaces and native allocations, and is not a total device-memory figure.
+
+\paragraph{CPU.} References for all cases were computed once with 24 threads. For the timing baseline each case is run in fresh processes on a whole 48-core node: first with 48 threads (the natural choice for a whole-node job), then with 24 threads and BLAS threads set to one (Section~\ref{sec:cpu}). Hessian cases are timed through the finite-difference oracle described below.
+
+\subsection{Capacity study}
+
+A ladder of systems of increasing size (vitamin C, tamoxifen, Taxol, valinomycin, three water clusters, glycine chains) is run with B3LYP/def2-SVP energy plus full-response gradient for each card, code version and storage tier (fitted integrals resident on the GPU, in pinned host memory, or in a file on disk). A column stops after two consecutive rungs fail for resource reasons. Build and staging budgets start at 4~GiB and are raised on demand to 1.2 times a rung's stated minimum (at most 35\% of the card). Disk files are capped at 1.5~TB each and 4~TB in total.
+
+\subsection{Deviations from the plan and registry amendments}
+\label{sec:deviations}
+
+The following were fixed \emph{before} the campaign freeze, each on measured evidence, and apply identically to CPU and GPU.
+
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \textbf{TDA tolerance} $10^{-9}\to10^{-7}$ (six cases): PySCF's TDA solver does not report convergence at $10^{-9}$ even after 500 iterations; energies agree to six digits at $10^{-7}$.
+\item \textbf{TDDFT tolerance} $10^{-9}\to10^{-6}$ (six cases): the GPU solver reports convergence only for tolerances of $10^{-6}$ or looser, while CPU--GPU excitation energies differ by $4\times10^{-9}$~Eh at every tolerance. As a consequence the GPU TDA calculations, which run at $10^{-7}$, are much slower than the TDDFT ones and the two must not be compared with each other.
+\item \textbf{Polarizability and shielding} run with exact integrals (no density fitting) on both sides, because CPU PySCF raises \texttt{NotImplementedError} for these properties on density-fitted references.
+\item \textbf{Periodic cases} use FFT-based Coulomb (FFTDF) on both sides; they agree to $5.6\times10^{-10}$~Eh. Gaussian density fitting with each library's default auxiliary basis differs by $1.8\times10^{-4}$~Eh.
+\item \textbf{Dispersion} parameters are named explicitly (\texttt{d3bj:b3lyp}, \texttt{d4:b3lyp}) while the pinned VWN5 B3LYP coefficients are kept; PySCF's own name \texttt{b3lyp} is the VWN3 variant and differs by 0.037~Eh.
+\item \textbf{Hessian oracle.} The CPU analytic density-fitted Hessian ignores the grid response (3.7$\times10^{-4}$~Eh/Bohr$^2$ away from finite differences of the exact gradient), whereas the GPU Hessian matches finite differences to $1.7\times10^{-6}$. The oracle is therefore a central finite difference (step $10^{-3}$~Bohr, stability checked at $2\times10^{-3}$) of the CPU analytic gradient with auxiliary and grid response.
+\item \textbf{Geometry optimization} passes the GPU gradient to PySCF's optimizer as a gradient scanner.
+\item \textbf{Open-shell cases} (OH with B3LYP and PBE, NO with PBE, and the OH wB97X probe) do not converge on CPU from the MINAO guess in 100 cycles and are kept as terminal \emph{non-converged} outcomes; no tuned guess was substituted.
+\end{itemize}
+
+Further changes to G1 were made after the initial single-GPU studies and before the freeze. Two came from memory profiling of the DF gradient: the auxiliary metric is applied in place (one $N_\mathrm{aux}N_\mathrm{occ}^2$ tensor instead of two), and a copy-free auxiliary Gram matrix replaces an \texttt{einsum} temporary of the same size in the CuPy engine (found with a labelled allocator trace on the P100). Two came from an independent code review of the working-tree diff: the gradient workspace budget falls back to the true minimum when free memory allows it, and the raw cuBLAS handle is bound to the current stream (and restored). New unit tests cover the fast contraction paths (58 DF and gradient tests pass in both engines). A candidate (caching pinned staging buffers for the disk tier) was tried and reverted after an alternating A/B/A/B measurement showed no gain. Review findings left unchanged are listed in Section~\ref{sec:limits}.

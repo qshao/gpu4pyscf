@@ -1,0 +1,44 @@
+\begin{table}[!htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lllrrr}
+\toprule
+system & card & version / tier & time (s) & GPU peak, gradient (GB) & host RSS (GB) \\
+\midrule
+Taxol (1123 AOs) & V100 32GB & orig. GPU & 59.1 & 29.6 & -- \\
+ & V100 32GB & orig. host & 70.8 & 29.6 & 17 \\
+ &  & new GPU & 59.3 & 4.1 & 1 \\
+ &  & new host & 71.7 & 4.1 & 17 \\
+ &  & new disk & 254.5 & 4.1 & 3 \\
+ & A100 80GB & orig. GPU & 33.7 & 54.9 & -- \\
+ & A100 80GB & orig. host & 43.8 & 54.9 & 17 \\
+ &  & new GPU & 35.4 & 4.1 & 1 \\
+ &  & new host & 46.4 & 4.1 & 17 \\
+ &  & new disk & 215.2$^\dagger$ & 6.6$^\dagger$ & 3 \\
+ & P100 16GB & orig. GPU & out of memory & -- & -- \\
+ & P100 16GB & orig. host & out of memory & -- & -- \\
+ &  & new host & 91.5 & 4.7 & 16 \\
+ & P100 12GB & orig. GPU & out of memory & -- & -- \\
+ & P100 12GB & orig. host & out of memory & -- & -- \\
+ &  & new host & 111.5 & 4.7 & 16 \\
+\midrule
+valinomycin (1542 AOs) & V100 32GB & orig. GPU & out of memory & -- & -- \\
+ & V100 32GB & orig. host & 174.4 & -- & 33 \\
+ &  & new GPU & out of memory & -- & -- \\
+ &  & new host & 185.0$^\dagger$ & 14.8$^\dagger$ & 33 \\
+ &  & new disk & 577.6$^\dagger$ & 14.8$^\dagger$ & 6 \\
+ & A100 80GB & orig. GPU & 79.4 & -- & 1 \\
+ & A100 80GB & orig. host & 88.2 & 75.5 & 33 \\
+ &  & new GPU & 79.1$^\dagger$ & 14.8$^\dagger$ & 1 \\
+ &  & new host & 97.2 & 8.7 & 33 \\
+ &  & new disk & 524.4$^\dagger$ & 14.8$^\dagger$ & 6 \\
+ & P100 16GB & orig. host & out of memory & -- & -- \\
+ &  & new host & 220.9 & 8.7 & 32 \\
+ & P100 12GB & orig. host & out of memory & -- & -- \\
+ &  & new host & 264.9 & 8.7 & 32 \\
+\bottomrule
+\end{tabular}}
+\caption{Storage tiers for the fitted integrals. Taxol has a CPU reference and passes the accuracy gate for the new code in every tier (the original code fails its gradient gate); valinomycin is a capacity observation. The original code has no disk tier. Rows marked $\dagger$ were run before the final gradient-memory fixes (their gradient peaks are 6.6 and 14.8 GB instead of 4.1 and 8.7 GB); all other new-code rows use the final code.}
+\label{tab:storage}
+\end{table}

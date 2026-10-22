@@ -1,0 +1,16 @@
+\section{Introduction}
+
+Graphics processing units (GPUs) have become a routine target for electronic-structure software. GPU4PySCF~\cite{li2024gpu4pyscf,wu2024gpu4pyscf} accelerates the density-functional and related methods of PySCF~\cite{sun2018pyscf,sun2020pyscf} on NVIDIA GPUs, and its density-fitted (DF) single-GPU path~\cite{whitten1973,dunlap1979,vahtras1993} is the workhorse for medium-size molecules. Three practical limits recur when such code runs on the heterogeneous GPUs found in university clusters: the \emph{memory} of the card (12--16\,GB on older cards, 80\,GB on the largest), the \emph{contraction engine} available (cuTENSOR may be missing or unsupported, in which case NumPy-style \texttt{einsum} contractions in CuPy~\cite{okuta2017cupy} are used instead), and the need to know that a faster or smaller code gives \emph{the same answer}.
+
+This paper evaluates a set of changes to the DF single-GPU path of GPU4PySCF: a bounded fitted-integral build workspace with a disk tier alongside the existing host-memory tier, cuBLAS contraction fast paths for the Fock build, and a lower-memory analytic gradient. We compare it with the unmodified upstream code and with CPU PySCF on three GPU generations. We ask two questions:
+
+\begin{enumerate}[itemsep=1pt]
+\item Does the new code give \emph{the same answer} as the original and as CPU PySCF across many job types, and is it \emph{faster}?
+\item Does it let \emph{smaller-memory} GPUs treat \emph{larger systems}, and what does this cost in time?
+\end{enumerate}
+
+The measurements cover 127 benchmark cases on a university HPC cluster (the Lipscomb Compute Cluster, LCC) with P100 (12 and 16\,GB), V100 (16 and 32\,GB) and A100 (80\,GB) cards, two contraction engines (cuTENSOR and the CuPy fallback) and three storage tiers for the fitted integrals. The CPU serves as an accuracy oracle and, in a separate lane, as a timing baseline; the emphasis is on the GPU code, and the CPU baseline is required only to be fair. The accuracy criteria were declared before any performance run, and an independent audit recomputes every statistic from the stored records.
+
+The main results are as follows. The new code is numerically equivalent to the original within the declared gates. With cuTENSOR it is not faster than the original; without cuTENSOR it is up to 2.4 times faster. Its main benefit is memory: a median of 2.1 times (up to 4.8 times) less GPU memory, which lets a 12\,GB card treat a system of 1542 basis functions and an 80\,GB card one of 3336. We also report a caveat for CPU baselines: a whole-node 48-thread run with default BLAS threading is usually slower than a 24-thread run with one BLAS thread, so GPU-over-CPU speed-ups depend strongly on how the baseline is run.
+
+Section~\ref{sec:methods} describes the code versions, hardware, cases, accuracy gates and timing protocol, including every deviation from the original plan. Section~\ref{sec:audit} describes the audit. Sections~\ref{sec:accuracy}--\ref{sec:cpu} give accuracy, speed, profiling and CPU-baseline results, and Section~\ref{sec:memory} the memory and capacity results. Section~\ref{sec:discussion} discusses when the new code helps and what limits larger systems, Section~\ref{sec:limits} the limitations, and Section~\ref{sec:conclusions} the conclusions.

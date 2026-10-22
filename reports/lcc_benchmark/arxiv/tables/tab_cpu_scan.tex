@@ -1,0 +1,18 @@
+\begin{table*}[!htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+case & 1 & 2 & 4 & 8 & 12 & 24 & 48 & 24/B1 & 48/B1 & 24 pin & 48 pin \\
+\midrule
+H$_2$O & 4.54 & 4.30 & 4.13 & 4.12 & 4.11 & 4.58 & \textbf{3.52} & -- & -- & -- & -- \\
+benzene & 15.3 & 9.06 & 6.07 & 4.33 & \textbf{4.01} & 7.80 & 17.7 & -- & -- & -- & -- \\
+vitamin C & -- & -- & -- & -- & 22.3 & 23.5 & 55.3 & \textbf{20.6} & 24.0 & 23.5 & 43.2 \\
+tamoxifen & -- & -- & -- & -- & 319.8 & 357.8 & 1663 & \textbf{307.1} & 363.8 & 322.2 & 946.6 \\
+Taxol PBE & -- & -- & -- & -- & 1972 & 1604 & 1717 & \textbf{1594} & 1622 & 1604 & 1700 \\
+\bottomrule
+\end{tabular}}
+\caption{CPU thread scan, wall time in seconds on one 48-core node. Columns: OpenMP threads with BLAS threads equal to OpenMP threads; `B1' = BLAS threads set to 1; `pin' = OpenMP threads pinned to cores. Bold: fastest for that case.}
+\label{tab:cpuscan}
+\end{table*}

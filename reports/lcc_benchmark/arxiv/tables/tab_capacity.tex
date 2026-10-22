@@ -1,0 +1,42 @@
+\begin{table}[!htbp]
+\centering
+\small
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llcrrr}
+\toprule
+card & version / tier & largest system & atoms & AOs & time (min) \\
+\midrule
+P100 12GB & orig. GPU & tamoxifen & 57 & 537 & 0.39 \\
+ & orig. host & tamoxifen & 57 & 537 & 0.42 \\
+ & new GPU & tamoxifen & 57 & 537 & 0.22 \\
+ & new host & valinomycin & 168 & 1542 & 4.41 \\
+ & new disk & valinomycin & 168 & 1542 & 12.0 \\
+\midrule
+P100 16GB & orig. GPU & tamoxifen & 57 & 537 & 0.27 \\
+ & orig. host & tamoxifen & 57 & 537 & 0.39 \\
+ & new GPU & tamoxifen & 57 & 537 & 0.20 \\
+ & new host & valinomycin & 168 & 1542 & 3.70 \\
+ & new disk & valinomycin & 168 & 1542 & 12.9 \\
+\midrule
+V100 16GB & orig. GPU & tamoxifen & 57 & 537 & 0.13 \\
+ & orig. host & valinomycin & 168 & 1542 & 3.17 \\
+ & new GPU & tamoxifen & 57 & 537 & 0.14 \\
+ & new host & valinomycin & 168 & 1542 & 3.05 \\
+ & new disk & valinomycin & 168 & 1542 & 11.5 \\
+\midrule
+V100 32GB & orig. GPU & Taxol & 113 & 1123 & 0.94 \\
+ & orig. host & (H$_2$O)$_{76}$ & 228 & 1824 & 4.54 \\
+ & new GPU & Taxol & 113 & 1123 & 0.97 \\
+ & new host & gly30 & 213 & 2154 & 8.99 \\
+ & new disk & gly30 & 213 & 2154 & 11.7 \\
+\midrule
+A100 80GB & orig. GPU & (H$_2$O)$_{100}$ & 300 & 2400 & 4.29 \\
+ & orig. host & (H$_2$O)$_{100}$ & 300 & 2400 & 4.58 \\
+ & new GPU & gly40 & 283 & 2864 & 9.82 \\
+ & new host & (H$_2$O)$_{139}$ & 417 & 3336 & 17.9 \\
+ & new disk & (H$_2$O)$_{139}$ & 417 & 3336 & 45.6 \\
+\bottomrule
+\end{tabular}}
+\caption{Largest system completed with B3LYP/def2-SVP energy and full-response gradient. These are capacity observations: no CPU reference exists, so only finite values and convergence are checked.}
+\label{tab:capacity}
+\end{table}
