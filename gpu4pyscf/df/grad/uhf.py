@@ -18,9 +18,12 @@ import cupy as cp
 from pyscf import lib
 from gpu4pyscf.lib import logger
 from gpu4pyscf.lib.cupy_helper import contract, asarray, ndarray, get_avail_mem
+from gpu4pyscf.lib.cutensor import contract_engine
 from gpu4pyscf.grad import uhf as uhf_grad
 from gpu4pyscf.df.grad.rhf import (
-    int3c2e_scheme, _factorize_dm, _gen_metric_solver)
+    int3c2e_scheme, _factorize_dm, _gen_metric_solver, _apply_auxiliary_metric, _auxiliary_gram,
+    _gradient_workspace_sizes, _gradient_contract)
+from gpu4pyscf import __config__
 from gpu4pyscf.df.int3c2e_bdiv import (
     _split_l_ctr_pattern, argsort_aux, get_ao_pair_loc, int2c2e_ip1_per_atom,
     SHM_SIZE, LMAX, L_AUX_MAX, THREADS, libvhf_rys, Int3c2eOpt, int2c2e)
@@ -70,12 +73,20 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
     mem_free = get_avail_mem(exclude_memory_pool=True)
     mem_avail = mem_free - 2*naux*nocc**2*8 - nao**2*8
     batch_size = max(1, min(naux, int(mem_avail*.5/(nao_pair*8))))
+    aux_l = auxmol.uniq_l_ctr[:,0]
+    min_aux = int(((aux_l+1)*(aux_l+2)//2).max())
+    budget = min(getattr(__config__, 'df_gradient_workspace_bytes', 2*1024**3),
+                 int(mem_avail*.8))
+    batch_cap, block_cap = _gradient_workspace_sizes(
+        nao, 2*nocc, naux, nao_pair, hermi, min_aux, budget, limit=int(mem_avail*.8))
+    batch_size = max(min_aux, min(batch_size, batch_cap))
     eval_j3c, aux_sorting, _, aux_offsets = int3c2e_opt.int3c2e_evaluator(
         aux_batch_size=batch_size, reorder_aux=True, cart=True,
         omega=omega, lr_factor=lr_factor, sr_factor=sr_factor)
     aux_batches = len(aux_offsets) - 1
 
     blksize = max(1, min(naux, int(mem_avail*.4/(nao*nao*2*8))//8*8))
+    blksize = min(blksize, block_cap)
     log.debug1('%.3f GB free memory. nao_pair=%d naux=%d batch_size=%d blksize=%d',
                mem_free*1e-9, nao_pair, naux, batch_size, blksize)
 
@@ -93,9 +104,9 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
             j3c = j3c_full[:,:,:dk]
             j3c[j_addr,i_addr] = j3c[i_addr,j_addr] = compressed[:,k0:k1]
             tmp = ndarray((nocc, nao, dk), buffer=buf1)
-            contract('pqr,pi->iqr', j3c, dm_factor_r[0], out=tmp)
+            _gradient_contract('pqr,pi->iqr', j3c, dm_factor_r[0], out=tmp)
             contract('iqr,qj->rij', tmp, dm_factor_l[0], out=j3c_oo[0,aux0:aux1])
-            contract('pqr,pi->iqr', j3c, dm_factor_r[1], out=tmp)
+            _gradient_contract('pqr,pi->iqr', j3c, dm_factor_r[1], out=tmp)
             contract('iqr,qj->rij', tmp, dm_factor_l[1], out=j3c_oo[1,aux0:aux1])
     j3c_full = buf = buf1 = eval_j3c = j3c = tmp = compressed = None
     t0 = log.timer_debug1('contract dm', *t0)
@@ -107,12 +118,15 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
 
     j2c = int2c2e(auxmol, omega=omega, lr_factor=lr_factor, sr_factor=sr_factor)
     if mol.omega <= 0 and not auxmol.mol.cart:
-        metric = aux_coeff.dot(_gen_metric_solver(j2c, 'CD')(aux_coeff.T))
+        solve = _gen_metric_solver(j2c, 'CD')
     else:
-        metric = aux_coeff.dot(_gen_metric_solver(j2c, 'ED')(aux_coeff.T))
-    j2c = aux_coeff = None
-    dm_oo = contract('uv,nvij->nuij', metric, j3c_oo)
-    metric = j3c_oo = None
+        solve = _gen_metric_solver(j2c, 'ED')
+    # In place: each column block of the result depends only on the same block of j3c_oo[spin], so one
+    # 2*naux*nocc*nocc tensor suffices (bit-identical results, lower peak GPU memory).
+    dm_oo = j3c_oo
+    for spin in range(2):
+        _apply_auxiliary_metric(aux_coeff, solve, j3c_oo[spin], out=dm_oo[spin])
+    solve = j2c = aux_coeff = j3c_oo = None
     if j_factor != 0:
         auxvec = dm_oo.trace(axis1=2, axis2=3).sum(axis=0)
 
@@ -145,7 +159,7 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
     aux0 = aux1 = 0
     buf = cp.empty((nao_pair*batch_size))
     buf1 = cp.empty((blksize, nao, nao))
-    buf2 = cp.empty(blksize*nao*max(2*nocc, nao))
+    buf2 = cp.empty(blksize*nao*(2*nocc if hermi == 1 else max(2*nocc, nao)))
     ejk = cp.zeros((mol.natm, 3))
     ejk_aux = cp.zeros((mol.natm, 3))
     for kbatch in range(aux_batches):
@@ -207,7 +221,10 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
             dm_aux = None
         else:
             dm_aux = auxvec[:,None] * auxvec
-        if dm_factor_l is dm_factor_r:
+        if contract_engine == 'cupy':
+            dm_aux = _auxiliary_gram(dm_oo, dm_factor_l is not dm_factor_r,
+                                     -k_factor, j_factor, out=dm_aux)
+        elif dm_factor_l is dm_factor_r:
             dm_aux = contract('nrij,nsij->rs', dm_oo, dm_oo,
                               alpha=-k_factor, beta=j_factor, out=dm_aux)
         else:

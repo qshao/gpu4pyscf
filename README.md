@@ -53,6 +53,46 @@ There shouldn't be cupy or cutensor compilation during pip install process. If y
 <repo_path>/gpu4pyscf/lib/cutensor.py:<line_number>: UserWarning: using cupy as the tensor contraction engine.
 ```
 
+For source builds, GPU targets can be selected explicitly. For example, on a
+GB10 with a CUDA compiler supporting SM121:
+
+```sh
+cmake -S gpu4pyscf/lib -B build/single-gpu -DCMAKE_CUDA_ARCHITECTURES=121
+cmake --build build/single-gpu -j 4
+```
+
+Without an override, the build queries nvcc and selects supported generic
+architectures plus a PTX image for forward compatibility. Explicit
+`CUDA_ARCHITECTURES`, `CMAKE_CUDA_ARCHITECTURES`, and `CUDAARCHS` choices take
+precedence over automatic selection. Other CUDA compilers require an explicit
+architecture selection.
+
+The [single-GPU qualification suite](benchmarks/single_gpu/README.md) records
+component performance and matched CPU/GPU scientific results separately.
+The [support matrix](docs/single-gpu-support.md) distinguishes tested component
+behavior from native package qualification and published wheel coverage.
+The [bounded gradient workspace measurements](benchmarks/single_gpu/README.md#bounded-gradient-workspaces-and-direct-coulomb-contractions)
+document reduced transient GPU allocations and the remaining large-system
+storage limits, with host RAM measured separately.
+Optional [disk-backed DF storage](benchmarks/single_gpu/README.md#disk-backed-df-and-cpugpu-communication)
+provides a single-GPU capacity path. GPU caching remains experimental and off
+by default because repeated timing found a small-case SCF iteration regression.
+When the cuTENSOR bindings are unavailable in CuPy, the CuPy contraction fallback
+is used; installing the cuTENSOR library alone does not supply those bindings.
+The [corrected-code optimization campaign](benchmarks/single_gpu/README.md#corrected-code-optimization-campaign-2026-10-18)
+records measured short-block exchange gains and a 512 MiB estimated grid-weight
+response batch target for full-response RKS gradients. The target limits that
+temporary batch rather than total GPU or host memory; all grids and response
+terms are retained.
+The [resident DF construction measurements](benchmarks/single_gpu/README.md#bounded-resident-df-build-workspace-2026-10-18)
+qualify a configurable 4 GiB build-buffer target for bases without general
+contractions. Taxol peak tracked CuPy storage falls from 30.10 to 20.05 GB,
+with a 0.286% median workflow time increase across three fresh timing pairs.
+This target excludes persistent integrals, metric and native workspaces.
+The [comprehensive code review](benchmarks/single_gpu/code_review_results/REPORT.md)
+documents correctness repairs, output-buffer reuse and grid temporary reduction,
+with fresh CPU-referenced workflows and separately measured component results.
+
 Features
 --------
 - Density fitting scheme and direct SCF scheme;

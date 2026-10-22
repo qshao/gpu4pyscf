@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+from functools import lru_cache
+
 import numpy as np
 import cupy
 from gpu4pyscf.lib import logger
@@ -52,17 +54,60 @@ def _create_tensor_descriptor(a):
         a = cupy.ndarray(a.shape, a.dtype, a.data, strides)
     return cutensor.create_tensor_descriptor(a)
 
+@lru_cache(maxsize=128)
+def _matrix_product_axes(pattern):
+    """Recognize binary matrix products without changing general einsum rules."""
+    try:
+        inputs, output = pattern.replace(" ", "").split("->")
+        left, right = inputs.split(",")
+    except ValueError:
+        return None
+    if not (len(left) == len(right) == len(output) == 2):
+        return None
+    if any(len(set(modes)) != 2 for modes in (left, right, output)):
+        return None
+    shared = set(left) & set(right)
+    if len(shared) != 1:
+        return None
+    contracted, = shared
+    left_free = left.replace(contracted, "")
+    right_free = right.replace(contracted, "")
+    if output != left_free + right_free:
+        return None
+    return left.index(contracted), right.index(contracted)
+
+
 def _contract_einsum(pattern, a, b, alpha, beta, out=None, einsum=cupy.einsum):
-    if out is None:
-        out = cupy.ascontiguousarray(einsum(pattern, a, b))
-        out *= alpha
-    elif beta == 0.:
-        out[:] = einsum(pattern, a, b)
-        out *= alpha
+    axes = _matrix_product_axes(pattern) if einsum is cupy.einsum else None
+    if (axes is not None and a.ndim == b.ndim == 2
+            and a.shape[axes[0]] == b.shape[axes[1]]):
+        a, b = cupy.asarray(a), cupy.asarray(b)
+        left = a if axes[0] == 1 else a.T
+        right = b if axes[1] == 0 else b.T
+        if (out is not None and alpha == 1 and beta == 0
+                and a.dtype == b.dtype == out.dtype
+                and out.dtype in (np.dtype(np.float64), np.dtype(np.complex128))
+                and out.shape == (left.shape[0], right.shape[1])
+                and out.flags.c_contiguous
+                and not cupy.may_share_memory(a, out)
+                and not cupy.may_share_memory(b, out)):
+            return cupy.matmul(left, right, out=out)
+        tmp = cupy.matmul(left, right)
     else:
-        out *= beta
         tmp = einsum(pattern, a, b)
-        tmp *= alpha
+
+    # Evaluate before writing out: out may share storage with either input.
+    if out is None:
+        out = cupy.ascontiguousarray(tmp)
+        if alpha != 1:
+            out *= alpha
+    elif beta == 0.:
+        cupy.multiply(tmp, alpha, out=out)
+    else:
+        if beta != 1:
+            out *= beta
+        if alpha != 1:
+            tmp *= alpha
         out += tmp
     return out
 

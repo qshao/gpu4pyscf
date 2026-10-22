@@ -199,7 +199,11 @@ class Int3c2eOpt:
                 pair_splits = np.append(0, np.searchsorted(
                     shl_pair_offsets.get(), np.cumsum(pair_batch_sizes), side='left'))
                 ao_pair_offsets = ao_pair_offsets[pair_splits]
-                assert max(ao_pair_offsets[1:]-ao_pair_offsets[:-1]) < ao_pair_batch_size
+                minimum_pairs = max(ao_pair_offsets[1:]-ao_pair_offsets[:-1])
+                if minimum_pairs >= ao_pair_batch_size:
+                    raise MemoryError(f'A complete angular-pair group requires an '
+                                      f'ao_pair_batch_size greater than {minimum_pairs}; '
+                                      f'requested {ao_pair_batch_size}')
 
             else:
                 ao_pair_offsets = ao_pair_loc[shl_pair_offsets].get()

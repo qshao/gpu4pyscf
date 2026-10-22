@@ -27,3 +27,4 @@ recursive-include gpu4pyscf *.dat
 recursive-include gpu4pyscf/lib/deps *.so
 include gpu4pyscf/lib/*.so
 exclude gpu4pyscf/lib.deps *.so.*
+recursive-include gpu4pyscf/lib/cmake *.cmake

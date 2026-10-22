@@ -18,6 +18,8 @@ import cupy as cp
 from cupyx.scipy.linalg import solve_triangular
 from pyscf import lib
 from gpu4pyscf.lib import logger
+from gpu4pyscf import __config__
+from gpu4pyscf.lib.cutensor import contract_engine
 from gpu4pyscf.lib.cupy_helper import (
     contract, asarray, ndarray, cholesky, eigh, transpose_sum, get_avail_mem)
 from gpu4pyscf.grad import rhf as rhf_grad
@@ -31,6 +33,55 @@ from gpu4pyscf.gto.mole import SortedMole
 from gpu4pyscf.scf.jk import _check_rsh_factors
 
 __all__ = ['Gradients']
+
+def _gradient_workspace_sizes(nao, nocc, naux, npair, hermi,
+                              min_aux, budget, limit=None):
+    '''Plan compressed/dense blocks within a temporary-workspace byte budget.
+
+    Includes a conservative allowance for contraction packing and intermediates.
+    Persistent auxiliary tensors, metric/factor storage and library workspaces
+    are outside this budget. A complete auxiliary shell must fit in compressed
+    storage; dense contractions can split that shell into smaller blocks.
+    '''
+    compressed = 8 * int(npair)
+    scratch = nocc if hermi == 1 else max(nao, nocc)
+    dense = 8 * (nao*nao + nao*scratch + nao*nao
+                 + nao*nocc + 2*nocc*nocc)
+    budget = int(budget)
+    minimum = compressed*min_aux + dense
+    if budget < minimum and limit is not None and int(limit) >= minimum:
+        # The configured budget is a preference: when free memory can hold the true minimum, use the minimum
+        # (very large systems or high-angular-momentum auxiliary shells) instead of failing.
+        budget = minimum
+    if budget < minimum:
+        raise MemoryError(f'Gradient workspace budget {budget} bytes is smaller '
+                          f'than the minimum workspace {minimum} bytes')
+    batch = min(naux, max(128, min_aux),
+                max(min_aux, (budget//4)//compressed),
+                (budget-dense)//compressed)
+    block = min(naux, 128, (budget-batch*compressed)//dense)
+    return int(batch), int(block)
+
+
+def _gradient_contract(pattern, a, b, alpha=1., beta=0., out=None):
+    '''Use GEMM accumulation for the real DF-gradient AO transformations.'''
+    if (contract_engine == 'cupy' and pattern in ('pqr,pi->iqr', 'iqr,pi->pqr')
+            and a.ndim == 3 and b.ndim == 2 and out is not None
+            and b.shape[0] >= 512
+            and a.size > 0 and b.size > 0
+            and a.shape[0] == b.shape[0 if pattern == 'pqr,pi->iqr' else 1]
+            and out.shape == (b.shape[1 if pattern == 'pqr,pi->iqr' else 0], *a.shape[1:])
+            and a.dtype == b.dtype == out.dtype == cp.float64
+            and out.flags.c_contiguous and not cp.may_share_memory(a, out)
+            and not cp.may_share_memory(b, out)):
+        from cupy import cublas
+        matrix = cp.ascontiguousarray(a).reshape(a.shape[0], -1)
+        target = out.reshape(out.shape[0], -1)
+        trans = 'T' if pattern == 'pqr,pi->iqr' else 'N'
+        cublas.gemm(trans, 'N', b, matrix, out=target, alpha=alpha, beta=beta)
+        return out
+    return contract(pattern, a, b, alpha=alpha, beta=beta, out=out)
+
 
 def _gen_metric_solver(int2c, decompose_j2c='CD', lindep=df.LINEAR_DEP_THR):
     ''' generate a solver to solve Ax = b, RHS must be in (n,....) '''
@@ -56,6 +107,54 @@ def _gen_metric_solver(int2c, decompose_j2c='CD', lindep=df.LINEAR_DEP_THR):
         x = v1 @ x
         return x.reshape(b.shape)
     return j2c_solver
+
+def _apply_auxiliary_metric(coeff, solve, rhs, out=None):
+    '''Apply C J^-1 C.T through solves, without forming the projected inverse.
+
+    An explicit projected inverse loses accuracy for nearly dependent auxiliary
+    bases. Project each right-hand side before solving instead. Column blocks
+    bound temporary storage while retaining the existing CD/ED decomposition.
+    '''
+    flat = rhs.reshape(rhs.shape[0], -1)
+    if out is None:
+        out = cp.empty_like(rhs, order='C')
+    # Reshaping a strided output can copy. Keep the usual C-order path direct
+    # and explicitly write back when an external caller supplies another layout.
+    work = out if out.flags.c_contiguous else cp.empty(rhs.shape, dtype=out.dtype)
+    target = work.reshape(flat.shape)
+    for p0, p1 in lib.prange(0, flat.shape[1], 256):
+        target[:,p0:p1] = coeff.dot(solve(coeff.T.dot(flat[:,p0:p1])))
+    if work is not out:
+        out[...] = work
+    return out
+
+def _auxiliary_gram(dm_oo, transposed, alpha, beta, out=None, block=256):
+    '''alpha * sum_{n,ij} dm_oo[n,r,i,j]*dm_oo[n,s,i,j] + beta*out  (transposed: ... dm_oo[n,s,j,i]).
+
+    Matrix products on contiguous (naux, nocc*nocc) views. The CuPy einsum fallback materializes a full-size copy of
+    the operand (naux*nocc*nocc, several GB for large systems); the non-symmetric case here copies only blocks of
+    `block` auxiliary rows. dm_oo may have a leading spin axis.
+    '''
+    dm = dm_oo if dm_oo.ndim == 4 else dm_oo[None]
+    naux = dm.shape[1]
+    if out is None:
+        out = cp.zeros((naux, naux))
+    elif beta == 0:
+        out[:] = 0
+    elif beta != 1:
+        out *= beta
+    from cupy import cublas
+    for n in range(dm.shape[0]):
+        a = dm[n].reshape(naux, -1)
+        if not transposed:
+            cublas.gemm('N', 'T', a, a, out=out, alpha=alpha, beta=1.)
+        else:
+            for s0 in range(0, naux, block):
+                s1 = min(naux, s0 + block)
+                bt = cp.ascontiguousarray(dm[n, s0:s1].transpose(0, 2, 1)).reshape(s1 - s0, -1)
+                out[:, s0:s1] += alpha * a.dot(bt.T)
+    return out
+
 
 def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
                         auxbasis_response=True, verbose=None,
@@ -95,12 +194,20 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
     mem_free = get_avail_mem(exclude_memory_pool=True)
     mem_avail = mem_free - naux*nocc**2*8 - nao**2*8
     batch_size = max(1, min(naux, int(mem_avail*.5/(nao_pair*8))))
+    aux_l = auxmol.uniq_l_ctr[:,0]
+    min_aux = int(((aux_l+1)*(aux_l+2)//2).max())
+    budget = min(getattr(__config__, 'df_gradient_workspace_bytes', 2*1024**3),
+                 int(mem_avail*.8))
+    batch_cap, block_cap = _gradient_workspace_sizes(
+        nao, nocc, naux, nao_pair, hermi, min_aux, budget, limit=int(mem_avail*.8))
+    batch_size = max(min_aux, min(batch_size, batch_cap))
     eval_j3c, aux_sorting, _, aux_offsets = int3c2e_opt.int3c2e_evaluator(
         aux_batch_size=batch_size, reorder_aux=True, cart=True,
         omega=omega, lr_factor=lr_factor, sr_factor=sr_factor)
     aux_batches = len(aux_offsets) - 1
 
     blksize = max(1, min(naux, int(mem_avail*.4/(nao*nao*2*8))//8*8))
+    blksize = min(blksize, block_cap)
     log.debug1('%.3f GB free memory. nao_pair=%d naux=%d batch_size=%d blksize=%d',
                mem_free*1e-9, nao_pair, naux, batch_size, blksize)
 
@@ -118,7 +225,7 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
             j3c = j3c_full[:,:,:dk]
             j3c[j_addr,i_addr] = j3c[i_addr,j_addr] = compressed[:,k0:k1]
             tmp = ndarray((nocc, nao, dk), buffer=buf1)
-            contract('pqr,pi->iqr', j3c, dm_factor_r, out=tmp)
+            _gradient_contract('pqr,pi->iqr', j3c, dm_factor_r, out=tmp)
             contract('iqr,qj->rij', tmp, dm_factor_l, out=j3c_oo[aux0:aux1])
     j3c_full = buf = buf1 = eval_j3c = j3c = tmp = compressed = None
     t0 = log.timer_debug1('contract dm', *t0)
@@ -130,12 +237,13 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
 
     j2c = int2c2e(auxmol, omega=omega, lr_factor=lr_factor, sr_factor=sr_factor)
     if mol.omega <= 0 and not auxmol.mol.cart:
-        metric = aux_coeff.dot(_gen_metric_solver(j2c, 'CD')(aux_coeff.T))
+        solve = _gen_metric_solver(j2c, 'CD')
     else:
-        metric = aux_coeff.dot(_gen_metric_solver(j2c, 'ED')(aux_coeff.T))
-    j2c = aux_coeff = None
-    dm_oo = cp.einsum('uv,vij->uij', metric, j3c_oo)
-    metric = j3c_oo = None
+        solve = _gen_metric_solver(j2c, 'ED')
+    # Each column block of the result depends only on the same block of j3c_oo, so the metric is applied in
+    # place: one naux*nocc*nocc tensor instead of two (bit-identical results, lower peak GPU memory).
+    dm_oo = _apply_auxiliary_metric(aux_coeff, solve, j3c_oo, out=j3c_oo)
+    solve = j2c = aux_coeff = j3c_oo = None
     if j_factor != 0:
         auxvec = dm_oo.trace(axis1=1, axis2=2)
 
@@ -169,7 +277,7 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
     aux0 = aux1 = 0
     buf = cp.empty((nao_pair*batch_size))
     buf1 = cp.empty((blksize, nao, nao))
-    buf2 = cp.empty((blksize, nao, nao))
+    buf2 = cp.empty((blksize, nocc if hermi == 1 else max(nao, nocc), nao))
     ejk = cp.zeros((mol.natm, 3))
     ejk_aux = cp.zeros((mol.natm, 3))
     for kbatch in range(aux_batches):
@@ -186,7 +294,7 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
                 cp.multiply(dm[:,:,None], auxvec[aux0:aux1], out=dm_tensor)
                 beta = j_factor
             contract('rji,qj->iqr', dm_oo[aux0:aux1], dm_factor_l, out=tmp)
-            contract('iqr,pi->pqr', tmp, dm_factor_r, -.5*k_factor, beta, out=dm_tensor)
+            _gradient_contract('iqr,pi->pqr', tmp, dm_factor_r, -.5*k_factor, beta, out=dm_tensor)
             if hermi == 1:
                 cp.take(dm_tensor.reshape(-1,dk), pair_addresses, axis=0,
                         out=compressed[:,k0:k1])
@@ -231,7 +339,10 @@ def _jk_energy_per_atom(int3c2e_opt, dm, j_factor=1, k_factor=1, hermi=0,
             dm_aux = None
         else:
             dm_aux = auxvec[:,None] * auxvec
-        if dm_factor_l is dm_factor_r:
+        if contract_engine == 'cupy':
+            dm_aux = _auxiliary_gram(dm_oo, dm_factor_l is not dm_factor_r,
+                                     -.5*k_factor, j_factor, out=dm_aux)
+        elif dm_factor_l is dm_factor_r:
             dm_aux = contract('rij,sij->rs', dm_oo, dm_oo,
                               alpha=-.5*k_factor, beta=j_factor, out=dm_aux)
         else:

@@ -47,9 +47,16 @@ class DF(lib.StreamObject):
     # When gpu memory is sufficient, cderi is cached in GPU memory. Otherwise,
     # transfer to the host memory
     use_gpu_memory = None
+    # Opt-in single-GPU disk storage. Staging budget excludes metric/factors,
+    # unpacked integrals, consumer workspaces and the OS file cache.
+    cderi_storage = None
+    cderi_directory = None
+    cderi_buffer_bytes = 128 * 1024**2
+    cderi_cache_bytes = 0
 
     _keys = {'intopt', 'j_engine', 'nao', 'naux', 'cd_low', 'mol', 'auxmol',
-             'use_gpu_memory'}
+             'use_gpu_memory', 'cderi_storage', 'cderi_directory',
+             'cderi_buffer_bytes', 'cderi_cache_bytes'}
 
     # These attributes are not available in PySCF. When accessing them from an
     # object created by to_gpu(), they may not be available.
@@ -111,7 +118,10 @@ class DF(lib.StreamObject):
             self._rsh_parameters = (omega, lr_factor, sr_factor)
             self._cderi, self._cderi_idx = _cholesky_eri(
                 intopt, omega=omega, lr_factor=lr_factor, sr_factor=sr_factor,
-                use_gpu_memory=self.use_gpu_memory)
+                use_gpu_memory=self.use_gpu_memory,
+                storage=self.cderi_storage, directory=self.cderi_directory,
+                buffer_bytes=self.cderi_buffer_bytes,
+                cache_bytes=self.cderi_cache_bytes)
             log.timer_debug1('cholesky_eri', *t0)
         return self
 
@@ -211,6 +221,12 @@ class DF(lib.StreamObject):
         if blksize > ALIGNED:
             blksize = blksize // ALIGNED * ALIGNED
         blksize = min(blksize, MIN_BLK_SIZE, naux_slice)
+        from gpu4pyscf.df.disk import DiskTensor
+        if isinstance(cderi_sparse, DiskTensor):
+            staging_cap = int(self.cderi_buffer_bytes) // (2*cderi_sparse.shape[1]*8)
+            if staging_cap < 1:
+                raise MemoryError('Disk CDERI staging budget cannot hold two auxiliary rows')
+            blksize = min(blksize, staging_cap)
         logger.debug1(self.mol, f"{mem_avail/1e9:.3f} GB memory available on"
                       f"Device {device_id}, block size = {blksize}")
         assert blksize > 0
@@ -235,6 +251,28 @@ class DF(lib.StreamObject):
             return
 
         on_gpu = isinstance(cderi_sparse, cp.ndarray)
+
+        from gpu4pyscf.df.disk import DiskTensor, device_blocks
+        if isinstance(cderi_sparse, DiskTensor):
+            cap = int(self.cderi_buffer_bytes) // (2*cderi_sparse.shape[1]*8)
+            if cap < 1:
+                raise MemoryError('Disk CDERI staging budget cannot hold two auxiliary rows')
+            blksize = min(blksize, cap)
+            pair_idx = cp.asarray(self._cderi_idx[0], dtype=np.int32) if unpack else None
+            if unpack:
+                work = cp.zeros((nao, nao, blksize))
+            blocks = device_blocks(cderi_sparse, blksize)
+            try:
+                for p0, p1, block in blocks:
+                    if unpack:
+                        out = fill_symmetric(block.T, pair_idx, nao, 0, p1-p0,
+                                             out=work[:,:,:p1-p0])
+                        yield out.transpose(2,0,1), block
+                    else:
+                        yield None, block
+            finally:
+                blocks.close()
+            return
 
         if unpack:
             work = cp.zeros((nao, nao, blksize))
@@ -571,8 +609,25 @@ def _cderi_task(intopt, cd_low, task_list, _cderi, aux_blksize,
             t1 = log.timer_debug1(f'transfer data for {cp_ij_id} / {nq} on Device {device_id}', *t1)
     return
 
+def _resident_build_batch_size(requested, naux, budget, extra_buffer=False):
+    '''Bound splittable integral input and an optional transformed buffer.
+
+    The persistent CDERI, metric/factors and native workspaces are separate.
+    Generally contracted bases retain their angular-group batching policy.
+    '''
+    budget = int(budget)
+    if budget <= 0:
+        raise ValueError('CDERI build workspace budget must be positive')
+    per_pair = 8 * int(naux) * (1 + int(extra_buffer))
+    if budget < per_pair:
+        raise MemoryError(f'CDERI build workspace needs at least {per_pair} bytes; '
+                          f'budget is {budget}')
+    return max(1, min(int(requested), budget // per_pair))
+
+
 def _cholesky_eri(intopt, *, omega=None, lr_factor=None, sr_factor=None,
-                  use_gpu_memory=None):
+                  use_gpu_memory=None, storage=None, directory=None,
+                  buffer_bytes=128*1024**2, cache_bytes=0):
     assert isinstance(intopt, int3c2e_bdiv.Int3c2eOpt)
     if intopt._int3c2e_envs is None:
         intopt.build()
@@ -582,6 +637,17 @@ def _cholesky_eri(intopt, *, omega=None, lr_factor=None, sr_factor=None,
     auxmol = intopt.auxmol
     naux_sorted = auxmol.nao
     num_devices = multi_gpu.num_devices
+    if storage not in (None, 'disk'):
+        raise ValueError("cderi_storage must be None or 'disk'")
+    if storage == 'disk':
+        if num_devices != 1:
+            raise NotImplementedError('Disk CDERI currently supports one GPU')
+        if use_gpu_memory is True:
+            raise ValueError('Disk CDERI conflicts with use_gpu_memory=True')
+        if int(buffer_bytes) <= 0:
+            raise ValueError('Disk CDERI staging budget must be positive')
+        if int(cache_bytes) < 0:
+            raise ValueError('Disk CDERI cache budget cannot be negative')
 
     # When the basis set does not contain general contractions, sorted_mol are
     # simply an reordering of the original mol bases.
@@ -591,14 +657,37 @@ def _cholesky_eri(intopt, *, omega=None, lr_factor=None, sr_factor=None,
     mem_avail = get_avail_mem(exclude_memory_pool=True)
     word_avail = mem_avail // 8
     batch_size = int(word_avail * .2) // naux_sorted
+    build_budget = None
+    if storage == 'disk':
+        # Integral input, transformed output, recontraction and transpose.
+        batch_size = max(1, min(batch_size, int(buffer_bytes)//(4*8*naux_sorted)))
+    elif not needs_recontraction:
+        build_budget = int(getattr(__config__, 'df_cderi_build_workspace_bytes',
+                                   4*1024**3))
+        # Automatic storage may select mapped host memory, requiring a second
+        # transformed-output buffer. Forced GPU storage writes into CDERI itself.
+        build_buffers = 1 + int(use_gpu_memory is not True)
+        batch_size = _resident_build_batch_size(
+            batch_size, naux_sorted, build_budget, build_buffers == 2)
 
     current_device = cp.cuda.device.get_device_id()
-    eval_j3c, aux_sorting, ao_pair_offsets, _, clone_context = intopt.int3c2e_evaluator(
-        ao_pair_batch_size=batch_size, reorder_aux=True,
-        pair_batch_by_l=needs_recontraction, return_clone_context=True,
-        omega=omega, lr_factor=lr_factor, sr_factor=sr_factor)
+    try:
+        eval_j3c, aux_sorting, ao_pair_offsets, _, clone_context = intopt.int3c2e_evaluator(
+            ao_pair_batch_size=batch_size, reorder_aux=True,
+            pair_batch_by_l=needs_recontraction, return_clone_context=True,
+            omega=omega, lr_factor=lr_factor, sr_factor=sr_factor)
+    except MemoryError as error:
+        if storage == 'disk':
+            raise MemoryError('Disk CDERI evaluator allocation failed with staging '
+                              f'budget {buffer_bytes}: {error}') from error
+        raise
     cderi_batch_size = int(max(ao_pair_offsets[1:] - ao_pair_offsets[:-1]))
     batch_size = cderi_batch_size
+    if build_budget is not None:
+        workspace = batch_size * naux_sorted * 8 * build_buffers
+        if workspace > build_budget:
+            raise MemoryError('CDERI minimum shell-pair build workspace requires '
+                              f'{workspace} bytes; budget is {build_budget}')
     # * When the get_avail_mem() returns a small amount of memory, the actual
     #   size (cderi_batch_size) can be larger than the input batch_size.
     #   This cderi_batch_size should not be used to initialize eval_j3c for
@@ -632,6 +721,46 @@ def _cholesky_eri(intopt, *, omega=None, lr_factor=None, sr_factor=None,
         aux_coef = cp.asarray(aux_coef, order='F')
 
     naux = aux_coef.shape[1]
+    if storage == 'disk':
+        from gpu4pyscf.df.disk import DiskTensor, pinned_empty
+        workspace = 8*(batch_size*(naux_sorted+naux)
+                       + naux*cderi_batch_size*(1+int(needs_recontraction)))
+        if workspace > int(buffer_bytes):
+            raise MemoryError(f'Disk CDERI minimum build staging requires {workspace} bytes; '
+                              f'budget is {buffer_bytes}')
+        result = DiskTensor((naux, cderi_npairs), directory=directory)
+        try:
+            cached_rows = min(naux, int(cache_bytes)//(8*cderi_npairs))
+            if cached_rows:
+                result.cache = cp.empty((cached_rows, cderi_npairs))
+                result.stats['cache_device_bytes'] = result.cache.nbytes
+            work = cp.empty(naux_sorted*batch_size)
+            work2 = cp.empty(naux*batch_size)
+            work1 = cp.empty(naux*cderi_batch_size) if needs_recontraction else None
+            host = pinned_empty((naux*cderi_batch_size,))
+            result.stats['peak_host_buffer_bytes'] = host.nbytes
+            result.stats['peak_device_buffer_bytes'] = workspace
+            for batch_id in range(num_batches):
+                j3c = eval_j3c(shl_pair_batch_id=batch_id, out=work)
+                output = ndarray((j3c.shape[0], naux), buffer=work2)
+                j3c.dot(aux_coef, out=output)
+                if needs_recontraction:
+                    output = recontract(batch_id, output, out=work1)
+                p0, p1 = cderi_offsets[batch_id:batch_id+2]
+                packed = cp.ascontiguousarray(output.T)
+                if cached_rows:
+                    result.cache[:, p0:p1] = packed[:cached_rows]
+                staging = host[:naux*(p1-p0)].reshape(naux, p1-p0)
+                packed.get(out=staging)
+                result.stats['d2h_bytes'] += staging.nbytes
+                result.stats['d2h_calls'] += 1
+                result.write_columns(int(p0), int(p1), staging)
+                packed = None
+            result.finish()
+            return [result], cderi_idx
+        except BaseException:
+            result.close()
+            raise
     naux_per_device = min(naux, (naux + num_devices - 1) // num_devices)
 
     cp.get_default_memory_pool().free_all_blocks()

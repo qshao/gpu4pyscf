@@ -19,14 +19,9 @@ set(CMAKE_C_STANDARD "99")
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Set architectures before enabling CUDA, which otherwise initializes its own default.
-# For better performance on A100, the option
-# -DCUDA_ARCHITECTURES="70-real;80-real" can be added to cmake command
-if(DEFINED CUDA_ARCHITECTURES)
-  set(CMAKE_CUDA_ARCHITECTURES "${CUDA_ARCHITECTURES}")
-elseif(NOT DEFINED CMAKE_CUDA_ARCHITECTURES)
-  set(CMAKE_CUDA_ARCHITECTURES "70-real;80-real;90-real")
-endif()
+# Set architectures before enabling CUDA, respecting explicit user choices.
+include(cmake/CudaArchitectures.cmake)
+gpu4pyscf_select_cuda_architectures()
 enable_language(CUDA)
 message("CUDA_ARCHITECTURES: ${CMAKE_CUDA_ARCHITECTURES}")
 
@@ -108,20 +103,29 @@ option(ENABLE_MULTIGRID_V2 "Enable multigrid-v2 kernels" ON)
 option(ENABLE_FP32_MULTIGRID "Enable experimental FP32 multigrid-v2 collocation kernels" OFF)
 
 option(BUILD_CUTLASS "Using cutlass" ON)
+set(CUTLASS_SOURCE_DIR "" CACHE PATH "Use a pre-fetched CUTLASS source tree instead of downloading it")
 if(BUILD_CUTLASS)
-  include(ExternalProject)
-  ExternalProject_Add(cutlass
-    GIT_REPOSITORY https://github.com/NVIDIA/cutlass.git
-    GIT_TAG        v3.4.0
-    CONFIGURE_COMMAND ""  # No configure step
-    BUILD_COMMAND ""      # No build step
-    INSTALL_COMMAND ""    # No install step
-    TEST_COMMAND ""       # No test step
-  )
+  if(CUTLASS_SOURCE_DIR)
+    if(NOT EXISTS "${CUTLASS_SOURCE_DIR}/include/cutlass/cutlass.h")
+      message(FATAL_ERROR "CUTLASS_SOURCE_DIR must contain include/cutlass/cutlass.h")
+    endif()
+    set(cutlass_SOURCE_DIR "${CUTLASS_SOURCE_DIR}")
+    add_custom_target(cutlass)
+  else()
+    include(ExternalProject)
+    ExternalProject_Add(cutlass
+      GIT_REPOSITORY https://github.com/NVIDIA/cutlass.git
+      GIT_TAG        v3.4.0
+      CONFIGURE_COMMAND ""  # No configure step
+      BUILD_COMMAND ""      # No build step
+      INSTALL_COMMAND ""    # No install step
+      TEST_COMMAND ""       # No test step
+    )
 
-  # ExternalProject_Add automatically populates this variable
-  ExternalProject_Get_Property(cutlass SOURCE_DIR)
-  set(cutlass_SOURCE_DIR ${SOURCE_DIR})
+    # ExternalProject_Add automatically populates this variable
+    ExternalProject_Get_Property(cutlass SOURCE_DIR)
+    set(cutlass_SOURCE_DIR ${SOURCE_DIR})
+  endif()
 endif()
 
 add_subdirectory(gint)

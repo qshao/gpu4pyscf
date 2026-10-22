@@ -25,7 +25,8 @@ from pyscf import lib
 from pyscf.scf import dhf
 from gpu4pyscf.lib import logger
 from gpu4pyscf.lib.cupy_helper import (
-    contract, transpose_sum, tag_array, CPArrayWithTag, cholesky)
+    contract, transpose_sum, tag_array, CPArrayWithTag, cholesky, hermi_triu)
+from gpu4pyscf.lib.cutensor import contract_engine
 from gpu4pyscf.dft import rks, uks, numint, gks
 from gpu4pyscf.scf import hf, uhf, rohf
 from gpu4pyscf.scf.jk import _check_rsh_factors
@@ -493,6 +494,112 @@ class _DFHF:
             obj.spin_samples = self.spin_samples
         return obj
 
+def _coulomb_contract(pattern, a, b, alpha=1., beta=0., out=None):
+    '''Single-density Coulomb GEMV without packing padded DF blocks.'''
+    if (contract_engine == 'cupy' and pattern in ('np,Lp->nL', 'nL,Lp->np')
+            and a.ndim == b.ndim == 2 and a.shape[0] == 1
+            and a.size > 0 and b.size > 0
+            and a.shape[1] == b.shape[1 if pattern == 'np,Lp->nL' else 0]
+            and a.dtype == b.dtype == cp.float64 and a.flags.c_contiguous
+            and b.strides[0] % 8 == b.strides[1] % 8 == 0
+            and ((b.strides[0] == 8 and b.strides[1] >= b.shape[0]*8)
+                 or (b.strides[1] == 8 and b.strides[0] >= b.shape[1]*8))):
+        shape = (1, b.shape[0 if pattern == 'np,Lp->nL' else 1])
+        if out is None:
+            out = cp.empty(shape, dtype=cp.float64)
+            beta = 0.
+        if (out.shape == shape and out.dtype == cp.float64
+                and out.flags.c_contiguous and not cp.may_share_memory(a, out)
+                and not cp.may_share_memory(b, out)):
+            from cupy_backends.cuda.libs import cublas
+            from cupy.cuda import device
+            forward = pattern == 'np,Lp->nL'
+            if b.strides[0] == 8 and b.strides[1] >= b.shape[0]*8:
+                m, n = b.shape
+                lda = b.strides[1]//8
+                trans = cublas.CUBLAS_OP_N if forward else cublas.CUBLAS_OP_T
+            else:
+                n, m = b.shape
+                lda = b.strides[0]//8
+                trans = cublas.CUBLAS_OP_T if forward else cublas.CUBLAS_OP_N
+            handle = device.get_cublas_handle()
+            previous = cublas.getPointerMode(handle)
+            previous_stream = cublas.getStream(handle)
+            scale = numpy.array(alpha, dtype=numpy.float64)
+            accum = numpy.array(beta, dtype=numpy.float64)
+            try:
+                cublas.setStream(handle, cp.cuda.get_current_stream().ptr)
+                cublas.setPointerMode(handle, cublas.CUBLAS_POINTER_MODE_HOST)
+                cublas.dgemv(handle, trans, m, n, scale.ctypes.data,
+                             b.data.ptr, lda, a.data.ptr, 1,
+                             accum.ctypes.data, out.data.ptr, 1)
+            finally:
+                cublas.setPointerMode(handle, previous)
+                cublas.setStream(handle, previous_stream)
+            return out
+    return contract(pattern, a, b, alpha=alpha, beta=beta, out=out)
+
+
+def _exchange_transform(a, b, out):
+    '''Transform auxiliary-contiguous real DF blocks into the exchange buffer.'''
+    naux, ni, nj = a.shape
+    batch, nj_b, nocc = b.shape
+    # Full blocks and measured large-AO short blocks benefit from strided GEMM
+    # on the qualified CuPy fallback. Other sizes/engines keep their contraction.
+    measured_size = (ni >= 512 and naux >= 256
+                     or ni >= 1024 and 32 <= naux < 256 and nocc >= 128)
+    if not (contract_engine == 'cupy' and measured_size
+            and a.dtype == b.dtype == out.dtype == cp.float64
+            and ni == nj == nj_b and out.shape == (batch,ni,nocc,naux)
+            and b.flags.c_contiguous and out.flags.c_contiguous
+            and a.strides[0] == 8 and a.strides[2] >= naux*8
+            and a.strides[2] % 8 == 0
+            and a.strides[1] == nj*a.strides[2]
+            and not cp.may_share_memory(a,out)
+            and not cp.may_share_memory(b,out)):
+        return contract('Lij,njk->nikL', a, b, out=out)
+    if out.size == 0:
+        return out
+
+    from cupy_backends.cuda.libs import cublas
+    from cupy.cuda import device
+    handle = device.get_cublas_handle()
+    previous = cublas.getPointerMode(handle)
+    previous_stream = cublas.getStream(handle)
+    one = numpy.array(1., dtype=numpy.float64)
+    zero = numpy.array(0., dtype=numpy.float64)
+    try:
+        cublas.setStream(handle, cp.cuda.get_current_stream().ptr)
+        cublas.setPointerMode(handle, cublas.CUBLAS_POINTER_MODE_HOST)
+        for n in range(batch):
+            # Per AO: (L,j) @ (j,k) -> (L,k), all column-major. lda
+            # retains the DF block capacity when the auxiliary slice is padded.
+            cublas.dgemmStridedBatched(
+                handle, cublas.CUBLAS_OP_N, cublas.CUBLAS_OP_T,
+                naux, nocc, nj, one.ctypes.data,
+                a.data.ptr, a.strides[2]//8, a.strides[1]//8,
+                b[n].data.ptr, nocc, 0, zero.ctypes.data,
+                out[n].data.ptr, naux, nocc*naux, ni)
+    finally:
+        cublas.setPointerMode(handle, previous)
+        cublas.setStream(handle, previous_stream)
+    return out
+
+
+def _symmetric_gram(x, out):
+    '''Add real Gram matrices to an already symmetric contiguous accumulator.'''
+    if x.shape[-1] == 0 or x.shape[-2] == 0:
+        return out
+    if cp.may_share_memory(x, out):
+        x = x.copy()
+    from cupy import cublas
+    for a, result in zip(x.reshape(-1, *x.shape[-2:]),
+                         out.reshape(-1, *out.shape[-2:])):
+        cublas.syrk('N', a, out=result, beta=1., lower=True)
+        hermi_triu(result)
+    return out
+
+
 def get_jk(dfobj, dms, hermi=0, with_j=True, with_k=True,
            omega=None, lr_factor=None, sr_factor=None):
     '''
@@ -573,8 +680,8 @@ def get_jk(dfobj, dms, hermi=0, with_j=True, with_k=True,
 
         for cderi, cderi_tril in dfobj.loop(blksize=blksize, unpack=with_k):
             if with_j:
-                auxvec = contract('np,Lp->nL', _dm_sparse, cderi_tril)
-                contract('nL,Lp->np', auxvec, cderi_tril, beta=1, out=vj)
+                auxvec = _coulomb_contract('np,Lp->nL', _dm_sparse, cderi_tril)
+                _coulomb_contract('nL,Lp->np', auxvec, cderi_tril, beta=1, out=vj)
 
             if with_k:
                 nL = len(cderi)
@@ -582,27 +689,33 @@ def get_jk(dfobj, dms, hermi=0, with_j=True, with_k=True,
                     if dm_factor_mode == 0:
                         for i0, i1 in lib.prange(0, n_dm, dm_batch_size):
                             rhok = ndarray((i1-i0,nao,nocc,nL), buffer=buf)
-                            contract('Lij,njk->nikL', cderi, factor_l[s,i0:i1], out=rhok)
-                            contract('nikL,njkL->nij', rhok, rhok, beta=1, out=vk[s,i0:i1])
+                            _exchange_transform(cderi, factor_l[s,i0:i1], rhok)
+                            # vk starts at zero and these real self-Gram updates
+                            # preserve symmetry. Small matrices favor GEMM on
+                            # the qualified CuPy fallback; retain other engines.
+                            if contract_engine == 'cupy' and nao >= 512 and rhok.dtype == cp.float64:
+                                _symmetric_gram(rhok.reshape(i1-i0,nao,-1), vk[s,i0:i1])
+                            else:
+                                contract('nikL,njkL->nij', rhok, rhok, beta=1, out=vk[s,i0:i1])
                     elif dm_factor_mode == 1:
                         for i0, i1 in lib.prange(0, n_dm, dm_batch_size):
                             rhok, rhok1 = ndarray((2,i1-i0,nao,nocc,nL), buffer=buf)
-                            contract('Lij,njk->nikL', cderi, factor_l[s,i0:i1], out=rhok)
-                            contract('Lij,njk->nikL', cderi, factor_r[s,i0:i1], out=rhok1)
+                            _exchange_transform(cderi, factor_l[s,i0:i1], rhok)
+                            _exchange_transform(cderi, factor_r[s,i0:i1], rhok1)
                             contract('nikL,njkL->nij', rhok, rhok1, beta=1, out=vk[s,i0:i1])
                     elif dm_factor_mode == 2:
                         rhok = ndarray((nao,nocc,nL), buffer=buf1)
                         contract('Lij,jk->ikL', cderi, factor_l[s,0], out=rhok)
                         for i0, i1 in lib.prange(0, n_dm, dm_batch_size):
                             rhok1 = ndarray((i1-i0,nao,nocc,nL), buffer=buf)
-                            contract('Lij,njk->nikL', cderi, factor_r[s,i0:i1], out=rhok1)
+                            _exchange_transform(cderi, factor_r[s,i0:i1], rhok1)
                             contract('nikL,jkL->nij', rhok, rhok1, beta=1, out=vk[s,i0:i1])
                     else:
                         rhok1 = ndarray((nao,nocc,nL), buffer=buf1)
                         contract('Lij,jk->ikL', cderi, factor_r[s,0], out=rhok1)
                         for i0, i1 in lib.prange(0, n_dm, dm_batch_size):
                             rhok = ndarray((i1-i0,nao,nocc,nL), buffer=buf)
-                            contract('Lij,njk->nikL', cderi, factor_l[s,i0:i1], out=rhok)
+                            _exchange_transform(cderi, factor_l[s,i0:i1], rhok)
                             contract('nikL,jkL->nij', rhok, rhok1, beta=1, out=vk[s,i0:i1])
                 rhok1 = rhok = None
         return vj, vk

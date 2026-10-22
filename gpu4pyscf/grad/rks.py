@@ -414,6 +414,13 @@ def _tau_grad_dot_(ao, wv, accumulate=False, buf=None, out=None):
     _d1_dot_(ao[idx3], aow.T, beta=1, out=out)
     return out
 
+def _grid_response_batch_size(available_bytes, natm):
+    '''Bound the estimated grid-weight derivative workspace, aligned down.'''
+    budget = min(int(available_bytes * 0.1), 512 * 1024**2)
+    bytes_per_grid = 6 * natm * 8
+    return budget // (16 * bytes_per_grid) * 16
+
+
 def get_exc_full_response(ni, mol, grids, xc_code, dms, relativity=0, hermi=1,
                           max_memory=2000, verbose=None):
     '''Full response including the response of the grids'''
@@ -475,21 +482,20 @@ def get_exc_full_response(ni, mol, grids, xc_code, dms, relativity=0, hermi=1,
     del rho
 
     available_gpu_memory = get_avail_mem()
-    available_gpu_memory = int(available_gpu_memory * 0.1) # Don't use too much gpu memory
-    ao_nbytes_per_grid = ((2*3) * natm) * 8
-    ngrids_per_batch = int(available_gpu_memory / ao_nbytes_per_grid)
+    # This target bounds the estimated batch workspace, not the full gradient
+    # or native allocations. Keep every grid point and all response terms.
+    ngrids_per_batch = _grid_response_batch_size(available_gpu_memory, natm)
     if ngrids_per_batch < 16:
         raise MemoryError(f"Out of GPU memory for XC energy first derivative, available gpu memory = {get_avail_mem()}"
                           f" bytes, nao = {nao}, natm = {natm}, ngrids (nonzero rho) = {ngrids}")
-    ngrids_per_batch = (ngrids_per_batch + 16 - 1) // 16 * 16
-    ### Don't split the batch too small for get_dweight_dA()
-    # ngrids_per_batch = min(ngrids_per_batch, MIN_BLK_SIZE)
 
     for g0 in range(0, ngrids, ngrids_per_batch):
         g1 = min(g0 + ngrids_per_batch, ngrids)
         dweight_dA = get_dweight_dA(_sorted_mol, grids, (g0,g1))
-        de_grid_response_weight += cupy.einsum("Adg->Ad", dweight_dA * dweightdA_right[g0:g1])
-    del dweight_dA
+        # This freshly computed batch is consumed only by this weighted sum.
+        dweight_dA *= dweightdA_right[g0:g1]
+        de_grid_response_weight += cupy.einsum("Adg->Ad", dweight_dA)
+        del dweight_dA
     del dweightdA_right
     del exc
 

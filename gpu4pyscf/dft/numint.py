@@ -195,6 +195,20 @@ def _eval_rho2(ao, cpos, xctype, with_lapl=False, buf=None, rho=None):
         nvar = 2
 
     nmo = cpos.shape[1]
+    # A GGA MO density needs four AO-to-MO products. For sparse AO blocks,
+    # forming the same occupation-weighted DM and one DM-AO product is cheaper.
+    if (xctype == 'GGA' and ao.dtype == cpos.dtype == cupy.float64
+            and ao.shape[1] < 4*nmo):
+        dm = cpos @ cpos.T
+        dm_buf = buf
+        if dm_buf is not None and dm_buf.nbytes < ao.shape[1]*ngrids*8:
+            dm_buf = None
+        value = eval_rho(None, ao, dm, xctype='GGA', hermi=1, buf=dm_buf)
+        if rho is None:
+            return value
+        rho[:] = value
+        return rho
+
     buf = ndarray((nvar,nmo,ngrids), dtype=cpos.dtype, buffer=buf)
     if rho is None:
         if xctype == 'LDA' or xctype == 'HF':
@@ -1994,7 +2008,8 @@ def _sparse_index(mol, coords, l_ctr_offsets, ao_loc, opt=None):
     return pad, idx, non0shl_idx, ctr_offsets_slice, ao_loc_slice
 
 def _block_loop(ni, mol, grids, nao=None, deriv=0, max_memory=2000,
-                non0tab=None, blksize=None, buf=None, extra=0, grid_range=None):
+                non0tab=None, blksize=None, buf=None, extra=0, grid_range=None,
+                strict_grid_order=False):
     '''
     Generator loops over grids block-by-block.
     Kwargs:
@@ -2004,6 +2019,8 @@ def _block_loop(ni, mol, grids, nao=None, deriv=0, max_memory=2000,
         blksize: if not given, it will be estimated with avail GPU memory.
         buf: dummy argument for compatibility with PySCF
         grid_range: loop [grid_start, grid_end] in grids only. Both values has to be multiple of MIN_BLK_SIZE.
+        strict_grid_order: compatibility flag for external integrators. Grid
+            order, including zero-AO blocks, is always preserved by this loop.
     '''
     log = logger.new_logger(mol)
     if grids.coords is None:
