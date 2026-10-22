@@ -1,0 +1,112 @@
+{
+  "timestamp_utc": "2026-10-17T13:43:00.133769+00:00",
+  "status": "passed",
+  "scope": "Contraction-only baseline substitution in same native build; shared GB10; excludes constructor/initial guess/imports/metadata. CPU reference is for numerical correctness, not tuned performance.",
+  "timed_medium_gpu_calculations": 56,
+  "component_speedups": {
+    "small_matrix": 2.5028422692499817,
+    "medium_matrix": 1.0570839270945647,
+    "df_j": 1.0048468624815856,
+    "df_j_accumulate": 6.982344209494468,
+    "df_k_transform": 1.1070650929154358
+  },
+  "medium_workflows": [
+    {
+      "method": "HF",
+      "baseline_seconds": 2.080895146355033,
+      "current_seconds": 2.0651349928230047,
+      "speedup": 1.0076315367212312,
+      "paired_ratio_min": 0.9996884750472056,
+      "paired_ratio_max": 1.0229296207560137,
+      "paired_ratio_median": 1.005168538105224,
+      "current_gradient_fraction_median": 0.3930437484946226,
+      "energy_max_error": 3.9335645851679146e-11,
+      "gradient_max_error": 1.1899160767825379e-08,
+      "iterations": {
+        "baseline": [
+          19
+        ],
+        "current": [
+          19
+        ]
+      }
+    },
+    {
+      "method": "PBE",
+      "baseline_seconds": 3.2871324261650443,
+      "current_seconds": 3.2945103142410517,
+      "speedup": 0.9977605509249386,
+      "paired_ratio_min": 0.9840536040137664,
+      "paired_ratio_max": 1.0165061810882603,
+      "paired_ratio_median": 1.0014855002429115,
+      "current_gradient_fraction_median": 0.15916573681369373,
+      "energy_max_error": 3.001332515850663e-11,
+      "gradient_max_error": 3.2471698219183054e-08,
+      "iterations": {
+        "baseline": [
+          22
+        ],
+        "current": [
+          22
+        ]
+      }
+    },
+    {
+      "method": "B3LYP",
+      "baseline_seconds": 3.5340916104614735,
+      "current_seconds": 3.513106278143823,
+      "speedup": 1.00597344078322,
+      "paired_ratio_min": 1.0014329118100305,
+      "paired_ratio_max": 1.011332228742955,
+      "paired_ratio_median": 1.0048725998281918,
+      "current_gradient_fraction_median": 0.3276269683177067,
+      "energy_max_error": 4.524736141320318e-11,
+      "gradient_max_error": 2.6244720174872782e-08,
+      "iterations": {
+        "baseline": [
+          18
+        ],
+        "current": [
+          18
+        ]
+      }
+    },
+    {
+      "method": "WB97X",
+      "baseline_seconds": 5.00396032910794,
+      "current_seconds": 4.991387783549726,
+      "speedup": 1.0025188476839346,
+      "paired_ratio_min": 0.9988207239441698,
+      "paired_ratio_max": 1.0119499516237174,
+      "paired_ratio_median": 1.0006374855225972,
+      "current_gradient_fraction_median": 0.3949248671619896,
+      "energy_max_error": 4.5702108764089644e-11,
+      "gradient_max_error": 6.085531900623664e-08,
+      "iterations": {
+        "baseline": [
+          19
+        ],
+        "current": [
+          19
+        ]
+      }
+    }
+  ],
+  "verification": {
+    "existing_campaign_passed": 5,
+    "medium_campaign_passed": 1,
+    "medium_seconds": 360.13
+  },
+  "source_hashes": {
+    "benchmarks/single_gpu/df_profile.py": "0ecee44d1af57e284e044b3c0d4859008bdac48da102557b45fc67b333c56925",
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_medium_workflow_benchmark.py": "469c012096dadfac7003f11e5e527a7e59b7ec579f089ea2aee15aba2de186fa",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "report_hashes": {
+    "contraction_results.json": "4104d450474a4c64b84eb031c8d772f72ab95b3403348f870b3bca4bf40da790",
+    "df_profile_results.json": "99228676ec7c679ade2fa41fd4d633bce6c4154e7cd3af53d6358872eb219052",
+    "workflow_results.json": "30689f2b9dc3bd7655f60d2b18bb935ec552f7212c1edae5722b2840f99492fc",
+    "medium_workflow_results.json": "5953e2df520b684fc78268bab35dc01df841056b08abc366ba5533470c50fb49"
+  }
+}

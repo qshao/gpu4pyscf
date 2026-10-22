@@ -1,0 +1,22 @@
+\appendix
+\section{Reproducibility}
+\label{sec:repro}
+
+\paragraph{Frozen campaign.} The 127-case campaign (\texttt{campaign1}) was frozen on 2026-10-20 with the SHA-256 digest of its \texttt{campaign.json} \texttt{\small 231fea7a9e1722ad46b8c79eeb06789f0437118b8df3fa4976874d7459e4d380}. The file records the hashes of the G0 and G1 Python sources, the native libraries, all benchmark helper files, the registry and the hashed initial atomic densities; every job validates these identities before and after it runs, and each card works in a fork of the campaign whose \texttt{campaign.json} is byte-identical, so the CPU references are shared and one audit applies to all.
+
+\paragraph{Layout.}
+Code and data live in \texttt{benchmarks/single\_gpu/qm\_suite} of the repository (\texttt{cases.json}, \texttt{run.py}, \texttt{schedule.py}, \texttt{adapters.py}, \texttt{audit.py}); the cluster drivers are in \texttt{qm\_suite/lcc}; the stage profiles, storage-tier and capacity runs are in \texttt{benchmarks/single\_gpu/lcc\_profile\_results}; this report is built by \texttt{reports/lcc\_benchmark} (\texttt{collect\_aux.py}, \texttt{make\_figures.py}, \texttt{make\_tables.py}, \texttt{report.tex}). The environment is a conda environment with Python~3.11, PySCF~2.14.0, CuPy~13.4.1, cuTENSOR~2.2.0 and the GCC~12 and CUDA~12.4 toolchains.
+
+\paragraph{Commands.} CPU references: a Slurm job array over the case list calling \texttt{run.py ... --variant CPU --mode reference}. GPU matrix: \texttt{schedule.py --campaign all --cases <list> --repetitions 5} on each card fork. CPU timing: \texttt{run.py ... --variant CPU --mode timing} per case and repetition on whole nodes. Capacity ladder: \texttt{lcc/capacity.py CARD}. Cross-stratum tables: \texttt{lcc/compare\_variants.py}.
+
+\section{Context: earlier single-GPU study on a GB10}
+\label{sec:gb10}
+
+Before the cluster campaign, the same branch was compared with the original code on one NVIDIA GB10 (unified memory, weak double-precision throughput, no cuTENSOR bindings so all contractions used the CuPy fallback). Table~\ref{tab:gb10} reproduces that result. The GB10 study motivated two checks in the present report: whether the speed-up survives when cuTENSOR is available (Section~\ref{sec:engine}), and whether the memory reduction matters on cards with far less memory (Section~\ref{sec:memory}).
+
+\input{tables/tab_gb10.tex}
+
+\begin{landscape}
+\section{Per-case results}
+\input{tables/tab_percase.tex}
+\end{landscape}

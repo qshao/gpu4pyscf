@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "production": [
+    {
+      "case": "vitamin_svp",
+      "pairs": 1,
+      "medians_seconds": {
+        "previous": 3.4766822662204504,
+        "production": 3.411495978012681
+      },
+      "speedup": 1.0191078308835477,
+      "time_reduction_percent": 1.8749567322018934,
+      "paired_ratios": [
+        1.0191078308835477
+      ],
+      "production_phase_medians": {
+        "scf": 2.241675116121769,
+        "gradient": 1.169820861890912
+      }
+    },
+    {
+      "case": "tamoxifen_svp",
+      "pairs": 3,
+      "medians_seconds": {
+        "previous": 42.475492366589606,
+        "production": 38.86725719831884
+      },
+      "speedup": 1.0928348288087288,
+      "time_reduction_percent": 8.494863666627984,
+      "paired_ratios": [
+        1.0950389724529066,
+        1.0913911947346309,
+        1.0928348288087288
+      ],
+      "production_phase_medians": {
+        "scf": 26.274644231423736,
+        "gradient": 12.604891661554575
+      }
+    }
+  ],
+  "experimental": [
+    {
+      "case": "vitamin_svp",
+      "pairs": 3,
+      "medians_seconds": {
+        "current": 3.454867142252624,
+        "combined": 3.4043233916163445
+      },
+      "speedup": 1.014846929865932,
+      "time_reduction_percent": 1.4629723388820182,
+      "paired_ratios": [
+        1.0121299123354515,
+        1.0212486210212068,
+        1.0145680527738221
+      ],
+      "production_phase_medians": {
+        "scf": 2.245585622265935,
+        "gradient": 1.15651810541749
+      }
+    },
+    {
+      "case": "tamoxifen_svp",
+      "pairs": 3,
+      "medians_seconds": {
+        "current": 42.062718680128455,
+        "combined": 38.706231380812824
+      },
+      "speedup": 1.0867169750083054,
+      "time_reduction_percent": 7.979720295400994,
+      "paired_ratios": [
+        1.0867169750083054,
+        1.0859931990532212,
+        1.0855813415352409
+      ],
+      "production_phase_medians": {
+        "scf": 26.170068121515214,
+        "gradient": 12.542685038410127
+      }
+    }
+  ],
+  "accuracy": {
+    "records": 31,
+    "cpu_energy_hartree": 7.821654435247183e-11,
+    "cpu_gradient_hartree_per_bohr": 6.909636702800981e-07,
+    "paired_energy_hartree": 1.3642420526593924e-12,
+    "paired_gradient_hartree_per_bohr": 8.920883320939765e-08
+  },
+  "summary_script_sha256": "7f85ea60e4ef014597a5b695fd3336ad69d7af53fcbd310235663792343e23f7",
+  "memory": {
+    "previous_peak_tracked_live_bytes": 21088910800,
+    "production_peak_tracked_live_bytes": 4326738768,
+    "reduction_percent": 79.48334644196039,
+    "previous_host_address_space_peak_rss_bytes": 1391054848,
+    "production_host_address_space_peak_rss_bytes": 1391026176
+  },
+  "production_source_hashes": {
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e"
+  },
+  "raw_report_hashes": {
+    "speed_memory_acceptance_results.json": "8cd93cff94c56635baa7ae80e2f4e52df466269c5df9b1aa22e53dd4b4a69700",
+    "speed_memory_workflow_results.json": "e71714a6ea9a5eac7801f08521a40a10b9024b1d23eb2175b7a6a3a87391a51b",
+    "speed_memory_components.json": "f33c941fe381f68ad92097655ecb8f7cced91259e311196ee953021bf1883f28",
+    "speed_memory_usage_current.json": "05ecd82dad314e875d0952d1ab212a06234b97cc53bc25733f86229a0e6e3c5d",
+    "runs/2026-10-17-pre-promotion-speed-memory/speed_memory_usage_current.json": "2559523bf1e3ecc15fd5ebaf16556e372ded9ebb98ca3f650915decd715ea014"
+  },
+  "note": "Single shared GB10, CuPy fallback, regression grid level 1. Saved approximately42-second GPU baseline; unchanged native build and scientific settings. Memory is live CuPy-requested storage, excludes native/library/preexisting allocations. Host RSS unchanged; unified-memory metrics must not be added. Workspace cap is not a full-memory cap. No arbitrary large chemical calculation or production grid qualified."
+}

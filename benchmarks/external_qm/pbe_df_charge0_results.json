@@ -1,0 +1,109 @@
+{
+  "status": "passed",
+  "started_utc": "2026-10-17T11:41:50.599492+00:00",
+  "skala_revision": "c0487c9a241f652e3bcee9042677da835dde3dda",
+  "source_sha256": {
+    "gpu4pyscf/dft/numint.py": "f4fbde5afeb964cbbd80b65a38266caba41a8e577379c473348c3cb6ff4a2683",
+    "benchmarks/external_qm/test_skala_pbe.py": "1a1a96cf1c6bf5d8ae0ce59eb60b7fa7212fc52449f694cc335e1f6cac05ecbd",
+    "build/vendor/skala/src/skala/pyscf/gradients.py": "42dbaf485ba92d40317ebb152c9e8881a6d3730a5c190707d9c440b4f8192c3f",
+    "build/vendor/skala/src/skala/gpu4pyscf/gradients.py": "2a4a56f1cb1a796fcce722654075754f857923d8e3066a5bed29bfae081536b8"
+  },
+  "functional": "PBE (not neural Skala)",
+  "charge": 0,
+  "spin": 0,
+  "basis": "def2-svp",
+  "auxbasis": "def2-universal-jkfit",
+  "density_fit": true,
+  "atom_grid": [
+    30,
+    110
+  ],
+  "prune": null,
+  "with_dftd3": false,
+  "conv_tol": 1e-11,
+  "conv_tol_grad": 1e-08,
+  "backends": {
+    "native_cpu": {
+      "energy": -76.27192538970235,
+      "gradient": [
+        [
+          -1.7892575948587749e-16,
+          1.1139922491425462e-15,
+          0.022551595704430216
+        ],
+        [
+          7.286521651232836e-16,
+          0.010614909283710006,
+          -0.011275797852220881
+        ],
+        [
+          -5.961782542189968e-16,
+          -0.010614909283712226,
+          -0.011275797852219105
+        ]
+      ],
+      "scf_seconds": 0.12710519414395094,
+      "gradient_seconds": 0.019860155880451202,
+      "converged": true,
+      "energy_error": 3.455975999600014e-06,
+      "gradient_max_error": 1.6188021589869095e-08
+    },
+    "skala_pbe_cpu": {
+      "energy": -76.27192884567835,
+      "gradient": [
+        [
+          -6.287538247846646e-17,
+          3.7306386379653026e-16,
+          0.022551587436465237
+        ],
+        [
+          4.601599048344448e-17,
+          0.01061489309569108,
+          -0.011275793718236837
+        ],
+        [
+          2.6138858218756476e-17,
+          -0.010614893095690636,
+          -0.011275793718236171
+        ]
+      ],
+      "scf_seconds": 0.23937895987182856,
+      "gradient_seconds": 0.04986365418881178,
+      "converged": true,
+      "energy_error": 0.0,
+      "gradient_max_error": 0.0
+    },
+    "skala_pbe_gpu": {
+      "energy": -76.27192884567637,
+      "gradient": [
+        [
+          1.2632209611715974e-16,
+          -4.2069884162966685e-16,
+          0.022551587756648228
+        ],
+        [
+          6.621445077699001e-17,
+          0.010614892397229347,
+          -0.011275793878321672
+        ],
+        [
+          -1.8813875183201848e-16,
+          -0.010614892397232456,
+          -0.01127579387832367
+        ]
+      ],
+      "scf_seconds": 0.14683709293603897,
+      "gradient_seconds": 0.09242116287350655,
+      "converged": true,
+      "energy_error": 1.9753088054130785e-12,
+      "gradient_max_error": 6.984617328953391e-10
+    }
+  },
+  "finite_difference": {
+    "component": "oxygen_z",
+    "step_bohr": 0.001,
+    "gradient": 0.022551644548229888,
+    "analytic_gradient": 0.022551587436465237,
+    "absolute_error": 5.7111764650841224e-08
+  }
+}

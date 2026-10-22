@@ -1,0 +1,130 @@
+{
+  "status": "passed",
+  "validator_sha256": "f1f928209e74d7607c6e55b9f14f227b8209bcdb893d505e0e0178fe699b6625",
+  "short_exchange": [
+    {
+      "rows": 32,
+      "layout": "tight",
+      "speedup": 1.3347096269026695
+    },
+    {
+      "rows": 64,
+      "layout": "tight",
+      "speedup": 1.3462912981421935
+    },
+    {
+      "rows": 128,
+      "layout": "tight",
+      "speedup": 1.3422908412466128
+    },
+    {
+      "rows": 32,
+      "layout": "padded",
+      "speedup": 1.3319094029834047
+    },
+    {
+      "rows": 64,
+      "layout": "padded",
+      "speedup": 1.3181853668452983
+    },
+    {
+      "rows": 128,
+      "layout": "padded",
+      "speedup": 1.3466620350581808
+    }
+  ],
+  "streamed_jk": {
+    "medians": {
+      "baseline": 49.033203271217644,
+      "strided": 44.425110349431634
+    },
+    "speedup": 1.1037272138558676,
+    "paired_ratios": [
+      1.1037920304966504,
+      1.103426340858805,
+      1.103706870207212
+    ]
+  },
+  "xc": {
+    "medians": {
+      "baseline": 38.805601629428566,
+      "capped": 38.73155160062015
+    },
+    "speedup": 1.0019118787073644,
+    "paired_ratios": [
+      1.001707077669404,
+      1.0019118787073644,
+      1.002612861590532
+    ]
+  },
+  "gradient_memory": {
+    "before_bytes": 7951961177,
+    "after_bytes": 6556902612,
+    "reduction_fraction": 0.1754357867132228
+  },
+  "xc_memory": {
+    "before_bytes": 7887651993,
+    "after_bytes": 1124073384
+  },
+  "force_error_to_corrected_gpu": 3.232969447708456e-13,
+  "xc_error_to_baseline": 2.220446049250313e-16,
+  "production_cpu_acceptance": {
+    "resident": {
+      "energy_error_hartree": 2.2246240405365825e-09,
+      "gradient_max_error": 6.9835222049619006e-09,
+      "passed": true
+    },
+    "disk": {
+      "energy_error_hartree": 2.2209860617294908e-09,
+      "gradient_max_error": 6.990315881694187e-09,
+      "passed": true
+    }
+  },
+  "packing": "rejected: strict accuracy gate failed",
+  "short_exchange_promotion": "qualified by corrected full resident/disk CPU acceptance",
+  "excluded_protocol_reports": [
+    {
+      "name": "production_resident_acceptance.json",
+      "status": "excluded: factory bypassed NWChem pruning",
+      "sha256": "31e95fbad71e4a2901b3e6b118af11d89997381f9b7a2a459e569866a0f0b0da"
+    },
+    {
+      "name": "production_resident_xc_acceptance.json",
+      "status": "excluded: factory bypassed NWChem pruning",
+      "sha256": "d69beddefd65e17acaf3cbf20fd1158fd572fa2b68c5298ebcc99da5a3a07cb0"
+    }
+  ],
+  "regression_tests": {
+    "qualified_regressions.xml": {
+      "passed": 56,
+      "sha256": "b438068c1cd850fa59b917b3e6fa0eb0cb492394c54bb59a302eddd0f32824b8"
+    },
+    "configuration.xml": {
+      "passed": 12,
+      "sha256": "315b4ca604df9402d98513ce23806d9ca1f4535cc7d4d29497e5a108bf53b15b"
+    }
+  },
+  "tdd_red_sha256": "ec1d78514db1e197e193ce0ce61736173b134209183edba25a9a6c078ca29837",
+  "protocol_red_sha256": "71120916b1120188fda67c022e85bbfbd17ff4aea43bc3f809d6b4b2000174dd",
+  "note": "Ratios apply to separate measured components; do not multiply them or claim a whole-workflow speedup. Allocation peaks exclude preexisting/native storage; RSS is a separate metric. Streamed J/K keeps identical H2D volume. Packing remains benchmark-only.",
+  "input_sha256": {
+    "short_exchange_32_padded.json": "0361fdd1820ebed3df5e340a9a6cd452a1651c8ae3714fc41584f0fa74d66210",
+    "production_disk_qualified_acceptance.json": "4d50b5844a84cad7972cce4b701565f4974a78fe95719d5492ca0ae3fe1fbcab",
+    "gradient_baseline_memory.json": "994a15651310c5a6852543a2499cda56006e56e777eac4f26c88d490612ea837",
+    "short_exchange_64_padded.json": "1979ab9c9b557b0059d0978c48d4c4a538dc5c7f78146acfd5e4eb9be6733565",
+    "xc_capped_memory.json": "5d7e0550bd4155863afb18f76fbf0ec99cf03b621514142c63e751ce0cde52b5",
+    "xc_full_capped_memory.json": "79a6860636d131cf016f76cd39ebac8c252d38bb9d508d5c1a183c126452e37f",
+    "production_resident_qualified_acceptance.json": "c498726a05dc1474e7845637be85a74a823845d5ce14191c847a9869d67b913c",
+    "short_exchange_128_tight.json": "513506efaf1c1ea06a391d91ab4013c2cd27e995881fe89fd8f0b8d80fe81683",
+    "short_exchange_64_tight.json": "70107e246afd1c7936ff9095434e03f95c68487c87acb6d373fe069b47dd8a04",
+    "gradient_packed_memory.json": "c88f82d527608a7e499b32dce85e441f70a71e62311e1f5420a837f0e9783126",
+    "short_exchange_128_padded.json": "904e7d5587190f4c72d91f6c254325699827ad1d8e8d9ded66c12f14514d722f",
+    "xc_baseline_memory.json": "87ce09365efa65ec74de6317b0c445ee2ade1b20ae2b04238e2799d133158569",
+    "streamed_exchange_pairs.json": "8b335d908af2da6104020b217c1fd6356733e2ed0fed4458eb6cb9f3c3533fe6",
+    "production_resident_acceptance.json": "31e95fbad71e4a2901b3e6b118af11d89997381f9b7a2a459e569866a0f0b0da",
+    "xc_pairs.json": "cbacecd82de5c4bf7a29180b63abf0364ff2c0fa1344d6ee55753b66f0dd8cd7",
+    "production_resident_xc_acceptance.json": "d69beddefd65e17acaf3cbf20fd1158fd572fa2b68c5298ebcc99da5a3a07cb0",
+    "corrected_profile.json": "9cf8d5e388cc70a9bdd7309a8bb4775e4b048ca9b262a29981d53310bab05b52",
+    "short_exchange_32_tight.json": "17874015fcd2472e84905ccd59d1a5cb8316d4066a6de7ed6b7ea87a2b1f99e9"
+  }
+}

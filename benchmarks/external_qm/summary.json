@@ -1,0 +1,105 @@
+{
+  "recorded_utc": "2026-10-17T11:35:22.049754+00:00",
+  "status": "partial: local DF force fix validated; external downloads pending",
+  "reports": {
+    "pbe_df_charge0_results.json": {
+      "status": "passed",
+      "finite_difference_error": 5.7111764650841224e-08,
+      "cpu_gpu_energy_error": 1.9753088054130785e-12,
+      "cpu_gpu_gradient_max_error": 6.984617328953391e-10
+    },
+    "pbe_df_charge1_results.json": {
+      "status": "passed",
+      "finite_difference_error": 5.228617627750509e-08,
+      "cpu_gpu_energy_error": 2.2168933355715126e-12,
+      "cpu_gpu_gradient_max_error": 2.15203632691896e-09
+    },
+    "pbe_direct_charge0_results.json": {
+      "status": "passed",
+      "finite_difference_error": 5.7242671491763986e-08,
+      "cpu_gpu_energy_error": 6.0111915445304476e-12,
+      "cpu_gpu_gradient_max_error": 7.027112225443943e-10
+    },
+    "pbe_direct_charge1_results.json": {
+      "status": "passed",
+      "finite_difference_error": 5.226926358403716e-08,
+      "cpu_gpu_energy_error": 6.849631972727366e-12,
+      "cpu_gpu_gradient_max_error": 2.158733636292709e-09
+    }
+  },
+  "cuest": {
+    "version_requested": "0.2.2",
+    "binary_available": false,
+    "sample_revision": "58c811d2d3bccdcea6fcd8a2c45fddd19ca2fb00",
+    "python": "3.12.3",
+    "download_result": "Package download failed; initial index DNS failure, later no matching distribution. No runtime qualification."
+  },
+  "skala": {
+    "source_tag": "v2026.9",
+    "source_revision": "c0487c9a241f652e3bcee9042677da835dde3dda",
+    "neural_checkpoint_available": false,
+    "model_metadata_revision": "99b5ed87e5f69d9216e1f9e30148b922eaea1241",
+    "download_error": "curl exit 6: Could not resolve host huggingface.co; cloned files are LFS pointers",
+    "local_patch": {
+      "file": "benchmarks/external_qm/patches/skala-v2026.9-df-gradients.patch",
+      "sha256": "ba704061a922a9a2ff72ff4ea4e5ca8c4cb97514f5e20e407348e6baf38894ef",
+      "base_revision": "c0487c9a241f652e3bcee9042677da835dde3dda",
+      "clean_apply_matches_tested_source": true
+    }
+  },
+  "mako": {
+    "artifact": "https://doi.org/10.5281/zenodo.15269220",
+    "available": false,
+    "download_error": "Browser access failed; curl exit6: Could not resolve host zenodo.org",
+    "license_verified": false
+  },
+  "tests": {
+    "external_suite": {
+      "passed": 12,
+      "failed": 0,
+      "warnings": 3,
+      "seconds": 39.98,
+      "subsequent_force_report_refresh": {
+        "passed": 2,
+        "seconds": 35.25
+      }
+    },
+    "upstream_numint": {
+      "passed": 23,
+      "failed": 1,
+      "failure": "Sparse index hard-coded fingerprint",
+      "baseline_reproduction": "Same observed110.33487367511532 vs expected103.60117204957997 with HEAD block loop"
+    }
+  },
+  "files_sha256": {
+    "benchmarks/external_qm/test_grid_order.py": "a875c798b9c64bffd4482edd1e650369b8e2aab5adf2237fd3fc6228b834a2e1",
+    "benchmarks/external_qm/df_diagnosis.py": "3323321e721ea453fac363111b2295df450b6489fd00129bfc9f652d087edb6e",
+    "benchmarks/external_qm/test_preflight.py": "6dcab5083ad85279eb1b494f28a611f6003604bc15a4d089bf79659a815876ce",
+    "benchmarks/external_qm/test_skala_df_forces.py": "637bf48265c49f8a634c877d65f3be46f0497174d2809d280c976e2a181ed294",
+    "benchmarks/external_qm/test_skala_pbe.py": "1a1a96cf1c6bf5d8ae0ce59eb60b7fa7212fc52449f694cc335e1f6cac05ecbd"
+  },
+  "all_component_force_reports": {
+    "df_forces_charge0.json": {
+      "status": "passed",
+      "auxbasis": "def2-universal-jkfit",
+      "finite_difference_max_errors": [
+        5.244104408531902e-10,
+        4.391852805908647e-10
+      ],
+      "cpu_gpu_energy_error": 7.958078640513122e-13,
+      "cpu_gpu_gradient_max_error": 9.641487608291754e-11,
+      "finite_difference_step_difference": 9.315215265814913e-08
+    },
+    "df_forces_charge1.json": {
+      "status": "passed",
+      "auxbasis": "weigend",
+      "finite_difference_max_errors": [
+        4.719900026373125e-10,
+        3.7999092761253905e-10
+      ],
+      "cpu_gpu_energy_error": 8.526512829121202e-13,
+      "cpu_gpu_gradient_max_error": 1.6058315788214372e-10,
+      "finite_difference_step_difference": 9.063683137355838e-08
+    }
+  }
+}

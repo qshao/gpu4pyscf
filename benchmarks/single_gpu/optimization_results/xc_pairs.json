@@ -1,0 +1,138 @@
+{
+  "timestamp_utc": "2026-10-18T11:57:47.959313+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "taxol_svp_b3lyp",
+  "benchmark_sha256": "686c32edd818767820a7f0f2b7159e9d9a5308dfd6c7f7ce3b4b031d2491213d",
+  "cpu_reference_sha256": "10c21e5c5149b37796ce85e783fac711b4c5dda22cce4e2cdf1984a4278ba58c",
+  "configuration_sha256": "170c47c1a65b5c474cc89aae4ad16caa1179265073da742864b346bf05bb1358",
+  "shared_helper_sha256": "62261c35ccfed578d1480a4f9a6be502c5d6f9a9a6b645fbeac21396ad2885ff",
+  "comparison_helper_sha256": "d060341c2973e58515c17e9e10874f324abeff84a374250d5b6a7e6a2810d0f5",
+  "candidate_sha256": "5dd241b5b159c3f6707e8ea120ffd0c7d0e0084df192b98df0de382e31e477a7",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "e5cc64cf60706a8ae89fec55b2b2906e15b21dbfc438c02069e11b59e6d9c4a5",
+    "gpu4pyscf/df/grad/uhf.py": "bac79c8f90d6588ff1e0a2664301d13e279a0804fcaafc7b1797792f6514ec99",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/113_Taxol.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "profile_sha256": "9cf8d5e388cc70a9bdd7309a8bb4775e4b048ca9b262a29981d53310bab05b52",
+  "baseline_sha256": "87ce09365efa65ec74de6317b0c445ee2ade1b20ae2b04238e2799d133158569",
+  "capped_sha256": "5d7e0550bd4155863afb18f76fbf0ec99cf03b621514142c63e751ce0cde52b5",
+  "xc_source_sha256": "fd4fd2177567e39fef8703fddcf1165397de755bb5f054b889da0ddaafef576e",
+  "warmups": [
+    {
+      "variant": "baseline",
+      "seconds": 38.991710158996284,
+      "error_to_baseline": 2.220446049250313e-16
+    },
+    {
+      "variant": "capped",
+      "seconds": 38.65061587281525,
+      "error_to_baseline": 2.220446049250313e-16
+    }
+  ],
+  "pairs": [
+    {
+      "baseline": {
+        "seconds": 38.761912322603166,
+        "error_to_baseline": 2.220446049250313e-16
+      },
+      "capped": {
+        "seconds": 38.695855491794646,
+        "error_to_baseline": 2.220446049250313e-16
+      }
+    },
+    {
+      "capped": {
+        "seconds": 38.73155160062015,
+        "error_to_baseline": 2.220446049250313e-16
+      },
+      "baseline": {
+        "seconds": 38.805601629428566,
+        "error_to_baseline": 2.220446049250313e-16
+      }
+    },
+    {
+      "baseline": {
+        "seconds": 38.86413928307593,
+        "error_to_baseline": 1.6653345369377348e-16
+      },
+      "capped": {
+        "seconds": 38.762857302092016,
+        "error_to_baseline": 2.220446049250313e-16
+      }
+    }
+  ],
+  "note": "XC component only; same converged orbitals, all grid response retained. Uninstrumented alternating timings after one warmup per variant. No whole-gradient or whole-SCF speed claim.",
+  "medians": {
+    "baseline": 38.805601629428566,
+    "capped": 38.73155160062015
+  },
+  "speedup": 1.0019118787073644,
+  "paired_ratios": [
+    1.001707077669404,
+    1.0019118787073644,
+    1.002612861590532
+  ]
+}

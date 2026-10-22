@@ -1,0 +1,137 @@
+{
+  "status": "passed",
+  "scope": "Original GPU contraction + saved original algorithm functions versus production defaults, same current native build. Shared GB10. Warm both; one pair per small case, three alternating pairs per large case. CPU gates on every run; per-iteration synchronization retained. Includes SCF/DF setup and gradient, excludes construction/initial guess/imports/metadata. Not independent package-release comparison.",
+  "baseline_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "raw_sha256": "e0d7f341805296afdce0e0f5028cf940bddf7bfd0df3e1d894b242bc04c0b0ba",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/df/df_jk.py": "1eba37e6d8ded79d25f7bf48928101f55b097147cd8375225f939fc513c3eddf"
+  },
+  "cases": [
+    {
+      "case": "vitamin_svp",
+      "method": "PBE",
+      "combined_medians": {
+        "original_gpu": 3.358770444057882,
+        "production": 3.2733563724905252
+      },
+      "paired_ratios": [
+        1.026093728225005
+      ],
+      "speedup": 1.026093728225005,
+      "pairs": 1,
+      "paired_ratio_range": [
+        1.026093728225005,
+        1.026093728225005
+      ],
+      "production_time_reduction_percent": 2.5430160527482704,
+      "original_gpu_control_range_seconds": [
+        3.358770444057882,
+        3.358770444057882
+      ],
+      "production_control_range_seconds": [
+        3.2733563724905252,
+        3.2733563724905252
+      ]
+    },
+    {
+      "case": "vitamin_svp",
+      "method": "B3LYP",
+      "combined_medians": {
+        "original_gpu": 3.5423078360036016,
+        "production": 3.48508514277637
+      },
+      "paired_ratios": [
+        1.0164193099688938
+      ],
+      "speedup": 1.0164193099688938,
+      "pairs": 1,
+      "paired_ratio_range": [
+        1.0164193099688938,
+        1.0164193099688938
+      ],
+      "production_time_reduction_percent": 1.6154071265525594,
+      "original_gpu_control_range_seconds": [
+        3.5423078360036016,
+        3.5423078360036016
+      ],
+      "production_control_range_seconds": [
+        3.48508514277637,
+        3.48508514277637
+      ]
+    },
+    {
+      "case": "tamoxifen_svp",
+      "method": "PBE",
+      "combined_medians": {
+        "original_gpu": 18.71691795717925,
+        "production": 16.885129870846868
+      },
+      "paired_ratios": [
+        1.10848528263292,
+        1.117454738263848,
+        1.1035284437290105
+      ],
+      "speedup": 1.10848528263292,
+      "pairs": 3,
+      "paired_ratio_range": [
+        1.1035284437290105,
+        1.117454738263848
+      ],
+      "production_time_reduction_percent": 9.786804058890276,
+      "original_gpu_control_range_seconds": [
+        18.71210945211351,
+        18.863433903083205
+      ],
+      "production_control_range_seconds": [
+        16.88071405235678,
+        16.956617256626487
+      ]
+    },
+    {
+      "case": "tamoxifen_svp",
+      "method": "B3LYP",
+      "combined_medians": {
+        "original_gpu": 59.86741397995502,
+        "production": 49.572083617560565
+      },
+      "paired_ratios": [
+        1.1830377376306322,
+        1.2299626914915736,
+        1.2089246491859649
+      ],
+      "speedup": 1.207684035269145,
+      "pairs": 3,
+      "paired_ratio_range": [
+        1.1830377376306322,
+        1.2299626914915736
+      ],
+      "production_time_reduction_percent": 17.196885046415332,
+      "original_gpu_control_range_seconds": [
+        59.834073131904006,
+        60.971813389100134
+      ],
+      "production_control_range_seconds": [
+        49.52121211215854,
+        50.576639466919005
+      ]
+    }
+  ],
+  "verification": {
+    "acceptance_tests_passed": 1,
+    "acceptance_seconds": 615.45,
+    "timed_gpu_calculations": 16,
+    "warmups": 8,
+    "targeted_tests_passed": 50,
+    "known_baseline_tests_excluded": 1,
+    "targeted_seconds": 8.18,
+    "molecular_tests_passed": 8,
+    "molecular_benchmark_tests_excluded": 5,
+    "molecular_seconds": 5.89,
+    "isolated_reproducibility_tests_passed": 2
+  },
+  "max_cpu_energy_error_hartree": 7.639755494892597e-11,
+  "max_cpu_gradient_error_hartree_per_bohr": 6.586873588787512e-07,
+  "max_paired_gpu_energy_difference_hartree": 9.094947017729282e-13,
+  "max_paired_gpu_gradient_difference_hartree_per_bohr": 5.68737288375587e-08
+}

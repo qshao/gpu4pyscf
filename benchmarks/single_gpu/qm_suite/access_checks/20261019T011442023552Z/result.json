@@ -1,0 +1,51 @@
+{
+  "timestamp_utc": "2026-10-19T01:14:42.023812+00:00",
+  "target": "DGX Spark / NVIDIA GB10",
+  "task": "H2O B3LYP/def2-SVP density-fitted SCF and full-response analytic gradient",
+  "scope": "Single application access test, not a repeated performance benchmark. No GPU-to-CPU fallback.",
+  "settings": {
+    "atom": "O 0 0 0; H 0 -.757 .587; H 0 .757 .587",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "B3LYP",
+    "grid_level": 3,
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "device_nodes": [],
+  "gpu_calculation_completed": false,
+  "initial_density_sha256": "c972786c0b733c5278a5528fe31a8c89ba8a3539ef7edbdd633a98813fce6761",
+  "cpu_reference": {
+    "converged": true,
+    "implementation": "pyscf.df.df_jk.DFRKS",
+    "energy_hartree": -76.35815960169077,
+    "gradient_hartree_per_bohr": [
+      [
+        -3.5181389455408906e-16,
+        -8.946261924466355e-16,
+        0.012427482984563643
+      ],
+      [
+        -1.8839506803211366e-16,
+        0.005604793322111945,
+        -0.006213741492279823
+      ],
+      [
+        -3.501666782750165e-17,
+        -0.005604793322112833,
+        -0.006213741492280267
+      ]
+    ],
+    "elapsed_seconds": 0.5194607470184565,
+    "nao": 24
+  },
+  "status": "gpu_application_failed",
+  "failed_stage": "importing native GPU4PySCF",
+  "error_type": "CUDARuntimeError",
+  "error": "cudaErrorNoDevice: no CUDA-capable device is detected",
+  "traceback": "Traceback (most recent call last):\n  File \"/tmp/gpu4pyscf_real_application_probe.py\", line 49, in <module>\n    from gpu4pyscf.dft import rks\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py\", line 19, in <module>\n    from . import lib, grad, hessian, solvent, scf, dft, tdscf, nac\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/lib/__init__.py\", line 18, in <module>\n    from gpu4pyscf.lib import cupy_helper\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/lib/cupy_helper.py\", line 27, in <module>\n    from gpu4pyscf.lib.memcpy import copy_array, p2p_transfer  #NOQA\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/lib/memcpy.py\", line 18, in <module>\n    from gpu4pyscf.__config__ import _p2p_access\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/__config__.py\", line 17, in <module>\n    num_devices = cupy.cuda.runtime.getDeviceCount()\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"cupy_backends/cuda/api/runtime.pyx\", line 412, in cupy_backends.cuda.api.runtime.getDeviceCount\n  File \"cupy_backends/cuda/api/runtime.pyx\", line 415, in cupy_backends.cuda.api.runtime.getDeviceCount\n  File \"cupy_backends/cuda/api/runtime.pyx\", line 146, in cupy_backends.cuda.api.runtime.check_status\ncupy_backends.cuda.api.runtime.CUDARuntimeError: cudaErrorNoDevice: no CUDA-capable device is detected\n",
+  "gpu_attempt_elapsed_seconds": 0.14832489471882582,
+  "cuda_driver_cuInit_return_code": 100
+}

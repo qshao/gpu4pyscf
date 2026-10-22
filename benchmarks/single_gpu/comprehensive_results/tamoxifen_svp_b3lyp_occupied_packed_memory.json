@@ -1,0 +1,547 @@
+{
+  "timestamp_utc": "2026-10-18T01:25:11.136247+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "tamoxifen_svp_b3lyp",
+  "variant": "packed",
+  "mode": "memory",
+  "reference_sha256": "009ed4c5c21445167398cc2c5ed2fc1e2ec60c675af19f5fab301d1f678ec443",
+  "benchmark_sha256": "8820d677550e4d288c1a969cb7b4b01655139c5226d90cee20c1c44f94ecf956",
+  "candidate_sha256": "144a0d95bcd68655a66d3fe4606b8c1b46ad900315b058715982286abf09ddac",
+  "configuration_sha256": "170c47c1a65b5c474cc89aae4ad16caa1179265073da742864b346bf05bb1358",
+  "memory_profiler_sha256": "d01d26e7571383beb9542c6c0676872c039928aa7d60cd44e6182f613ad2583b",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+  "note": "Single control is not repeated speed qualification. Memory is requested CuPy storage, not total RAM; J/K scope counts new allocations only and excludes preexisting storage. Full grid/aux response; default cache disabled.",
+  "memory": {
+    "peak_pool_live_bytes": 345014272,
+    "peak_pool_reserved_bytes": 798870528,
+    "allocation_observations": 40669,
+    "initial_pool_live_bytes": 0,
+    "peak_tracked_live_bytes": 4342868816,
+    "peak_live_bytes": 4342868816,
+    "host_peak_rss_bytes": 3955601408,
+    "host_address_space_peak_rss_bytes": 1392193536,
+    "observed_thread_count": 2,
+    "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+  },
+  "jk_memory": [
+    {
+      "peak_pool_live_bytes": 345014272,
+      "peak_pool_reserved_bytes": 798870528,
+      "allocation_observations": 2142,
+      "initial_pool_live_bytes": 37559808,
+      "peak_tracked_live_bytes": 958503280,
+      "peak_live_bytes": 996063088,
+      "host_peak_rss_bytes": 3955601408,
+      "host_address_space_peak_rss_bytes": 1393491968,
+      "observed_thread_count": 1,
+      "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+    }
+  ],
+  "result": {
+    "timestamp_utc": "2026-10-18T01:25:59.242481+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "B3LYP",
+    "settings": {
+      "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/057_Tamoxifen.xyz",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "grid_level": 3,
+      "grid_pruning": "nwchem",
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 4,
+      "max_cycle": 100
+    },
+    "converged": true,
+    "energy_hartree": -1137.1213013033262,
+    "scf_seconds": 33.45777262188494,
+    "iterations": 18,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 8.47505864314735,
+        "energy_hartree": -1136.9376700721555
+      },
+      {
+        "cycle": 1,
+        "seconds": 1.4560309434309602,
+        "energy_hartree": -1136.8720543295203
+      },
+      {
+        "cycle": 2,
+        "seconds": 1.4767646798864007,
+        "energy_hartree": -1137.1138430523933
+      },
+      {
+        "cycle": 3,
+        "seconds": 1.4595647491514683,
+        "energy_hartree": -1137.1204435882605
+      },
+      {
+        "cycle": 4,
+        "seconds": 1.455129654146731,
+        "energy_hartree": -1137.1212034617201
+      },
+      {
+        "cycle": 5,
+        "seconds": 1.4589718459174037,
+        "energy_hartree": -1137.1212807238276
+      },
+      {
+        "cycle": 6,
+        "seconds": 1.489045949652791,
+        "energy_hartree": -1137.1213000075036
+      },
+      {
+        "cycle": 7,
+        "seconds": 1.4644949594512582,
+        "energy_hartree": -1137.121301228075
+      },
+      {
+        "cycle": 8,
+        "seconds": 1.4744710708037019,
+        "energy_hartree": -1137.1213012858784
+      },
+      {
+        "cycle": 9,
+        "seconds": 1.4562491532415152,
+        "energy_hartree": -1137.1213013009415
+      },
+      {
+        "cycle": 10,
+        "seconds": 1.4541772995144129,
+        "energy_hartree": -1137.121301303016
+      },
+      {
+        "cycle": 11,
+        "seconds": 1.459795438684523,
+        "energy_hartree": -1137.121301303293
+      },
+      {
+        "cycle": 12,
+        "seconds": 1.4581406759098172,
+        "energy_hartree": -1137.1213013033207
+      },
+      {
+        "cycle": 13,
+        "seconds": 1.469817309640348,
+        "energy_hartree": -1137.1213013033243
+      },
+      {
+        "cycle": 14,
+        "seconds": 1.499948468990624,
+        "energy_hartree": -1137.1213013033266
+      },
+      {
+        "cycle": 15,
+        "seconds": 1.50295125041157,
+        "energy_hartree": -1137.1213013033262
+      },
+      {
+        "cycle": 16,
+        "seconds": 1.486836126074195,
+        "energy_hartree": -1137.1213013033262
+      },
+      {
+        "cycle": 17,
+        "seconds": 1.4601213475689292,
+        "energy_hartree": -1137.1213013033262
+      }
+    ],
+    "df_build_calls_seconds": [
+      4.22325184289366
+    ],
+    "gradient_seconds": 14.40068208053708,
+    "gradient_hartree_per_bohr": [
+      [
+        0.021812143974413667,
+        0.0007685903311669406,
+        -0.0005028308371559098
+      ],
+      [
+        -0.022390000588164316,
+        -0.013888952974765889,
+        -4.292077868837951e-05
+      ],
+      [
+        -0.04453285542662844,
+        0.0033719184080656106,
+        2.1897590584268878e-05
+      ],
+      [
+        0.054666175138008644,
+        -0.00375796811665019,
+        -0.00031881168560972395
+      ],
+      [
+        0.03067039365065316,
+        -0.003408619633211707,
+        0.009546726990708465
+      ],
+      [
+        0.005112419674013324,
+        -0.003591081036322663,
+        1.959881171270661e-06
+      ],
+      [
+        0.0821951843165295,
+        -0.04863105073284979,
+        -7.693743691941299e-05
+      ],
+      [
+        0.00276428922283678,
+        -0.0009565370821729147,
+        -0.00024924204592050025
+      ],
+      [
+        0.04545265639963447,
+        0.036599733217122066,
+        0.010497010464099454
+      ],
+      [
+        0.013440176864499165,
+        0.001366429180753581,
+        -0.0005031250745619054
+      ],
+      [
+        -0.0018282531525994905,
+        -0.0030656306438543446,
+        4.767842108373624e-05
+      ],
+      [
+        -0.0025253168281573757,
+        0.0033203082428472364,
+        0.0001680367161860305
+      ],
+      [
+        -0.003223014572713012,
+        -0.00031467795171802315,
+        1.0375721514049863e-05
+      ],
+      [
+        -0.06317033065258926,
+        0.008981720585945707,
+        0.0008019346128341209
+      ],
+      [
+        -0.010260466831083281,
+        -0.003456298334834962,
+        0.003210855378215527
+      ],
+      [
+        -0.022381305756260905,
+        -0.026676999046494565,
+        -0.022082692082921795
+      ],
+      [
+        0.0029964792892093195,
+        -0.005990215951722888,
+        0.008082198316786915
+      ],
+      [
+        0.0026990576016695522,
+        -0.0010417957069267791,
+        -0.004517234348580423
+      ],
+      [
+        -0.0008122628984130742,
+        0.00015845966153671398,
+        -0.013790645088064934
+      ],
+      [
+        0.0015285343122745515,
+        -0.0017006472431523312,
+        0.005355012164410589
+      ],
+      [
+        0.02030909107782719,
+        -0.025132996195919688,
+        0.0059315416610842275
+      ],
+      [
+        0.0009341302554126962,
+        0.001412353494127938,
+        -0.004902123307140904
+      ],
+      [
+        -0.0010487927039619649,
+        0.00039192703690171804,
+        0.005282998378790094
+      ],
+      [
+        0.05080908102169657,
+        -0.008573181277395314,
+        0.0005074643466069818
+      ],
+      [
+        -0.006348898012023874,
+        -0.01265809512225946,
+        -0.00019227603466380472
+      ],
+      [
+        -0.031720992233077894,
+        0.009761099967745324,
+        -1.7494742365786742e-05
+      ],
+      [
+        -0.0008541042121876785,
+        -0.006663982729707918,
+        -1.10674163981625e-05
+      ],
+      [
+        -0.0029577187114877,
+        0.005112403385739039,
+        -0.0002636067974136208
+      ],
+      [
+        -0.004383156955496403,
+        -0.0008478483061225006,
+        -1.931297477771564e-05
+      ],
+      [
+        -0.05510645671950931,
+        -0.03673817320532757,
+        5.308674818825694e-05
+      ],
+      [
+        -0.011571068373886106,
+        0.0015813819908886417,
+        4.7743202806063006e-05
+      ],
+      [
+        0.0022528202535077035,
+        0.00355823027526192,
+        -3.0538511405392085e-05
+      ],
+      [
+        0.002072213796629585,
+        -0.0034118159773002255,
+        1.1193796499360878e-05
+      ],
+      [
+        0.0038716294041472032,
+        -0.0003544116758098237,
+        -1.0610991345211956e-05
+      ],
+      [
+        0.09797656804529531,
+        0.01372110478478561,
+        -0.0001802016725596517
+      ],
+      [
+        0.002972560527756629,
+        0.009366539226242754,
+        0.019963803424947635
+      ],
+      [
+        0.003021757534702685,
+        0.009409795951849764,
+        -0.0199623134792839
+      ],
+      [
+        -0.09020994037437072,
+        0.02238090802873316,
+        -6.478431933527873e-06
+      ],
+      [
+        -0.017768486800528005,
+        0.016647740602822036,
+        -0.024059842426409794
+      ],
+      [
+        -0.01799316896271974,
+        0.016756785992210865,
+        0.02414494193155292
+      ],
+      [
+        -0.015608389958011615,
+        0.021055684262527574,
+        -1.5383904633800918e-06
+      ],
+      [
+        -0.02134342676182044,
+        0.028704190627310666,
+        -0.0026344734710996853
+      ],
+      [
+        0.03471997263850479,
+        -0.013255110812340654,
+        0.002676351923391884
+      ],
+      [
+        -0.017013699019668982,
+        -0.0028169015053595148,
+        0.017018445131996796
+      ],
+      [
+        -0.013406315823232262,
+        0.0045301754024068,
+        -0.017764587137099053
+      ],
+      [
+        -0.056191578769913875,
+        -0.016307814603505832,
+        -0.004085244382884934
+      ],
+      [
+        0.01084209446622486,
+        -0.004752971107965354,
+        0.01765712524113283
+      ],
+      [
+        0.018829083493206333,
+        0.0029190067466662306,
+        -0.01978260699825274
+      ],
+      [
+        0.0318769292667449,
+        -0.00816018355089998,
+        0.049063620966699695
+      ],
+      [
+        0.011464212479032398,
+        0.009689567193644222,
+        -0.021629372238692213
+      ],
+      [
+        -0.017189906638485297,
+        0.011200735563209774,
+        0.003418443222074574
+      ],
+      [
+        -0.007024293912748947,
+        -0.018016553699530924,
+        -0.005925480819812812
+      ],
+      [
+        -0.02872873316512292,
+        0.054578270302380716,
+        0.0022200195146616086
+      ],
+      [
+        -0.014527301067078446,
+        -0.014778976794049825,
+        -0.0005872057956811394
+      ],
+      [
+        0.011035343491644367,
+        -0.0015212308908816308,
+        0.017653846777498483
+      ],
+      [
+        0.01765554717147766,
+        -0.0039728829547542865,
+        -0.020307529354135045
+      ],
+      [
+        0.018139690516143947,
+        -0.002901455602154712,
+        -0.01893596777457951
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 8.094502845779061e-11,
+    "gradient_max_error": 6.602597726335091e-07,
+    "passed": true
+  }
+}

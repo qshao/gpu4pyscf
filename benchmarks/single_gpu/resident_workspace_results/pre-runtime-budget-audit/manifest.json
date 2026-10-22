@@ -1,0 +1,6 @@
+{
+  "reason": "Preliminary candidate memory observation predates explicit effective runtime-budget assertion; excluded from final qualification and rerun. Exact runner is retained solely to audit the completed pre-change control profile.",
+  "runner_sha256": "7696a4788f0f5388107c62d45d564a0e427896adb1c5188db5eab4e94f1043f8",
+  "candidate_sha256": "dd1ad54f858b7ea7ba8f9f092221e0926e6f7b58322ebf59f355c79a68f9a961",
+  "control_profile_sha256": "344b547608061d2dd0ea586f7a590e0eba58f5c0343eef0d81c9e816ef9e8c26"
+}

@@ -1,0 +1,14 @@
+{
+  "torch": "2.11.0+cu130",
+  "torch_cuda": "13.0",
+  "torch_cuda_available": true,
+  "cupy_device_count": 1,
+  "device": "NVIDIA GB10",
+  "compute_capability": [
+    12,
+    1
+  ],
+  "cuda_runtime": 13020,
+  "cuda_driver": 13000,
+  "dlpack_zero_copy": true
+}

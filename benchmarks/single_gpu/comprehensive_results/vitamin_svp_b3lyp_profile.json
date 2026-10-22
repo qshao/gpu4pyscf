@@ -1,0 +1,1053 @@
+{
+  "timestamp_utc": "2026-10-18T01:20:43.571398+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "vitamin_svp_b3lyp",
+  "mode": "profile",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "driver_sha256": "8dd6028c6368d90ee0cf6e58e7c33ddf06db5885884575440fccfd4b9eb75ef7",
+  "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "note": "Level3 NWChem-pruned matched grid, not a grid-convergence study. FP64, full auxiliary/grid response. GPU-resident CDERI forced; experimental cache disabled. Initial single cold control establishes scaling, not repeated speedup. Profiles synchronize inclusive nested scopes; allocation run separate. CPU references are scientific oracles, not tuned CPU timing baselines.",
+  "cpu_reference_sha256": "dd23a6a7e0dee6fd992a3b440b327c30de5253cf542f63a2e0c9f1a72fd86a31",
+  "coarse": {
+    "scf.veff": {
+      "calls": 19,
+      "seconds": 3.2761692870408297
+    },
+    "scf.jk": {
+      "calls": 19,
+      "seconds": 0.9722901154309511
+    },
+    "scf.xc_quadrature": {
+      "calls": 19,
+      "seconds": 2.287327895872295
+    },
+    "scf.diagonalization": {
+      "calls": 18,
+      "seconds": 0.1044040722772479
+    },
+    "scf.df_build_nested_in_jk": {
+      "calls": 1,
+      "seconds": 0.21213160827755928
+    },
+    "gradient.one_electron": {
+      "calls": 1,
+      "seconds": 0.02881836611777544
+    },
+    "gradient.two_electron": {
+      "calls": 1,
+      "seconds": 1.4110619639977813
+    },
+    "gradient.df_jk_total": {
+      "calls": 1,
+      "seconds": 0.8150280993431807
+    },
+    "gradient.df_jk_core_nested": {
+      "calls": 1,
+      "seconds": 0.7963252766057849
+    },
+    "gradient.xc_full_response": {
+      "calls": 1,
+      "seconds": 0.5959779601544142
+    }
+  },
+  "fine": {
+    "timings": {
+      "scf.xc.ao": {
+        "calls": 2318,
+        "seconds": 0.40294639207422733,
+        "shapes": []
+      },
+      "scf.xc.density_dm": {
+        "calls": 1141,
+        "seconds": 0.7049402194097638,
+        "shapes": []
+      },
+      "scf.xc.density_mo": {
+        "calls": 1159,
+        "seconds": 0.7829101569950581,
+        "shapes": []
+      },
+      "scf.xc.functional": {
+        "calls": 19,
+        "seconds": 0.029534081928431988,
+        "shapes": []
+      },
+      "scf.xc.scale_ao": {
+        "calls": 1159,
+        "seconds": 0.09756182134151459,
+        "shapes": []
+      },
+      "scf.xc.sparse_scatter": {
+        "calls": 1159,
+        "seconds": 0.01535061839967966,
+        "shapes": []
+      },
+      "scf.jk.factorize_dm": {
+        "calls": 19,
+        "seconds": 0.0036061471328139305,
+        "shapes": []
+      },
+      "scf.jk.unpack": {
+        "calls": 95,
+        "seconds": 0.04322154447436333,
+        "shapes": []
+      },
+      "scf.jk.block_fetch_including_unpack": {
+        "calls": 114,
+        "seconds": 0.0554122356697917,
+        "shapes": []
+      },
+      "scf.jk.contract:Lij,njk->nikL": {
+        "calls": 95,
+        "seconds": 0.3802410252392292,
+        "shapes": [
+          [
+            [
+              256,
+              208,
+              208
+            ],
+            [
+              1,
+              208,
+              68
+            ]
+          ],
+          [
+            [
+              32,
+              208,
+              208
+            ],
+            [
+              1,
+              208,
+              68
+            ]
+          ],
+          [
+            [
+              256,
+              208,
+              208
+            ],
+            [
+              1,
+              208,
+              46
+            ]
+          ],
+          [
+            [
+              32,
+              208,
+              208
+            ],
+            [
+              1,
+              208,
+              46
+            ]
+          ]
+        ]
+      },
+      "scf.jk.contract:nikL,njkL->nij": {
+        "calls": 95,
+        "seconds": 0.2775899153202772,
+        "shapes": [
+          [
+            [
+              1,
+              208,
+              68,
+              256
+            ],
+            [
+              1,
+              208,
+              68,
+              256
+            ]
+          ],
+          [
+            [
+              1,
+              208,
+              68,
+              32
+            ],
+            [
+              1,
+              208,
+              68,
+              32
+            ]
+          ],
+          [
+            [
+              1,
+              208,
+              46,
+              256
+            ],
+            [
+              1,
+              208,
+              46,
+              256
+            ]
+          ],
+          [
+            [
+              1,
+              208,
+              46,
+              32
+            ],
+            [
+              1,
+              208,
+              46,
+              32
+            ]
+          ]
+        ]
+      },
+      "gradient.jk.derivative3c": {
+        "calls": 17,
+        "seconds": 0.5906429355964065,
+        "shapes": []
+      },
+      "gradient.xc.ao": {
+        "calls": 144,
+        "seconds": 0.047422037459909916,
+        "shapes": []
+      },
+      "gradient.xc.density_dm": {
+        "calls": 72,
+        "seconds": 0.05777338147163391,
+        "shapes": []
+      },
+      "gradient.xc.functional": {
+        "calls": 1,
+        "seconds": 0.0017824722453951836,
+        "shapes": []
+      },
+      "gradient.xc.grid_weight_derivative": {
+        "calls": 1,
+        "seconds": 0.07941584195941687,
+        "shapes": []
+      },
+      "gradient.xc.scale_ao": {
+        "calls": 72,
+        "seconds": 0.008711294271051884,
+        "shapes": []
+      },
+      "gradient.xc.gradient_matrix": {
+        "calls": 72,
+        "seconds": 0.2734301062300801,
+        "shapes": []
+      },
+      "gradient.jk.integral3c": {
+        "calls": 16,
+        "seconds": 0.06240374967455864,
+        "shapes": []
+      },
+      "gradient.jk.contract:pqr,pi->iqr": {
+        "calls": 16,
+        "seconds": 0.024572432972490788,
+        "shapes": [
+          [
+            [
+              220,
+              220,
+              12
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              8
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              116
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              36
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              126
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              48
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              96
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              60
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              220,
+              220,
+              120
+            ],
+            [
+              220,
+              46
+            ]
+          ]
+        ]
+      },
+      "gradient.jk.contract:iqr,qj->rij": {
+        "calls": 16,
+        "seconds": 0.004191862419247627,
+        "shapes": [
+          [
+            [
+              46,
+              220,
+              12
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              8
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              116
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              36
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              126
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              48
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              96
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              60
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              120
+            ],
+            [
+              220,
+              46
+            ]
+          ]
+        ]
+      },
+      "gradient.jk.metric_integrals": {
+        "calls": 1,
+        "seconds": 0.006777765229344368,
+        "shapes": []
+      },
+      "gradient.jk.metric_factorization": {
+        "calls": 1,
+        "seconds": 0.004133175127208233,
+        "shapes": []
+      },
+      "gradient.jk.metric_solve": {
+        "calls": 1,
+        "seconds": 0.012427731417119503,
+        "shapes": []
+      },
+      "gradient.jk.contract:rji,qj->iqr": {
+        "calls": 16,
+        "seconds": 0.00485009141266346,
+        "shapes": [
+          [
+            [
+              12,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              8,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              116,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              36,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              126,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              48,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              96,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              60,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              120,
+              46,
+              46
+            ],
+            [
+              220,
+              46
+            ]
+          ]
+        ]
+      },
+      "gradient.jk.contract:iqr,pi->pqr": {
+        "calls": 16,
+        "seconds": 0.029029949568212032,
+        "shapes": [
+          [
+            [
+              46,
+              220,
+              12
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              8
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              116
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              36
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              126
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              48
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              96
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              60
+            ],
+            [
+              220,
+              46
+            ]
+          ],
+          [
+            [
+              46,
+              220,
+              120
+            ],
+            [
+              220,
+              46
+            ]
+          ]
+        ]
+      },
+      "gradient.jk.contract:rij,sij->rs": {
+        "calls": 1,
+        "seconds": 0.017512479797005653,
+        "shapes": [
+          [
+            [
+              1252,
+              46,
+              46
+            ],
+            [
+              1252,
+              46,
+              46
+            ]
+          ]
+        ]
+      },
+      "gradient.jk.metric_derivative": {
+        "calls": 1,
+        "seconds": 0.007149575278162956,
+        "shapes": []
+      }
+    },
+    "bindings_restored": true
+  },
+  "result": {
+    "timestamp_utc": "2026-10-18T01:20:48.582989+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "B3LYP",
+    "settings": {
+      "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/020_Vitamin_C.xyz",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "grid_level": 3,
+      "grid_pruning": "nwchem",
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 4,
+      "max_cycle": 100
+    },
+    "converged": true,
+    "energy_hartree": -684.1881402200477,
+    "scf_seconds": 3.4703516587615013,
+    "iterations": 18,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 0.6635191962122917,
+        "energy_hartree": -683.7038281098542
+      },
+      {
+        "cycle": 1,
+        "seconds": 0.1643420346081257,
+        "energy_hartree": -681.8354034904944
+      },
+      {
+        "cycle": 2,
+        "seconds": 0.1648617973551154,
+        "energy_hartree": -684.1072254248245
+      },
+      {
+        "cycle": 3,
+        "seconds": 0.16464387718588114,
+        "energy_hartree": -684.17463671458
+      },
+      {
+        "cycle": 4,
+        "seconds": 0.16810357477515936,
+        "energy_hartree": -684.1867945016834
+      },
+      {
+        "cycle": 5,
+        "seconds": 0.16415193676948547,
+        "energy_hartree": -684.1880402957402
+      },
+      {
+        "cycle": 6,
+        "seconds": 0.15789054334163666,
+        "energy_hartree": -684.1881298232481
+      },
+      {
+        "cycle": 7,
+        "seconds": 0.16430574655532837,
+        "energy_hartree": -684.1881395145379
+      },
+      {
+        "cycle": 8,
+        "seconds": 0.16496134921908379,
+        "energy_hartree": -684.1881401340208
+      },
+      {
+        "cycle": 9,
+        "seconds": 0.1640871213749051,
+        "energy_hartree": -684.1881402130505
+      },
+      {
+        "cycle": 10,
+        "seconds": 0.1643018750473857,
+        "energy_hartree": -684.1881402192
+      },
+      {
+        "cycle": 11,
+        "seconds": 0.16469397116452456,
+        "energy_hartree": -684.1881402200195
+      },
+      {
+        "cycle": 12,
+        "seconds": 0.17993957549333572,
+        "energy_hartree": -684.1881402200393
+      },
+      {
+        "cycle": 13,
+        "seconds": 0.15827148873358965,
+        "energy_hartree": -684.1881402200465
+      },
+      {
+        "cycle": 14,
+        "seconds": 0.16464355494827032,
+        "energy_hartree": -684.1881402200474
+      },
+      {
+        "cycle": 15,
+        "seconds": 0.16444182768464088,
+        "energy_hartree": -684.1881402200472
+      },
+      {
+        "cycle": 16,
+        "seconds": 0.16833402402698994,
+        "energy_hartree": -684.1881402200479
+      },
+      {
+        "cycle": 17,
+        "seconds": 0.16479363571852446,
+        "energy_hartree": -684.1881402200477
+      }
+    ],
+    "df_build_calls_seconds": [
+      0.21214074455201626
+    ],
+    "gradient_seconds": 1.4404428601264954,
+    "gradient_hartree_per_bohr": [
+      [
+        0.013272773219674905,
+        -0.01641722897595077,
+        0.047346210361762786
+      ],
+      [
+        0.010903276859849598,
+        -0.03167234343634018,
+        -0.05077119777486061
+      ],
+      [
+        -0.07370707484993222,
+        -0.024262104564319653,
+        -0.024959222102866052
+      ],
+      [
+        -0.010693039922169634,
+        -0.03299140151377511,
+        -0.0095555166688861
+      ],
+      [
+        0.046989038964915686,
+        -0.002037163531485753,
+        0.004820125686773036
+      ],
+      [
+        -0.0012778110540261622,
+        0.017086192421389423,
+        -0.017666479616734954
+      ],
+      [
+        -0.006862301537246304,
+        0.052479540617932585,
+        0.015088436900615676
+      ],
+      [
+        -0.00309377602144828,
+        -0.0037140519587173237,
+        0.007733619954723325
+      ],
+      [
+        -0.06020935015837203,
+        -0.0002125597050479655,
+        -0.016394870245936444
+      ],
+      [
+        0.0007840666233200899,
+        -0.0006667693674198283,
+        -0.007786558927520337
+      ],
+      [
+        0.08249964195728055,
+        0.024750724747963027,
+        0.042413480722960806
+      ],
+      [
+        0.0026138790514164123,
+        0.032362861105567686,
+        -0.013056978168035194
+      ],
+      [
+        -0.0014401045816538616,
+        -0.018154876971714806,
+        0.017580892826689176
+      ],
+      [
+        -0.0006287916550942185,
+        0.014825423898300105,
+        0.03316068138904571
+      ],
+      [
+        0.01197838102434412,
+        -0.007215581372189694,
+        0.007764765853520872
+      ],
+      [
+        -0.0007872993360535929,
+        0.014543691282915328,
+        -0.021656646020205894
+      ],
+      [
+        -0.004748516112368151,
+        -0.013493294651899745,
+        -0.01604906193210276
+      ],
+      [
+        0.0072036710100849,
+        -0.001589839747830002,
+        0.004859974822348345
+      ],
+      [
+        -0.01670582868479009,
+        -0.004492634746950053,
+        -0.00023654512176918274
+      ],
+      [
+        0.003909165202301335,
+        0.0008714164696148607,
+        -0.0026351119398078104
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 4.1154635255225e-11,
+    "gradient_max_error": 2.5411548421061525e-08,
+    "passed": true
+  }
+}

@@ -1,0 +1,12 @@
+\section{Introduction}
+
+GPU4PySCF accelerates density-functional and related quantum-chemistry calculations of PySCF on NVIDIA GPUs. This report evaluates a set of changes to its density-fitted (DF) single-GPU path---a bounded fitted-integral build workspace with a disk tier alongside the existing host-memory tier, new contraction fast paths for the Fock build, and a lower-memory analytic gradient---against the unmodified upstream code and against CPU PySCF. The work targets two practical questions that arise when the same code must run on very different hardware:
+
+\begin{enumerate}[itemsep=1pt]
+\item Does the new GPU code give \emph{the same answer} as the original and as CPU PySCF, across many job types, and is it \emph{faster}?
+\item Does it let \emph{smaller-memory} GPUs treat \emph{larger systems}, and what does this cost in time?
+\end{enumerate}
+
+The measurements were made on the LCC cluster on three GPU generations and five card configurations (P100 with 12 and 16\,GB, V100 with 16 and 32\,GB, and A100 with 80\,GB) in 127 benchmark cases, with the original and the new code, two contraction engines (cuTENSOR and the CuPy fallback) and three storage tiers for the fitted integrals. The CPU serves as an accuracy oracle and, in a separate lane, as a timing baseline; the emphasis of the study is the GPU code, and the CPU baseline is only required to be fair.
+
+The report is organized as follows. Section~\ref{sec:methods} describes the code versions, hardware, cases, accuracy gates and timing protocol, including every deviation from the original plan. Section~\ref{sec:audit} describes the audit of the records. Sections~\ref{sec:accuracy}--\ref{sec:cpu} give accuracy, speed, profiling and CPU-baseline results, and Section~\ref{sec:memory} the memory and capacity results. Section~\ref{sec:discussion} discusses when the new code helps and what limits larger systems. Limitations are in Section~\ref{sec:limits}.

@@ -1,0 +1,2230 @@
+{
+  "status": "partial",
+  "cases": [
+    {
+      "case": "vitamin_svp_pbe",
+      "status": "passed",
+      "modes": {
+        "gpu": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 2.7966962079517543e-11,
+            "gradient_max_error": 3.248067947936306e-08,
+            "passed": true
+          },
+          "iterations": 22,
+          "scf_seconds": 4.411775720305741,
+          "gradient_seconds": 0.8251275504007936
+        },
+        "profile": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 2.8194335754960775e-11,
+            "gradient_max_error": 3.2480876654972235e-08,
+            "passed": true
+          },
+          "iterations": 22,
+          "scf_seconds": 4.0866740215569735,
+          "gradient_seconds": 0.7903708023950458,
+          "coarse": {
+            "scf.veff": {
+              "calls": 23,
+              "seconds": 3.871923277154565
+            },
+            "scf.jk": {
+              "calls": 23,
+              "seconds": 0.9928906159475446
+            },
+            "scf.xc_quadrature": {
+              "calls": 23,
+              "seconds": 2.860390570014715
+            },
+            "scf.diagonalization": {
+              "calls": 22,
+              "seconds": 0.12986289989203215
+            },
+            "scf.df_build_nested_in_jk": {
+              "calls": 1,
+              "seconds": 0.018934104591608047
+            },
+            "gradient.one_electron": {
+              "calls": 1,
+              "seconds": 0.02876332588493824
+            },
+            "gradient.two_electron": {
+              "calls": 1,
+              "seconds": 0.7610377622768283
+            },
+            "gradient.df_jk_total": {
+              "calls": 1,
+              "seconds": 0.17061635665595531
+            },
+            "gradient.df_jk_core_nested": {
+              "calls": 1,
+              "seconds": 0.15471623931080103
+            },
+            "gradient.xc_full_response": {
+              "calls": 1,
+              "seconds": 0.5903269415721297
+            }
+          },
+          "fine": {
+            "timings": {
+              "scf.xc.ao": {
+                "calls": 2806,
+                "seconds": 0.467038088478148,
+                "shapes": []
+              },
+              "scf.xc.density_dm": {
+                "calls": 1381,
+                "seconds": 0.8510685320943594,
+                "shapes": []
+              },
+              "scf.xc.density_mo": {
+                "calls": 1403,
+                "seconds": 0.9404650190845132,
+                "shapes": []
+              },
+              "scf.xc.functional": {
+                "calls": 23,
+                "seconds": 0.03030725847929716,
+                "shapes": []
+              },
+              "scf.xc.scale_ao": {
+                "calls": 1403,
+                "seconds": 0.11781979817897081,
+                "shapes": []
+              },
+              "scf.xc.sparse_scatter": {
+                "calls": 1403,
+                "seconds": 0.018891398794949055,
+                "shapes": []
+              },
+              "gradient.jk.derivative3c": {
+                "calls": 2,
+                "seconds": 0.11157840304076672,
+                "shapes": []
+              },
+              "gradient.xc.ao": {
+                "calls": 144,
+                "seconds": 0.047425150871276855,
+                "shapes": []
+              },
+              "gradient.xc.density_dm": {
+                "calls": 72,
+                "seconds": 0.058073521591722965,
+                "shapes": []
+              },
+              "gradient.xc.functional": {
+                "calls": 1,
+                "seconds": 0.0014680558815598488,
+                "shapes": []
+              },
+              "gradient.xc.grid_weight_derivative": {
+                "calls": 1,
+                "seconds": 0.07714293338358402,
+                "shapes": []
+              },
+              "gradient.xc.scale_ao": {
+                "calls": 72,
+                "seconds": 0.008670688606798649,
+                "shapes": []
+              },
+              "gradient.xc.gradient_matrix": {
+                "calls": 72,
+                "seconds": 0.274067641235888,
+                "shapes": []
+              },
+              "gradient.jk.metric_integrals": {
+                "calls": 1,
+                "seconds": 0.0065444353967905045,
+                "shapes": []
+              },
+              "gradient.jk.metric_factorization": {
+                "calls": 1,
+                "seconds": 0.0041254786774516106,
+                "shapes": []
+              },
+              "gradient.jk.metric_solve": {
+                "calls": 1,
+                "seconds": 0.0003579864278435707,
+                "shapes": []
+              },
+              "gradient.jk.metric_derivative": {
+                "calls": 1,
+                "seconds": 0.006830197758972645,
+                "shapes": []
+              }
+            },
+            "bindings_restored": true
+          }
+        },
+        "memory": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 2.773958840407431e-11,
+            "gradient_max_error": 3.2480931722034256e-08,
+            "passed": true
+          },
+          "iterations": 22,
+          "scf_seconds": 4.605782479047775,
+          "gradient_seconds": 0.8572149937972426,
+          "memory": {
+            "peak_pool_live_bytes": 227396096,
+            "peak_pool_reserved_bytes": 644155904,
+            "allocation_observations": 24585,
+            "initial_pool_live_bytes": 0,
+            "peak_tracked_live_bytes": 370117069,
+            "peak_live_bytes": 370117069,
+            "host_peak_rss_bytes": 3955601408,
+            "host_address_space_peak_rss_bytes": 1373446144,
+            "observed_thread_count": 2,
+            "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+          }
+        }
+      }
+    },
+    {
+      "case": "vitamin_svp_b3lyp",
+      "status": "passed",
+      "modes": {
+        "gpu": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 4.1154635255225e-11,
+            "gradient_max_error": 2.3975214702431913e-08,
+            "passed": true
+          },
+          "iterations": 18,
+          "scf_seconds": 3.2242098404094577,
+          "gradient_seconds": 1.4208418475463986
+        },
+        "profile": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 4.1154635255225e-11,
+            "gradient_max_error": 2.5411548421061525e-08,
+            "passed": true
+          },
+          "iterations": 18,
+          "scf_seconds": 3.4703516587615013,
+          "gradient_seconds": 1.4404428601264954,
+          "coarse": {
+            "scf.veff": {
+              "calls": 19,
+              "seconds": 3.2761692870408297
+            },
+            "scf.jk": {
+              "calls": 19,
+              "seconds": 0.9722901154309511
+            },
+            "scf.xc_quadrature": {
+              "calls": 19,
+              "seconds": 2.287327895872295
+            },
+            "scf.diagonalization": {
+              "calls": 18,
+              "seconds": 0.1044040722772479
+            },
+            "scf.df_build_nested_in_jk": {
+              "calls": 1,
+              "seconds": 0.21213160827755928
+            },
+            "gradient.one_electron": {
+              "calls": 1,
+              "seconds": 0.02881836611777544
+            },
+            "gradient.two_electron": {
+              "calls": 1,
+              "seconds": 1.4110619639977813
+            },
+            "gradient.df_jk_total": {
+              "calls": 1,
+              "seconds": 0.8150280993431807
+            },
+            "gradient.df_jk_core_nested": {
+              "calls": 1,
+              "seconds": 0.7963252766057849
+            },
+            "gradient.xc_full_response": {
+              "calls": 1,
+              "seconds": 0.5959779601544142
+            }
+          },
+          "fine": {
+            "timings": {
+              "scf.xc.ao": {
+                "calls": 2318,
+                "seconds": 0.40294639207422733,
+                "shapes": []
+              },
+              "scf.xc.density_dm": {
+                "calls": 1141,
+                "seconds": 0.7049402194097638,
+                "shapes": []
+              },
+              "scf.xc.density_mo": {
+                "calls": 1159,
+                "seconds": 0.7829101569950581,
+                "shapes": []
+              },
+              "scf.xc.functional": {
+                "calls": 19,
+                "seconds": 0.029534081928431988,
+                "shapes": []
+              },
+              "scf.xc.scale_ao": {
+                "calls": 1159,
+                "seconds": 0.09756182134151459,
+                "shapes": []
+              },
+              "scf.xc.sparse_scatter": {
+                "calls": 1159,
+                "seconds": 0.01535061839967966,
+                "shapes": []
+              },
+              "scf.jk.factorize_dm": {
+                "calls": 19,
+                "seconds": 0.0036061471328139305,
+                "shapes": []
+              },
+              "scf.jk.unpack": {
+                "calls": 95,
+                "seconds": 0.04322154447436333,
+                "shapes": []
+              },
+              "scf.jk.block_fetch_including_unpack": {
+                "calls": 114,
+                "seconds": 0.0554122356697917,
+                "shapes": []
+              },
+              "scf.jk.contract:Lij,njk->nikL": {
+                "calls": 95,
+                "seconds": 0.3802410252392292,
+                "shapes": [
+                  [
+                    [
+                      256,
+                      208,
+                      208
+                    ],
+                    [
+                      1,
+                      208,
+                      68
+                    ]
+                  ],
+                  [
+                    [
+                      32,
+                      208,
+                      208
+                    ],
+                    [
+                      1,
+                      208,
+                      68
+                    ]
+                  ],
+                  [
+                    [
+                      256,
+                      208,
+                      208
+                    ],
+                    [
+                      1,
+                      208,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      32,
+                      208,
+                      208
+                    ],
+                    [
+                      1,
+                      208,
+                      46
+                    ]
+                  ]
+                ]
+              },
+              "scf.jk.contract:nikL,njkL->nij": {
+                "calls": 95,
+                "seconds": 0.2775899153202772,
+                "shapes": [
+                  [
+                    [
+                      1,
+                      208,
+                      68,
+                      256
+                    ],
+                    [
+                      1,
+                      208,
+                      68,
+                      256
+                    ]
+                  ],
+                  [
+                    [
+                      1,
+                      208,
+                      68,
+                      32
+                    ],
+                    [
+                      1,
+                      208,
+                      68,
+                      32
+                    ]
+                  ],
+                  [
+                    [
+                      1,
+                      208,
+                      46,
+                      256
+                    ],
+                    [
+                      1,
+                      208,
+                      46,
+                      256
+                    ]
+                  ],
+                  [
+                    [
+                      1,
+                      208,
+                      46,
+                      32
+                    ],
+                    [
+                      1,
+                      208,
+                      46,
+                      32
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.derivative3c": {
+                "calls": 17,
+                "seconds": 0.5906429355964065,
+                "shapes": []
+              },
+              "gradient.xc.ao": {
+                "calls": 144,
+                "seconds": 0.047422037459909916,
+                "shapes": []
+              },
+              "gradient.xc.density_dm": {
+                "calls": 72,
+                "seconds": 0.05777338147163391,
+                "shapes": []
+              },
+              "gradient.xc.functional": {
+                "calls": 1,
+                "seconds": 0.0017824722453951836,
+                "shapes": []
+              },
+              "gradient.xc.grid_weight_derivative": {
+                "calls": 1,
+                "seconds": 0.07941584195941687,
+                "shapes": []
+              },
+              "gradient.xc.scale_ao": {
+                "calls": 72,
+                "seconds": 0.008711294271051884,
+                "shapes": []
+              },
+              "gradient.xc.gradient_matrix": {
+                "calls": 72,
+                "seconds": 0.2734301062300801,
+                "shapes": []
+              },
+              "gradient.jk.integral3c": {
+                "calls": 16,
+                "seconds": 0.06240374967455864,
+                "shapes": []
+              },
+              "gradient.jk.contract:pqr,pi->iqr": {
+                "calls": 16,
+                "seconds": 0.024572432972490788,
+                "shapes": [
+                  [
+                    [
+                      220,
+                      220,
+                      12
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      8
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      116
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      36
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      126
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      48
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      96
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      60
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      220,
+                      220,
+                      120
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.contract:iqr,qj->rij": {
+                "calls": 16,
+                "seconds": 0.004191862419247627,
+                "shapes": [
+                  [
+                    [
+                      46,
+                      220,
+                      12
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      8
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      116
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      36
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      126
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      48
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      96
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      60
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      120
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.metric_integrals": {
+                "calls": 1,
+                "seconds": 0.006777765229344368,
+                "shapes": []
+              },
+              "gradient.jk.metric_factorization": {
+                "calls": 1,
+                "seconds": 0.004133175127208233,
+                "shapes": []
+              },
+              "gradient.jk.metric_solve": {
+                "calls": 1,
+                "seconds": 0.012427731417119503,
+                "shapes": []
+              },
+              "gradient.jk.contract:rji,qj->iqr": {
+                "calls": 16,
+                "seconds": 0.00485009141266346,
+                "shapes": [
+                  [
+                    [
+                      12,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      8,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      116,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      36,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      126,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      48,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      96,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      60,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      120,
+                      46,
+                      46
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.contract:iqr,pi->pqr": {
+                "calls": 16,
+                "seconds": 0.029029949568212032,
+                "shapes": [
+                  [
+                    [
+                      46,
+                      220,
+                      12
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      8
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      116
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      36
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      126
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      48
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      96
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      60
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ],
+                  [
+                    [
+                      46,
+                      220,
+                      120
+                    ],
+                    [
+                      220,
+                      46
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.contract:rij,sij->rs": {
+                "calls": 1,
+                "seconds": 0.017512479797005653,
+                "shapes": [
+                  [
+                    [
+                      1252,
+                      46,
+                      46
+                    ],
+                    [
+                      1252,
+                      46,
+                      46
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.metric_derivative": {
+                "calls": 1,
+                "seconds": 0.007149575278162956,
+                "shapes": []
+              }
+            },
+            "bindings_restored": true
+          }
+        },
+        "memory": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 4.1154635255225e-11,
+            "gradient_max_error": 2.1840472541612144e-08,
+            "passed": true
+          },
+          "iterations": 18,
+          "scf_seconds": 3.8174167508259416,
+          "gradient_seconds": 1.4903099853545427,
+          "memory": {
+            "peak_pool_live_bytes": 248487936,
+            "peak_pool_reserved_bytes": 337382400,
+            "allocation_observations": 22693,
+            "initial_pool_live_bytes": 0,
+            "peak_tracked_live_bytes": 526085773,
+            "peak_live_bytes": 526085773,
+            "host_peak_rss_bytes": 3955601408,
+            "host_address_space_peak_rss_bytes": 1377988608,
+            "observed_thread_count": 2,
+            "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+          }
+        }
+      }
+    },
+    {
+      "case": "tamoxifen_svp_pbe",
+      "status": "passed",
+      "modes": {
+        "gpu": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 2.7284841053187847e-11,
+            "gradient_max_error": 1.852539188718083e-08,
+            "passed": true
+          },
+          "iterations": 20,
+          "scf_seconds": 18.500254897400737,
+          "gradient_seconds": 7.117585747502744
+        },
+        "profile": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 2.9103830456733704e-11,
+            "gradient_max_error": 1.8525491363163837e-08,
+            "passed": true
+          },
+          "iterations": 20,
+          "scf_seconds": 18.914385298267007,
+          "gradient_seconds": 7.115542179904878,
+          "coarse": {
+            "scf.veff": {
+              "calls": 21,
+              "seconds": 18.308801617473364
+            },
+            "scf.jk": {
+              "calls": 21,
+              "seconds": 4.412670631892979
+            },
+            "scf.xc_quadrature": {
+              "calls": 21,
+              "seconds": 13.68190561980009
+            },
+            "scf.diagonalization": {
+              "calls": 20,
+              "seconds": 0.3772699451074004
+            },
+            "scf.df_build_nested_in_jk": {
+              "calls": 1,
+              "seconds": 0.025108041241765022
+            },
+            "gradient.one_electron": {
+              "calls": 1,
+              "seconds": 0.07146909274160862
+            },
+            "gradient.two_electron": {
+              "calls": 1,
+              "seconds": 7.042819865047932
+            },
+            "gradient.df_jk_total": {
+              "calls": 1,
+              "seconds": 1.2720317421481013
+            },
+            "gradient.df_jk_core_nested": {
+              "calls": 1,
+              "seconds": 1.2515452150255442
+            },
+            "gradient.xc_full_response": {
+              "calls": 1,
+              "seconds": 5.7706883465871215
+            }
+          },
+          "fine": {
+            "timings": {
+              "scf.xc.ao": {
+                "calls": 6972,
+                "seconds": 1.534072931855917,
+                "shapes": []
+              },
+              "scf.xc.density_dm": {
+                "calls": 3486,
+                "seconds": 5.218744196929038,
+                "shapes": []
+              },
+              "scf.xc.density_mo": {
+                "calls": 3486,
+                "seconds": 5.518837177194655,
+                "shapes": []
+              },
+              "scf.xc.functional": {
+                "calls": 21,
+                "seconds": 0.0754048740491271,
+                "shapes": []
+              },
+              "scf.xc.scale_ao": {
+                "calls": 3486,
+                "seconds": 0.6719528930261731,
+                "shapes": []
+              },
+              "scf.xc.sparse_scatter": {
+                "calls": 3486,
+                "seconds": 0.0738975927233696,
+                "shapes": []
+              },
+              "gradient.jk.derivative3c": {
+                "calls": 2,
+                "seconds": 1.044385357759893,
+                "shapes": []
+              },
+              "gradient.xc.ao": {
+                "calls": 398,
+                "seconds": 0.2391916625201702,
+                "shapes": []
+              },
+              "gradient.xc.density_dm": {
+                "calls": 199,
+                "seconds": 0.629846922121942,
+                "shapes": []
+              },
+              "gradient.xc.functional": {
+                "calls": 1,
+                "seconds": 0.005862575955688953,
+                "shapes": []
+              },
+              "gradient.xc.grid_weight_derivative": {
+                "calls": 1,
+                "seconds": 1.2699624923989177,
+                "shapes": []
+              },
+              "gradient.xc.scale_ao": {
+                "calls": 199,
+                "seconds": 0.04048352222889662,
+                "shapes": []
+              },
+              "gradient.xc.gradient_matrix": {
+                "calls": 199,
+                "seconds": 2.4410211807116866,
+                "shapes": []
+              },
+              "gradient.jk.metric_integrals": {
+                "calls": 1,
+                "seconds": 0.011414109729230404,
+                "shapes": []
+              },
+              "gradient.jk.metric_factorization": {
+                "calls": 1,
+                "seconds": 0.030666150152683258,
+                "shapes": []
+              },
+              "gradient.jk.metric_solve": {
+                "calls": 1,
+                "seconds": 0.0013274801895022392,
+                "shapes": []
+              },
+              "gradient.jk.metric_derivative": {
+                "calls": 1,
+                "seconds": 0.01182817667722702,
+                "shapes": []
+              }
+            },
+            "bindings_restored": true
+          }
+        },
+        "memory": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 2.7284841053187847e-11,
+            "gradient_max_error": 1.8525859069029593e-08,
+            "passed": true
+          },
+          "iterations": 20,
+          "scf_seconds": 19.593952713534236,
+          "gradient_seconds": 7.3186881290748715,
+          "memory": {
+            "peak_pool_live_bytes": 394075648,
+            "peak_pool_reserved_bytes": 850209792,
+            "allocation_observations": 42845,
+            "initial_pool_live_bytes": 0,
+            "peak_tracked_live_bytes": 2389195229,
+            "peak_live_bytes": 2389195229,
+            "host_peak_rss_bytes": 3955601408,
+            "host_address_space_peak_rss_bytes": 1388519424,
+            "observed_thread_count": 2,
+            "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+          }
+        }
+      }
+    },
+    {
+      "case": "tamoxifen_svp_b3lyp",
+      "status": "passed",
+      "modes": {
+        "gpu": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 8.094502845779061e-11,
+            "gradient_max_error": 6.842778579319031e-07,
+            "passed": true
+          },
+          "iterations": 18,
+          "scf_seconds": 32.18391933199018,
+          "gradient_seconds": 14.689291233196855
+        },
+        "profile": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 8.094502845779061e-11,
+            "gradient_max_error": 6.581644407255283e-07,
+            "passed": true
+          },
+          "iterations": 18,
+          "scf_seconds": 32.71728095039725,
+          "gradient_seconds": 14.977561291307211,
+          "coarse": {
+            "scf.veff": {
+              "calls": 19,
+              "seconds": 32.106464504264295
+            },
+            "scf.jk": {
+              "calls": 19,
+              "seconds": 19.63028918299824
+            },
+            "scf.xc_quadrature": {
+              "calls": 19,
+              "seconds": 12.260815789923072
+            },
+            "scf.diagonalization": {
+              "calls": 18,
+              "seconds": 0.34058053605258465
+            },
+            "scf.df_build_nested_in_jk": {
+              "calls": 1,
+              "seconds": 4.103784695267677
+            },
+            "gradient.one_electron": {
+              "calls": 1,
+              "seconds": 0.07197897788137197
+            },
+            "gradient.two_electron": {
+              "calls": 1,
+              "seconds": 14.904354833997786
+            },
+            "gradient.df_jk_total": {
+              "calls": 1,
+              "seconds": 9.116630671545863
+            },
+            "gradient.df_jk_core_nested": {
+              "calls": 1,
+              "seconds": 9.073171238414943
+            },
+            "gradient.xc_full_response": {
+              "calls": 1,
+              "seconds": 5.787647746503353
+            }
+          },
+          "fine": {
+            "timings": {
+              "scf.xc.ao": {
+                "calls": 6308,
+                "seconds": 1.3889560988172889,
+                "shapes": []
+              },
+              "scf.xc.density_dm": {
+                "calls": 3154,
+                "seconds": 4.705111565068364,
+                "shapes": []
+              },
+              "scf.xc.density_mo": {
+                "calls": 3154,
+                "seconds": 4.976748417131603,
+                "shapes": []
+              },
+              "scf.xc.functional": {
+                "calls": 19,
+                "seconds": 0.08589194901287556,
+                "shapes": []
+              },
+              "scf.xc.scale_ao": {
+                "calls": 3154,
+                "seconds": 0.6018112916499376,
+                "shapes": []
+              },
+              "scf.xc.sparse_scatter": {
+                "calls": 3154,
+                "seconds": 0.06512690801173449,
+                "shapes": []
+              },
+              "scf.jk.factorize_dm": {
+                "calls": 19,
+                "seconds": 0.004536875523626804,
+                "shapes": []
+              },
+              "scf.jk.unpack": {
+                "calls": 209,
+                "seconds": 0.5348442830145359,
+                "shapes": []
+              },
+              "scf.jk.block_fetch_including_unpack": {
+                "calls": 228,
+                "seconds": 0.9930475717410445,
+                "shapes": []
+              },
+              "scf.jk.contract:Lij,njk->nikL": {
+                "calls": 19,
+                "seconds": 0.41880836710333824,
+                "shapes": [
+                  [
+                    [
+                      66,
+                      537,
+                      537
+                    ],
+                    [
+                      1,
+                      537,
+                      169
+                    ]
+                  ],
+                  [
+                    [
+                      66,
+                      537,
+                      537
+                    ],
+                    [
+                      1,
+                      537,
+                      100
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.derivative3c": {
+                "calls": 33,
+                "seconds": 5.276085048913956,
+                "shapes": []
+              },
+              "gradient.xc.ao": {
+                "calls": 398,
+                "seconds": 0.23822665587067604,
+                "shapes": []
+              },
+              "gradient.xc.density_dm": {
+                "calls": 199,
+                "seconds": 0.6297846781089902,
+                "shapes": []
+              },
+              "gradient.xc.functional": {
+                "calls": 1,
+                "seconds": 0.00711930263787508,
+                "shapes": []
+              },
+              "gradient.xc.grid_weight_derivative": {
+                "calls": 1,
+                "seconds": 1.2689861040562391,
+                "shapes": []
+              },
+              "gradient.xc.scale_ao": {
+                "calls": 199,
+                "seconds": 0.039873731322586536,
+                "shapes": []
+              },
+              "gradient.xc.gradient_matrix": {
+                "calls": 199,
+                "seconds": 2.4394634794443846,
+                "shapes": []
+              },
+              "gradient.jk.integral3c": {
+                "calls": 32,
+                "seconds": 0.5889196190983057,
+                "shapes": []
+              },
+              "gradient.jk.contract:iqr,qj->rij": {
+                "calls": 32,
+                "seconds": 0.12551687750965357,
+                "shapes": [
+                  [
+                    [
+                      100,
+                      565,
+                      28
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      29
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      128
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      25
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      84
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      126
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      6
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      12
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      30
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      120
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      20
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      100,
+                      565,
+                      40
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.metric_integrals": {
+                "calls": 1,
+                "seconds": 0.011934000067412853,
+                "shapes": []
+              },
+              "gradient.jk.metric_factorization": {
+                "calls": 1,
+                "seconds": 0.03031944204121828,
+                "shapes": []
+              },
+              "gradient.jk.metric_solve": {
+                "calls": 1,
+                "seconds": 0.145270730368793,
+                "shapes": []
+              },
+              "gradient.jk.contract:rji,qj->iqr": {
+                "calls": 32,
+                "seconds": 0.11507824808359146,
+                "shapes": [
+                  [
+                    [
+                      28,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      29,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      128,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      25,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      84,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      126,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      6,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      12,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      30,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      120,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      20,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ],
+                  [
+                    [
+                      40,
+                      100,
+                      100
+                    ],
+                    [
+                      565,
+                      100
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.contract:rij,sij->rs": {
+                "calls": 1,
+                "seconds": 0.48833315446972847,
+                "shapes": [
+                  [
+                    [
+                      3080,
+                      100,
+                      100
+                    ],
+                    [
+                      3080,
+                      100,
+                      100
+                    ]
+                  ]
+                ]
+              },
+              "gradient.jk.metric_derivative": {
+                "calls": 1,
+                "seconds": 0.012405875138938427,
+                "shapes": []
+              }
+            },
+            "bindings_restored": true
+          }
+        },
+        "memory": {
+          "status": "passed",
+          "comparison": {
+            "energy_error_hartree": 8.049028110690415e-11,
+            "gradient_max_error": 6.382160298024075e-07,
+            "passed": true
+          },
+          "iterations": 18,
+          "scf_seconds": 33.35836923867464,
+          "gradient_seconds": 15.0304374685511,
+          "memory": {
+            "peak_pool_live_bytes": 344932352,
+            "peak_pool_reserved_bytes": 709698560,
+            "allocation_observations": 40549,
+            "initial_pool_live_bytes": 0,
+            "peak_tracked_live_bytes": 4397714085,
+            "peak_live_bytes": 4397714085,
+            "host_peak_rss_bytes": 3955601408,
+            "host_address_space_peak_rss_bytes": 1391964160,
+            "observed_thread_count": 2,
+            "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+          }
+        }
+      },
+      "baseline_memory": {
+        "candidate_version": "lower_triangle_v1",
+        "whole_cupy_bytes": 4397714085,
+        "jk_new_cupy_bytes": 1070149680,
+        "process_peak_rss_bytes": 1391898624,
+        "comparison": {
+          "energy_error_hartree": 8.094502845779061e-11,
+          "gradient_max_error": 6.887394765620058e-07,
+          "passed": true
+        }
+      },
+      "packed_memory": {
+        "candidate_version": "lower_triangle_v1",
+        "whole_cupy_bytes": 4342868816,
+        "jk_new_cupy_bytes": 958503280,
+        "process_peak_rss_bytes": 1392193536,
+        "comparison": {
+          "energy_error_hartree": 8.094502845779061e-11,
+          "gradient_max_error": 6.602597726335091e-07,
+          "passed": true
+        }
+      },
+      "memory_reductions": {
+        "whole_cupy_bytes": 0.012471313036713672,
+        "jk_new_cupy_bytes": 0.1043278357098607,
+        "process_peak_rss_bytes": -0.00021187749949236334
+      }
+    },
+    {
+      "case": "tamoxifen_tzvp_b3lyp",
+      "status": "cpu_passed",
+      "modes": {
+        "gpu": "pending",
+        "profile": "pending",
+        "memory": "pending"
+      }
+    },
+    {
+      "case": "taxol_svp_b3lyp",
+      "status": "seeded_cpu_complete",
+      "modes": {},
+      "supplementary_cpu_status": "passed"
+    },
+    {
+      "case": "valinomycin_svp_pbe",
+      "status": "pending",
+      "modes": {}
+    },
+    {
+      "case": "valinomycin_svp_b3lyp",
+      "status": "pending",
+      "modes": {}
+    }
+  ],
+  "occupied_pairs": [],
+  "large_cases": [
+    {
+      "report": "tamoxifen_tzvp_b3lyp_capacity_resident_baseline.json",
+      "case": "tamoxifen_tzvp_b3lyp",
+      "status": "captured_original_gpu",
+      "iterations": 18,
+      "scf_seconds": 113.8938501663506,
+      "gradient_seconds": 37.71931679174304,
+      "error": null,
+      "cpu_comparison": {
+        "energy_error_hartree": 4.0472514228895307e-11,
+        "gradient_max_error": 4.5744044929740824e-07,
+        "passed": true
+      },
+      "cpu_report": "tamoxifen_tzvp_b3lyp_cpu.json",
+      "whole_cupy_bytes": 13733349328,
+      "process_peak_rss_bytes": 1431453696,
+      "jk_new_cupy_bytes": 2235781288
+    },
+    {
+      "report": "taxol_svp_b3lyp_capacity_disk_packed.json",
+      "case": "taxol_svp_b3lyp",
+      "status": "failed",
+      "iterations": 20,
+      "scf_seconds": 445.75770093873143,
+      "gradient_seconds": 106.89770463760942,
+      "error": "{'energy_hartree': 1.8189894035458565e-12, 'gradient_max': 1.769922384653455e-06}",
+      "cpu_comparison": {
+        "energy_error_hartree": 2.2228050511330366e-09,
+        "gradient_max_error": 2.4780410106561845e-05,
+        "passed": false
+      },
+      "cpu_report": "taxol_svp_b3lyp_seeded_cpu.json",
+      "whole_cupy_bytes": 7910679652,
+      "process_peak_rss_bytes": 3624275968,
+      "jk_new_cupy_bytes": 3327875096,
+      "candidate_version": "lower_triangle_v1",
+      "gpu_comparison": {
+        "energy_hartree": 1.8189894035458565e-12,
+        "gradient_max": 1.769922384653455e-06,
+        "passed": false
+      }
+    },
+    {
+      "report": "taxol_svp_b3lyp_capacity_resident_baseline.json",
+      "case": "taxol_svp_b3lyp",
+      "status": "captured_original_gpu",
+      "iterations": 20,
+      "scf_seconds": 433.4218234028667,
+      "gradient_seconds": 119.2565622413531,
+      "error": null,
+      "cpu_comparison": {
+        "energy_error_hartree": 2.2246240405365825e-09,
+        "gradient_max_error": 2.5356641451645956e-05,
+        "passed": false
+      },
+      "cpu_report": "taxol_svp_b3lyp_seeded_cpu.json",
+      "whole_cupy_bytes": 25872500300,
+      "process_peak_rss_bytes": 1521176576,
+      "jk_new_cupy_bytes": 8795785632
+    }
+  ],
+  "jk_capacity": [
+    {
+      "report": "valinomycin_svp_b3lyp_disk_jk_capacity.json",
+      "case": "valinomycin_svp_b3lyp",
+      "status": "passed",
+      "nao": 1542,
+      "mode": "disk",
+      "cderi_bytes": 31524357312,
+      "whole_cupy_bytes": 4521525304,
+      "process_peak_rss_bytes": 3480666112,
+      "errors": {
+        "j_max": 1.3073986337985843e-12,
+        "k_max": 1.6697754290362354e-13
+      },
+      "scope": "Single J/K; no converged SCF/force qualification"
+    },
+    {
+      "report": "vitamin_svp_b3lyp_disk_jk_capacity.json",
+      "case": "vitamin_svp_b3lyp",
+      "status": "passed",
+      "nao": 208,
+      "mode": "disk",
+      "cderi_bytes": 164913408,
+      "whole_cupy_bytes": 298219796,
+      "process_peak_rss_bytes": 1176748032,
+      "errors": {
+        "j_max": 8.526512829121202e-14,
+        "k_max": 1.3322676295501878e-14
+      },
+      "scope": "Single J/K; no converged SCF/force qualification"
+    }
+  ],
+  "diagnostics": {
+    "taxol_original_gradient_profile.json": {
+      "status": "passed_replay",
+      "coarse": {
+        "scf.veff": {
+          "calls": 0,
+          "seconds": 0.0
+        },
+        "scf.jk": {
+          "calls": 0,
+          "seconds": 0.0
+        },
+        "scf.xc_quadrature": {
+          "calls": 0,
+          "seconds": 0.0
+        },
+        "scf.diagonalization": {
+          "calls": 0,
+          "seconds": 0.0
+        },
+        "scf.df_build_nested_in_jk": {
+          "calls": 0,
+          "seconds": 0.0
+        },
+        "gradient.one_electron": {
+          "calls": 1,
+          "seconds": 0.45242694579064846
+        },
+        "gradient.two_electron": {
+          "calls": 1,
+          "seconds": 122.30162456352264
+        },
+        "gradient.df_jk_total": {
+          "calls": 1,
+          "seconds": 81.58231648243964
+        },
+        "gradient.df_jk_core_nested": {
+          "calls": 1,
+          "seconds": 81.54614262562245
+        },
+        "gradient.xc_full_response": {
+          "calls": 1,
+          "seconds": 39.12387063913047
+        }
+      },
+      "fine": {
+        "timings": {
+          "gradient.jk.derivative3c": {
+            "calls": 58,
+            "seconds": 23.846203244291246,
+            "shapes": []
+          },
+          "gradient.xc.ao": {
+            "calls": 802,
+            "seconds": 0.9110826337710023,
+            "shapes": []
+          },
+          "gradient.xc.density_dm": {
+            "calls": 401,
+            "seconds": 4.943113347515464,
+            "shapes": []
+          },
+          "gradient.xc.functional": {
+            "calls": 1,
+            "seconds": 0.14706366322934628,
+            "shapes": []
+          },
+          "gradient.xc.grid_weight_derivative": {
+            "calls": 2,
+            "seconds": 8.914561362937093,
+            "shapes": []
+          },
+          "gradient.xc.scale_ao": {
+            "calls": 401,
+            "seconds": 0.14309899881482124,
+            "shapes": []
+          },
+          "gradient.xc.gradient_matrix": {
+            "calls": 401,
+            "seconds": 16.5531581453979,
+            "shapes": []
+          },
+          "gradient.jk.integral3c": {
+            "calls": 57,
+            "seconds": 3.189668847247958,
+            "shapes": []
+          },
+          "gradient.jk.contract:iqr,qj->rij": {
+            "calls": 113,
+            "seconds": 3.008084300905466,
+            "shapes": [
+              [
+                [
+                  226,
+                  1185,
+                  62
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  51
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  63
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  2
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  34
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  60
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  33
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  27
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  30
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  57
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  226,
+                  1185,
+                  47
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ]
+            ]
+          },
+          "gradient.jk.metric_integrals": {
+            "calls": 1,
+            "seconds": 0.05613604560494423,
+            "shapes": []
+          },
+          "gradient.jk.metric_factorization": {
+            "calls": 1,
+            "seconds": 0.1978033958002925,
+            "shapes": []
+          },
+          "gradient.jk.metric_solve": {
+            "calls": 1,
+            "seconds": 1.176579506136477,
+            "shapes": []
+          },
+          "gradient.jk.contract:rji,qj->iqr": {
+            "calls": 113,
+            "seconds": 2.888175228610635,
+            "shapes": [
+              [
+                [
+                  62,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  51,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  63,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  2,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  34,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  60,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  33,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  27,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  30,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  57,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ],
+              [
+                [
+                  47,
+                  226,
+                  226
+                ],
+                [
+                  1185,
+                  226
+                ]
+              ]
+            ]
+          },
+          "gradient.jk.contract:rij,sij->rs": {
+            "calls": 1,
+            "seconds": 10.862814281135798,
+            "shapes": [
+              [
+                [
+                  6598,
+                  226,
+                  226
+                ],
+                [
+                  6598,
+                  226,
+                  226
+                ]
+              ]
+            ]
+          },
+          "gradient.jk.metric_derivative": {
+            "calls": 1,
+            "seconds": 0.031214500777423382,
+            "shapes": []
+          }
+        },
+        "bindings_restored": true
+      },
+      "replay_error": 5.666578317686799e-13
+    },
+    "taxol_fixed_orbital_xc_cpu.json": {
+      "status": "captured",
+      "seconds": 656.60726565402
+    },
+    "taxol_fixed_orbital_xc_gpu.json": {
+      "status": "captured",
+      "seconds": 39.57945876568556
+    },
+    "matched_orbital_xc_max_error": 1.843356023378817e-11
+  },
+  "report_hashes": {
+    "vitamin_svp_pbe_cpu.json": "447e73d1522a863dba780ad088b1c48ba0a45685e64ea5495f28b0fcaf39a55a",
+    "vitamin_svp_pbe_gpu.json": "8459be07e4710f4f144c331870210f0a8185f31e0c1bcdb7ba02d987ea3b8aeb",
+    "vitamin_svp_pbe_profile.json": "12d0c76dc9de6fde8393033495f557bab4b0a3dccbee26ee51088b2d7ad9abbd",
+    "vitamin_svp_pbe_memory.json": "20661f264434c7e183bf465d89b697fc12830ee8d9d33b3f242e7ca542b3598e",
+    "vitamin_svp_b3lyp_cpu.json": "dd23a6a7e0dee6fd992a3b440b327c30de5253cf542f63a2e0c9f1a72fd86a31",
+    "vitamin_svp_b3lyp_gpu.json": "75f5858118524b7589ccc428eccfa80e40c8977a10d42c56427092d3cbe2902f",
+    "vitamin_svp_b3lyp_profile.json": "6f1d1150c405c884fbca74bd7f2ab32d9a6dc9cc94fa18596ef14646c741e9cb",
+    "vitamin_svp_b3lyp_memory.json": "aec5423e00fd12a5a823104a232c0f2bcef137858e891c417429d65e9e6d4734",
+    "tamoxifen_svp_pbe_cpu.json": "44a32114af67e411586aae483b16c7170da00b5918ebb88e74cb19b3f530bd85",
+    "tamoxifen_svp_pbe_gpu.json": "3cc859e511a6b375645609e5e284beccc36338e1a753e5e9716c00e430384a23",
+    "tamoxifen_svp_pbe_profile.json": "212e9a958fcc0c642949399ec7aa83c2cff3d969cc61496e61ddab8a9f81b18e",
+    "tamoxifen_svp_pbe_memory.json": "1be9ce473844863a2b6ded29cd3102373ecf9ec11fba354855d676e04c1a131b",
+    "tamoxifen_svp_b3lyp_cpu.json": "009ed4c5c21445167398cc2c5ed2fc1e2ec60c675af19f5fab301d1f678ec443",
+    "tamoxifen_svp_b3lyp_gpu.json": "eec96840203f3f7b60e507ecdd7622e25c6e8a7bc79c40b77f152f8db1937c28",
+    "tamoxifen_svp_b3lyp_profile.json": "4f00992cbe2486533cf30c9075adac0c812a4bea807b96dbe748203039094336",
+    "tamoxifen_svp_b3lyp_memory.json": "72dfd32f1b205edde048a56db918f5b71dbac121d8c9108fc9543e3e82cf21e5",
+    "tamoxifen_svp_b3lyp_occupied_baseline_memory.json": "e789624252de0929fe9bef692be592700958fe0022edf034f1fc5d3b06ee69ea",
+    "tamoxifen_svp_b3lyp_occupied_packed_memory.json": "45b91f1538f988cad1b19627de396731059beb10ba01dda17c67ae05c2d2bc90",
+    "tamoxifen_tzvp_b3lyp_cpu.json": "8253bb61b169f87683758a3e14a6b3529cbb7b800ba55a3cc416fdf3d4b11fba",
+    "taxol_svp_b3lyp_seeded_cpu.json": "10c21e5c5149b37796ce85e783fac711b4c5dda22cce4e2cdf1984a4278ba58c",
+    "tamoxifen_tzvp_b3lyp_capacity_resident_baseline.json": "99979016174da9360be5ac150ea47691f7488dd88845938b96cbb171a1b1227b",
+    "taxol_svp_b3lyp_capacity_disk_packed.json": "8f52369371bba8336ac794c52babb30771bcec70d36b1ff9b0c56262996018f8",
+    "taxol_svp_b3lyp_capacity_resident_baseline.json": "4ef49af064065a296358961b5e1ee075d0541ae217adbbda62674f47580f07be",
+    "valinomycin_svp_b3lyp_disk_jk_capacity.json": "35bb324cf1713a0f91cf835ed1e8e9d95e9efff4b518e40ba74ee0e3f482f89b",
+    "vitamin_svp_b3lyp_disk_jk_capacity.json": "5c8fb2a8df2a0e2d24ec0d01f92d9639b17a49d4811d3c8f5c02079b19b43051",
+    "taxol_original_gradient_profile.json": "1c027f310def8b8edcd6742142ef4c4a5f737b6a92205b6d3a7133e2ce507da8",
+    "taxol_fixed_orbital_full_diagnostic.json": "96e4393b0e4b2052d5ff315fefbf26d71b34a48965cf21ee73551397bb513c5d",
+    "taxol_fixed_orbital_xc_cpu.json": "3d25c024823146e525db7edcb43e1b18c5d436244a530ae46f9e7f0f9e24e880",
+    "taxol_fixed_orbital_xc_gpu.json": "9140b72b8a2b42da283bbdc9fda319659025b6a7c3e8ab0e24fc7e58d38f8c10"
+  },
+  "report_directory": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/comprehensive_results",
+  "validator_sha256": "152ee51c33a0969250185fd9d0b1149e8c800edd68635872c2b34dd2712f3f7e",
+  "note": "Single controls establish scaling only. Profiles synchronize inclusive nested scopes. Memory is requested CuPy storage and separate process RSS, not hardware-wide RAM. Original 4-case controls/profiles shared a Python process; process-cold claims are not made. Superseded shared-process memory reports are excluded. Capacity estimates at2228/2958 AOs are not completed calculations."
+}

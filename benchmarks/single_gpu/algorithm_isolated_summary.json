@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "scope": "Isolated algorithm substitutions on pre-algorithm GPU code, retaining earlier contraction improvements; shared single GB10, CuPy fallback.",
+  "reports": {
+    "algorithm_component_results.json": "b6d1363cc0253d754cfcb1aa351c87675ac32568d4244890b8efb3e29d1c0649",
+    "algorithm_density_results.json": "0fb9ebb6def44775c249fb982ef65d2a587b80130451811cd3bf266cc942d014",
+    "algorithm_exchange_results.json": "6f1f5533db28e6e58b6b3dd4bffd2b9bd311ef59ee4c2e84fb2c943b1f622a0e"
+  },
+  "isolated_workflows": [
+    {
+      "algorithm": "density",
+      "case": "vitamin_svp",
+      "method": "PBE",
+      "medians": {
+        "original": 3.2430516313761473,
+        "density": 3.1861395314335823
+      },
+      "speedup": 1.0178624003691883,
+      "paired_ratio_range": [
+        1.0178624003691883,
+        1.02219941704918
+      ]
+    },
+    {
+      "algorithm": "density",
+      "case": "tamoxifen_svp",
+      "method": "PBE",
+      "medians": {
+        "original": 18.7672189893201,
+        "density": 16.931774676777422
+      },
+      "speedup": 1.108402358735618,
+      "paired_ratio_range": [
+        1.1055898823925856,
+        1.1158678517578027
+      ]
+    },
+    {
+      "algorithm": "exchange",
+      "case": "vitamin_svp",
+      "method": "B3LYP",
+      "medians": {
+        "original": 3.498694813810289,
+        "exchange": 3.503290240652859
+      },
+      "speedup": 0.9986882540335242,
+      "paired_ratio_range": [
+        0.9980804140971197,
+        1.0000421542466489
+      ]
+    },
+    {
+      "algorithm": "exchange",
+      "case": "tamoxifen_svp",
+      "method": "B3LYP",
+      "medians": {
+        "original": 59.559421168640256,
+        "exchange": 51.24503451306373
+      },
+      "speedup": 1.1622476545206926,
+      "paired_ratio_range": [
+        1.1462579245704643,
+        1.1634885823580967
+      ]
+    }
+  ],
+  "verification": {
+    "benchmark_tests_passed": 3,
+    "benchmark_seconds": 648.82,
+    "targeted_tests_passed": 50,
+    "targeted_deselected": 1,
+    "targeted_seconds": 8.18
+  },
+  "maximum_energy_error_hartree": 7.685230229981244e-11,
+  "maximum_gradient_error_hartree_per_bohr": 7.078965378326529e-07
+}

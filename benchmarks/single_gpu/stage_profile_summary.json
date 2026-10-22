@@ -1,0 +1,223 @@
+{
+  "status": "passed",
+  "raw_report_sha256": "178ad5330e2af8e7c2ff176c53e93deb84aaa27e33c49c5832cd7c892dddc5f3",
+  "scope": "Current local code on shared single GB10. Three controls with per-iteration synchronization and one stage-instrumented run per case. Wall times, not kernel time or speedups. Grid level 1 unpruned; no production convergence claim.",
+  "verification": {
+    "pytest_passed": 1,
+    "pytest_seconds": 1056.25,
+    "cases": 6,
+    "timed_gpu_calculations": 24
+  },
+  "cases": [
+    {
+      "case": "vitamin_svp",
+      "method": "PBE",
+      "basis": "def2-svp",
+      "natm": 20,
+      "nao": 208,
+      "scf_median_seconds": 2.8086665784940124,
+      "gradient_median_seconds": 0.5248857969418168,
+      "combined_median_seconds": 3.3336109099909663,
+      "combined_control_range_seconds": [
+        3.323735929094255,
+        3.344701481051743
+      ],
+      "instrumented_over_control_ratio": 1.0039114017664417,
+      "iterations": 22,
+      "within_phase_stage_wall_time_shares": {
+        "scf.veff": 0.9223014458967614,
+        "scf.jk": 0.36884616105559964,
+        "scf.xc_quadrature": 0.5488874090266943,
+        "scf.diagonalization": 0.0461341100689326,
+        "scf.df_build_nested_in_jk": 0.006770382475750546,
+        "gradient.one_electron": 0.05518500964847589,
+        "gradient.two_electron": 0.9436282753574807,
+        "gradient.df_jk_total": 0.3236848067635745,
+        "gradient.df_jk_core_nested": 0.2929451391214213,
+        "gradient.xc_full_response": 0.6197620165781523
+      },
+      "combined_instrumented_wall_time_shares": {
+        "xc": 0.5600434463810575,
+        "jk": 0.36173752549681126
+      }
+    },
+    {
+      "case": "vitamin_svp",
+      "method": "B3LYP",
+      "basis": "def2-svp",
+      "natm": 20,
+      "nao": 208,
+      "scf_median_seconds": 2.3650990147143602,
+      "gradient_median_seconds": 1.1447919951751828,
+      "combined_median_seconds": 3.509891009889543,
+      "combined_control_range_seconds": [
+        3.501825174316764,
+        3.5197849506512284
+      ],
+      "instrumented_over_control_ratio": 1.0072179048265042,
+      "iterations": 18,
+      "within_phase_stage_wall_time_shares": {
+        "scf.veff": 0.9182417449293956,
+        "scf.jk": 0.43134967421768966,
+        "scf.xc_quadrature": 0.47936277829556917,
+        "scf.diagonalization": 0.04389844899549644,
+        "scf.df_build_nested_in_jk": 0.08701717377776179,
+        "gradient.one_electron": 0.02499682955842059,
+        "gradient.two_electron": 0.9744975445809161,
+        "gradient.df_jk_total": 0.692081524400044,
+        "gradient.df_jk_core_nested": 0.6759634259425099,
+        "gradient.xc_full_response": 0.28237063828620773
+      },
+      "combined_instrumented_wall_time_shares": {
+        "xc": 0.41506068021713594,
+        "jk": 0.5164576638146369
+      }
+    },
+    {
+      "case": "vitamin_tzvp",
+      "method": "PBE",
+      "basis": "def2-tzvp",
+      "natm": 20,
+      "nao": 420,
+      "scf_median_seconds": 5.535704722627997,
+      "gradient_median_seconds": 1.5170394536107779,
+      "combined_median_seconds": 7.052744176238775,
+      "combined_control_range_seconds": [
+        7.0524781020358205,
+        7.103201366961002
+      ],
+      "instrumented_over_control_ratio": 1.0085709137653391,
+      "iterations": 22,
+      "within_phase_stage_wall_time_shares": {
+        "scf.veff": 0.9208109213626602,
+        "scf.jk": 0.3495102090134673,
+        "scf.xc_quadrature": 0.5689243950388038,
+        "scf.diagonalization": 0.052509921929910955,
+        "scf.df_build_nested_in_jk": 0.005316949671463331,
+        "gradient.one_electron": 0.03544667775719628,
+        "gradient.two_electron": 0.9641007904291488,
+        "gradient.df_jk_total": 0.29531861430448947,
+        "gradient.df_jk_core_nested": 0.27782468678299865,
+        "gradient.xc_full_response": 0.6687175724324494
+      },
+      "combined_instrumented_wall_time_shares": {
+        "xc": 0.5904040906911906,
+        "jk": 0.33784589496247025
+      }
+    },
+    {
+      "case": "vitamin_tzvp",
+      "method": "B3LYP",
+      "basis": "def2-tzvp",
+      "natm": 20,
+      "nao": 420,
+      "scf_median_seconds": 9.135245573706925,
+      "gradient_median_seconds": 3.3704560240730643,
+      "combined_median_seconds": 12.498975357972085,
+      "combined_control_range_seconds": [
+        12.482751498930156,
+        12.73687033355236
+      ],
+      "instrumented_over_control_ratio": 1.0005535975149675,
+      "iterations": 18,
+      "within_phase_stage_wall_time_shares": {
+        "scf.veff": 0.9581899883241425,
+        "scf.jk": 0.6855156760970698,
+        "scf.xc_quadrature": 0.2711017702291499,
+        "scf.diagonalization": 0.026106948770957157,
+        "scf.df_build_nested_in_jk": 0.07433702000554153,
+        "gradient.one_electron": 0.015990293653996897,
+        "gradient.two_electron": 0.9838115047691609,
+        "gradient.df_jk_total": 0.6769632496623863,
+        "gradient.df_jk_core_nested": 0.6666579570305364,
+        "gradient.xc_full_response": 0.30683062367221503
+      },
+      "combined_instrumented_wall_time_shares": {
+        "xc": 0.28071244639204324,
+        "jk": 0.6832151656426357
+      }
+    },
+    {
+      "case": "tamoxifen_svp",
+      "method": "PBE",
+      "basis": "def2-svp",
+      "natm": 57,
+      "nao": 537,
+      "scf_median_seconds": 13.809352214448154,
+      "gradient_median_seconds": 4.943343201652169,
+      "combined_median_seconds": 18.752695416100323,
+      "combined_control_range_seconds": [
+        18.7103752521798,
+        18.820127946324646
+      ],
+      "instrumented_over_control_ratio": 0.9987915386014192,
+      "iterations": 20,
+      "within_phase_stage_wall_time_shares": {
+        "scf.veff": 0.9587241333285085,
+        "scf.jk": 0.31994497724572574,
+        "scf.xc_quadrature": 0.6311562155244694,
+        "scf.diagonalization": 0.02725472264587883,
+        "scf.df_build_nested_in_jk": 0.0017888200086080314,
+        "gradient.one_electron": 0.014522255456268611,
+        "gradient.two_electron": 0.9852460523018433,
+        "gradient.df_jk_total": 0.25593477756974436,
+        "gradient.df_jk_core_nested": 0.2517255293191018,
+        "gradient.xc_full_response": 0.7292914998635257
+      },
+      "combined_instrumented_wall_time_shares": {
+        "xc": 0.6570454386800234,
+        "jk": 0.3030583461547358
+      }
+    },
+    {
+      "case": "tamoxifen_svp",
+      "method": "B3LYP",
+      "basis": "def2-svp",
+      "natm": 57,
+      "nao": 537,
+      "scf_median_seconds": 46.65918660815805,
+      "gradient_median_seconds": 12.852802730165422,
+      "combined_median_seconds": 59.49728491809219,
+      "combined_control_range_seconds": [
+        59.4647740162909,
+        60.58465011790395
+      ],
+      "instrumented_over_control_ratio": 1.0181911590005304,
+      "iterations": 18,
+      "within_phase_stage_wall_time_shares": {
+        "scf.veff": 0.9885659019660722,
+        "scf.jk": 0.8236396492016105,
+        "scf.xc_quadrature": 0.1626908874454916,
+        "scf.diagonalization": 0.007174972201934326,
+        "scf.df_build_nested_in_jk": 0.08634555275482884,
+        "gradient.one_electron": 0.005548161684425998,
+        "gradient.two_electron": 0.9943558674119961,
+        "gradient.df_jk_total": 0.7140042425837896,
+        "gradient.df_jk_core_nested": 0.7106664572863767,
+        "gradient.xc_full_response": 0.28034557773309277
+      },
+      "combined_instrumented_wall_time_shares": {
+        "xc": 0.1879890152556522,
+        "jk": 0.8000658288774338
+      }
+    }
+  ],
+  "energy_max_error_hartree": 7.685230229981244e-11,
+  "gradient_max_error_hartree_per_bohr": 6.684079334462467e-07,
+  "priority_actions": [
+    "Profile AO evaluation, density construction, functional evaluation, and potential/grid-response assembly separately in PBE XC stages.",
+    "Profile integral generation, tensor unpacking/contractions, metric operations and derivative kernels separately in large hybrid DF J/K stages.",
+    "Accept any optimization only after alternating whole-workflow comparisons with unchanged scientific settings and CPU energy/force gates."
+  ],
+  "stage_source_hashes_at_analysis": {
+    "gpu4pyscf/dft/numint.py": "f4fbde5afeb964cbbd80b65a38266caba41a8e577379c473348c3cb6ff4a2683",
+    "gpu4pyscf/grad/rks.py": "fd4fd2177567e39fef8703fddcf1165397de755bb5f054b889da0ddaafef576e",
+    "gpu4pyscf/df/grad/rhf.py": "6a7eff20fa2254cc7bcf9921d533deca3bb00b05280203c200e1425a09d43d89",
+    "gpu4pyscf/df/grad/rks.py": "a69ccfdee0ca4beaa66fd96d2fef4c15f81a181551e3465cb4aa1058a482c1bb",
+    "gpu4pyscf/df/df_jk.py": "3f3e3b452120edbe64a257e97c19bd1313962831ac2e5a06350f65999e2d9565",
+    "gpu4pyscf/df/df.py": "04c8af4028a4ce6bd54edaa8379102394e801dc76bd85832d9a1c25b8e43e157",
+    "gpu4pyscf/grad/rhf.py": "0bb4cd4201a6027aa13ad46569571c4bed1c4d30907ae1dd37c3b639ab16baf6",
+    "gpu4pyscf/scf/hf.py": "3660a83a84b388930390d2e834a40b31cf94f3aa73bf32705bec6502eb200ab0"
+  },
+  "source_note": "Stage source fingerprints recorded after the run; no production source was edited during the campaign. Raw report contains run-time helper, profiler, selected source and native binary fingerprints."
+}

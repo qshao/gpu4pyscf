@@ -1,0 +1,145 @@
+diff --git a/src/skala/gpu4pyscf/gradients.py b/src/skala/gpu4pyscf/gradients.py
+index 8c9fc4c..b7ec653 100644
+--- a/src/skala/gpu4pyscf/gradients.py
++++ b/src/skala/gpu4pyscf/gradients.py
+@@ -9,6 +9,8 @@ import cupy as cp
+ import numpy as np
+ import torch
+ from gpu4pyscf import dft
++from gpu4pyscf.df.grad.rhf import Gradients as DFRHFGradient
++from gpu4pyscf.df.grad.uhf import Gradients as DFUHFGradient
+ from gpu4pyscf.grad.rhf import Gradients as RHFGradient
+ from gpu4pyscf.grad.rks import grids_noresponse_cc, grids_response_cc
+ from gpu4pyscf.grad.uhf import Gradients as UHFGradient
+@@ -269,6 +271,7 @@ def nuc_grad_from_veff(
+ 
+ 
+ class SkalaRKSGradient(RHFGradient):  # type: ignore[misc]
++    auxbasis_response: bool = True
+     functional: ExcFunctionalBase
+     """Skala functional"""
+     nuc_grad_feats: set[Feature] | None
+@@ -312,9 +315,15 @@ class SkalaRKSGradient(RHFGradient):  # type: ignore[misc]
+         veff_grad = (
+             2 * nuc_grad_from_veff(mol, veff, from_dlpack(dm)).detach().cpu().numpy()
+         )
+-        return veff_grad + self.jk_energy_per_atom(
+-            dm, k_factor=0.0, verbose=self.verbose
+-        )
++        if getattr(self.base, "with_df", None):
++            coulomb_grad = DFRHFGradient.jk_energy_per_atom(
++                self, dm, k_factor=0.0, verbose=self.verbose
++            )
++        else:
++            coulomb_grad = self.jk_energy_per_atom(
++                dm, k_factor=0.0, verbose=self.verbose
++            )
++        return veff_grad + coulomb_grad
+ 
+     def grad_elec(
+         self,
+@@ -370,6 +379,7 @@ class SkalaRKSGradient(RHFGradient):  # type: ignore[misc]
+ 
+ 
+ class SkalaUKSGradient(UHFGradient):  # type: ignore[misc]
++    auxbasis_response: bool = True
+     functional: ExcFunctionalBase
+     """Skala functional"""
+     nuc_grad_feats: set[Feature] | None
+@@ -413,7 +423,13 @@ class SkalaUKSGradient(UHFGradient):  # type: ignore[misc]
+         veff_grad = (
+             2 * nuc_grad_from_veff(mol, veff, from_dlpack(dm)).detach().cpu().numpy()
+         )
+-        return veff_grad + self.jk_energy_per_atom(dm, k_factor=0, verbose=self.verbose)
++        if getattr(self.base, "with_df", None):
++            coulomb_grad = DFUHFGradient.jk_energy_per_atom(
++                self, dm, k_factor=0, verbose=self.verbose
++            )
++        else:
++            coulomb_grad = self.jk_energy_per_atom(dm, k_factor=0, verbose=self.verbose)
++        return veff_grad + coulomb_grad
+ 
+     def grad_elec(
+         self,
+diff --git a/src/skala/pyscf/gradients.py b/src/skala/pyscf/gradients.py
+index 59b6090..1783884 100644
+--- a/src/skala/pyscf/gradients.py
++++ b/src/skala/pyscf/gradients.py
+@@ -7,7 +7,8 @@ from typing import Any
+ 
+ import numpy as np
+ import torch
+-from pyscf import dft, gto
++from pyscf import dft, gto, lib
++from pyscf.df.grad import rhf as df_rhf_grad
+ from pyscf.grad.rhf import Gradients as RHFGradient
+ from pyscf.grad.rks import grids_noresponse_cc, grids_response_cc
+ from pyscf.grad.uks import Gradients as UHFGradient
+@@ -234,6 +235,7 @@ def veff_and_expl_nuc_grad(
+ 
+ 
+ class SkalaRKSGradient(RHFGradient):  # type: ignore[misc]
++    auxbasis_response: bool = True
+     functional: ExcFunctionalBase
+     """LivDFT functional"""
+     nuc_grad_feats: set[Feature] | None
+@@ -274,7 +276,12 @@ class SkalaRKSGradient(RHFGradient):  # type: ignore[misc]
+             nuc_grad_feats=self.nuc_grad_feats,
+         )
+         self.veff_nuc_grad_.detach_()
+-        return veff.detach_().numpy() + self.get_j(mol, dm)
++        with_df = getattr(self.base, "with_df", None)
++        vj = df_rhf_grad.get_j(self, mol, dm) if with_df else self.get_j(mol, dm)
++        result = veff.detach_().numpy() + vj
++        if with_df and self.auxbasis_response:
++            result = lib.tag_array(result, aux=vj.aux.sum(axis=(0, 1)))
++        return result
+ 
+     def grad_elec(
+         self,
+@@ -308,11 +315,15 @@ class SkalaRKSGradient(RHFGradient):  # type: ignore[misc]
+ 
+     def extra_force(
+         self, atom_id: int | None = None, envs: dict[str, Any] | None = None
+-    ) -> int:
++    ) -> int | np.ndarray:
++        if getattr(self.base, "with_df", None) and self.auxbasis_response:
++            assert envs is not None and atom_id is not None
++            return envs["vhf"].aux[atom_id]
+         return 0
+ 
+ 
+ class SkalaUKSGradient(UHFGradient):  # type: ignore[misc]
++    auxbasis_response: bool = True
+     functional: ExcFunctionalBase
+     """LivDFT functional"""
+     nuc_grad_feats: set[Feature] | None
+@@ -352,7 +363,12 @@ class SkalaUKSGradient(UHFGradient):  # type: ignore[misc]
+             rdm1=torch.from_numpy(dm),
+             nuc_grad_feats=self.nuc_grad_feats,
+         )
+-        return veff.detach_().numpy() + self.get_j(mol, dm).sum(0)
++        with_df = getattr(self.base, "with_df", None)
++        vj = df_rhf_grad.get_j(self, mol, dm) if with_df else self.get_j(mol, dm)
++        result = veff.detach_().numpy() + vj.sum(0)
++        if with_df and self.auxbasis_response:
++            result = lib.tag_array(result, aux=vj.aux.sum(axis=(0, 1)))
++        return result
+ 
+     def grad_elec(
+         self,
+@@ -372,6 +388,14 @@ class SkalaUKSGradient(UHFGradient):  # type: ignore[misc]
+ 
+         return grad + (self.veff_nuc_grad_).numpy()
+ 
++    def extra_force(
++        self, atom_id: int | None = None, envs: dict[str, Any] | None = None
++    ) -> int | np.ndarray:
++        if getattr(self.base, "with_df", None) and self.auxbasis_response:
++            assert envs is not None and atom_id is not None
++            return envs["vhf"].aux[atom_id]
++        return 0
++
+     def grad_nuc(
+         self, mol: gto.Mole | None = None, atmlst: list[int] | None = None
+     ) -> np.ndarray:

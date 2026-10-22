@@ -1,0 +1,411 @@
+{
+  "timestamp_utc": "2026-10-17T13:36:07.445094+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "baseline": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "natm": 20,
+  "nao": 208,
+  "basis": "def2-svp",
+  "auxbasis": "def2-universal-jkfit",
+  "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+  "profile_source_sha256": "0ecee44d1af57e284e044b3c0d4859008bdac48da102557b45fc67b333c56925",
+  "cpu_scf_converged": true,
+  "storage": [
+    {
+      "requested_storage": "gpu",
+      "actual_storage": "gpu",
+      "setup_seconds": 0.31236701272428036,
+      "tensor_bytes": 164913408,
+      "naux": 1056,
+      "default_pool_live_bytes": 819712,
+      "default_pool_total_bytes": 24599552,
+      "device_free_bytes": 67225108480,
+      "measurements": [
+        {
+          "block_size": 128,
+          "packed_loop": {
+            "median_seconds": 1.1855736374855042e-05,
+            "samples_seconds": [
+              1.3743527233600616e-05,
+              1.2287870049476624e-05,
+              1.1616386473178864e-05,
+              1.1855736374855042e-05,
+              1.1264346539974213e-05
+            ]
+          },
+          "unpacked_loop": {
+            "median_seconds": 0.0025422777980566025,
+            "samples_seconds": [
+              0.002551702782511711,
+              0.0025422777980566025,
+              0.0025367755442857742,
+              0.002547222189605236,
+              0.002538423053920269
+            ]
+          },
+          "jk": {
+            "baseline": {
+              "samples_seconds": [
+                0.04062362480908632,
+                0.040347752161324024,
+                0.04032730404287577,
+                0.04041051957756281,
+                0.04030903149396181,
+                0.04038258455693722,
+                0.040372551418840885
+              ],
+              "contraction_sha256": "7ed3714af8dd405c0a2c1f40dcc2017eff4c84a9f236c4ec1b8e04711582c272",
+              "median_seconds": 0.040372551418840885
+            },
+            "current": {
+              "samples_seconds": [
+                0.03964957408607006,
+                0.039659254252910614,
+                0.0397066306322813,
+                0.039761719293892384,
+                0.039670695550739765,
+                0.0396380377933383,
+                0.039670598693192005
+              ],
+              "contraction_sha256": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+              "median_seconds": 0.039670598693192005
+            }
+          },
+          "baseline_current_j_error": 2.842170943040401e-14,
+          "baseline_current_k_error": 5.551115123125783e-17,
+          "speedup": 1.0176945332002096
+        },
+        {
+          "block_size": 256,
+          "packed_loop": {
+            "median_seconds": 7.64802098274231e-06,
+            "samples_seconds": [
+              1.025572419166565e-05,
+              8.240342140197754e-06,
+              7.599592208862305e-06,
+              7.64802098274231e-06,
+              7.487833499908447e-06
+            ]
+          },
+          "unpacked_loop": {
+            "median_seconds": 0.002756631001830101,
+            "samples_seconds": [
+              0.002744407393038273,
+              0.002756631001830101,
+              0.002753094770014286,
+              0.0027951588854193687,
+              0.0031086644157767296
+            ]
+          },
+          "jk": {
+            "baseline": {
+              "samples_seconds": [
+                0.04162897076457739,
+                0.041608299128711224,
+                0.041625658981502056,
+                0.041588987223804,
+                0.04161885939538479,
+                0.04160935524851084,
+                0.0416485071182251
+              ],
+              "contraction_sha256": "7ed3714af8dd405c0a2c1f40dcc2017eff4c84a9f236c4ec1b8e04711582c272",
+              "median_seconds": 0.04161885939538479
+            },
+            "current": {
+              "samples_seconds": [
+                0.04123237822204828,
+                0.04121269844472408,
+                0.04123613890260458,
+                0.041213931515812874,
+                0.041244618594646454,
+                0.04123964160680771,
+                0.0412258030846715
+              ],
+              "contraction_sha256": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+              "median_seconds": 0.04123237822204828
+            }
+          },
+          "baseline_current_j_error": 4.973799150320701e-14,
+          "baseline_current_k_error": 1.1102230246251565e-16,
+          "speedup": 1.009373244765441
+        },
+        {
+          "block_size": 512,
+          "packed_loop": {
+            "median_seconds": 5.424022674560547e-06,
+            "samples_seconds": [
+              6.0480087995529175e-06,
+              5.472451448440552e-06,
+              5.424022674560547e-06,
+              5.2480027079582214e-06,
+              5.21540641784668e-06
+            ]
+          },
+          "unpacked_loop": {
+            "median_seconds": 0.012189199216663837,
+            "samples_seconds": [
+              0.012289072386920452,
+              0.012651041150093079,
+              0.012189199216663837,
+              0.012134622782468796,
+              0.01206952054053545
+            ]
+          },
+          "jk": {
+            "baseline": {
+              "samples_seconds": [
+                0.06454773526638746,
+                0.0651443125680089,
+                0.0635400041937828,
+                0.06460162252187729,
+                0.06376270949840546,
+                0.06489306222647429,
+                0.06356302835047245
+              ],
+              "contraction_sha256": "7ed3714af8dd405c0a2c1f40dcc2017eff4c84a9f236c4ec1b8e04711582c272",
+              "median_seconds": 0.06454773526638746
+            },
+            "current": {
+              "samples_seconds": [
+                0.06374513916671276,
+                0.06420930102467537,
+                0.06237529776990414,
+                0.06317080277949572,
+                0.06241792161017656,
+                0.06235624011605978,
+                0.06294520199298859
+              ],
+              "contraction_sha256": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+              "median_seconds": 0.06294520199298859
+            }
+          },
+          "baseline_current_j_error": 6.750155989720952e-14,
+          "baseline_current_k_error": 1.1102230246251565e-16,
+          "speedup": 1.025459180726394
+        }
+      ],
+      "default_block_size": 256,
+      "j_cpu_max_error": 1.1408474165364169e-10,
+      "k_cpu_max_error": 4.492184402238308e-12
+    },
+    {
+      "requested_storage": "host",
+      "actual_storage": "host",
+      "setup_seconds": 0.26945197489112616,
+      "tensor_bytes": 164913408,
+      "naux": 1056,
+      "default_pool_live_bytes": 819712,
+      "default_pool_total_bytes": 24599552,
+      "device_free_bytes": 67165401088,
+      "measurements": [
+        {
+          "block_size": 128,
+          "packed_loop": {
+            "median_seconds": 0.0028362786397337914,
+            "samples_seconds": [
+              0.0028419438749551773,
+              0.002836550585925579,
+              0.002836199477314949,
+              0.0028354646638035774,
+              0.0028362786397337914
+            ]
+          },
+          "unpacked_loop": {
+            "median_seconds": 0.004905819892883301,
+            "samples_seconds": [
+              0.004905819892883301,
+              0.0049011483788490295,
+              0.0053861262276768684,
+              0.0052601248025894165,
+              0.004881196655333042
+            ]
+          },
+          "jk": {
+            "baseline": {
+              "samples_seconds": [
+                0.04036391153931618,
+                0.04028117563575506,
+                0.04028154443949461,
+                0.04027784802019596,
+                0.04028037656098604,
+                0.0403099600225687,
+                0.04040015209466219
+              ],
+              "contraction_sha256": "7ed3714af8dd405c0a2c1f40dcc2017eff4c84a9f236c4ec1b8e04711582c272",
+              "median_seconds": 0.04028154443949461
+            },
+            "current": {
+              "samples_seconds": [
+                0.037848818115890026,
+                0.037849921733140945,
+                0.03785419277846813,
+                0.0378336813300848,
+                0.037846081890165806,
+                0.03783465642482042,
+                0.03784500900655985
+              ],
+              "contraction_sha256": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+              "median_seconds": 0.037846081890165806
+            }
+          },
+          "baseline_current_j_error": 2.842170943040401e-14,
+          "baseline_current_k_error": 2.3592239273284576e-16,
+          "speedup": 1.06435177507666
+        },
+        {
+          "block_size": 256,
+          "packed_loop": {
+            "median_seconds": 0.002816806547343731,
+            "samples_seconds": [
+              0.0028293030336499214,
+              0.002817528322339058,
+              0.002815878950059414,
+              0.0028160391375422478,
+              0.002816806547343731
+            ]
+          },
+          "unpacked_loop": {
+            "median_seconds": 0.005178365856409073,
+            "samples_seconds": [
+              0.0051567647606134415,
+              0.005156844854354858,
+              0.005178365856409073,
+              0.0056340619921684265,
+              0.00548932608217001
+            ]
+          },
+          "jk": {
+            "baseline": {
+              "samples_seconds": [
+                0.04179207514971495,
+                0.04167492315173149,
+                0.04168001189827919,
+                0.04173604305833578,
+                0.041681211441755295,
+                0.041735163889825344,
+                0.04178554750978947
+              ],
+              "contraction_sha256": "7ed3714af8dd405c0a2c1f40dcc2017eff4c84a9f236c4ec1b8e04711582c272",
+              "median_seconds": 0.041735163889825344
+            },
+            "current": {
+              "samples_seconds": [
+                0.03914933372288942,
+                0.03937896527349949,
+                0.03912602085620165,
+                0.03922832477837801,
+                0.03924283757805824,
+                0.03913704492151737,
+                0.03914005309343338
+              ],
+              "contraction_sha256": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+              "median_seconds": 0.03914933372288942
+            }
+          },
+          "baseline_current_j_error": 4.618527782440651e-14,
+          "baseline_current_k_error": 1.1102230246251565e-16,
+          "speedup": 1.0660504259214012
+        },
+        {
+          "block_size": 512,
+          "packed_loop": {
+            "median_seconds": 0.0028071273118257523,
+            "samples_seconds": [
+              0.0028082141652703285,
+              0.0028057824820280075,
+              0.0028071273118257523,
+              0.002814311534166336,
+              0.0028059594333171844
+            ]
+          },
+          "unpacked_loop": {
+            "median_seconds": 0.014511125162243843,
+            "samples_seconds": [
+              0.014511125162243843,
+              0.014452660456299782,
+              0.015188279561698437,
+              0.015152695588767529,
+              0.01441362127661705
+            ]
+          },
+          "jk": {
+            "baseline": {
+              "samples_seconds": [
+                0.06285526603460312,
+                0.0646978784352541,
+                0.06333133205771446,
+                0.06475509516894817,
+                0.06290828995406628,
+                0.06516309641301632,
+                0.06433154083788395
+              ],
+              "contraction_sha256": "7ed3714af8dd405c0a2c1f40dcc2017eff4c84a9f236c4ec1b8e04711582c272",
+              "median_seconds": 0.06433154083788395
+            },
+            "current": {
+              "samples_seconds": [
+                0.06022292375564575,
+                0.06002940330654383,
+                0.06110116560012102,
+                0.061266190372407436,
+                0.06005085911601782,
+                0.06001573894172907,
+                0.06213891226798296
+              ],
+              "contraction_sha256": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+              "median_seconds": 0.06022292375564575
+            }
+          },
+          "baseline_current_j_error": 7.105427357601002e-14,
+          "baseline_current_k_error": 2.220446049250313e-16,
+          "speedup": 1.0682234741526149
+        }
+      ],
+      "default_block_size": 256,
+      "j_cpu_max_error": 1.1408296529680229e-10,
+      "k_cpu_max_error": 4.492184402238308e-12
+    }
+  ],
+  "note": "Shared GPU. Seven alternating paired warm J/K samples. Loop-only timings exclude contractions. Block sizes are temporary overrides. Default-pool live/total bytes exclude large allocations routed directly to CUDA and are not peak memory."
+}

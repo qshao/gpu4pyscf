@@ -1,0 +1,151 @@
+{
+  "status": "passed",
+  "case": "taxol_svp_b3lyp",
+  "sample_count": 22,
+  "variants": {
+    "128": {
+      "median_jk_seconds": 13.873715495690703,
+      "median_paired_normalized_seconds": 1.0073339925864337,
+      "paired_jk_speed_ratio": 0.9927194032561107,
+      "timing_samples_seconds": [
+        13.873715495690703,
+        13.873845787718892,
+        13.873688055202365
+      ],
+      "paired_control_seconds": [
+        13.771659038960934,
+        13.772835911251605,
+        13.776166076771915
+      ],
+      "paired_normalized_seconds": [
+        1.0074106145411417,
+        1.0073339925864337,
+        1.0070790362055
+      ],
+      "estimated_workspace_bytes": {
+        "dense_ao_unpack": 1291396096,
+        "occupied_transform": 259889152,
+        "sum": 1551285248
+      },
+      "blocks_per_call": 44,
+      "maximum_jk_error": {
+        "J": 1.2789769243681803e-13,
+        "K": 6.24389429049188e-13
+      }
+    },
+    "256": {
+      "median_jk_seconds": 13.772835911251605,
+      "median_paired_normalized_seconds": 1.0,
+      "paired_jk_speed_ratio": 1.0,
+      "timing_samples_seconds": [
+        13.771659038960934,
+        13.772835911251605,
+        13.776166076771915,
+        13.773386253975332,
+        13.773211701773107,
+        13.77239349577576,
+        13.788623187690973,
+        13.771918686106801,
+        13.771585081703961
+      ],
+      "paired_control_seconds": [],
+      "paired_normalized_seconds": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "estimated_workspace_bytes": {
+        "dense_ao_unpack": 2582792192,
+        "occupied_transform": 519778304,
+        "sum": 3102570496
+      },
+      "blocks_per_call": 22,
+      "maximum_jk_error": {
+        "J": 0.0,
+        "K": 2.220446049250313e-16
+      }
+    },
+    "512": {
+      "median_jk_seconds": 13.87940282560885,
+      "median_paired_normalized_seconds": 1.0076972045710921,
+      "paired_jk_speed_ratio": 0.9923615898345493,
+      "timing_samples_seconds": [
+        13.87940282560885,
+        13.878035087138414,
+        13.890370107255876
+      ],
+      "paired_control_seconds": [
+        13.773386253975332,
+        13.773211701773107,
+        13.77239349577576
+      ],
+      "paired_normalized_seconds": [
+        1.0076972045710921,
+        1.0076106711807684,
+        1.0085661661871848
+      ],
+      "estimated_workspace_bytes": {
+        "dense_ao_unpack": 5165584384,
+        "occupied_transform": 1039556608,
+        "sum": 6205140992
+      },
+      "blocks_per_call": 11,
+      "maximum_jk_error": {
+        "J": 5.684341886080802e-14,
+        "K": 1.6697754290362354e-12
+      }
+    },
+    "1024": {
+      "median_jk_seconds": 14.132802474312484,
+      "median_paired_normalized_seconds": 1.0262291806255777,
+      "paired_jk_speed_ratio": 0.974441205609074,
+      "timing_samples_seconds": [
+        14.179768920876086,
+        14.125829358585179,
+        14.132802474312484
+      ],
+      "paired_control_seconds": [
+        13.788623187690973,
+        13.771918686106801,
+        13.771585081703961
+      ],
+      "paired_normalized_seconds": [
+        1.0283672798843533,
+        1.0256979931805295,
+        1.0262291806255777
+      ],
+      "estimated_workspace_bytes": {
+        "dense_ao_unpack": 10331168768,
+        "occupied_transform": 2079113216,
+        "sum": 12410281984
+      },
+      "blocks_per_call": 6,
+      "maximum_jk_error": {
+        "J": 4.973799150320701e-14,
+        "K": 6.609823799408332e-12
+      }
+    }
+  },
+  "snapshot_cpu_comparison": {
+    "energy_error_hartree": 2.2246240405365825e-09,
+    "gradient_max_error": 6.979247402227884e-09,
+    "passed": true
+  },
+  "limitations": "Fixed-density J/K only: no SCF, forces or full-workflow gain is measured. Workspace is an estimate of dense AO unpack plus one occupied transform buffer, not measured total RAM; it excludes persistent CDERI, outputs, factors, allocator reservation and native-library workspaces. Three timing pairs do not establish a hardware-wide guarantee. The audit rechecks recorded finite full-matrix maximum errors; J/K matrices were not persisted for a separate numerical recomputation.",
+  "input_report": {
+    "path": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/resident_workspace_results/exchange_sweep.json",
+    "size_bytes": 125869,
+    "sha256": "b41ce24a8ba6105eb4e4224ebe229ed3ec04bc65c4932ca2fb1aa933a40df84e"
+  },
+  "validator": {
+    "path": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/summarize_resident_exchange_sweep.py",
+    "size_bytes": 11309,
+    "sha256": "d20d3df47175c4655b80def2fa1dc162d0bf9bee6aa709e680543f332e89321d"
+  }
+}

@@ -1,0 +1,532 @@
+{
+  "timestamp_utc": "2026-10-18T01:19:51.467025+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "tamoxifen_svp_b3lyp",
+  "mode": "gpu",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "driver_sha256": "8dd6028c6368d90ee0cf6e58e7c33ddf06db5885884575440fccfd4b9eb75ef7",
+  "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "note": "Level3 NWChem-pruned matched grid, not a grid-convergence study. FP64, full auxiliary/grid response. GPU-resident CDERI forced; experimental cache disabled. Initial single cold control establishes scaling, not repeated speedup. Profiles synchronize inclusive nested scopes; allocation run separate. CPU references are scientific oracles, not tuned CPU timing baselines.",
+  "cpu_reference_sha256": "009ed4c5c21445167398cc2c5ed2fc1e2ec60c675af19f5fab301d1f678ec443",
+  "result": {
+    "timestamp_utc": "2026-10-18T01:20:38.484370+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "B3LYP",
+    "settings": {
+      "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/057_Tamoxifen.xyz",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "grid_level": 3,
+      "grid_pruning": "nwchem",
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 4,
+      "max_cycle": 100
+    },
+    "converged": true,
+    "energy_hartree": -1137.1213013033262,
+    "scf_seconds": 32.18391933199018,
+    "iterations": 18,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 7.766437826678157,
+        "energy_hartree": -1136.9376700721555
+      },
+      {
+        "cycle": 1,
+        "seconds": 1.4362666215747595,
+        "energy_hartree": -1136.8720543295212
+      },
+      {
+        "cycle": 2,
+        "seconds": 1.435333764180541,
+        "energy_hartree": -1137.113843052393
+      },
+      {
+        "cycle": 3,
+        "seconds": 1.4359843246638775,
+        "energy_hartree": -1137.1204435882596
+      },
+      {
+        "cycle": 4,
+        "seconds": 1.4365841960534453,
+        "energy_hartree": -1137.1212034617192
+      },
+      {
+        "cycle": 5,
+        "seconds": 1.4361034696921706,
+        "energy_hartree": -1137.1212807238285
+      },
+      {
+        "cycle": 6,
+        "seconds": 1.435983369126916,
+        "energy_hartree": -1137.1213000075027
+      },
+      {
+        "cycle": 7,
+        "seconds": 1.4365893844515085,
+        "energy_hartree": -1137.121301228075
+      },
+      {
+        "cycle": 8,
+        "seconds": 1.4361208034679294,
+        "energy_hartree": -1137.1213012858784
+      },
+      {
+        "cycle": 9,
+        "seconds": 1.4380476409569383,
+        "energy_hartree": -1137.1213013009406
+      },
+      {
+        "cycle": 10,
+        "seconds": 1.4370751362293959,
+        "energy_hartree": -1137.121301303016
+      },
+      {
+        "cycle": 11,
+        "seconds": 1.4372146856039762,
+        "energy_hartree": -1137.121301303292
+      },
+      {
+        "cycle": 12,
+        "seconds": 1.4353324472904205,
+        "energy_hartree": -1137.1213013033216
+      },
+      {
+        "cycle": 13,
+        "seconds": 1.4363718898966908,
+        "energy_hartree": -1137.1213013033257
+      },
+      {
+        "cycle": 14,
+        "seconds": 1.436649663373828,
+        "energy_hartree": -1137.1213013033266
+      },
+      {
+        "cycle": 15,
+        "seconds": 1.4374272637069225,
+        "energy_hartree": -1137.1213013033266
+      },
+      {
+        "cycle": 16,
+        "seconds": 1.4351769275963306,
+        "energy_hartree": -1137.1213013033257
+      },
+      {
+        "cycle": 17,
+        "seconds": 1.4351154686883092,
+        "energy_hartree": -1137.1213013033262
+      }
+    ],
+    "df_build_calls_seconds": [
+      4.101741845719516
+    ],
+    "gradient_seconds": 14.689291233196855,
+    "gradient_hartree_per_bohr": [
+      [
+        0.021812109279214065,
+        0.0007685327534465713,
+        -0.0005028385000796498
+      ],
+      [
+        -0.022389950134604764,
+        -0.01388892895668059,
+        -4.291489698780848e-05
+      ],
+      [
+        -0.04453282267409131,
+        0.0033719162698808702,
+        2.1902823575670194e-05
+      ],
+      [
+        0.05466614965635186,
+        -0.0037579995366812113,
+        -0.00031881324890456475
+      ],
+      [
+        0.030670390036434902,
+        -0.003408599560306591,
+        0.009546721342916564
+      ],
+      [
+        0.00511242811066559,
+        -0.0035910735656585757,
+        1.961005278106054e-06
+      ],
+      [
+        0.08219520045603612,
+        -0.04863107991686677,
+        -7.69376487148414e-05
+      ],
+      [
+        0.0027643014205196437,
+        -0.0009565438999246112,
+        -0.0002492402712214459
+      ],
+      [
+        0.04545268153223092,
+        0.036599773953425285,
+        0.010497014202435095
+      ],
+      [
+        0.013440168464446955,
+        0.0013664257687580061,
+        -0.0005031255684566083
+      ],
+      [
+        -0.0018282597096530573,
+        -0.0030656434417895007,
+        4.7678473210048186e-05
+      ],
+      [
+        -0.0025253245529772705,
+        0.0033203261959244834,
+        0.00016803688605017408
+      ],
+      [
+        -0.003223028282407725,
+        -0.00031467754261910175,
+        1.0375770513919996e-05
+      ],
+      [
+        -0.06317031362322911,
+        0.008981703595304813,
+        0.0008019198143263684
+      ],
+      [
+        -0.010260474863196478,
+        -0.0034562942476465963,
+        0.0032108576769118713
+      ],
+      [
+        -0.022381306319259442,
+        -0.026676996736464176,
+        -0.022082694493883892
+      ],
+      [
+        0.0029964834770072057,
+        -0.005990225859641818,
+        0.008082197217449405
+      ],
+      [
+        0.0026990655719517642,
+        -0.0010418039289582792,
+        -0.004517249920033883
+      ],
+      [
+        -0.000812265710615101,
+        0.00015844647125184963,
+        -0.013790643599014274
+      ],
+      [
+        0.0015285368305309327,
+        -0.001700666043463861,
+        0.005355039745784218
+      ],
+      [
+        0.020309081749451785,
+        -0.02513295423469586,
+        0.0059315258756548195
+      ],
+      [
+        0.0009341298374377083,
+        0.0014123589426442429,
+        -0.0049021339430792565
+      ],
+      [
+        -0.0010488025242567645,
+        0.00039193368009171614,
+        0.005283020573706221
+      ],
+      [
+        0.05080905353527454,
+        -0.00857319165365028,
+        0.0005074659490309531
+      ],
+      [
+        -0.0063488918131975325,
+        -0.012658100054491861,
+        -0.0001922754932811993
+      ],
+      [
+        -0.03172101134798044,
+        0.009761106492144123,
+        -1.7493044797110835e-05
+      ],
+      [
+        -0.0008541038187654948,
+        -0.006663979088513905,
+        -1.1067464786043008e-05
+      ],
+      [
+        -0.0029577286304009465,
+        0.005112419186140027,
+        -0.0002636066728773992
+      ],
+      [
+        -0.004383157241715452,
+        -0.0008478502709898805,
+        -1.9313190030510394e-05
+      ],
+      [
+        -0.05510647365429133,
+        -0.03673819060092187,
+        5.308701648813058e-05
+      ],
+      [
+        -0.011571063208160481,
+        0.0015813809794962275,
+        4.774315254165579e-05
+      ],
+      [
+        0.0022528285528564673,
+        0.0035582452567517464,
+        -3.053845337840262e-05
+      ],
+      [
+        0.002072220703262184,
+        -0.0034118288028870403,
+        1.119384242978614e-05
+      ],
+      [
+        0.003871643564576477,
+        -0.00035441156295909493,
+        -1.0610984454386373e-05
+      ],
+      [
+        0.097976581675141,
+        0.013721118393569043,
+        -0.0001802006468880485
+      ],
+      [
+        0.0029725707085044295,
+        0.009366545199763543,
+        0.019963785190393324
+      ],
+      [
+        0.0030217685804740935,
+        0.009409801567885179,
+        -0.019962293989001623
+      ],
+      [
+        -0.09020995766083009,
+        0.02238090895274425,
+        -6.478531363603157e-06
+      ],
+      [
+        -0.0177685024028581,
+        0.0166477482053351,
+        -0.024059826097988513
+      ],
+      [
+        -0.017993184410295404,
+        0.016756793035711315,
+        0.024144925882247037
+      ],
+      [
+        -0.015608383684009852,
+        0.021055674001936975,
+        -1.5383402153026915e-06
+      ],
+      [
+        -0.02134343953074236,
+        0.02870419688438286,
+        -0.0026344751111730957
+      ],
+      [
+        0.03471997382704339,
+        -0.013255109960797817,
+        0.002676350043779696
+      ],
+      [
+        -0.017013692901880928,
+        -0.0028169011829369817,
+        0.017018435410520727
+      ],
+      [
+        -0.013406310062211269,
+        0.004530174224279426,
+        -0.01776457582465829
+      ],
+      [
+        -0.05619157818823162,
+        -0.016307809813209673,
+        -0.004085244783454067
+      ],
+      [
+        0.010842089440860736,
+        -0.0047529700880416526,
+        0.017657116320666688
+      ],
+      [
+        0.018829078761503304,
+        0.002919006714260708,
+        -0.019782598852567723
+      ],
+      [
+        0.03187692688355703,
+        -0.008160182259564941,
+        0.04906361805339543
+      ],
+      [
+        0.011464207320440178,
+        0.009689563077338703,
+        -0.021629366944757145
+      ],
+      [
+        -0.017189899224056227,
+        0.011200730053140928,
+        0.0034184407108886483
+      ],
+      [
+        -0.007024291783754633,
+        -0.01801654650986695,
+        -0.005925477959598524
+      ],
+      [
+        -0.02872873202034487,
+        0.054578267170011685,
+        0.0022200196523693427
+      ],
+      [
+        -0.014527296220127606,
+        -0.014778971487987569,
+        -0.0005872052224268065
+      ],
+      [
+        0.011035339097267505,
+        -0.0015212300976306103,
+        0.017653840234760576
+      ],
+      [
+        0.0176555434459853,
+        -0.003972883242833625,
+        -0.020307523467713917
+      ],
+      [
+        0.01813969368164914,
+        -0.002901452879680022,
+        -0.01893596970181477
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 8.094502845779061e-11,
+    "gradient_max_error": 6.842778579319031e-07,
+    "passed": true
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "status": "passed",
+  "raw_sha256": "0c0a8e3548886faa72342089a3b036480ee15f641cb055fccc5f2f8246f2d392",
+  "verification": {
+    "pytest_passed": 1,
+    "seconds": 399.49,
+    "timed_gpu_calculations": 8,
+    "warmups": 2
+  },
+  "cases": [
+    {
+      "method": "PBE",
+      "case": "tamoxifen_svp",
+      "control_median_seconds": 18.7252149078995,
+      "control_range_seconds": [
+        18.697726452723145,
+        18.734139238484204
+      ],
+      "instrumented_over_control_ratio": 1.0134690885755298,
+      "dominant_helpers": [
+        {
+          "label": "scf.xc.density_mo",
+          "seconds": 4.642522285692394,
+          "calls": 1617,
+          "combined_wall_fraction": 0.24463392278691182
+        },
+        {
+          "label": "gradient.xc.gradient_matrix",
+          "seconds": 1.850599450059235,
+          "calls": 85,
+          "combined_wall_fraction": 0.09751582762898317
+        },
+        {
+          "label": "gradient.jk.derivative3c",
+          "seconds": 1.0395060358569026,
+          "calls": 2,
+          "combined_wall_fraction": 0.05477592215250288
+        },
+        {
+          "label": "scf.xc.ao",
+          "seconds": 0.7482054904103279,
+          "calls": 3234,
+          "combined_wall_fraction": 0.039426077659094165
+        },
+        {
+          "label": "gradient.xc.grid_weight_derivative",
+          "seconds": 0.5450007114559412,
+          "calls": 1,
+          "combined_wall_fraction": 0.028718367680434367
+        },
+        {
+          "label": "gradient.xc.density_dm",
+          "seconds": 0.3693925002589822,
+          "calls": 85,
+          "combined_wall_fraction": 0.01946483631643845
+        },
+        {
+          "label": "scf.xc.scale_ao",
+          "seconds": 0.3428842928260565,
+          "calls": 1617,
+          "combined_wall_fraction": 0.018068007960794136
+        },
+        {
+          "label": "gradient.xc.ao",
+          "seconds": 0.12456355802714825,
+          "calls": 170,
+          "combined_wall_fraction": 0.0065637750260000485
+        },
+        {
+          "label": "scf.xc.sparse_scatter",
+          "seconds": 0.03561376500874758,
+          "calls": 1617,
+          "combined_wall_fraction": 0.0018766382804777004
+        },
+        {
+          "label": "scf.xc.functional",
+          "seconds": 0.03374428581446409,
+          "calls": 21,
+          "combined_wall_fraction": 0.00177812760013578
+        },
+        {
+          "label": "gradient.jk.metric_factorization",
+          "seconds": 0.03049415722489357,
+          "calls": 1,
+          "combined_wall_fraction": 0.0016068647267449745
+        },
+        {
+          "label": "gradient.xc.scale_ao",
+          "seconds": 0.02554741408675909,
+          "calls": 85,
+          "combined_wall_fraction": 0.0013462001344326097
+        }
+      ],
+      "scf_xc_density_fraction": 0.5233500727370587,
+      "scf_xc_functional_fraction": 0.0038039826948996595
+    },
+    {
+      "method": "B3LYP",
+      "case": "tamoxifen_svp",
+      "control_median_seconds": 60.642618673853576,
+      "control_range_seconds": [
+        60.563605319708586,
+        60.868148426525295
+      ],
+      "instrumented_over_control_ratio": 0.9915724990091371,
+      "dominant_helpers": [
+        {
+          "label": "scf.jk.contract:Lij,njk->nikL",
+          "seconds": 16.45698412694037,
+          "calls": 209,
+          "combined_wall_fraction": 0.2736830053603093
+        },
+        {
+          "label": "scf.jk.contract:nikL,njkL->nij",
+          "seconds": 12.00476691313088,
+          "calls": 209,
+          "combined_wall_fraction": 0.19964172427299365
+        },
+        {
+          "label": "scf.xc.density_mo",
+          "seconds": 4.209520694799721,
+          "calls": 1463,
+          "combined_wall_fraction": 0.07000518843505715
+        },
+        {
+          "label": "gradient.jk.derivative3c",
+          "seconds": 3.866363884881139,
+          "calls": 12,
+          "combined_wall_fraction": 0.0642984206382388
+        },
+        {
+          "label": "scf.jk.contract:nL,Lp->np",
+          "seconds": 2.380333620123565,
+          "calls": 209,
+          "combined_wall_fraction": 0.0395854339951119
+        },
+        {
+          "label": "scf.jk.contract:np,Lp->nL",
+          "seconds": 2.2551940185949206,
+          "calls": 209,
+          "combined_wall_fraction": 0.037504336877208895
+        },
+        {
+          "label": "gradient.xc.gradient_matrix",
+          "seconds": 1.8478554682806134,
+          "calls": 85,
+          "combined_wall_fraction": 0.030730213636327004
+        },
+        {
+          "label": "gradient.jk.contract:pqr,pi->iqr",
+          "seconds": 1.0235547544434667,
+          "calls": 11,
+          "combined_wall_fraction": 0.01702192450245756
+        },
+        {
+          "label": "gradient.jk.contract:iqr,pi->pqr",
+          "seconds": 0.9992335960268974,
+          "calls": 11,
+          "combined_wall_fraction": 0.01661745867336349
+        },
+        {
+          "label": "scf.jk.block_fetch_including_unpack",
+          "seconds": 0.9802486933767796,
+          "calls": 228,
+          "combined_wall_fraction": 0.016301735866944087
+        },
+        {
+          "label": "scf.xc.ao",
+          "seconds": 0.679335180670023,
+          "calls": 2926,
+          "combined_wall_fraction": 0.011297482725793132
+        },
+        {
+          "label": "gradient.jk.integral3c",
+          "seconds": 0.5890637133270502,
+          "calls": 11,
+          "combined_wall_fraction": 0.009796249796956187
+        }
+      ],
+      "scf_xc_density_fraction": 0.5326160089138812,
+      "scf_xc_functional_fraction": 0.0047105487834735935,
+      "scf_exchange_contractions_seconds": 28.46175104007125,
+      "scf_exchange_contractions_fraction_of_jk": 0.7407049653503172,
+      "contraction_shapes": {
+        "scf.jk.contract:Lij,njk->nikL": [
+          [
+            [
+              256,
+              537,
+              537
+            ],
+            [
+              1,
+              537,
+              169
+            ]
+          ],
+          [
+            [
+              66,
+              537,
+              537
+            ],
+            [
+              1,
+              537,
+              169
+            ]
+          ],
+          [
+            [
+              256,
+              537,
+              537
+            ],
+            [
+              1,
+              537,
+              100
+            ]
+          ],
+          [
+            [
+              66,
+              537,
+              537
+            ],
+            [
+              1,
+              537,
+              100
+            ]
+          ]
+        ],
+        "scf.jk.contract:nikL,njkL->nij": [
+          [
+            [
+              1,
+              537,
+              169,
+              256
+            ],
+            [
+              1,
+              537,
+              169,
+              256
+            ]
+          ],
+          [
+            [
+              1,
+              537,
+              169,
+              66
+            ],
+            [
+              1,
+              537,
+              169,
+              66
+            ]
+          ],
+          [
+            [
+              1,
+              537,
+              100,
+              256
+            ],
+            [
+              1,
+              537,
+              100,
+              256
+            ]
+          ],
+          [
+            [
+              1,
+              537,
+              100,
+              66
+            ],
+            [
+              1,
+              537,
+              100,
+              66
+            ]
+          ]
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Synchronized inclusive wall timings, not kernel-only times; one instrumented run per case.",
+    "DF block retrieval includes unpacking; do not add its nested unpack time.",
+    "GGA gradient_matrix includes nested scale_ao; do not sum those labels.",
+    "SCF potential AO.dot products are not timed separately; scale/scatter do not cover all assembly.",
+    "PBE Coulomb gradient contract_dm bypasses the hybrid integral evaluator, so missing integral3c means unmeasured."
+  ],
+  "max_energy_error_hartree": 7.73070496506989e-11,
+  "max_gradient_error_hartree_per_bohr": 7.03089426679071e-07
+}

@@ -1,0 +1,76 @@
+{
+  "status": "passed",
+  "decision": "Keep benchmark-only: Vitamin C regression; small tamoxifen gain does not justify a global change.",
+  "workflow_sha256": "d0ddbdbb67f57162000b8a1c741a7b6bbe06324f824e579b203bf79a92fcd9a9",
+  "component_sha256": "ae83e15066a27b2a80b7a3c51605eadab2fcd5ffa0652d7e9560c82d53634b5b",
+  "verification": {
+    "component_pytest_passed": 1,
+    "component_seconds": 1.27,
+    "workflow_pytest_passed": 1,
+    "workflow_seconds": 269.08,
+    "timed_workflows": 20,
+    "warmups": 4
+  },
+  "cases": [
+    {
+      "case": "vitamin_svp",
+      "method": "PBE",
+      "combined_medians": {
+        "original": 3.333958664909005,
+        "candidate": 3.430517223663628
+      },
+      "scf_medians": {
+        "original": 2.8090295856818557,
+        "candidate": 2.9047344317659736
+      },
+      "gradient_medians": {
+        "original": 0.5248053092509508,
+        "candidate": 0.5249606743454933
+      },
+      "median_time_ratio": 0.9718530610811209,
+      "candidate_time_change_percent": 2.8962134345255297,
+      "paired_ratio_range": [
+        0.970994990670816,
+        0.9746321576324353
+      ],
+      "paired_ratios": [
+        0.970994990670816,
+        0.9726122496388528,
+        0.9718530610811209,
+        0.9746321576324353,
+        0.9715823871543706
+      ]
+    },
+    {
+      "case": "tamoxifen_svp",
+      "method": "PBE",
+      "combined_medians": {
+        "original": 18.740343619138002,
+        "candidate": 18.587308800779283
+      },
+      "scf_medians": {
+        "original": 13.782481546513736,
+        "candidate": 13.64448415208608
+      },
+      "gradient_medians": {
+        "original": 4.945255408063531,
+        "candidate": 4.943842524662614
+      },
+      "median_time_ratio": 1.0082332961699276,
+      "candidate_time_change_percent": -0.8166062558342735,
+      "paired_ratio_range": [
+        1.0069880813065857,
+        1.0095709687588723
+      ],
+      "paired_ratios": [
+        1.0095709687588723,
+        1.0082332961699276,
+        1.00714369278413,
+        1.0076903648234152,
+        1.0069880813065857
+      ]
+    }
+  ],
+  "max_energy_error_hartree": 2.864908310584724e-11,
+  "max_gradient_error_hartree_per_bohr": 3.247147706275655e-08
+}

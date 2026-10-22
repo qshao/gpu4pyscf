@@ -1,0 +1,201 @@
+{
+  "status": "passed",
+  "capacity": {
+    "vitamin_svp": {
+      "resident": {
+        "peak_tracked_cupy_bytes": 407750180,
+        "host_address_space_peak_rss_bytes": 1378279424,
+        "tensor_bytes": 164913408,
+        "iterations": 18
+      },
+      "host": {
+        "peak_tracked_cupy_bytes": 387537860,
+        "host_address_space_peak_rss_bytes": 1541246976,
+        "tensor_bytes": 164913408,
+        "iterations": 18,
+        "h2d_bytes_inferred": 3133354752
+      },
+      "disk": {
+        "peak_tracked_cupy_bytes": 322794788,
+        "host_address_space_peak_rss_bytes": 1546444800,
+        "tensor_bytes": 164913408,
+        "iterations": 18,
+        "stats": {
+          "read_bytes": 3133354752,
+          "write_bytes": 164913408,
+          "h2d_bytes": 3133354752,
+          "h2d_calls": 95,
+          "d2h_bytes": 164913408,
+          "d2h_calls": 8,
+          "peak_host_buffer_bytes": 79958016,
+          "peak_device_buffer_bytes": 86791200,
+          "cache_hit_bytes": 0,
+          "cache_device_bytes": 0
+        },
+        "staging_budget_bytes": 134217728,
+        "cache_budget_bytes": 0
+      },
+      "cached": {
+        "peak_tracked_cupy_bytes": 389790860,
+        "host_address_space_peak_rss_bytes": 1546498048,
+        "tensor_bytes": 164913408,
+        "iterations": 18,
+        "stats": {
+          "read_bytes": 2373753600,
+          "write_bytes": 164913408,
+          "h2d_bytes": 2373753600,
+          "h2d_calls": 76,
+          "d2h_bytes": 164913408,
+          "d2h_calls": 8,
+          "peak_host_buffer_bytes": 79958016,
+          "peak_device_buffer_bytes": 86791200,
+          "cache_hit_bytes": 759601152,
+          "cache_device_bytes": 66996072
+        },
+        "staging_budget_bytes": 134217728,
+        "cache_budget_bytes": 67108864
+      },
+      "tensor_passes": {
+        "disk": 19.0,
+        "cached": 19.0
+      },
+      "used_cache_bytes_per_pass": 39979008.0,
+      "cache_h2d_reduction_percent": 24.242424242424242,
+      "cache_h2d_per_pass_reduction_percent": 24.242424242424242,
+      "disk_vs_resident_cupy_reduction_percent": 20.835157448612286,
+      "disk_vs_host_rss_reduction_percent": -0.3372479609653478
+    },
+    "tamoxifen_svp": {
+      "resident": {
+        "peak_tracked_cupy_bytes": 4326738768,
+        "host_address_space_peak_rss_bytes": 1391431680,
+        "tensor_bytes": 1946223136,
+        "iterations": 18
+      },
+      "host": {
+        "peak_tracked_cupy_bytes": 4326738768,
+        "host_address_space_peak_rss_bytes": 3337707520,
+        "tensor_bytes": 1946223136,
+        "iterations": 18,
+        "h2d_bytes_inferred": 36978239584
+      },
+      "disk": {
+        "peak_tracked_cupy_bytes": 1385145740,
+        "host_address_space_peak_rss_bytes": 2465464320,
+        "tensor_bytes": 1946223136,
+        "iterations": 18,
+        "stats": {
+          "read_bytes": 36978239584,
+          "write_bytes": 1946223136,
+          "h2d_bytes": 36978239584,
+          "h2d_calls": 209,
+          "d2h_bytes": 1946223136,
+          "d2h_calls": 10,
+          "peak_host_buffer_bytes": 379461632,
+          "peak_device_buffer_bytes": 995840640,
+          "cache_hit_bytes": 0,
+          "cache_device_bytes": 0
+        },
+        "staging_budget_bytes": 1073741824,
+        "cache_budget_bytes": 0
+      },
+      "cached": {
+        "peak_tracked_cupy_bytes": 1787582588,
+        "host_address_space_peak_rss_bytes": 2466050048,
+        "tensor_bytes": 1946223136,
+        "iterations": 18,
+        "stats": {
+          "read_bytes": 29768468576,
+          "write_bytes": 1946223136,
+          "h2d_bytes": 29768468576,
+          "h2d_calls": 171,
+          "d2h_bytes": 1946223136,
+          "d2h_calls": 10,
+          "peak_host_buffer_bytes": 379461632,
+          "peak_device_buffer_bytes": 995840640,
+          "cache_hit_bytes": 7209771008,
+          "cache_device_bytes": 402436848
+        },
+        "staging_budget_bytes": 1073741824,
+        "cache_budget_bytes": 402653184
+      },
+      "tensor_passes": {
+        "disk": 19.0,
+        "cached": 19.0
+      },
+      "used_cache_bytes_per_pass": 379461632.0,
+      "cache_h2d_reduction_percent": 19.497334348819496,
+      "cache_h2d_per_pass_reduction_percent": 19.497334348819496,
+      "disk_vs_resident_cupy_reduction_percent": 67.98637925071051,
+      "disk_vs_host_rss_reduction_percent": 26.133002810264216
+    }
+  },
+  "accuracy": {
+    "records": 24,
+    "max_energy_hartree": 7.639755494892597e-11,
+    "max_gradient_hartree_per_bohr": 6.737933322398248e-07
+  },
+  "speed_case": "vitamin_svp",
+  "speed_rounds": 3,
+  "speed_medians_seconds": {
+    "resident": 3.4079872677102685,
+    "host": 3.5488884514197707,
+    "disk": 3.692943465895951,
+    "cached": 4.744245026260614
+  },
+  "cache_performance_status": "not_qualified_iteration_regression",
+  "speed_iteration_counts": [
+    {
+      "resident": 18,
+      "host": 18,
+      "disk": 18,
+      "cached": 29
+    },
+    {
+      "resident": 18,
+      "host": 18,
+      "disk": 18,
+      "cached": 29
+    },
+    {
+      "resident": 18,
+      "host": 18,
+      "disk": 18,
+      "cached": 29
+    }
+  ],
+  "speed_transfer_totals": {
+    "disk": {
+      "median_h2d_bytes": 3133354752,
+      "median_iterations": 18
+    },
+    "cached": {
+      "median_h2d_bytes": 3748032000,
+      "median_iterations": 29
+    }
+  },
+  "production_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/disk.py": "b2525ab181c46043548b0150847a6a1dd1744bb3e915fa7e41e2442167921cd1",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642"
+  },
+  "raw_report_hashes": {
+    "disk_df_memory_vitamin_svp_resident.json": "1a98ac21ec0b5a2b367ff7ebf88197cc294a8ca64a41930f1d51c3570a252d1f",
+    "disk_df_memory_vitamin_svp_host.json": "538b1c0916c4b308ac2b7bfcd01d099398ed677042574504a6c0fd830cf1a1d4",
+    "disk_df_memory_vitamin_svp_disk.json": "1f86b509a5f98f3994b5ff8304e18339ee43bb8ad87ed06361be5f2904a8fcdd",
+    "disk_df_memory_vitamin_svp_cached.json": "316e9cb02fdec9d79c01ca4e292d7a15828d16a26a15da0989fc78f518580b75",
+    "disk_df_memory_tamoxifen_svp_resident.json": "bb6ca63f1471d45ef791d896ad408ec8045750cf5a3bfba00a07d4a9e7fcd9c9",
+    "disk_df_memory_tamoxifen_svp_host.json": "00a2b4ca78e37a5893a9979bca4c4e7b4344bbd2475e87a254db3cdb1e635e1d",
+    "disk_df_memory_tamoxifen_svp_disk.json": "63bb206d15e2bab664fd1efe03474b382b5bedb1a6c230cfc6313ae5d0ab728c",
+    "disk_df_memory_tamoxifen_svp_cached.json": "5063e4467c29f0b3c6964ffcc4c31db9449872d60ec5fd00ff0bfda520e9f7f9",
+    "disk_df_speed_results.json": "30a0700183f969e195d1932d2a874b1550fac32361030b3ba27e9c15626fccba",
+    "disk_df_repeated_jk.json": "3d8e8bc9769597c15afe1f9c48455fedaddffdf63736a1908df512ba67191cb2"
+  },
+  "summary_script_sha256": "3027cdf1b13ed66acd799d195f550efe9b26bc99430aa6d05010e9767b0b4b51",
+  "diagnostic_benchmark_sha256": "186a03543b8b62dbad362fc2439f64995fa561d832253a03944777f8fc0549b6",
+  "note": "Single shared GB10/ext4 NVMe, gridlevel1. Logical H2D bytes, not physical bus traffic. Small3round timings are separate from instrumented fresh-process memory runs. Native/library memory, OS cache and persistent metric/factor tensors are excluded from staging budget; cache has separate explicit budget. Do not add GPU and host figures on unified memory. Largecase uses1GiB staging,128MiB default insufficient for its995840640B indivisible construction workspace. Disk mode is capacity feature, resident default retained."
+}

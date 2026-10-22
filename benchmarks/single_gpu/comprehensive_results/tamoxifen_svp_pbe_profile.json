@@ -1,0 +1,674 @@
+{
+  "timestamp_utc": "2026-10-18T01:20:48.632049+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "tamoxifen_svp_pbe",
+  "mode": "profile",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "driver_sha256": "8dd6028c6368d90ee0cf6e58e7c33ddf06db5885884575440fccfd4b9eb75ef7",
+  "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "note": "Level3 NWChem-pruned matched grid, not a grid-convergence study. FP64, full auxiliary/grid response. GPU-resident CDERI forced; experimental cache disabled. Initial single cold control establishes scaling, not repeated speedup. Profiles synchronize inclusive nested scopes; allocation run separate. CPU references are scientific oracles, not tuned CPU timing baselines.",
+  "cpu_reference_sha256": "44a32114af67e411586aae483b16c7170da00b5918ebb88e74cb19b3f530bd85",
+  "coarse": {
+    "scf.veff": {
+      "calls": 21,
+      "seconds": 18.308801617473364
+    },
+    "scf.jk": {
+      "calls": 21,
+      "seconds": 4.412670631892979
+    },
+    "scf.xc_quadrature": {
+      "calls": 21,
+      "seconds": 13.68190561980009
+    },
+    "scf.diagonalization": {
+      "calls": 20,
+      "seconds": 0.3772699451074004
+    },
+    "scf.df_build_nested_in_jk": {
+      "calls": 1,
+      "seconds": 0.025108041241765022
+    },
+    "gradient.one_electron": {
+      "calls": 1,
+      "seconds": 0.07146909274160862
+    },
+    "gradient.two_electron": {
+      "calls": 1,
+      "seconds": 7.042819865047932
+    },
+    "gradient.df_jk_total": {
+      "calls": 1,
+      "seconds": 1.2720317421481013
+    },
+    "gradient.df_jk_core_nested": {
+      "calls": 1,
+      "seconds": 1.2515452150255442
+    },
+    "gradient.xc_full_response": {
+      "calls": 1,
+      "seconds": 5.7706883465871215
+    }
+  },
+  "fine": {
+    "timings": {
+      "scf.xc.ao": {
+        "calls": 6972,
+        "seconds": 1.534072931855917,
+        "shapes": []
+      },
+      "scf.xc.density_dm": {
+        "calls": 3486,
+        "seconds": 5.218744196929038,
+        "shapes": []
+      },
+      "scf.xc.density_mo": {
+        "calls": 3486,
+        "seconds": 5.518837177194655,
+        "shapes": []
+      },
+      "scf.xc.functional": {
+        "calls": 21,
+        "seconds": 0.0754048740491271,
+        "shapes": []
+      },
+      "scf.xc.scale_ao": {
+        "calls": 3486,
+        "seconds": 0.6719528930261731,
+        "shapes": []
+      },
+      "scf.xc.sparse_scatter": {
+        "calls": 3486,
+        "seconds": 0.0738975927233696,
+        "shapes": []
+      },
+      "gradient.jk.derivative3c": {
+        "calls": 2,
+        "seconds": 1.044385357759893,
+        "shapes": []
+      },
+      "gradient.xc.ao": {
+        "calls": 398,
+        "seconds": 0.2391916625201702,
+        "shapes": []
+      },
+      "gradient.xc.density_dm": {
+        "calls": 199,
+        "seconds": 0.629846922121942,
+        "shapes": []
+      },
+      "gradient.xc.functional": {
+        "calls": 1,
+        "seconds": 0.005862575955688953,
+        "shapes": []
+      },
+      "gradient.xc.grid_weight_derivative": {
+        "calls": 1,
+        "seconds": 1.2699624923989177,
+        "shapes": []
+      },
+      "gradient.xc.scale_ao": {
+        "calls": 199,
+        "seconds": 0.04048352222889662,
+        "shapes": []
+      },
+      "gradient.xc.gradient_matrix": {
+        "calls": 199,
+        "seconds": 2.4410211807116866,
+        "shapes": []
+      },
+      "gradient.jk.metric_integrals": {
+        "calls": 1,
+        "seconds": 0.011414109729230404,
+        "shapes": []
+      },
+      "gradient.jk.metric_factorization": {
+        "calls": 1,
+        "seconds": 0.030666150152683258,
+        "shapes": []
+      },
+      "gradient.jk.metric_solve": {
+        "calls": 1,
+        "seconds": 0.0013274801895022392,
+        "shapes": []
+      },
+      "gradient.jk.metric_derivative": {
+        "calls": 1,
+        "seconds": 0.01182817667722702,
+        "shapes": []
+      }
+    },
+    "bindings_restored": true
+  },
+  "result": {
+    "timestamp_utc": "2026-10-18T01:21:14.849460+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "PBE",
+    "settings": {
+      "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/057_Tamoxifen.xyz",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "grid_level": 3,
+      "grid_pruning": "nwchem",
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 4,
+      "max_cycle": 100
+    },
+    "converged": true,
+    "energy_hartree": -1135.6601916018626,
+    "scf_seconds": 18.914385298267007,
+    "iterations": 20,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 2.1771181728690863,
+        "energy_hartree": -1135.3792471003871
+      },
+      {
+        "cycle": 1,
+        "seconds": 0.8808011580258608,
+        "energy_hartree": -1135.092160936752
+      },
+      {
+        "cycle": 2,
+        "seconds": 0.8762892279773951,
+        "energy_hartree": -1135.6390203854558
+      },
+      {
+        "cycle": 3,
+        "seconds": 0.8753536539152265,
+        "energy_hartree": -1135.6580611944746
+      },
+      {
+        "cycle": 4,
+        "seconds": 0.8764527942985296,
+        "energy_hartree": -1135.6596097368665
+      },
+      {
+        "cycle": 5,
+        "seconds": 0.8806324638426304,
+        "energy_hartree": -1135.6601072927997
+      },
+      {
+        "cycle": 6,
+        "seconds": 0.8792471429333091,
+        "energy_hartree": -1135.6601788032067
+      },
+      {
+        "cycle": 7,
+        "seconds": 0.8833425249904394,
+        "energy_hartree": -1135.6601907261925
+      },
+      {
+        "cycle": 8,
+        "seconds": 0.8826532708480954,
+        "energy_hartree": -1135.6601913857148
+      },
+      {
+        "cycle": 9,
+        "seconds": 0.8756656963378191,
+        "energy_hartree": -1135.660191581262
+      },
+      {
+        "cycle": 10,
+        "seconds": 0.8799054939299822,
+        "energy_hartree": -1135.660191598839
+      },
+      {
+        "cycle": 11,
+        "seconds": 0.8760042870417237,
+        "energy_hartree": -1135.660191600754
+      },
+      {
+        "cycle": 12,
+        "seconds": 0.8786204438656569,
+        "energy_hartree": -1135.660191601813
+      },
+      {
+        "cycle": 13,
+        "seconds": 0.8791173258796334,
+        "energy_hartree": -1135.6601916018471
+      },
+      {
+        "cycle": 14,
+        "seconds": 0.8791554216295481,
+        "energy_hartree": -1135.6601916018603
+      },
+      {
+        "cycle": 15,
+        "seconds": 0.8791628582403064,
+        "energy_hartree": -1135.6601916018622
+      },
+      {
+        "cycle": 16,
+        "seconds": 0.8786610644310713,
+        "energy_hartree": -1135.6601916018612
+      },
+      {
+        "cycle": 17,
+        "seconds": 0.8800728777423501,
+        "energy_hartree": -1135.6601916018617
+      },
+      {
+        "cycle": 18,
+        "seconds": 0.8787966296076775,
+        "energy_hartree": -1135.6601916018644
+      },
+      {
+        "cycle": 19,
+        "seconds": 0.9171572849154472,
+        "energy_hartree": -1135.6601916018626
+      }
+    ],
+    "df_build_calls_seconds": [
+      0.025112520903348923
+    ],
+    "gradient_seconds": 7.115542179904878,
+    "gradient_hartree_per_bohr": [
+      [
+        0.026868972275000624,
+        0.01008909459039753,
+        -0.0005608107829537246
+      ],
+      [
+        -0.027654750515407667,
+        -0.022691191426302826,
+        -0.00011947289763387936
+      ],
+      [
+        -0.048989187827940484,
+        0.00320177888824702,
+        -7.86247774092752e-06
+      ],
+      [
+        0.05368070835392169,
+        -0.004737437960056212,
+        -0.0003237338548383595
+      ],
+      [
+        0.02989111138225553,
+        -0.0024690994310399006,
+        0.009077266455698452
+      ],
+      [
+        0.005126427241261666,
+        -0.002840520927351875,
+        6.340680519675845e-06
+      ],
+      [
+        0.07306046481095085,
+        -0.03925740865464755,
+        -6.698186528056836e-05
+      ],
+      [
+        0.0026573263822040616,
+        -0.001800084996434137,
+        -0.00031004319055197294
+      ],
+      [
+        0.03742457749490247,
+        0.02716556946764881,
+        0.009666323202078275
+      ],
+      [
+        0.013990680561420277,
+        0.0014037179074177786,
+        -0.0005031455439906962
+      ],
+      [
+        0.0008184080433513152,
+        0.001525149330404485,
+        5.330826247576005e-05
+      ],
+      [
+        8.925343254029272e-05,
+        -0.00138176195134454,
+        0.00014659047359642102
+      ],
+      [
+        0.0021077299775438263,
+        -0.00034160596963178635,
+        1.985453239103721e-05
+      ],
+      [
+        -0.061821419957103,
+        0.01507166283080763,
+        0.0014261476933153383
+      ],
+      [
+        -0.010414719821250085,
+        -0.0035628301995469513,
+        0.005070754786579812
+      ],
+      [
+        -0.020040231855495694,
+        -0.024659576771557834,
+        -0.022892260909003426
+      ],
+      [
+        0.0024186967657765512,
+        -0.005755997399259805,
+        0.008776039515801415
+      ],
+      [
+        0.00043039212084761136,
+        0.000934428521670666,
+        -2.8059997521090452e-05
+      ],
+      [
+        -0.0006132985303661798,
+        0.00014092658666342572,
+        -0.014476718975709346
+      ],
+      [
+        0.0008966788431882672,
+        0.0012465673869052063,
+        0.0007168057789064264
+      ],
+      [
+        0.02044063234788407,
+        -0.02793772147897222,
+        0.0055967095486386675
+      ],
+      [
+        0.0012927647730976155,
+        -0.0014769918864696585,
+        -0.0003627030897979111
+      ],
+      [
+        0.0010799450304856961,
+        -0.0014428227994931486,
+        0.000730747083625527
+      ],
+      [
+        0.055114073265461805,
+        -0.00834080408427501,
+        0.0005530461576437086
+      ],
+      [
+        -0.006179137570010873,
+        -0.013284334259382469,
+        -0.000171857108150833
+      ],
+      [
+        -0.03134222886592486,
+        0.008762411073718113,
+        -2.690422931237585e-05
+      ],
+      [
+        -0.0009246898772659051,
+        -0.007122548110376492,
+        8.172439833323275e-06
+      ],
+      [
+        0.0004074291615355219,
+        8.920592260386329e-05,
+        -0.00022755565449457393
+      ],
+      [
+        -0.004359439376713681,
+        -4.7773389892924456e-05,
+        -1.8478217924408277e-05
+      ],
+      [
+        -0.047272764860637584,
+        -0.028273585125767386,
+        5.1293717415596546e-05
+      ],
+      [
+        -0.012070734098815095,
+        0.0015012261770241397,
+        4.2461860095828474e-05
+      ],
+      [
+        -0.0003627979387936797,
+        -0.001014498584431145,
+        -2.8683370554430723e-05
+      ],
+      [
+        -0.0005522467874203851,
+        0.0011747516733557894,
+        9.372140865169902e-06
+      ],
+      [
+        -0.0014176181829888002,
+        -0.0003598719755863039,
+        -9.539962622237379e-06
+      ],
+      [
+        0.10023057502886701,
+        0.012096509626507768,
+        -0.00018367102554206483
+      ],
+      [
+        -0.0016392416188650838,
+        0.008984995171546162,
+        0.02470199644099047
+      ],
+      [
+        -0.0015960264874783636,
+        0.009017497662097362,
+        -0.024693553012190783
+      ],
+      [
+        -0.08976676504805128,
+        0.01831270389068429,
+        -7.16759284338786e-06
+      ],
+      [
+        -0.012669043622528409,
+        0.015217036143779339,
+        -0.028470093763216298
+      ],
+      [
+        -0.012877251761606479,
+        0.01532627914800333,
+        0.028557305066525096
+      ],
+      [
+        -0.01807356989398301,
+        0.02522127201666402,
+        -4.29949512630555e-07
+      ],
+      [
+        -0.014506650200655002,
+        0.027180455639352452,
+        -0.002058804833838135
+      ],
+      [
+        0.03757256058998548,
+        -0.013090909616145119,
+        0.0029669686043599652
+      ],
+      [
+        -0.020927233648149857,
+        -0.003378984325297929,
+        0.021485554433331888
+      ],
+      [
+        -0.016764100886527356,
+        0.004863908327631561,
+        -0.02295201290401616
+      ],
+      [
+        -0.05981813071454578,
+        -0.01623262338980691,
+        -0.004664296632968856
+      ],
+      [
+        0.013630836480212682,
+        -0.005529913060120184,
+        0.022068087475656917
+      ],
+      [
+        0.022321547374925643,
+        0.003293177704837724,
+        -0.02437178083147895
+      ],
+      [
+        0.03395705836818763,
+        -0.008457919176501072,
+        0.051437664298628505
+      ],
+      [
+        0.014502488063408703,
+        0.012239404493400996,
+        -0.025446543969960267
+      ],
+      [
+        -0.021210634599353462,
+        0.014153725242252113,
+        0.004620804007100243
+      ],
+      [
+        -0.008344268919386222,
+        -0.02248691467061814,
+        -0.007556864478772685
+      ],
+      [
+        -0.029924642241264454,
+        0.057403620233626995,
+        0.0019495458688661427
+      ],
+      [
+        -0.01785325703535301,
+        -0.01844442523133516,
+        -0.0009537116760157949
+      ],
+      [
+        0.01381792881653321,
+        -0.0019664162418193687,
+        0.02173181768403909
+      ],
+      [
+        0.020924423922000335,
+        -0.004077798923570297,
+        -0.02457093516568376
+      ],
+      [
+        0.015232391836798254,
+        -0.003152703639738519,
+        -0.01540630024527534
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 2.9103830456733704e-11,
+    "gradient_max_error": 1.8525491363163837e-08,
+    "passed": true
+  }
+}

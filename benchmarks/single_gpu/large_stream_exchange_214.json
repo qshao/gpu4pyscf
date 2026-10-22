@@ -1,0 +1,122 @@
+{
+  "timestamp_utc": "2026-10-18T01:48:39.650049+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "nao": 1542,
+  "nocc": 300,
+  "naux": 214,
+  "benchmark_sha256": "92539a439ad030c0972513b96c0369476b30549312ac099d3cf28e7cf156091d",
+  "candidate_sha256": "29302eed62ba6f76a9d818c280543570e2b517b413152cd5f927b88c006fa4c2",
+  "production_sha256": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+  "max_error": 0.0,
+  "samples": {
+    "current": [
+      {
+        "wall_seconds": 1.047099788673222,
+        "event_seconds": 1.04707666015625
+      },
+      {
+        "wall_seconds": 1.044915652833879,
+        "event_seconds": 1.0448961181640626
+      },
+      {
+        "wall_seconds": 1.0435643522068858,
+        "event_seconds": 1.0435440673828125
+      },
+      {
+        "wall_seconds": 1.0470436783507466,
+        "event_seconds": 1.04702294921875
+      },
+      {
+        "wall_seconds": 1.0518210297450423,
+        "event_seconds": 1.0518009033203124
+      },
+      {
+        "wall_seconds": 1.0479138540104032,
+        "event_seconds": 1.0478934326171876
+      },
+      {
+        "wall_seconds": 1.054726135917008,
+        "event_seconds": 1.054705810546875
+      }
+    ],
+    "strided": [
+      {
+        "wall_seconds": 0.9135689744725823,
+        "event_seconds": 0.9135542602539063
+      },
+      {
+        "wall_seconds": 0.9134400887414813,
+        "event_seconds": 0.9134253540039062
+      },
+      {
+        "wall_seconds": 0.9135677833110094,
+        "event_seconds": 0.9135527954101562
+      },
+      {
+        "wall_seconds": 0.9134457474574447,
+        "event_seconds": 0.91343115234375
+      },
+      {
+        "wall_seconds": 0.9137318274006248,
+        "event_seconds": 0.913715087890625
+      },
+      {
+        "wall_seconds": 0.9134779321029782,
+        "event_seconds": 0.9134606323242187
+      },
+      {
+        "wall_seconds": 0.9135547485202551,
+        "event_seconds": 0.913537841796875
+      }
+    ]
+  },
+  "medians": {
+    "current": 1.047099788673222,
+    "strided": 0.9135547485202551
+  },
+  "component_ratio": 1.1461817590782366,
+  "note": "Component only, no concurrent CPU-reference jobs. Seven alternating samples after two warmups, padded256-row storage. naux214 models a large-system disk staging cap. naux256 is a same-algorithm control. No whole-workflow speed or reduced-RAM claim. Do not change production thresholds without molecular qualification."
+}

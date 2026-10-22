@@ -1,0 +1,543 @@
+{
+  "timestamp_utc": "2026-10-18T00:48:27.755739+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "mode": "resident",
+  "case": "tamoxifen_svp",
+  "scratch_filesystem": "Filesystem     Type  1K-blocks      Used  Available Use% Mounted on\n/dev/nvme0n1p3 ext4 3830651816 857196000 2778794596  24% /",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/disk.py": "b2525ab181c46043548b0150847a6a1dd1744bb3e915fa7e41e2442167921cd1",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6"
+  },
+  "benchmark_sha256": "0418e08f22ab2fd18d337c64e1a19e9f346e39778a58466f51e9346d4166cddc",
+  "reference_sha256": "178ad5330e2af8e7c2ff176c53e93deb84aaa27e33c49c5832cd7c892dddc5f3",
+  "memory_profiler_sha256": "d01d26e7571383beb9542c6c0676872c039928aa7d60cd44e6182f613ad2583b",
+  "storage_buffer_bytes": 1073741824,
+  "cache_budget_bytes": 0,
+  "note": "Fresh process, cold run, regression grid level1/shared GB10. Instrumented time diagnostic only. Counts are logical array-copy bytes, not physical bus traffic on unified memory. Host-mode streaming bytes inferred from complete loop yields; disk records actual set/get requests. OS file cache and native allocations not included in staging caps.",
+  "result": {
+    "timestamp_utc": "2026-10-18T00:49:07.410317+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "B3LYP",
+    "settings": {
+      "atom": "/home/qshao/gpu4pyscf/examples/Tamoxifen.xyz",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "grid_level": 1,
+      "grid_pruning": false,
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 4
+    },
+    "converged": true,
+    "energy_hartree": -1137.1213036437302,
+    "scf_seconds": 26.849341781809926,
+    "iterations": 18,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 7.529696258716285,
+        "energy_hartree": -1136.937680429035
+      },
+      {
+        "cycle": 1,
+        "seconds": 1.1362847248092294,
+        "energy_hartree": -1136.8720573681953
+      },
+      {
+        "cycle": 2,
+        "seconds": 1.1349284779280424,
+        "energy_hartree": -1137.1138460961647
+      },
+      {
+        "cycle": 3,
+        "seconds": 1.1330775590613484,
+        "energy_hartree": -1137.120445785862
+      },
+      {
+        "cycle": 4,
+        "seconds": 1.1340664746239781,
+        "energy_hartree": -1137.1212057480975
+      },
+      {
+        "cycle": 5,
+        "seconds": 1.1335342796519399,
+        "energy_hartree": -1137.1212830721897
+      },
+      {
+        "cycle": 6,
+        "seconds": 1.1351615823805332,
+        "energy_hartree": -1137.1213023517485
+      },
+      {
+        "cycle": 7,
+        "seconds": 1.1336560724303126,
+        "energy_hartree": -1137.1213035688124
+      },
+      {
+        "cycle": 8,
+        "seconds": 1.134836588986218,
+        "energy_hartree": -1137.1213036263607
+      },
+      {
+        "cycle": 9,
+        "seconds": 1.1331326281651855,
+        "energy_hartree": -1137.1213036413465
+      },
+      {
+        "cycle": 10,
+        "seconds": 1.1339336093515158,
+        "energy_hartree": -1137.1213036434197
+      },
+      {
+        "cycle": 11,
+        "seconds": 1.1337068872526288,
+        "energy_hartree": -1137.1213036436952
+      },
+      {
+        "cycle": 12,
+        "seconds": 1.1704529551789165,
+        "energy_hartree": -1137.1213036437257
+      },
+      {
+        "cycle": 13,
+        "seconds": 1.1351527338847518,
+        "energy_hartree": -1137.1213036437293
+      },
+      {
+        "cycle": 14,
+        "seconds": 1.1353080607950687,
+        "energy_hartree": -1137.1213036437312
+      },
+      {
+        "cycle": 15,
+        "seconds": 1.1338458312675357,
+        "energy_hartree": -1137.1213036437307
+      },
+      {
+        "cycle": 16,
+        "seconds": 1.133771238848567,
+        "energy_hartree": -1137.1213036437312
+      },
+      {
+        "cycle": 17,
+        "seconds": 1.1346323136240244,
+        "energy_hartree": -1137.1213036437302
+      }
+    ],
+    "df_build_calls_seconds": [
+      4.195245552808046
+    ],
+    "gradient_seconds": 12.639341853559017,
+    "gradient_hartree_per_bohr": [
+      [
+        0.0221341199742755,
+        0.0006188122029220366,
+        -0.0004983358939709137
+      ],
+      [
+        -0.02269710449979323,
+        -0.013976524668099177,
+        -3.4082393851886383e-06
+      ],
+      [
+        -0.0446844441923262,
+        0.0034385043758042855,
+        1.923935001027499e-05
+      ],
+      [
+        0.054444216487520514,
+        -0.0036840835260090188,
+        -0.0003198615402298238
+      ],
+      [
+        0.030409620238391,
+        -0.0034773689688827325,
+        0.00955499476628563
+      ],
+      [
+        0.005061078307599942,
+        -0.003552642293477959,
+        3.1780641563255996e-06
+      ],
+      [
+        0.08228750423891273,
+        -0.04881948731773145,
+        -7.672043070829082e-05
+      ],
+      [
+        0.0026624536710961877,
+        -0.0009806828725240635,
+        -0.000258017333714361
+      ],
+      [
+        0.04563260473268671,
+        0.036581396371188846,
+        0.010418047550283638
+      ],
+      [
+        0.013454243849643888,
+        0.0013605472402602459,
+        -0.0005032908679188652
+      ],
+      [
+        -0.0018226159714447299,
+        -0.0030754972341200393,
+        4.762089351516806e-05
+      ],
+      [
+        -0.0024437344808156958,
+        0.003358553525115493,
+        0.00018523485970958764
+      ],
+      [
+        -0.0032259485187005055,
+        -0.0003138621540257902,
+        1.0264029267098573e-05
+      ],
+      [
+        -0.06328541310994673,
+        0.009119163552928411,
+        0.0008016794899648461
+      ],
+      [
+        -0.010110282334105047,
+        -0.003477602744479391,
+        0.0030547565140430777
+      ],
+      [
+        -0.022419825115747416,
+        -0.026847239623285724,
+        -0.022038062763492405
+      ],
+      [
+        0.003014923268813141,
+        -0.005983297139949606,
+        0.008160952736643523
+      ],
+      [
+        0.002720262896735215,
+        -0.0010830070907820455,
+        -0.0044960727692293645
+      ],
+      [
+        -0.0009365976456949809,
+        0.00028272572489296266,
+        -0.013664378512588726
+      ],
+      [
+        0.001583744709233878,
+        -0.0016933310239005683,
+        0.005358349878107127
+      ],
+      [
+        0.020403390162774926,
+        -0.025162940726382033,
+        0.005912658305345264
+      ],
+      [
+        0.000905389588965827,
+        0.0014020779423842278,
+        -0.004921885096259793
+      ],
+      [
+        -0.0010577897094137256,
+        0.00040976222056721134,
+        0.0052554283463019935
+      ],
+      [
+        0.0507944618933851,
+        -0.008563313208404921,
+        0.0004991430216795857
+      ],
+      [
+        -0.006484243987411986,
+        -0.012737813822063515,
+        -0.0002082396591675667
+      ],
+      [
+        -0.031527783985749736,
+        0.009760346515960805,
+        -1.7724511811367805e-05
+      ],
+      [
+        -0.0008336497142575894,
+        -0.006705875190978539,
+        -1.1082791487940225e-05
+      ],
+      [
+        -0.002805425912698112,
+        0.005123406833410282,
+        -0.00025752848712168666
+      ],
+      [
+        -0.004330293132886354,
+        -0.000801070772682877,
+        -1.9792112088764732e-05
+      ],
+      [
+        -0.05533526014459078,
+        -0.03685497038560692,
+        5.3529082831764094e-05
+      ],
+      [
+        -0.011575081381691277,
+        0.001576761462062315,
+        4.699656015249784e-05
+      ],
+      [
+        0.0022624356681082425,
+        0.0035630830762674037,
+        -2.9410317108053904e-05
+      ],
+      [
+        0.0020687458902346467,
+        -0.003422114695661893,
+        1.1266302679010121e-05
+      ],
+      [
+        0.0038745044341319534,
+        -0.000353935465728511,
+        -1.0618769361048393e-05
+      ],
+      [
+        0.0979118399363994,
+        0.013985386881266493,
+        -0.00018388330134835873
+      ],
+      [
+        0.0030554687710300232,
+        0.009424297127723191,
+        0.019903189247007624
+      ],
+      [
+        0.0031098211830113964,
+        0.009469811367976533,
+        -0.019901907670587526
+      ],
+      [
+        -0.08990677152653662,
+        0.022605955566138647,
+        -3.425780692865865e-06
+      ],
+      [
+        -0.017768791864600675,
+        0.016659973697499497,
+        -0.024177666829201527
+      ],
+      [
+        -0.017995280551130532,
+        0.016766451908980073,
+        0.024262216351721655
+      ],
+      [
+        -0.015647007178947292,
+        0.021020254754045897,
+        -1.6442050527918847e-06
+      ],
+      [
+        -0.02142682469305157,
+        0.028765239947073695,
+        -0.0027310368950557162
+      ],
+      [
+        0.034823399970432156,
+        -0.013203169797049163,
+        0.0027584304236349944
+      ],
+      [
+        -0.016967157538233968,
+        -0.002948522210184046,
+        0.017088539058464303
+      ],
+      [
+        -0.013500158291323672,
+        0.004448850414395744,
+        -0.017761558047286297
+      ],
+      [
+        -0.05601682291213006,
+        -0.016169270450226314,
+        -0.004200262783687014
+      ],
+      [
+        0.010910560874102249,
+        -0.004785154148411297,
+        0.017620478896317238
+      ],
+      [
+        0.01855449891654004,
+        0.002830042306320224,
+        -0.019841172463806345
+      ],
+      [
+        0.03167999052019255,
+        -0.008078862754211436,
+        0.04902109831936663
+      ],
+      [
+        0.011458480061017906,
+        0.009688364267477545,
+        -0.021697286668684868
+      ],
+      [
+        -0.017092700651741843,
+        0.011170353388440857,
+        0.0034937491384121055
+      ],
+      [
+        -0.007023162498603908,
+        -0.018015524251792314,
+        -0.0059279691364606535
+      ],
+      [
+        -0.0286202637404549,
+        0.05446429812207576,
+        0.002152073796916898
+      ],
+      [
+        -0.0145189043695656,
+        -0.014785228507108172,
+        -0.000624708784842859
+      ],
+      [
+        0.011089594899662769,
+        -0.0015045803167557104,
+        0.017666610599728738
+      ],
+      [
+        0.017493786613992812,
+        -0.00390750262307149,
+        -0.020375521842223687
+      ],
+      [
+        0.018258197893435746,
+        -0.0029299448090593927,
+        -0.018597251076633015
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 7.639755494892597e-11,
+    "gradient_max_error": 6.436433075407422e-07,
+    "passed": true
+  },
+  "memory": {
+    "peak_pool_live_bytes": 328802304,
+    "peak_pool_reserved_bytes": 938451456,
+    "allocation_observations": 25843,
+    "initial_pool_live_bytes": 0,
+    "peak_tracked_live_bytes": 4326738768,
+    "peak_live_bytes": 4326738768,
+    "host_peak_rss_bytes": 3955601408,
+    "host_address_space_peak_rss_bytes": 1391431680,
+    "observed_thread_count": 2,
+    "note": "Wraps existing CuPy allocator and retains original memory owners across threads, including pool-bypassing allocations. peak_tracked_live_bytes is peak requested live storage allocated inside the context. peak_live_bytes adds the fixed initial_pool_live_bytes offset and can overcount preexisting pool storage later freed. Native/preexisting nonpool storage is excluded. Pool reserved and process RSS are separate; VmHWM is current address-space RSS high-water. On unified-memory GB10 do not sum metrics. Fresh process per variant; timing is diagnostic only."
+  },
+  "cderi_released_by_gradient": true,
+  "storage": [
+    {
+      "shape": [
+        2626,
+        92642
+      ],
+      "nbytes": 1946223136,
+      "stats": null
+    }
+  ],
+  "host_streamed_bytes_inferred": 0
+}

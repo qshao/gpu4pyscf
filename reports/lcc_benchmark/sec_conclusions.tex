@@ -1,0 +1,11 @@
+\section{Conclusions}
+\label{sec:conclusions}
+
+\begin{enumerate}[itemsep=2pt]
+\item \textbf{The new GPU code is numerically equivalent to the original.} Across all qualified results, and across all job types and cards, the deviations from CPU PySCF are within the declared gates and not systematically different between the two code versions. The failures that remain are either the original code's own (Taxol gradients with hybrid functionals) or common to both versions and the shared native stack (wB97M-V, periodic MgO).
+\item \textbf{Speed depends on the contraction engine.} With cuTENSOR the new code is no faster than the original (median ratio 1.00); without it, which is the case on the Pascal cards and on installations without a working cuTENSOR, it is faster by 1.2--1.8$\times$ for intermediate-size hybrid-functional calculations and by up to 2.4$\times$. The original code is the one that suffers from the loss of cuTENSOR.
+\item \textbf{Memory is the main gain.} A median 2.1$\times$ and up to 4.8$\times$ less GPU memory, plus a disk tier and a bounded build workspace, extend the reachable system size: valinomycin (1542 basis functions) on 12 and 16\,GB cards, 3336 functions on the 80\,GB A100. The price of the host tier is 20--30\% of the run time and of the disk tier a factor of three to six.
+\item \textbf{The next limit is the gradient.} A tensor of size $N_\mathrm{aux}N_\mathrm{occ}^2$ (97\,GB for a 50-residue glycine chain) caps the system size on every card regardless of where the fitted integrals live; moving it to host memory in blocks is the most valuable next step.
+\item \textbf{The exchange build is near the hardware ceiling.} The exchange matrix products run at 85--90\% of the cuBLAS double-precision rate; the SCF-cycle count, starting guess, gradient workspace budget and start-up cost offer little. Remaining speed work should target the XC quadrature, which is most of the SCF time for mid-size systems on the A100.
+\item \textbf{The CPU comparison must use a tuned baseline.} Using all 48 cores with default BLAS threading made CPU calculations slower than 24 threads with one BLAS thread in 120 of 127 cases (median 2.0$\times$ for the 65 cases above 20\,s; up to 33$\times$ for the benzene HF Hessian); GPU speed-ups over the CPU should be quoted against the better of the two.
+\end{enumerate}

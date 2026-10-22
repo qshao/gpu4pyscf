@@ -1,0 +1,62 @@
+{
+  "status": "passed",
+  "scope": "Taxol force accuracy correction only; original eight-case scaling matrix remains partial",
+  "baseline_jk_error": 2.4780882310171393e-05,
+  "factored_jk_error": 1.8214159069884772e-09,
+  "cpu_state_effect": 3.7196588170695932e-09,
+  "metric": {
+    "shape": [
+      5598,
+      5598
+    ],
+    "max_cpu_gpu_difference": 3.2791547255328624e-11,
+    "condition_estimate_1norm": 341499546333.2813
+  },
+  "workflows": {
+    "resident": {
+      "status": "passed",
+      "comparison": {
+        "energy_error_hartree": 2.2246240405365825e-09,
+        "gradient_max_error": 6.979274047580475e-09,
+        "passed": true
+      },
+      "iterations": 3,
+      "scf_seconds": 147.36981406249106,
+      "gradient_seconds": 134.8574670655653
+    },
+    "disk": {
+      "status": "passed",
+      "comparison": {
+        "energy_error_hartree": 2.2228050511330366e-09,
+        "gradient_max_error": 6.995362511474923e-09,
+        "passed": true
+      },
+      "iterations": 3,
+      "scf_seconds": 160.33965108636767,
+      "gradient_seconds": 135.81996037624776
+    }
+  },
+  "report_hashes": {
+    "comprehensive_results/taxol_svp_b3lyp_seeded_cpu.json": "10c21e5c5149b37796ce85e783fac711b4c5dda22cce4e2cdf1984a4278ba58c",
+    "comprehensive_results/taxol_svp_b3lyp_capacity_disk_packed.json": "8f52369371bba8336ac794c52babb30771bcec70d36b1ff9b0c56262996018f8",
+    "accuracy_results/taxol_cpu_fixed_components.json": "7e96aff2957c79cb98894402efab5865c912b07d5df434e54a9946435b8fda28",
+    "comprehensive_results/taxol_fixed_orbital_jk_diagnostic.json": "ba38ef6eef635fc94ffb726738130f862cd7debb1a8d9536630ceac5ecb445d0",
+    "accuracy_results/taxol_factored_metric.json": "07fd08c8456df8a3b993cd96f2ab3b73cc15033bdb16248e1f4c415fec655df9",
+    "accuracy_results/taxol_resident_acceptance.json": "0e369cbec963399f4e592b32660552eb8439223c0b3889d9ffd651560a0ac713",
+    "accuracy_results/taxol_disk_acceptance.json": "9f7dda0a28f27fb056816227ea734f5872f44d3028abde8f83e853bbb54bd21a"
+  },
+  "production_sources": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "e5cc64cf60706a8ae89fec55b2b2906e15b21dbfc438c02069e11b59e6d9c4a5",
+    "gpu4pyscf/df/grad/uhf.py": "bac79c8f90d6588ff1e0a2664301d13e279a0804fcaafc7b1797792f6514ec99",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "validator_sha256": "1b2a1fa33b940e0b3b6eeb5e9d4172917bc23b69a4226ae505d252674a815f6b",
+  "storage_comparison": {
+    "energy_error_hartree": 1.8189894035458565e-12,
+    "gradient_max_error": 9.7925512143604e-10
+  }
+}

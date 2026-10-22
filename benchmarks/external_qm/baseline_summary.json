@@ -1,0 +1,68 @@
+{
+  "recorded_utc": "2026-10-17T11:35:22.049754+00:00",
+  "status": "incomplete",
+  "reports": {
+    "pbe_df_charge0_results.json": {
+      "status": "failed",
+      "finite_difference_error": 7.739541167062214e-06,
+      "cpu_gpu_energy_error": 1.9753088054130785e-12,
+      "cpu_gpu_gradient_max_error": 6.983897904433434e-10
+    },
+    "pbe_df_charge1_results.json": {
+      "status": "failed",
+      "finite_difference_error": 9.437337185946859e-06,
+      "cpu_gpu_energy_error": 2.1600499167107046e-12,
+      "cpu_gpu_gradient_max_error": 2.151737454880731e-09
+    },
+    "pbe_direct_charge0_results.json": {
+      "status": "passed",
+      "finite_difference_error": 5.7228486838312165e-08,
+      "cpu_gpu_energy_error": 6.110667527536862e-12,
+      "cpu_gpu_gradient_max_error": 7.026961235112594e-10
+    },
+    "pbe_direct_charge1_results.json": {
+      "status": "passed",
+      "finite_difference_error": 5.2276359685521356e-08,
+      "cpu_gpu_energy_error": 6.778577699151356e-12,
+      "cpu_gpu_gradient_max_error": 2.158742962166116e-09
+    }
+  },
+  "cuest": {
+    "version_requested": "0.2.2",
+    "binary_available": false,
+    "sample_revision": "58c811d2d3bccdcea6fcd8a2c45fddd19ca2fb00",
+    "python": "3.12.3",
+    "download_result": "Package download failed; initial index DNS failure, later no matching distribution. No runtime qualification."
+  },
+  "skala": {
+    "source_tag": "v2026.9",
+    "source_revision": "c0487c9a241f652e3bcee9042677da835dde3dda",
+    "neural_checkpoint_available": false,
+    "model_metadata_revision": "99b5ed87e5f69d9216e1f9e30148b922eaea1241",
+    "download_error": "curl exit 6: Could not resolve host huggingface.co; cloned files are LFS pointers"
+  },
+  "mako": {
+    "artifact": "https://doi.org/10.5281/zenodo.15269220",
+    "available": false,
+    "download_error": "Browser access failed; curl exit6: Could not resolve host zenodo.org",
+    "license_verified": false
+  },
+  "tests": {
+    "external_suite": {
+      "passed": 8,
+      "failed": 2,
+      "failure": "DF gradient finite-difference consistency"
+    },
+    "upstream_numint": {
+      "passed": 23,
+      "failed": 1,
+      "failure": "Sparse index hard-coded fingerprint",
+      "baseline_reproduction": "Same observed110.33487367511532 vs expected103.60117204957997 with HEAD block loop"
+    }
+  },
+  "files_sha256": {
+    "benchmarks/external_qm/test_grid_order.py": "a875c798b9c64bffd4482edd1e650369b8e2aab5adf2237fd3fc6228b834a2e1",
+    "benchmarks/external_qm/test_preflight.py": "6dcab5083ad85279eb1b494f28a611f6003604bc15a4d089bf79659a815876ce",
+    "benchmarks/external_qm/test_skala_pbe.py": "1fe331e7f5881ee092c2461b566ea542f4938eefefc4cd993840a48001369a46"
+  }
+}

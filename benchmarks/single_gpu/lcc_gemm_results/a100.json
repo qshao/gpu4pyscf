@@ -1,0 +1,67 @@
+{
+  "gpu": "a100",
+  "device": "NVIDIA A100 80GB PCIe",
+  "nao": 1123,
+  "nocc": 226,
+  "naux": 5598,
+  "free_bytes": 84530692096,
+  "blocks": [
+    {
+      "nL": 128,
+      "transform_cutensor_s": 0.004706209525465965,
+      "transform_gemm_s": 0.004823535680770874,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.004124783910810947,
+      "gram_syrk_s": 0.002889367751777172,
+      "transform_cutensor_tflops": 15.50374649262472,
+      "transform_gemm_tflops": 15.126638269697482,
+      "gram_cutensor_tflops": 17.68913984385064,
+      "gram_syrk_tflops": 25.25254162580097,
+      "K_per_cycle_cutensor_s": 0.3862179785646731,
+      "K_per_cycle_gemm_s": 0.33731901105784345
+    },
+    {
+      "nL": 256,
+      "transform_cutensor_s": 0.010137530975043774,
+      "transform_gemm_s": 0.010271619074046612,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.008930644951760769,
+      "gram_syrk_s": 0.006857478991150856,
+      "transform_cutensor_tflops": 14.39480275890056,
+      "transform_gemm_tflops": 14.20688966325834,
+      "gram_cutensor_tflops": 16.34011425112459,
+      "gram_syrk_tflops": 21.280088358463885,
+      "K_per_cycle_cutensor_s": 0.4169673782744212,
+      "K_per_cycle_gemm_s": 0.37456519909756025
+    },
+    {
+      "nL": 512,
+      "transform_cutensor_s": 0.02067834883928299,
+      "transform_gemm_s": 0.020491535775363445,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.017754873260855675,
+      "gram_syrk_s": 0.015529334545135498,
+      "transform_cutensor_tflops": 14.114062973033775,
+      "transform_gemm_tflops": 14.242735190541058,
+      "gram_cutensor_tflops": 16.43805131177458,
+      "gram_syrk_tflops": 18.793819970052905,
+      "K_per_cycle_cutensor_s": 0.420213236946438,
+      "K_per_cycle_gemm_s": 0.39383756260576774
+    },
+    {
+      "nL": 1024,
+      "transform_cutensor_s": 0.04157677572220564,
+      "transform_gemm_s": 0.041042069904506207,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.03615598473697901,
+      "gram_syrk_s": 0.034089719876646996,
+      "transform_cutensor_tflops": 14.03935310645667,
+      "transform_gemm_tflops": 14.222261127426997,
+      "gram_cutensor_tflops": 16.14424388212007,
+      "gram_syrk_tflops": 17.122787676289136,
+      "K_per_cycle_cutensor_s": 0.4249492119633942,
+      "K_per_cycle_gemm_s": 0.41073023358876526
+    }
+  ],
+  "dgemm_ceiling_tflops": 16.300748496545744
+}

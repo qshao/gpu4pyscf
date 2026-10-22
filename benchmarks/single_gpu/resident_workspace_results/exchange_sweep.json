@@ -1,0 +1,3030 @@
+{
+  "timestamp_utc": "2026-10-18T17:08:11.664183+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "taxol_svp_b3lyp",
+  "method": "B3LYP",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/113_Taxol.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "algorithm_sources": {
+    "__config__.py": "280c054ceefd986dbcba95b7d62e59c0f9c3f718ee05ec3534ae79543a773ce4",
+    "__init__.py": "3fd60bfb141d3315d7a2536dfa47df904b6d4a5ba1679f3ec4df85fa6c9c41a0",
+    "_patch_pyscf.py": "92d3b245b3d536b2c8abf8bb5068b9db394861b09baefa17e5a0a0407303b7fa",
+    "cc/__init__.py": "5867682ad376be02188457fd199f047a2592bbfe6f9ab322f66244b9d61a15e3",
+    "cc/ccsd_incore.py": "be2a4cc1fe4f2eed7662af5e4b61dec086a6c5fb04ac5ed1a6b56e9ed68801ca",
+    "cc/tests/test_ccsd.py": "89bd14976f2991b02877619237e1af2bc6e5443641840eeaaad062a4abc07a36",
+    "df/__init__.py": "79b4752db781df098db5c0874800bdde0507f0546929812826384fc57f4400ba",
+    "df/df.py": "7626ddc5fcc4253a1f4aafbe68cde109d533f67e93e96d6f34dd036b5b42e376",
+    "df/df_jk.py": "e606c35fbe189990e84adc2193baf58831dce406853d87ddd231da199ade0637",
+    "df/disk.py": "b2525ab181c46043548b0150847a6a1dd1744bb3e915fa7e41e2442167921cd1",
+    "df/grad/__init__.py": "9dbcf29c278071be17d6688174a007ac056764aa3d91cf7d57fce758d4f61da4",
+    "df/grad/rhf.py": "e5cc64cf60706a8ae89fec55b2b2906e15b21dbfc438c02069e11b59e6d9c4a5",
+    "df/grad/rks.py": "a69ccfdee0ca4beaa66fd96d2fef4c15f81a181551e3465cb4aa1058a482c1bb",
+    "df/grad/tdrhf.py": "c70aeb7e3b0a248989636cc8c7a1bb59bf89fbf4905839a030f5743cef064567",
+    "df/grad/tdrks.py": "c9e7521e1b2a1d75f4a312845104d0edde470ec23ba3e6024fe3c74b2b0fe514",
+    "df/grad/tdrks_ris.py": "b38102e984b6ff1d856079a52f5fe935c07ec691c0e4df8bf4fe9d4ede6fc1b3",
+    "df/grad/tduhf.py": "0e6a0ecb4515a81f82c72880460e2b6140bb2304b79abf496896c2ebb51378be",
+    "df/grad/tduks.py": "6e6859f70e7a5200fbc0c9b13b359d07447422f7d93dc8d33bfaad24c26aa4f9",
+    "df/grad/tduks_sf.py": "08a657104dceab6424cde5635fb1dfc1f92329c401bacd7f7e5382619aeb0ee9",
+    "df/grad/ucdft.py": "32077700198b8cb01bc962d1f4f8cedb9d396da57572ea3c7794baedc88d2586",
+    "df/grad/uhf.py": "bac79c8f90d6588ff1e0a2664301d13e279a0804fcaafc7b1797792f6514ec99",
+    "df/grad/uks.py": "d5c32cfd4f166c53c4eccf6d5a557c8fb6a7441534027d0577d99d1352bb05b6",
+    "df/hessian/__init__.py": "53173373ed5e547c2beab5cf7756929f0bc84f72415054e15435c529d8fe381d",
+    "df/hessian/rhf.py": "634cead65accdb4453fddfeef41fcaaec02dfbee0a521f9338c55d9cb0e61375",
+    "df/hessian/rks.py": "b8cd70f67306371d17e4c8c809cb64723b50e37ab08585b76777a3220293f06c",
+    "df/hessian/tests/test_df_rhf_hessian.py": "d2b4c6258612fd2f158a8cab3df41485fd9b57f67fe2f8d7824c91d54a20b856",
+    "df/hessian/tests/test_df_rks_hessian.py": "475d426f01ebd86acd16eeee4c4ce816f4d9d6fbf615c60590db720418d85814",
+    "df/hessian/tests/test_df_uhf_hessian.py": "bc40cb76f9f5dfac971ca92ac197bfe0865af76611c94087de5a7e894c18f16c",
+    "df/hessian/tests/test_df_uks_hessian.py": "f59464fbf8a9cf4b71354ed64f0f2a9b08d95660c3954b3d9fa1be1c85e4be6b",
+    "df/hessian/uhf.py": "a8c1d2d7f47c87140f57e833c5e8b7ac4ea0967723621b5ca8e55af3a91d1531",
+    "df/hessian/uks.py": "9b8e9c3ff5db283f1543605898f6d0fd99b56d20a96e24959e9b2b3f5c444d9e",
+    "df/int3c2e.py": "039b6b91f97b902253ce69a26974566abe935855151919e1957e18b209c20d33",
+    "df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "df/j_engine_3c2e.py": "8ef088d9c8f36287ba30a9c8fc28cc63a041720bba2ebc2c11f77dc6934e7cbf",
+    "df/nac/__init__.py": "a0ed055053eebaa4a8e450840d626cc9c8ede4e06131d77ab5121ec9d86d897f",
+    "df/nac/tdrhf.py": "f7fcb4074ef7ce5381fb1af98755f79b978cdf3836f41c740ceb6ab46e243d17",
+    "df/nac/tdrhf_grad_nacv.py": "fe161f5eaed0c8fc50f067ce400f5cf21b5c628dfcf465e670279a309153c650",
+    "df/nac/tdrks.py": "3fe1064fd367894cf672ec9f52dd47aaaa918918c03c55e4bad1279c27332c8a",
+    "df/nac/tdrks_grad_nacv.py": "2d994ffb9fb56dee70d442b3d38425d9e42b361f284ffdeb28920ebc100d3ff1",
+    "df/nac/tdrks_ris.py": "12bc43e8284c3d7734f4a74b4c6fa9577ecf2eda1934b845af9e5104dfc99cbe",
+    "df/nac/tdrks_ris_grad_nacv.py": "7e04593b8161dabba749cd901adc771735d42aacd394dcd2f11f70a447bfb196",
+    "df/nac/tduks_sf.py": "b889e5b31f748caf11f2af04fc45b6f98d8eafdf04d3ed477bec18b552cf8e50",
+    "df/tests/test_df_ao2mo.py": "69480361863d9bd8fd99f224e20bede9e262630bfa418dd50ce304e615aea422",
+    "df/tests/test_df_ecp.py": "c0c307f1baeb139bb2eef41486f4f412af824a80b7d20b74838de24aa8ae3ae4",
+    "df/tests/test_df_geomopt.py": "8cea1d733f5fe43e0c2b32964ac11bd64b7e74c8b7ded788ab0c7d4cec535455",
+    "df/tests/test_df_ghf.py": "1322c8355b74d9c596aeeb847b98f0eeea381e1edd3931e89b1aa4c72a6f8256",
+    "df/tests/test_df_gks.py": "4549f556aacfac3fca422a44a6d16fe711d2a2b588fc09a4c79d012980176175",
+    "df/tests/test_df_hessian.py": "47662031f938b87d1a65105fadadc8cd28b29094b4e83496283533231b680cc9",
+    "df/tests/test_df_int3c2e.py": "45a947616df6f0afe5faaff4e1b817f176548347694b8dc49480fd96367fa864",
+    "df/tests/test_df_jk.py": "382091bd23c34955144798b0aaaf01e255c0b827623c306f469e9d9f9a818879",
+    "df/tests/test_df_rhf.py": "8048f35c52f2ea04d745744c5678ca819ea94a04dc0a74d045134d00e16208af",
+    "df/tests/test_df_rhf_grad.py": "0cb6bdf0a08d92d915cef8a4cad4d8d7efd776d09448d144fbc331a57d0268ef",
+    "df/tests/test_df_rks.py": "07492227dd5a90d2d170869a5cb0e0da7c919799e842f8555dea3a01a96a8c83",
+    "df/tests/test_df_rks_grad.py": "c15c76aa8824c83ff65bbcdda7cfdd61bf3632210cd8967af11524c447904ec2",
+    "df/tests/test_df_tddft_ris.py": "f5ffae7c8c26116e4a194164d23440228a7c222f0a03207bbd6ab5eb65d86486",
+    "df/tests/test_df_tddft_ris_nac.py": "0394a3c1ea5dc7fcd678c72bcd8c6957a3d74a19d9ddc75c13fb9f9f8829c374",
+    "df/tests/test_df_tdrhf_grad.py": "b8c6ee37e7371042e7def3cd032b08852d6b9783d3e1c09abbbbfa93bf29663b",
+    "df/tests/test_df_tdrhf_nac.py": "8cde68268bd80b9e708e4ce9a3baf654ed752fa3d498bc43a02c7e5438ae4219",
+    "df/tests/test_df_tdrhf_nac_batch.py": "85a1bc3d89f932f652b4cff188d61c064159ec3479337ba2fe1629b92b4a40f3",
+    "df/tests/test_df_tdrks_grad.py": "348a0ca300e5e6ff140376bfe57f12abbde2173dc635ee2b5a18637c082d7b12",
+    "df/tests/test_df_tdrks_nac.py": "d8fa4c233bed3255d8727723684573c77dcc6b737e0563ed4aa9fe84c45e8145",
+    "df/tests/test_df_tdrks_nac_batch.py": "6ce7cbce25d343f5753d5bbc082e4ecf623e9d71ba4d4981315c65551a3fd0fe",
+    "df/tests/test_df_tdrks_ris_grad.py": "298c001064c1f5fbe3d68ffdffd852f416590f3fb186c252b744f9bd4cee26f6",
+    "df/tests/test_df_tdrks_ris_nac_batch.py": "c8fe276c01d262970bb3e29967986853f165e4889a8cfba17def093bfd18f1d5",
+    "df/tests/test_df_tduhf_grad.py": "4de9438cddadc1f1a62e047148ac2b533d75a2959858127e27de45e826324408",
+    "df/tests/test_df_tduks_grad.py": "309d3c655adeda2c67fe8beb309f0f4188e89ae5b269d822a67580f3967bed5c",
+    "df/tests/test_df_ucdft.py": "67f0f10ae54abb75a00edfb89d67faf9134cf17ca5848009ecda0d45a9068a2e",
+    "df/tests/test_df_ucdft_grad.py": "36032da598fd6c10f74aadc2381c5ad1e5286b68cf2d4dcb5460e807d6feb8c5",
+    "df/tests/test_df_uhf.py": "9dcaaccbf2f1c1955b1a1ba98405478b6d5eef4c0341453ac571ff1e15f17b9f",
+    "df/tests/test_df_uks.py": "1c276a859e03aee7086d44ef6d26b03a310d3c3f525f141e589431debd51f414",
+    "df/tests/test_df_uks_grad.py": "cf86cee4c7ccbf7c5be6baaea37c1f02f4b1794c05f65e04b0fe17fa23b68e1a",
+    "df/tests/test_range_separation_in_kernel.py": "8baeecbc2f7020e32d350bead0b1467eec091c8ac2c2791a0b9d6fd2ab4c9f1e",
+    "dft/__init__.py": "6066a393ff0bcfea579b9b12ca8e4bb8c942190435b91a78daa9ede6a1abf5e6",
+    "dft/cdft_soscf.py": "d050248ef9aa9e2ae3aab0f95b2c003475223468cad52d81e3b13583cd7fa629",
+    "dft/cdft_soscf_full.py": "8450001cbfe7483af4908f4d93c4a91617cb72d1398f25cb521462fe5fcb7882",
+    "dft/gen_grid.py": "ed3a38b1c8550a73620c5c9a69abdd53354564f406317fdfc57cfafb61c87fbf",
+    "dft/gks.py": "940f5b49650d81cf1f3c4458e7b19b50d8823230a15e1ed8f8fd05939a943b03",
+    "dft/libxc.py": "239b08617de981d6dc851bd6bb79b0fb6c3011ae5d0114031cfa8d88c79ced33",
+    "dft/libxc_structs.py": "f2d2f21a9001f6f070b14cc7b7ea3e0381c320002d68b40df30873493763b846",
+    "dft/mcfun_gpu.py": "30caf5b7126d40da98793de553093a98eb0ec631fb50575701cfc1e17c950798",
+    "dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "dft/numint2c.py": "91b672f7f91c85497eeea78c0dca5d0201fc42444a92c33f67a264b6d45f41e4",
+    "dft/radi.py": "4306db32bed9f19802031362a4460d88e659b45c835113bdac9d28a2bd968dca",
+    "dft/rks.py": "20a73e34f2b60e08a3f00e6e2ef8113184712dc649e618bd3e84732e83f5e838",
+    "dft/rks_lowmem.py": "eed4215723584b935c62ff4df2b52a5f8cb718013f9c3a7856c70210abe5fd40",
+    "dft/rkspu.py": "bbf154c7a060901fe88d76c6d0208b2175f947a5f309750ecb34d773672cdef1",
+    "dft/roks.py": "0cf846e407396739cbf9799427162348ca7ef57bb7c653ae2db951c68217a07a",
+    "dft/tests/test_ao_values.py": "920796a350b24330b38e5e9a57cbc2d8d6f6c6c0bfcf161cb9e79dc84c620939",
+    "dft/tests/test_dft_ecp.py": "e2502225439c1f27793ddf4f35e00951d764e4a407d7ea779ac62541252ff6a0",
+    "dft/tests/test_dftu.py": "2e11fa04afc51a86d2112e5e18640b8fd4292e684cf4c9e3b280037870d9cc93",
+    "dft/tests/test_gks.py": "f4238d765f31ca2a0c0a6e7543d2d5a9bb641f1b1ecf17106cc75b8661e9226a",
+    "dft/tests/test_grids.py": "7c8f63c49d06e486e41dbdd99182646fe3ce4d5eb40dafb19c461b9c05e72f07",
+    "dft/tests/test_libxc.py": "994d06b9cdcbc87ed8aecf9f69adc5cae03ad475022639836852c864ebaccd4b",
+    "dft/tests/test_numint.py": "e802c9c553b87c187ae6aabb10adbf82ded36251d9695123758b81522d042503",
+    "dft/tests/test_numint2c.py": "3e34a9748ea74b69aaf950873898fab0b6d06c1d0e7343eb1c45dfae3919cdda",
+    "dft/tests/test_rks.py": "7a01612ced555db967170ca9207f1294ca0acf5fcd87861a760980aca7a3a590",
+    "dft/tests/test_rks_lowmem.py": "4cb31309a18b834fa6b509be152cfd50fec330d85e34387cc6826636e0f631cc",
+    "dft/tests/test_ucdft.py": "7af5ed7bb5367a9cd70ea2de4570f3c0cb1466733944aa644c8d0ed6c32d189a",
+    "dft/tests/test_uks.py": "7ef0b9a852c1fb7ae507b78b2155d61bf67109a6f05565474637215591a4dbf3",
+    "dft/ucdft.py": "647544e18b512e3ed4a40c206ead8e67429a06f1329971cf95a73ef2ebc048cc",
+    "dft/uks.py": "a948cd762ced97edd0907b23e079482cac787f6662a1361d32f002a87ad2f026",
+    "dft/ukspu.py": "73a7aaa0cb71d68079dd4d9c27ab18458217f40249fe73fe5151ab20d2aa1b9b",
+    "dft/xc_alias.py": "c0799b0242f8dd5fc514e8b08108cd1a332d70fba7e9b03898fcca42c75813a4",
+    "dft/xc_deriv.py": "e2f311cf05feeae5ac0ad0375310374cdb5dabfac25b0abd30016667ab11234d",
+    "dispersion/__init__.py": "b94c15c652ed8ea5da913f3c94b4303d195308002f6111b428c6c7772da513da",
+    "dispersion/dftd3.py": "d61e6270037d8039f2317cef71eaccbbadcc1e737261a07f5c7ee19247ba90a9",
+    "dispersion/dftd4.py": "a4a7ebad2808d61652b5c05e7d88cbf89c43f372d236e47d370c78485ecd194a",
+    "dispersion/gcp.py": "14e0f794740a10d33897d2c40625ee4b6e1c09bd269faea36d471f2c81de0fd7",
+    "dispersion/tests/test_d3.py": "b99e104cebac09c51c723e631710991729c9a363e5f5420c102e5b651dd6ee8c",
+    "dispersion/tests/test_d4.py": "0478c8805f2cdaf7c2f0a2567bf9c995e89b19b0c7e58559d6d1d3693dce83a4",
+    "dispersion/tests/test_gcp.py": "dea8a5a3be4812fb8b06318e4a9498fb6390f86a875549a116913623617383e0",
+    "drivers/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "drivers/dft_3c_driver.py": "c836a519ada06b1981d3afa261344fd2b91f7ea95b82cd815671fbef3c5b1162",
+    "fci/__init__.py": "91091f75f37ed3c796e1dac2b643d839fdb25f42668b479f2be6df4a90dbe5ae",
+    "fci/direct_spin1.py": "112e2fc7a29d2c42e6f5b4e8e9e7f900da2fe4ca3102f703549dfbd98ffff9d7",
+    "fci/tests/test_direct_spin1.py": "75a28d3dba421a1025da77cf07e78cae2443f9211381e9bacd8fffee00880aca",
+    "geomopt/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "geomopt/ase_solver.py": "7e5fa2711e862885602004c8f576e51f8586158927e8dac57efe461f36d814ab",
+    "geomopt/tests/test_pbc_geomopt_ase.py": "e6127f26b7eca9188b532f92b39c45371e6704cfe41834b6304f99abfacc2896",
+    "grad/__init__.py": "c968789ab7438420cad97f955a021f5194c40d9da3fd582b1ac79dd437269a6f",
+    "grad/dispersion.py": "455eb998cd303c61b9e31c216110b9f430970dd5a6d4c3e6f6171e0bda622223",
+    "grad/rhf.py": "0bb4cd4201a6027aa13ad46569571c4bed1c4d30907ae1dd37c3b639ab16baf6",
+    "grad/rks.py": "e8b561631c5d3528f37b5789914040ef17f92168b6901a457f7557604d1f7258",
+    "grad/rkspu.py": "24b90a730a4bf69b4f468156fbda3b0b023f3692ecd534f47fd38f0d0fbb3e00",
+    "grad/tdrhf.py": "140709d483f9c870aa9e4659de10aa3ed7cc6a1910165128fff053c134961803",
+    "grad/tdrks.py": "ff99de303e539c2db2b5d15f762a70d44472c4a22a73dfdc6b4863c2cef44671",
+    "grad/tdrks_ris.py": "12c09bed0dd4b538b167c767f5c3a7bf9bf04ba4988ca1b2c4f7acdc5da3cfc7",
+    "grad/tduhf.py": "25760a8a2710f2f501ab376556422349c6629a468664cc840da98b018e4f8945",
+    "grad/tduks.py": "9071607c2d5163785ff7fdcd6cdf0f2456042d7c88f1e1c3d8502d6b2c9fbfa3",
+    "grad/tduks_sf.py": "cbb68f3bee9781206421dc75b96879ad3ec2a373f9042414783cef63252022ec",
+    "grad/tests/test_geomopt.py": "f7a981ac0246faeab650c5ccba583dcee3219df7337f63970c1ab6dab5cf9d3e",
+    "grad/tests/test_grad_rkspu.py": "a2ec53a64c7e66cdda6c047c7f7c4910a1853f5ad123086ef9aba99e956de7b8",
+    "grad/tests/test_grad_ukspu.py": "b5c7fd0bda1c5b3e0e91875755b3d8ab06ff251dae98e9a73cebdb8e52b2dcb7",
+    "grad/tests/test_grid_response.py": "ebff216910ed3c9408f2984c74e05480f5ab0ab87839bb0b477315d3890068dd",
+    "grad/tests/test_level_shift_grad.py": "237151fabfbae45c0eb998d4c477c296ade19063f2dcf358a2635436df31cbf4",
+    "grad/tests/test_lowmem_grad.py": "cc3d9c309bdcaa25d44074dd9156442059a794e3495c1479cb89641ab5628f45",
+    "grad/tests/test_rhf_grad.py": "bafd731c67b0bbd56a301af34dd019db3f97e7a5ac5bdd9d51776c90257374b2",
+    "grad/tests/test_rks_grad.py": "056d232221a02a8a7cec37584aa42cc922af5f1b17b35cc0cf8ba1504f29e926",
+    "grad/tests/test_tddft_opt.py": "e9f9abc1718bf27ecce0b11c513b715de239ba6d6d438fc54c05ed3bafdaf888",
+    "grad/tests/test_tddft_ris_grad.py": "49d5a0796bbb6b458e0d45cd62663796d6ec125ed9242d000539ee2139519b11",
+    "grad/tests/test_tddft_ris_opt.py": "1b6a109c3ef1114103c511bfa39215f47d66edf389b25b42ce61ddf5622f2460",
+    "grad/tests/test_tdrhf_grad.py": "59b01292b269c6ede5c1209b80a116c9ce5c16515bafa8af88af255a762c6c31",
+    "grad/tests/test_tdrks_grad.py": "fab95ebc40c824ab32027c40853d29f00f8dc7e3e538a9b75f434e684e24afa3",
+    "grad/tests/test_tduhf_grad.py": "7f9036f4d01987ced385c214724762539a962c609ee93b37c62ff12e99fc7f88",
+    "grad/tests/test_tduks_grad.py": "dd3d89fbb68062d05c918c631f6da000a519dfd7612c99280e151e06f3fd7322",
+    "grad/tests/test_tduks_sf_grad.py": "2f6773c0439c3fb8fb4faf62bf4530d5383820fb74a54e8cab1424cfe30c5f98",
+    "grad/tests/test_ucdft_grad.py": "d233c7bc2b4725eb35ac457484db820a96cbd55372aff053c95216e879ffa0d6",
+    "grad/tests/test_uhf_grad.py": "cd580c873680475adfd1fe059c03eafa702aa611eabe11a04bf7a110851426d6",
+    "grad/tests/test_uks_grad.py": "d1ae2b882f8393962446e511d74f636fefaab158e5f6defd5a88c440d1270ac2",
+    "grad/tests/test_vv10_grid.py": "7dda9bec7316f93220a8adea347b9585ffcdada1c46b72957fe4ec8e44b2d147",
+    "grad/ucdft.py": "bf70efd69884c32748c3ccdb61c71ddfdf35922456c89017c53c7cfe22151549",
+    "grad/uhf.py": "c43d64b96956b921d8d658494b9fae71ed46b35adff8e70059eb9b9caa8969b9",
+    "grad/uks.py": "d34918943e23bb9ebb7c19656d93244024d066de084885998fc6ea50d23980bb",
+    "grad/ukspu.py": "f5721bd99ad09b04f781501f642a906e131e3d8b03ba328679e6c0825aca71ef",
+    "gto/__init__.py": "3bd3e1979a976aeda5fdbd846080f9158b9e1297a245c6db3bfcdd2dc24de1a4",
+    "gto/ecp.py": "db87dff01d74f58b5e08b498b08ef9911dbfa1763d26fc1c7127b42ddce315f6",
+    "gto/int3c1e.py": "fd8015cc5fe96b98cb1c898baf96047fb07faee5eadc83ee0ac5d3ef96609895",
+    "gto/int3c1e_ip.py": "aa3d6417f8b70ab6e80c522bf441bcc6c589ea5d5c0664e3ec964dda8108d96a",
+    "gto/int3c1e_ipip.py": "51e36a47a501b4a3731121088bb2fdc2eb00c2da5fb5703bc43a0aad413077ab",
+    "gto/mole.py": "a7c83982343a9e3ee3a2371803386b47dbafcc2de8c9effb105409b044d40a1d",
+    "gto/tests/test_ecp.py": "8005f206761313a05ff4c260fd55853028c26e10d65dc0236a02301c3427d8d5",
+    "gto/tests/test_int1e_grids.py": "4797333c0b0980c6508ca8577aa68bb29997f57e762f5a47da00d5436dcc8e04",
+    "gto/tests/test_int1e_grids_ip.py": "3fdc8df9298aba6e316098d25fc82fbec4ec62a4b1ae21cab44ccd2c4cdd398d",
+    "gto/tests/test_int1e_grids_ipip.py": "0b1e17f9572c166341d0685c0521f1a328b42844497e7e37e57bd8725c9b9e00",
+    "gto/tests/test_mole.py": "a87e4ca2fb443d92f9f1bded1b04c5429598e0a986a1a5de335564d34838ffe3",
+    "hessian/__init__.py": "278bb9147c3309839bb26b4ff42fd3ba9ee3cb5df61ccb149e23f770be32813f",
+    "hessian/dispersion.py": "ec7c130aa0d86a9e0f4042376b00cc5007cc8c4599056c7f809193d466e2a6fe",
+    "hessian/rhf.py": "d02ede87dfa94cfc9ec765d8037ac8ead5e050ae8a7a45d51488636e1edf95d2",
+    "hessian/rks.py": "5da70f958a13c116a164d68ad21b710f23f904bed6a3040707f2fb70c4ca1e68",
+    "hessian/tests/test_large_exponent.py": "80394c7caa8aa67dacb250c9cbe5ee73ef128c38b4a3a378b41ebe44732bf172",
+    "hessian/tests/test_level_shift_hessian.py": "7f6b7832185fb98bc8dc6d47bd305c13faa79d24d6185d84965d3e3c793d67eb",
+    "hessian/tests/test_rhf_hessian.py": "b576f07f8d4ddb3e15822c25477954f358833edc75b5dff3f13e9c5fee6a49f0",
+    "hessian/tests/test_rks_hessian.py": "82e86b2473313e4bdbb7efe02805d99d523af9e5e606aaa01533c01fe6c5d4de",
+    "hessian/tests/test_rks_hessian_grid_response.py": "d249f5bcdb3cb39fa2b4377fdf8b67fb48535d8c60f2cb138116ec1dd41efca6",
+    "hessian/tests/test_uhf_hessian.py": "7591ff240dc56bbe9b34d9e8f9ed1225f5afc4e0221a5f9664a9c581627ae26c",
+    "hessian/tests/test_uks_hessian.py": "5ae70e1c7fd61c6f13313683bd3560f9d1db56fd5f8a30a3bfae14dd8f0e0584",
+    "hessian/tests/test_uks_hessian_grid_response.py": "e9ce6678175ba4b0becf2f3341017d028097d23f0c87d4ed1018187b48d5b1d7",
+    "hessian/tests/test_vv10_hessian.py": "d4c0e4a426cab909a71c7ec68adde1242301045f3849de1f4947e0e5447e7515",
+    "hessian/uhf.py": "adcf7692582a3bf2714ef3ca25af4f0ede21cc60d67b9d15a0f34f2bc6778b55",
+    "hessian/uks.py": "83bc75fb96caacc06992790c4835dd9496a9244f800e4fdd81c2b60aa199ecbd",
+    "lib/__init__.py": "6b84feae6d57420122cb25eacc134d39245667703ad7c2a006020a76b348ec23",
+    "lib/cublas.py": "d669ad3779d9615db99b9df26ccb075b02d9597c34802468ace9f5531ab30e37",
+    "lib/cuest_wrapper.py": "3e774dc60d2cb3bd3397d4cf8605f9c038382721d9a045224f2997caa5a545c7",
+    "lib/cupy_helper.py": "4e34655b97c78a9d2949639059afcc247d40aa98295b6d5196864d538559505f",
+    "lib/cusolver.py": "563a9062445468b66aae7e07591056e3ed85b7ee70421c2911820ceb6eaa3c00",
+    "lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "lib/diis.py": "8d9c2a3d035f06f9d068a0bbf999f5eef245172f55121576cd599cbc5d8e30a6",
+    "lib/ecp/generate_cart2sph.py": "26a053e20ca61dd7525f8a81da8f8d9b4faf783f86b7717222f19d37470eb730",
+    "lib/ecp/generate_type1_ang_nuc.py": "5bce10db2a63d04909d23dac0d392a43e5d587ec275af3c5b31c20f8258ddc12",
+    "lib/ecp/generate_type2_ang_nuc.py": "bf875b28930a061ee3ba2782375a056c1e9555ab2542761c566d48c2f46c486d",
+    "lib/logger.py": "29b31b94e1540d05182320162a68f44cb4acf1a2ec99262a4e06cce82ae98674",
+    "lib/memcpy.py": "2dd8dfede5832f39faa7cce49da5d323b2a6fc40f09da7d2456bbd0bb90f1fc6",
+    "lib/multi_gpu.py": "10cfaec41201cc170e40450f47b74bb69ea87be37ecd384d2287620efb50ca51",
+    "lib/tests/test_cublas.py": "cc3751c8a041a18b56c68ceb3e10ed9deaae95ae7b685f78a2311c256bd20ce3",
+    "lib/tests/test_cuest_wrapper.py": "7d5f86e59b335aac7ddde53ec971f00b51406f6f4afa1280e30972910a6c36f3",
+    "lib/tests/test_cupy_helper.py": "2350c9aeeee9138ebfb1f8426b6bad84be4264d608efa4fa2e74e4d39408986c",
+    "lib/tests/test_cusolver.py": "aa67b8259facc2bf7db4e19783b4420c853ee7dbdd1a965fd1c4c918b2d041c3",
+    "lib/tests/test_cutensor.py": "8dcd7b00c9f3fe00925290512b2ae940dfd0b3684dd70ee5021416b94b62a560",
+    "lib/tests/test_dftd3.py": "c77308f9476857a6c718b226914f7ca35b48496f5025c938ed7e8d47e5e93cf9",
+    "lib/tests/test_dftd4.py": "fa5fcb0920cf2b8ed05ef923ad0d1fcb8a0c75cf3c953b6ab941f2d2209f2e77",
+    "lib/tests/test_diis.py": "23413ad598fa46ab2e9a698afc15ff99c1c8002b9ff667e910136e29abb0f4fc",
+    "lib/tests/test_multi_gpu.py": "fd1e441b3318c9f71c7fce313b2565bb9cbbea59960dd9250d99d425d06c30be",
+    "lib/tests/test_to_gpu.py": "e75e09a3910fb0a29d8342aa4a01a841f9197c154b6eed10e4290a4e986addf0",
+    "lib/utils.py": "6e3c9a36e3f804286e0e0b332f0eeea9e408775ace5b980eb4a7ffd7199cb595",
+    "mcscf/__init__.py": "c82c29cc7efff5228f84a52a64061021eb5eba9388e09e8884784a927d6420bd",
+    "mcscf/casci.py": "99988b693fa02f25d06bf665daf87ea1d2fbb8de455507cf6498fb681fb4fde6",
+    "mcscf/casscf.py": "d79933c2e82644ee89160a7f82bb940bf58bb7358718470beb3b8326c057832c",
+    "mcscf/df.py": "a3245b3ca6ca9a2062b3f341d734bc0ab80d22081d8f02934f175ee4469084ec",
+    "mcscf/tests/test_casscf.py": "93161fc85b7801edcc19eeef647faf5f36865e3add3b56ba80137980c0a0855d",
+    "mcscf/tests/test_df_casci.py": "11e33e2ca35de63290e929a465e11b3b3e42aecb03195937f9adcea5880cf974",
+    "md/__init__.py": "29b2e4d63550165d727d7675192f4ca8bf02c6fc6c5d19b0cf0024015bd33087",
+    "md/distributions.py": "cf838e0c36188dfeaf6fd14be13106bccb108dfcb16f1ae988d68e609d05ec0f",
+    "md/fssh.py": "c36551748cf8bf97ecb0d11d30b300b0cf39750db26e3c17a8adab009d354d45",
+    "md/fssh_tddft.py": "a2ec08229408a745ab363b4afe318df8445922da2a305305e686874d07cbf21c",
+    "md/fssh_tully.py": "47de9915ea2953e0b06129219e9d4fd8e4eb0ff20abeec50a03765855ca6ca2d",
+    "md/tests/test_fssh.py": "8980eced77222a6e0f4784e0c73bb7b530ae666476b6ca6cc44ffb4265b4136a",
+    "md/wigner_sampling.py": "e1255230060b39b29b070af5f492c4f3d32e74fa8181dc5367a9063c65fb060d",
+    "mp/__init__.py": "73580f7761e866099ad30b45d00f90daa14391aea2795588a5944040b719f01f",
+    "mp/dfmp2.py": "f512c5308075caee1d2f801a0889fb55901248dad01b35979ea0e5c3b2666703",
+    "mp/dfmp2_addons.py": "baa79b6f62cbf22ff519b8344dcf96ff0bbb6990d6095fbbe45ccdf5d1a6c440",
+    "mp/dfmp2_drivers.py": "5783051927fc477bba3c6faccd6ec4cdd310f96709dc65b870b9aa6ec8f39007",
+    "mp/dfmp2_old.py": "2c0bc8277066f742adaa70b9eac8a3c49988509a717d373d1c9cec7f0ca01071",
+    "mp/dfump2.py": "991cd8e537e7dc5debe5aaf452902fa0c108358f488a25c67b057814da7e1d79",
+    "mp/mp2.py": "20a48968df62a96d8f93d242e3e88b8d2761ac10a195403c9cbb49785319283c",
+    "mp/tests/test_dfmp2.py": "c0c21a1e9d18cfb7b3ce4a6d9b6ea33156c626e99df22bea3cf8fe312b22749d",
+    "mp/tests/test_dfmp2_utilities.py": "e21c0355098a0d7a6fea9e1091bbc5a5d32678b25df2eb24f49b7c6ce029afbc",
+    "mp/tests/test_dfmp2_utilities_large.py": "727a7650ab96ed796062c54c1fec75402cbfa37dfc5af6d1b55f73f50e987f4b",
+    "mp/tests/test_dfump2.py": "a6cae32936961eb458fd1eb21feef56c2dc14ae704265be4808727154c366d31",
+    "mp/tests/test_dfump2_utilities.py": "c9475875feb2a56a636cc269e56812dac509f9cc82ecd8ddedeaa4b70f2322e5",
+    "mp/tests/test_mp2.py": "53f9db1b7d0ed44d3872f126adb68ab74083eb8dadbe75c279552068976fe11a",
+    "nac/__init__.py": "b0472b0a42698d380bb686bb14eb1701d24b526adf9312573ea30063eeca8a77",
+    "nac/finite_diff.py": "7211ef442e83bfeef6ad681aadee2c27b4aa213d4b524637697cb6a87e3fdb52",
+    "nac/mecp.py": "dac9b1d62a907ef0793192f8dd251b966b14dd30157141c0df72e56252511db1",
+    "nac/tdrhf.py": "fb0b3d228a4744823d537c3c649b9c65b23c054a8b22987c6f6f6ed8de11142a",
+    "nac/tdrhf_grad_nacv.py": "7f64ee8682e844ba00a29d35e693a77517097650fbe36ec321d1cfd2c83e6088",
+    "nac/tdrks.py": "8da83f7141ef97f46e4b7e5a4f49ee4a677111483dc0ac3862fcd67e67c91d81",
+    "nac/tdrks_grad_nacv.py": "ddf8a86e74110ccd2e0faee624adba5c434f6f6507e559a3edf512e930d1c840",
+    "nac/tdrks_ris.py": "3edfe18b2fa0c4d3331a511ef1988d7875198c26eccf9f78f5a4274518265851",
+    "nac/tdrks_ris_grad_nacv.py": "b0b294e2e229058514a261d384db0f8560f8fcf77269daf779d4c9cd5b390682",
+    "nac/tduks_sf.py": "139f29057a9a1d8dc6490cb8b791d8df029cb068bff7e4df6eb122f9dbd180e2",
+    "nac/tests/test_tdrhf_mecp.py": "68dfb5644164fadf25dbab0e00b2ae9c96b8d0e21d1d68b8849bbdc199ab3431",
+    "nac/tests/test_tdrhf_nac_batch.py": "07c1573599814b20ac6b1d70772845bb9d6ca6965c453cb9b9befe7c19d52524",
+    "nac/tests/test_tdrhf_nac_ee.py": "affe1c3af80500c3f8f4ae6c734be5659e16c6441f232cb945c54e0045267079",
+    "nac/tests/test_tdrhf_nac_ge.py": "3c8bb767f6d4e9ac8819441ba834c67e239fd17dfa463d459771426bf1f90710",
+    "nac/tests/test_tdrhf_nac_scanner.py": "d918a07e0067dc966b54b50a182ea064c58114772f5c6bad695fe11280aff15d",
+    "nac/tests/test_tdrks_nac_batch.py": "e4ea3ddf26fd3bcef1f9e02e624212def6ca2f53d88c9a086ed3b4d30c37b589",
+    "nac/tests/test_tdrks_nac_ee.py": "d9ca4e0d74bb63f28ba2f9e44deba2efeedbb0f2844a87d0b3f5aaf5edee381b",
+    "nac/tests/test_tdrks_nac_ge.py": "6a89bef0777c3d019eafaefca17028836e97b463544243622c6deca92b4491d1",
+    "nac/tests/test_tdrks_nac_scanner.py": "ab3b8151f11a9ab81ba60e6787f6b07dd7396194cfa15b82147603383f823a6a",
+    "nac/tests/test_tdrks_ris_mecp.py": "9dd22bd6ef414f2a1a83b6a2cd8f70ab79c5f46903834367b2276c38150e7c5f",
+    "nac/tests/test_tdrks_ris_nac_batch.py": "ce692048af70e480da87764e0992b672e316fb4c36c02e2e2a39434c5d172d38",
+    "nac/tests/test_tdrks_ris_nac_ee.py": "c873023c190d424fcc36e396026260cba2f9954dca52ffb84379728ae0cf04c5",
+    "nac/tests/test_tdrks_ris_nac_ge.py": "b3debdf4e4ab104172c562fde10ea5fdf9d7eadcf14e5ff808f545bba20d3095",
+    "nac/tests/test_tdrks_ris_nac_scanner.py": "573bbd0dbd5cf8facc373ea76bd67fa5c477a0329b96d6983814eef41e21d977",
+    "nac/tests/test_tduks_sf_nac.py": "b61f8b5ea44717e754c28a12a8b64df235a55f14239b4a26942d1e0df6e4fafd",
+    "pbc/__init__.py": "939f3c124fbd47a7217d9263e2944cad84b466b26ea2832c3c6dff88ae85c20a",
+    "pbc/df/__init__.py": "171ec4cbe5b3ade167df49c328a7a7f57574b3d90f2885173a9fbf9e7ce57f39",
+    "pbc/df/aft.py": "6dfd62c57a8d4687d61468dd4f3d25bfa51440a64e3e8d0b2ca8219bb4b64a89",
+    "pbc/df/aft_jk.py": "4855310716dc73d5a46380b1a98542e149fc51e50b767d6b098b5aa389671fe6",
+    "pbc/df/df.py": "83f88f901b37e52f92ffd08c2b7ced028a020a19a70caa9bf28ce3cadae6442d",
+    "pbc/df/df_jk.py": "0aba81a3f8301935d37645fbfe6fa4aa742f0048171ae81acbe93a1224b841a9",
+    "pbc/df/df_jk_real.py": "a0353c86c266a0fa9c3393156c266da7b24b54bab5a85d7cb1629ce4642b6f17",
+    "pbc/df/fft.py": "951e481cdcffb36bd4f8b7b7e50303d028c97708f6f72d991c170506e0664f7c",
+    "pbc/df/fft_jk.py": "98bc159758b2d26d94f8d9ac2c3a00f63f91bf652f4bd428049875495f0980d0",
+    "pbc/df/ft_ao.py": "362466c6586b4a50af6128f1529994a5cd2ecd219ba3accf799605140dd73eb7",
+    "pbc/df/grad/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/df/grad/krhf.py": "0ff66737d418c2a380825ee5c853a8935184119b85570c47bbde4832b40f101c",
+    "pbc/df/grad/kuhf.py": "d14b798e5b4d951a2b2d1926eca570a880dd89d086d3845eb18f16621b22d60a",
+    "pbc/df/grad/rhf.py": "9d5e3397d19034c30d6c069a5301ffe0d9999217c8c71e3b5c45ba73ce711a71",
+    "pbc/df/grad/uhf.py": "00e12892e5526164f7f4ed98f182fefe9a35cd91deaed81d98cd67a090d9402b",
+    "pbc/df/int2c2e.py": "93c36b88a63c2e0a52bba85202bcf23a1a96851f98f21525fe1aa6e91a6001c7",
+    "pbc/df/int3c2e.py": "a8a062ef2fcd67e62dcdfca3f1fc57e0832a38b76e1029d0fc22e273d67158ca",
+    "pbc/df/rsdf_builder.py": "5dcaa524fff4db84ad73c94981329d04d1f85e8d4abb2dbaca6b20dff6fbf42d",
+    "pbc/df/tests/test_pbc_aft.py": "60cec13c05afd75f96552e4f79dcaf282c0d52a5903b9b72a93e03e5d5fb5c11",
+    "pbc/df/tests/test_pbc_df.py": "cdb9e5d3e7f2f34590a7d572f308c350bc4fecef859ba6c295088e841d34efc6",
+    "pbc/df/tests/test_pbc_df_derivatives.py": "2d9da101ea70eabb0477364c771d83626a2330d19f789ef8ee8eb773748d45ae",
+    "pbc/df/tests/test_pbc_ft_ao.py": "c2a317fa9c8862574fb1758ff12c6916178ee01daa35e4949bf2ffa455d65094",
+    "pbc/df/tests/test_pbc_hcore_derivatives.py": "b1a54b26b008f4ea1c036f99bc7c9c56d9c749b0c5f1edf8089951fa56bc7dab",
+    "pbc/df/tests/test_pbc_int3c2e.py": "fe40fd783771b17c7b6adb4a7eac34e52ea7362bff87dd1704c99870f59a8464",
+    "pbc/df/tests/test_rsdf_builder.py": "3c007b093025af6d88c493f8fa9bdfd240bae3d5e7126dba4f133d941422fc14",
+    "pbc/dft/__init__.py": "b3494a54e8e7a9a7510ddb8bc4a490ebbcdc14b17b9d20dac0176bd35012569c",
+    "pbc/dft/gen_grid.py": "e4cb42d1d3cbba32f0c1f2f941178f5700631da29c52c5afdf3ba94df03d398d",
+    "pbc/dft/gks.py": "c47422ffd62801c99fe0a7a89460f5de64a3a79b65250305ce089921afc36bc0",
+    "pbc/dft/kgks.py": "547301c6a1864561ce9c773fb9a31a194ce10eb20f3f0c5524a32b36e231d647",
+    "pbc/dft/krks.py": "0d92048a0fdb97eded9d09833bef037e51444e9167a427027893383b1c7f8fef",
+    "pbc/dft/krkspu.py": "c10e9fc81459524249fc9b79604df1240cf867c5330b7b03e835d8cd3b85d3d8",
+    "pbc/dft/kucdft.py": "9f5c4077d57ac7c1d4129854f5c0dcf8313d78962e61b8bbc16e685a4d9b2ad7",
+    "pbc/dft/kuks.py": "48df54424bcc8760bcd682a0a8300bb1caf8a781f385ff3faab2848f9ae1f75b",
+    "pbc/dft/kukspu.py": "66a8b9a8ab1117400fdfa34b3d5d847d0c4e9b0668981b2bcef79a332c7bb0fd",
+    "pbc/dft/multigrid.py": "746cf47ff12edcff54e25b7d8b6f8222e901da7f92ee89d98e5f3d004ed1f937",
+    "pbc/dft/multigrid_v2.py": "e6de277181ca17c6ee4dd6fbe5a91f58ea3ab5cb66b578e5e6aeed5a7266f46d",
+    "pbc/dft/multigrid_v3.py": "bb37f39302968aad89424f42257357a561649f836e926f3f1cf5f664ead9b169",
+    "pbc/dft/numint.py": "feb4ffa86e1668292b03f82e2d87b9073249036b7a1ad96a37840f230332707d",
+    "pbc/dft/numint2c.py": "7e27600cb0cdb364f255d4d34362c7325d6f82ab24c1a4c316ef49843775d293",
+    "pbc/dft/rks.py": "f0f8c50b143ffc587f994275e134a9d9c01a1267ec4455b088d7895df57d3ab4",
+    "pbc/dft/tests/test_multigrid.py": "82fc3fdd0fb40462faf50a8b2ec41c0c5aec036d2546bc67147fa3099801c2aa",
+    "pbc/dft/tests/test_multigrid_v2.py": "946ea22f9acd0c23d9f1c7db5a56b2ad928ee4fffc4cc464f4d7e2e022251e94",
+    "pbc/dft/tests/test_multigrid_v3.py": "03bab465938fd87db9f18793756d02aa2eea4103ce40e428a219ee9df7ed1500",
+    "pbc/dft/tests/test_pbc_dft_damp_levelshift.py": "e608808aee8a3932f2f52c5a23809b5c5fb3dfb274508e8288510e7fefc8cfac",
+    "pbc/dft/tests/test_pbc_dftu.py": "afb6cf4757d0e90c2df0fdb4279667fc3827489a80f13c9ea9cc78669491c48d",
+    "pbc/dft/tests/test_pbc_grids.py": "d20ae1008447d7bf24a16798225390dc2c6442f39e6742e23d8672f8b6a0d746",
+    "pbc/dft/tests/test_pbc_krks.py": "9eb5df9d2e5e0a1f850d55470e0aff14c1de5669d31a0e1179293b0c8e319081",
+    "pbc/dft/tests/test_pbc_krkspu.py": "9740044c80c6a10ec42b5a397c155d662e5ef59d4188fe7240aa110275131d38",
+    "pbc/dft/tests/test_pbc_kucdft.py": "b3511ee04fc4a5c596a0021e0940ff9243f7b1861776068c3c916f57aca13229",
+    "pbc/dft/tests/test_pbc_kukspu.py": "999af01974d7bb9b65f74ef5f917a226a52c3f1d8a136f2da7aa8653ff39c180",
+    "pbc/dft/tests/test_pbc_numint.py": "8f51ab9a6224a658081cc5e3081063cc3f1db54e29a4c6f6d2c99dd21a15c58b",
+    "pbc/dft/tests/test_pbc_rks.py": "6b8a2de309566d800fdadd6773abfaf506c22dea1c8ec9548a38d7625262f6fc",
+    "pbc/dft/tests/test_pbc_uks.py": "c6d04c5a54dacaaef0bf606078508636ee9eae6fca700228f70b4901953eef0a",
+    "pbc/dft/uks.py": "e51e6c02049d3331df1799c4538017b31c45408739797a743886316c4305e4e1",
+    "pbc/grad/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/grad/krhf.py": "4813f96bd420b25ad4f2fe44b6f91283c0a9d3d357960c44dc1e8b8edcfe38a0",
+    "pbc/grad/krks.py": "ebb9885059e061a1bec3a1e248b79e982862821df76dc8bf504536cb98bb8fee",
+    "pbc/grad/krks_stress.py": "5889c1b51f78d670179445e7b6c3fbbc85c288488d9d9015a537b8a5c076a20f",
+    "pbc/grad/krkspu.py": "340fbe2b57bff77898a6876a88d5228a32587c34b1b413098a25fe3f15b24c04",
+    "pbc/grad/kucdft.py": "0dff401bddad28dc94dad2b33b5b510cfc749ffbf784ce545a669172d62523c5",
+    "pbc/grad/kuhf.py": "4dce389934392067e05942fe364059bef120a4fb9e9deceb77639604e281d69a",
+    "pbc/grad/kuks.py": "b40a0095f0c0f976673863522e22de857d05465e0590cb4b0589bf6976f3495c",
+    "pbc/grad/kukspu.py": "0a42e3bac2f4e6ba6424bc7e85d17eed8ee148019d4960eeeb20978dc4f8f178",
+    "pbc/grad/pp.py": "c519448bdf1dd96e09be87f00db7be2ebe4515dbbec91fba8ea01b700239b6ee",
+    "pbc/grad/rhf.py": "1eefca40fabf1bce260aaf130eda713fe609892e5a2d742646da750b4dfa77ee",
+    "pbc/grad/rks.py": "c95f270cfb58e031759755cf97517303ac0638cf2b4b8916548e6c897fd67e6f",
+    "pbc/grad/tests/test_pbc_grad_krhf.py": "34332ac8a158d76422dd383c25bd42afa8c449363704dbee4ac59b5829532757",
+    "pbc/grad/tests/test_pbc_grad_krks.py": "f4a343e1875b88f2c1be1c33479b22acd31f54f1eda20bd95aaaaeece211b548",
+    "pbc/grad/tests/test_pbc_grad_krkspu.py": "106b216a3246bc07ca6bc7edc38bccee625719c3310e39035799be5d770c1b74",
+    "pbc/grad/tests/test_pbc_grad_kucdft.py": "55d754a8b589ba8e00775f94a437dbb3f2dcc7c0a60b69351ce21598334dee6d",
+    "pbc/grad/tests/test_pbc_grad_kuhf.py": "4a1bd66319c7064fd107aa53f07994ae816169969c84a0fbb0c8e5447b8e0ae3",
+    "pbc/grad/tests/test_pbc_grad_kuks.py": "890eef4ca9ac65ba808ce2d6196cc2a845cfef3643ca19d53cb284192d709839",
+    "pbc/grad/tests/test_pbc_grad_kukspu.py": "aa03e3971d4327ec0b3eec124ad3ed534ea432147d965918d17d34fdac8934ab",
+    "pbc/grad/tests/test_pbc_grad_rks.py": "7081c98189f9cecc29c99696858fd166faaca514244075ba74efa7d9f7b8813d",
+    "pbc/grad/tests/test_pbc_grad_uks.py": "c31f32e70b629226b1c0cc2ce5931198402989bc951da6f79eb97549b84fbf77",
+    "pbc/grad/tests/test_pbc_krhf_stress.py": "abc8ccc2a41e2af8a53a18f62d6628ed84423a737376c375ff509f54f13cc4e0",
+    "pbc/grad/tests/test_pbc_krks_stress.py": "3216f95e10d76e134e39a7a5b04bc7a79da6dcf276e638fec025886a04b84731",
+    "pbc/grad/tests/test_pbc_kuhf_stress.py": "511305102dcbaa3cd9780185ffb38628d15e17f43d9f1c7004535f5ea6f87a49",
+    "pbc/grad/tests/test_pbc_kuks_stress.py": "074399655efbc1e0f387a500a8ffc8c7479bc3cc51787f541470e756c9722518",
+    "pbc/grad/tests/test_pbc_pp_grad.py": "3fdac4da2fdacd09eeaaa107af819eda25c19cb8857387287301c7e1978445f4",
+    "pbc/grad/tests/test_pbc_rks_stress.py": "03972b4ff8750cbc6aad959ac3b3c5439bfbad94debcce95b30211deb1570261",
+    "pbc/grad/tests/test_pbc_uks_stress.py": "33654c815254f0d34a7a82b2e6a3a1619d59a4dff2d348598e94e5d4907c5bc1",
+    "pbc/grad/uhf.py": "3e579171c7e027efb80700129b57daa9ed17f626ff309d976fd1798057dfad82",
+    "pbc/grad/uks.py": "f5928043a7ab9d1298d9c54a8fcff15cbedeb3fea5a0b1bdfa2e8c767a96711a",
+    "pbc/gto/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/gto/cell.py": "7de3b85d67190973fb6b87b369a61e5c6d368f7f0d675d34576198f5c837a506",
+    "pbc/gto/int1e.py": "4bb7a8c1a44cb0fffcee9cd3626e8a172163259114e2b6726e819d62f9c816f7",
+    "pbc/gto/pseudo/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/gto/pseudo/pp_int.py": "c84555854ae6be2937982d0c422a0cdd2732294dd6c917faa2df1a488748619f",
+    "pbc/gto/pseudo/tests/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/gto/pseudo/tests/test_pp_int.py": "aefcae1a20a8f78211c5f3c58ef5135e7df7785bb11dd24595838c488e3abaae",
+    "pbc/gto/tests/test_pbc_int1e.py": "f106229c0c44c7adef7e7291da3e091ee9e88d0033d9fdfb4324952ac7b37195",
+    "pbc/hessian/__init__.py": "8b7aaf483af481958abc7083ba8860fae13722c0529ef128ff0a32e83d0ee334",
+    "pbc/hessian/gamma_hessian.py": "b185035ac98264a03a54910e60168aabd6359feb04eec0048d7b6d51ec2fdaff",
+    "pbc/hessian/tests/test_gamma_hessian.py": "c725e492befe33f2651189f5632aadf987142b1968929cbdbed4705fcbcdf41f",
+    "pbc/lib/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/lib/kpts_helper.py": "c7ad38093dd9b2486614b21c2c3476e203e424612f9f3919de585723214133a6",
+    "pbc/lib/tests/test_kpts_helper.py": "de9e4370c02be78fba9c2a42fc98b39ffb807f2a6ecda132dbdc3a81bfa27a30",
+    "pbc/properties/__init__.py": "fd9fbeec56d7e08a587bf6a09c842c0a260af6a97e5ffe975525de878dadaaef",
+    "pbc/properties/berry/__init__.py": "0b9f62256925daa5c1e204e922e394d7395430d7eee6ff6aea8c401427a6a610",
+    "pbc/properties/berry/berry_phase.py": "ea28d5025b5aae19291eb5379dc5083ec55caa6fbf53bd2aff684b42dacdfb91",
+    "pbc/properties/berry/overlap.py": "b99a98dfffb3ce12bff9adf36a1c61dbe0beaa41236a67668239dff5041c5a0a",
+    "pbc/properties/berry/polarization.py": "61c5cebd5fc5ded03143238b94171280425170fbfb08425cd2a0bd46514318ce",
+    "pbc/properties/berry/tests/test_wannier_polarization.py": "6815f1c7c837d3e14bb7c70c278f734d81965651922c7644cea1d171ca5338a3",
+    "pbc/scf/__init__.py": "98a44fc340016c9d27f2ed553ad313295b2b50c62a6a0dc575e0b3648728e74d",
+    "pbc/scf/ghf.py": "75bd8af9eb30c91f7a3cf22de20686122ad19247af46f3987fb86da4597b2fb4",
+    "pbc/scf/hf.py": "704cc25988753044def79bc1491a61103e42017a3da12641629dea9ff8e4b983",
+    "pbc/scf/j_engine.py": "13953bbacfc3c6a2ab8408351a19a3213e25591a10643425122799df75246a60",
+    "pbc/scf/kghf.py": "c613346ee823090c129a0ab67f36d0f86823eb5e664e81db6ab8829eca8a3365",
+    "pbc/scf/khf.py": "a22b289881b039efb083c4033e01d55f9d90fd479b41df4989e25c0d7f7112e9",
+    "pbc/scf/kuhf.py": "db484369e5ec5093e92ff3fef5960eeb5130d328b63f754e492940b7e0ed181f",
+    "pbc/scf/rsjk.py": "3163d3180c6c68cafd9923a195c0c45408330270aa0f776d39936f2db28a5bbe",
+    "pbc/scf/smearing.py": "61abfe8ab6e57a5899f6e78f12c122ba0c2aeaa2b45c400a9c100cfbf70656a1",
+    "pbc/scf/soscf.py": "33e739543a57b778d516eb3fb000ce5f95cac861c36a61f9f768404ac5f878bc",
+    "pbc/scf/tests/test_pbc_scf_diffuse_orbital.py": "05b3d3852893ffb5f60fd7dfe6a240aeb5e63d75a5985286a8dfc7b879316cec",
+    "pbc/scf/tests/test_pbc_scf_hf.py": "bc945604601929fa138ca53e9b80aec350fb1af95cab60646cf52366d04f3b59",
+    "pbc/scf/tests/test_pbc_scf_j_engine.py": "85797d5e1bc765a7d41b71bfe8792097d092e31323ce050b4fe2d2abe46ba480",
+    "pbc/scf/tests/test_pbc_scf_jk.py": "c5e16e872e0ac98006a2439427a079da79f4c530398e30ac59036c1ef55114b6",
+    "pbc/scf/tests/test_pbc_scf_smearing.py": "87608b835e7192e711485554ac83d46f857d1c6aee50767a79ac389480c300c3",
+    "pbc/scf/tests/test_pbc_scf_uhf.py": "cddb23fe983002e2ea3ad8e3b7e9ab22f3240914d9caf859afe90a395e0e12de",
+    "pbc/scf/tests/test_pbc_soscf.py": "4947892d27ce9997f24db37f24796214489157361cfa3562c5c0422b140edac3",
+    "pbc/scf/uhf.py": "276b4b38728887fffbc71f39cc9201b6d1cd26a359e55436bd9ec3ebfa7b3e1a",
+    "pbc/tools/__init__.py": "9e54e7487e7661cdd43a3edc72dfe12fbda1be22244899c5e4a5093fb0411883",
+    "pbc/tools/discretization.py": "0afcfea5bcfdf4cb6ac357b5cefb6f315013c531627791ca4bc41d15c3ed7df7",
+    "pbc/tools/k2gamma.py": "458c573b090443e725283daae6867b81ad8b70806f9d12d4adc4b78f468623d8",
+    "pbc/tools/magmom.py": "ae333b85fc4ad07307d58c3aafbe599998e1bf955dbbd4be33e1a9f26c794018",
+    "pbc/tools/pbc.py": "b0cad7c2e19fc0bdaea0df75df5544abd6a97a2cfaafea5fd9f22efe8c7af893",
+    "pbc/tools/tests/test_discretization.py": "6e7b6479b1fae777bab4e2376259f49e110bc9b4ba2dbb5cce6fa4633f1431c1",
+    "pbc/tools/tests/test_magmom.py": "407b093a43c5563996c4a7e55bab011968b45d5748ea6014e53d1aee12621728",
+    "pbc/x2c/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pbc/x2c/tests/test_pbc_x2c.py": "19408cc6f990b75d15df8f5b528ae499145b21bd844176b04c55ea42bfc923b5",
+    "pbc/x2c/x2c1e.py": "cc4d8c7d99434ae3d03e6416e5e8be4d313f815bc63ae167c538a41e5cf6548d",
+    "pop/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pop/esp.py": "419f864c80c10b4338f9bb5c2b0b1ff8b1134b855a5fdaa2253abd4c77f7f280",
+    "pop/tests/test_pop.py": "0ea3e292bbc2e31acb6a075235966256c95624df770bfd03d888e410c08a218e",
+    "properties/__init__.py": "65d3b91cd8afdcb2dfb5a1e3ceabca4a772433bbd66f4727a8f49603d027abd6",
+    "properties/c6.py": "555f6cb2413554ff92f8137bc35322630f739493061ec1a10f5ad9e5567b5843",
+    "properties/eda.py": "309933196847ac70121fbe5981782cdfdd2ea12f08cf9ee270c90a23845d0dac",
+    "properties/ir.py": "cf582a45d8ad06724ed6125c2ee46f7d1b04b008719592ca7173810730eb3f4d",
+    "properties/polarizability.py": "bf6312a76091f90efd66508329f66d63c4e10ea03757cdf6b1560a474ecf8964",
+    "properties/raman.py": "2166d05b0d6030c564c267c21306c22e83cced07bb891f67547f6d129fb15658",
+    "properties/shielding.py": "920851fdefcfb272f9ab18f4d3099d6d0ba6a9d49099c8eb8175b4a005eaa675",
+    "properties/tests/test_c6.py": "ef41d121e2a54d44a0357b795c18b6c95f521198da54fed5736f0a9b6e676e9f",
+    "properties/tests/test_eda.py": "4066a5a4053f38ab065ae32b0897ee1965cf975d1c2648ae3fdcc68f41494c89",
+    "properties/tests/test_ir_intensity.py": "3a70e8ad0e1ee1f901698454c93f1956b580d0220fa422877ddd0e04545ca5d8",
+    "properties/tests/test_polarizability.py": "d83880c466dd5eb99d6c42219b08f53861b8e215553a111be499c59d467d705b",
+    "properties/tests/test_raman_intensity.py": "0e6d172f971fab48ea5c461a025837c6628c7e8c0ae27f0d7afa501118968903",
+    "properties/tests/test_shielding.py": "880dc28c8ebbd76131fd6ebc791f59f281d8347ac1f9e9d0ba6bf0e28e8977e8",
+    "qmmm/__init__.py": "304ee3a2e82508b9f63395b30d4f0db90a6c2557699a388c21de6f4128373e85",
+    "qmmm/chelpg.py": "58308cf3ac7447f351ba99364db2611e723af5fe487bff74c42d50e6da2cadcf",
+    "qmmm/external_field.py": "600719f1ada46c40ad3ef3d3f48abd544dc1ded3814575dbedeaf0ef1c6601cf",
+    "qmmm/hirshfeld.py": "b90532687cda4d6b4512f988cf75930f3a42c0541ea61d54e96557ff680b232c",
+    "qmmm/itrf.py": "b913edf58525885db83bffe93bd1a6cd58f39967c1bf9a1999e167314cb9e298",
+    "qmmm/mbis.py": "fdca3ad00797d3513d3eed0a6ef7f0ac59d45bd22fa6aa4637880284877f6894",
+    "qmmm/pbc/__init__.py": "413e8328ef5b30ce417033ba91e5323cb9fecd959b88c7a165d74603c06c6014",
+    "qmmm/pbc/itrf.py": "140aef15b0318b9e6e1da4ca443e8d4eecdb69852761adb076929613195fb266",
+    "qmmm/pbc/mm_mole.py": "9d2d7764b63294915404fb49b48b6e1f5f8b2a6b42e78fd4bc6cac9b6b24254e",
+    "qmmm/pbc/tests/test_qmmm.py": "34a0011772d387bd234e3b7500b2e7cf31a0f6b2377f14ed2150d799d92817ff",
+    "qmmm/pbc/tools.py": "6f560455ce870b25f8d6b6aa12b31037ffc1fb8c8fa9216280200d4f5012eba3",
+    "qmmm/tests/test_chelpg.py": "46aeeeb2e9bd4ddac7ac5469be48f045f65dd5a2d4eb6934123a21780c700ba8",
+    "qmmm/tests/test_external_field.py": "64695a37de4b9d31d0b6d14b09d9887e8ef8303e34bb8baeb7f2781c780eb5af",
+    "qmmm/tests/test_hirshfeld.py": "57c95e4d184a4ac8517b21852c1590a492080742bc667a57b7aa43bfb9476b84",
+    "qmmm/tests/test_itrf.py": "cce170ae921a723c259d38a0b4f85c47e13bdff96fd4bc6e08d935d35da0e42b",
+    "qmmm/tests/test_mbis.py": "45b7ef78c3bbab4838594ada646678920800d902865a93236a3fe6ac534a74e9",
+    "scf/__init__.py": "203f95adbd96b07a6750704bd83b6351284b6122d3554781034a49a382a93512",
+    "scf/_response_functions.py": "ef6665f7a2b59206ac41673cfa52151270cdf33d16c13304e61fd96f341fc615",
+    "scf/addons.py": "bcde57fcbff1180aaf675e8709c93762a78eb381a994549fcbfeccf6bd57ae88",
+    "scf/cphf.py": "1010af1ff5cb62e424223e6c65bad9344e7a6e37bf6882ff574efddb9e2839de",
+    "scf/diis.py": "371f68ec9ea45cc671a7360217ea41a111cb20d9eae934c613768fe317e00d35",
+    "scf/dispersion.py": "e1cbffe4c8de7c7939668298a453f7b4daee6e6c5b35bef2f6b1292c8ecabfb4",
+    "scf/ghf.py": "f8ac7afd42d11a0f4a596018ba1308f57784b3e8996cc953818b97942a4be4ca",
+    "scf/hf.py": "3660a83a84b388930390d2e834a40b31cf94f3aa73bf32705bec6502eb200ab0",
+    "scf/hf_lowmem.py": "d24db8b997164eab4824a6405eb88c400ddf00e298ca8fe21723131c90e355e6",
+    "scf/hf_symm.py": "766ff620ecb2014c0f245ed9484bce5e4cc256942851b9db5b3dc247fd82cb12",
+    "scf/int4c2e.py": "8bef9512407639beb48fcc0fb84b8d2abb52631fd7cbd2c46cf1064d98097aac",
+    "scf/j_engine.py": "a554315c46048960f2ac915e3603a3e11c0dee18240410b51d2bcc163cc66104",
+    "scf/jk.py": "68fd75d8a96f21b8a1b39c7f4432d38971706dc7fca3abecc9faa05fbb6dd94a",
+    "scf/rohf.py": "81f54fe9f4e781274ae2ea1e4eb28507453bd8751cfd59f059e865d97237b82d",
+    "scf/smearing.py": "ba7592c222737928722219c31ce2f040a854f587f4f59209ebc92e47f9dcd13f",
+    "scf/soscf.py": "4d42c15753c1d623e47ce1c3b82d4ee684d1c43c257a5f094082223692d54e81",
+    "scf/tests/test_addons.py": "4e7e072bc2ceca340485c7dd3c718080237aaa3cf69da675598b213bc9c54f3c",
+    "scf/tests/test_cphf.py": "00e9846d0933dde12f64b1316709efb1d380645e11014e4017eea5ea60161117",
+    "scf/tests/test_diffuse_orbital.py": "aabddc8ed0dd08b9b010e50002f0553e5e11dc61553e0c70838d4054fb2b7534",
+    "scf/tests/test_dispersion_logic.py": "3fd39636a3947da6b2027951c1d68c8ce7347524604d6120d2757d711f102c2f",
+    "scf/tests/test_fermi_smearing.py": "5aad7e4dfe86d3e1b7e22b4973ad87807548d3120d95d479d8f584650b98c24c",
+    "scf/tests/test_ghf.py": "2de12e78f5eec2517660b1e33306519d2f52c3b08c13fb0eb238b9b537564717",
+    "scf/tests/test_hf_lowmem.py": "d740266ce6eecdce874fb163a6165ccba39fc57e8c08da7ca8dbe6ba787fc066",
+    "scf/tests/test_init_guess.py": "cd9d12327a1a3cc3cdc84b9a611b5b9490fab3b6f58356062362fab4727cb93a",
+    "scf/tests/test_int4c2e.py": "ebc92dcb36ee096b33d7a08e94dd39c6b29ded62588e55d8ac88b2063e3c7ad2",
+    "scf/tests/test_rhf.py": "012a356d1e3205ab2ae901b0cc65f28ddbace0516f0b5af84fde0328a13b14b2",
+    "scf/tests/test_scf.py": "fa7a3e20bdd546166fdf2cd2660fe71b483f1c82f08609145e5c1b50d0c37e38",
+    "scf/tests/test_scf_ecp.py": "8b2b429cc0ab142330ae8f6830c9d7a628c7d0af06f5b84ce13154772f02bb37",
+    "scf/tests/test_scf_j_engine.py": "5d28777904c03bdab1e59b05ad361974288fef25bfcbcde5811e686d9ccc3567",
+    "scf/tests/test_scf_jk.py": "3a1f1349491eeff8e2de678174d50e6bf5b1c2be6363b9120f171eb782d0479e",
+    "scf/tests/test_soscf.py": "e2225a24d8e510a2076f612794307e048517b3b52da963f50d4b91934fa1f2ee",
+    "scf/tests/test_uhf.py": "d8f2465b54ad5b2311a11fec19891c38a315cf4344eae242e006a010e09de3e5",
+    "scf/ucphf.py": "5e2aac9fe11ecb01ecd08b22cedef23a28fe62c1f9d13d1d32436a14c89d296b",
+    "scf/uhf.py": "6aa38a3731db6d2957293e67aae3d7aad936ea474dbaf2076c33cc5f3d58d231",
+    "scf/uhf_symm.py": "cb535419032967b7bc828d03d5e48388ec895797fd0ebc09b5c1f29c9aadcf0e",
+    "sem/__init__.py": "1ae0335b5fb91367cda8ff293c18d9a46e5e2fa2c5ef0a78a39f175d53819354",
+    "sem/data/__init__.py": "7851b0e32168198ceb05df1b3b5a09f1f9dc0d1db657c6c8fe3a104db9e77e5b",
+    "sem/data/atomic.py": "0abd3c06400c50fc1529cecd31997a5d70a02897761d164712f22dc3fe2ba151",
+    "sem/data/corrections.py": "1b0dce6afd671378e5efb16264df31dce8de4e93d52acc39c8db46370c7e5755",
+    "sem/data/electron_repulsion.py": "a3448d3c9ad10a84c35134898d073cbbccb528394cd39db1a6fd299c54ec0218",
+    "sem/dmp/__init__.py": "6c3ee99356f8fb05339db3f066c6bbca1efab2948326a9c5a37ed5412811e1cb",
+    "sem/dmp/sp2_purification.py": "baf4482b95b0c34418dce2636e061defc33ef76f38393703082f81ea86ae7589",
+    "sem/dmp/tests/test_sem_purification.py": "3f8d02684f5e47c38b0dce1052ffe7239e0044a059bdcc875ea25e008451f380",
+    "sem/grad/__init__.py": "9dc80dc3714e2afcaf9ce0c520bc2704ad4c8ef31ba2e64288a14cf6d37fc626",
+    "sem/grad/rhf.py": "56bca805747c4917429cb834786da72a6786a36d18f9054f895c8d29ae4c44a0",
+    "sem/grad/tests/test_sem_geomopt.py": "286f8026c750d617cecefba194c9ed75504c4eddc073ae22fa68d422a904e2ac",
+    "sem/grad/tests/test_sem_grad_rhf.py": "f9e55de4ac352c643b137615009e460b98ca44c75ab1523ec0a544d388a6e011",
+    "sem/gto/__init__.py": "a3d5d5ed7f0ccac481fdbd262e7ac2d0c966737fc51177f733d9db09dc52385c",
+    "sem/gto/mole.py": "b4f887f7a5994c0c46c02c137cb6a586a6d61350c4fa3a230fe3299adbccef10",
+    "sem/gto/params.py": "f2f738fe232dbed7fadf6411415ddd212920ce07b36ed09f56fc98e87a2501ed",
+    "sem/gto/tests/test_sem_mole.py": "9133218bdc1d1ec6965a81c6c981e61805323ad19b0cace2357505bffd5bfa6e",
+    "sem/gto/tests/test_sem_params.py": "449ee7e72e0fe63045cba5dd334df50cbdb027ac6a8370bf1a8048b1776e9e2a",
+    "sem/integral/__init__.py": "5b948ac47d721314fe2a467de50972354f70e9e4f51f8832ed287c482adc1baa",
+    "sem/integral/eri_1c2e.py": "2a96f47a4e1f320070fde654a0e00324cef5d3d9d4dbcff4cc8b12b7174fef2f",
+    "sem/integral/eri_2c2e.py": "61014c419080bb8ee5e39c99625e7c04c7c9a7c90a90d0f26fd223d8818d321e",
+    "sem/integral/fock.py": "c493f64360280ba822a74e8198f1af22a4bf3ae536a25011f03720523955541c",
+    "sem/integral/hcore2c1e.py": "30dca0e01c51402df667f89b264f84766443c64236ed6ca051bb835180c08b9c",
+    "sem/integral/tests/test_sem_eri1c2e.py": "b1399a92b2c37cea4506aaac76cdf09dfebbf29db051015f9d0beb479f6c81b7",
+    "sem/integral/tests/test_sem_eri2c2e.py": "b187153b0f7a0ae6991bac68f8e44308f7c84946462a87e7da17146d4b194277",
+    "sem/integral/tests/test_sem_fock.py": "b4a98ef620fd48575aa9fd6a699668778e6d53be6a3e169dd10188e893b7d315",
+    "sem/integral/tests/test_sem_hcore2c1e.py": "7696253e1b1a9298f8e010290eabb7920897005b19b2a01ab373ff31ae31cdb3",
+    "sem/lib.py": "995576ad76193d3b4ca99abc8f803b95225611aac3e5b2bcd178c8d72d515ac4",
+    "sem/scf/__init__.py": "dd6b0177195d9ddf4eb7cf95f91adbabb1664a3dcf5d569e7283060a410e3c5a",
+    "sem/scf/diis.py": "0f427571191ea3b9a7606311e99cf53c54efb85ba2ebaf318504e3c7e4770ffb",
+    "sem/scf/hf.py": "994b1ece015c8f9c9ac313d8ab41a75ecfc532a94243ce724def757fd7bad2cb",
+    "sem/scf/test/test_sem_hf.py": "965914b9e280f0ba1af47f6d3eea04e4314d4b038b3122a8fee3c5de455ee9be",
+    "solvent/__init__.py": "e2c0ee762c0c19c30906d07983126064ed9c5930a950180f6081b3caedebe97f",
+    "solvent/_attach_solvent.py": "b2e00a6fccbe8a079f61f5addf73bda912e0cabf5e9ab9bcae257ad4b261d4fc",
+    "solvent/_solvent_data.py": "39ac9bbda8b2197915e6ed672f71fd1d17a67649b93465a1882b3ce3f852d35f",
+    "solvent/grad/__init__.py": "3bd3e1979a976aeda5fdbd846080f9158b9e1297a245c6db3bfcdd2dc24de1a4",
+    "solvent/grad/pcm.py": "3be929139059282b762af3aa8ed38cbc005f1aa4d3519d7e7dd5cad88933917e",
+    "solvent/grad/smd.py": "2de746bc9a7c15e429e4a7365c791bcb0b30550ac8c6d0824c10f0f0af19d48a",
+    "solvent/grad/smd_experiment.py": "b4d6aba63e618ef57c16d82ab1e9034f8588f6e1d2fbc0742bd085d2144c4aa0",
+    "solvent/hessian/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solvent/hessian/pcm.py": "4cb4c1d9e31f24b857205cd239db1077d251c116a1d604b07cedb845047cd484",
+    "solvent/hessian/smd.py": "4124c1d5b44aee21ee2144f46fb75f2a6144bd7d96770b8c3fe9d69fa2909de1",
+    "solvent/hessian/smd_experiment.py": "a4fd74b349aae5812d3ba4a0e243cfde8f05bf5ee6ff822fc5c42c40bb98e90d",
+    "solvent/pcm.py": "0e4f553c2e2ce6a96b246e7528a4cad93e8ac55682c45f84fc758d5b561c8d1e",
+    "solvent/smd.py": "30863c50cad5cf544591f6bdb77e98ae742f51257c90b8d9b3b996e59c1507d7",
+    "solvent/smd_experiment.py": "16ac31b01611f38d455c419c9d8db7851dbecf28af20719973710d7fa876948d",
+    "solvent/tdscf/__init__.py": "6fb502eac26e8b0d76adf566535a4a361061015ea8537af5410c1b934a880d65",
+    "solvent/tdscf/pcm.py": "f1051e352a99635656a9aa8281072aae847fceb7f0c32fa124b75ec5afe63550",
+    "solvent/tests/test_pcm.py": "9b1b4e3a7bdd681e23004633f3b01e45cfad501290e52f6481ee3d3464fb380a",
+    "solvent/tests/test_pcm_grad.py": "4827164c91c591271b88619681a575593fcd84cd8ce989a3e549775e1e10b110",
+    "solvent/tests/test_pcm_hessian.py": "9187de8213a5a6bdfef056c46a46c5d64c1e853e1794c228fd77b3180916a292",
+    "solvent/tests/test_pcm_lowmem.py": "b42cfdde569c7cfe70511fb94b5211e26588fb59c0d6b0f1737d1e2446209aff",
+    "solvent/tests/test_pcm_lowmem_grad.py": "07ac038ed5b5506e7540bb536ba37ece314ea4b6d697410cf2ef876cbb2936ca",
+    "solvent/tests/test_pcm_tdscf.py": "cbe80ecf6c9459e8af2376273ea06924a99ed199babfbd2eea5a5557a38fa207",
+    "solvent/tests/test_pcm_tdscf_grad.py": "d19e1de63c11f9d863b26731134083f6b4a569e6606ad2a04e215af8e14008ea",
+    "solvent/tests/test_pcm_tdscf_nac.py": "ccf1b34b96fea9e1f3dc71172290898c7114351b871b5cb8847ac5ee92f5cd9a",
+    "solvent/tests/test_smd.py": "6f832ac0c2d7719b14977e71463b1a817798738fb9b994bf864613b04088fe06",
+    "solvent/tests/test_smd_grad.py": "9a6c57f1acc54e83b6398478a1dde04ce4c1238dca622692c977b98b125504a0",
+    "solvent/tests/test_smd_hessian.py": "318ac3916054bd52250515809f5588cdb024700f6fc18a4eabaf5650ba947028",
+    "tdscf/__init__.py": "e4db80591b32f561ae92ba897aca9c305d20d5c98b2c2c9d2bfd5ce61f18f806",
+    "tdscf/_krylov_tools.py": "dd4cfb74d59d52f43d347f6d03a8a1d2829e4795a59fe7a217b37857e25244a5",
+    "tdscf/_lr_eig.py": "d96dfa53838e20e132252f5ff7b9c7fdae54a344caca1db4de66f0d4df2fb9c3",
+    "tdscf/_uhf_resp_sf.py": "365032fbfc8ddac52961d95529c02869a51355e2ed379d803ba03a67b16a86c1",
+    "tdscf/math_helper.py": "e7b18889321e78d129e343fa890ba6536235988ed5da3195603a5391fcdb399a",
+    "tdscf/parameter.py": "c7a3920cc0d14d2eb559ae35d89e1a9112fcb8b751faf91ca2e1818025396cb7",
+    "tdscf/rhf.py": "2eaf8ed0fef764905615f9b19b24f1ec3db25881e29327fd428e6bc97f9eee69",
+    "tdscf/ris.py": "b70bd76f03c20d9c11679dc38d805da15a8b2e3bf1f08aee72b0a1aec97e33c8",
+    "tdscf/rks.py": "3a4a75d858353ba07722640e9ce5de6e72a5b475d29ebca78fdb911309709201",
+    "tdscf/spectralib.py": "4f266786ed8ac3b3632a50a0961b26982890ce78670f355b170049d371136f55",
+    "tdscf/tests/test_diffuse_orbital_tdscf.py": "4b6ca60fc2bb181c73b357d4a2f48320f44c2e05f83a250439202c85ef65cfd0",
+    "tdscf/tests/test_krylov.py": "cb790b931351df8756c11177f121337d0a2e68b7f325eb75b7b695315c8ffa40",
+    "tdscf/tests/test_ris.py": "9106e0fb54150bc9672f661f696841024ff765833ef715992d87ebc66053c98c",
+    "tdscf/tests/test_sftddft.py": "95db73252729da359553f09caf9293dcc5ea6ad7ca069efbd9f0dfd6d57e07ea",
+    "tdscf/tests/test_tdrhf.py": "0efaf668d97aa87a9912ccef0d829fb4a2631da7ed09dcd44eec1e9a5dcebc18",
+    "tdscf/tests/test_tdrks.py": "91f764c1b2647722db9b8265387a58e41ef8fbd1d6802eecebca3840ce525566",
+    "tdscf/tests/test_tdrks_vv10.py": "99fc92fe11e2a5548c884f9940d8f5cfceff6136567806b12534a2fd10d1ebe9",
+    "tdscf/tests/test_tduhf.py": "80bd46f60ff460c9d07fc874fd26d6bb8a1ce7f13519af96213582904a91cf51",
+    "tdscf/tests/test_tduks.py": "1802d2f54283195f0cbf1e560973f7f38fa59a8176f09bbdb1107dc0fe1743be",
+    "tdscf/uhf.py": "5f1cdc64e79b7a7beff10a4880ab5ee9c8021d03aceb882e2b0b0560aacc8554",
+    "tdscf/uks.py": "a5e20374ffeeac917ba1104586dea387bab9d8a8be401cb0a61cb9d52c61e864",
+    "tests/test_benchmark_ecp.py": "2ef138105821161efc1d3bc202a89394b116cd1e0c9616b7f88231e9c337fbd3",
+    "tests/test_benchmark_properties.py": "de93f482e9dec6a919b47c7d9307727cb0a087a2cd95cff34cb7ad9f270043b8",
+    "tests/test_benchmark_rks.py": "2df9afe383fe1ec8e5fa41996f80174e4fae8af9bad8a0bc7ab8693bd302a527",
+    "tests/test_benchmark_tddft.py": "d3df5996d8f3056d663863fd3a4a6a7a7369829ce8e306dc394f76fb25c63f56",
+    "tests/test_benchmark_uks.py": "ca1f56312fdf20bb9a3ae5305dadf47756583cda1aa38fa018f0a80b26ddf4a4",
+    "tools/__init__.py": "4d24cde8cf95f8daba616079d9fd6fcd6919011468da95e0228ddd343b06bd8f",
+    "tools/ase_interface.py": "b1925b9b959f97dcad1f3ee67fe672d91cef8a5eb54a2b7c631cdfa489dee4f3",
+    "tools/method_config.py": "8af214299b4a11dc9fa08d3a83aa1d793991de754fa4f3433efc477804767ed2",
+    "x2c/__init__.py": "4108a11adf0b1918d6eee21c7884dc327ef8215dfc4b09ab758818d361c95ac3",
+    "x2c/sfx2c1e.py": "3d9f333bcbc8b7648de0038b037bd99acd77e07c97362745935c2722b6711930",
+    "x2c/tests/test_x2c.py": "cd88b9c4a06c47484f30fef3df9455311830cd6462ed371558e68dfd0aa8407f",
+    "x2c/x2c.py": "fa6a2814a1fe2db35dc34c1f13429c259b86217f3f8cab5ef0da522b1e86c36c"
+  },
+  "native_source_hashes": {
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880",
+    "gpu4pyscf/lib/cupy_helper/CMakeLists.txt": "a6cfc287bbe554fa58e7b9802628359a0b500b1020951917c13fdc7e9feb906a",
+    "gpu4pyscf/lib/cupy_helper/add_sparse.cu": "3158510cd1fca9e8961d6ed9188b9281b465d48e93cfe2a9585af81281032305",
+    "gpu4pyscf/lib/cupy_helper/async_d2h_2d.cu": "6184d9f7cbe08a8e12583a1ee2c96d8b6e5bcbf34d570fdf0d82bb8a0a825e1a",
+    "gpu4pyscf/lib/cupy_helper/block_diag.cu": "85e057416a51c046449036c2bb73ad6e458512700ce35f821756c4a35730832d",
+    "gpu4pyscf/lib/cupy_helper/cart2sph.cu": "503df287072b739c263ebcbfe3d6420107e2f4bd09a9105e94bbe14e9abdc3c2",
+    "gpu4pyscf/lib/cupy_helper/dist_matrix.cu": "86cf9c5291ba3c9af5a8be4f35dab1445ab59d67d20f1689e25a83784a451e2f",
+    "gpu4pyscf/lib/cupy_helper/grouped_dot.cu": "312bc2dcf46d53b119c0d50d470c6e4084d9de7bf92d0d06b5ea87f0d18392ea",
+    "gpu4pyscf/lib/cupy_helper/grouped_gemm.cu": "272f103aaccbce4aec441e72da0d777007ab54a20ac7ff30a02aa48f5f375617",
+    "gpu4pyscf/lib/cupy_helper/sparse_cderi.cu": "1ec82bc85ea9d8ce0040a45216a45e1a9de53c0895d3175898db54fd6c23d7b6",
+    "gpu4pyscf/lib/cupy_helper/take_last2d.cu": "fa826b04fcadf27d84c6f43d7e49f3b68dccf4034cdd79ca9c02dcadd3faba24",
+    "gpu4pyscf/lib/cupy_helper/transpose.cu": "a4ee44a099034e10c6218c2936ff9b5e808af7f41dfca2e0a5f2ec9ab327f8c5",
+    "gpu4pyscf/lib/cupy_helper/unpack.cu": "3ed50736ebf35730828b6d432e2e03f9e25e135e961340f6009ef0280f90a214",
+    "gpu4pyscf/lib/ecp/CMakeLists.txt": "4fd376fe6079753d7d8aae9810933e0baadc70d38f662fb4ecafcc1cc0b1de32",
+    "gpu4pyscf/lib/ecp/bessel.cu": "bf71458285ff0f85e52da267b329f5ddd958acc613415721fa8bb4215cd3eeef",
+    "gpu4pyscf/lib/ecp/cart2sph.cu": "b5d5332688e58addbf758827644cc8e9aaae86cd4f12fabfeb145365c7b35329",
+    "gpu4pyscf/lib/ecp/common.cu": "0483591ba34576c164e6c1447cca8ed8ad19ce60c08d9a76c9decdd4d8b88651",
+    "gpu4pyscf/lib/ecp/ecp.h": "71d39e6b1155e593a06e23d5f1f6066099f837aac0893d2eafc713963f9cd58e",
+    "gpu4pyscf/lib/ecp/ecp_type1.cu": "0106a749ca6284bedba6a3d3d5f3360ef49b4f15329d879b8e04a5566724ddbb",
+    "gpu4pyscf/lib/ecp/ecp_type1_ip.cu": "d90e3c84756a061aee4e7de2a142b33487f021c9f7806290fa6d4d45378cf857",
+    "gpu4pyscf/lib/ecp/ecp_type1_ipip.cu": "5d056eaec749d2cf6e3856f8e303ee2465b8bb8ff7300009cd60aa0e9e7fb826",
+    "gpu4pyscf/lib/ecp/ecp_type2.cu": "ac6ee07a7a94b2fcaae5c5a394e03e84ad096804fd5d8dbd304465c5a855a5ad",
+    "gpu4pyscf/lib/ecp/ecp_type2_ip.cu": "18796b09cc7a26f3a2011893810cb0bd309265ea1edbb75e53961f4fb921272b",
+    "gpu4pyscf/lib/ecp/ecp_type2_ipip.cu": "379ed73c87f55bc49f7ec20a09646b85d5cb1b162453004ba685d77ebbfaf7f0",
+    "gpu4pyscf/lib/ecp/gauss_chebyshev.cu": "035ab6c2d6c3988cb1bea37e3c484367569df4ad78c0976dc13285b44c6fd9cd",
+    "gpu4pyscf/lib/ecp/nr_ecp_driver.cu": "8e40c7257558c087154a35fd072c42f321f10756eb5cf0a75a15d73f6a91bfc8",
+    "gpu4pyscf/lib/ecp/type1_ang_nuc.cu": "29db44a7f6fe6526b86fe2adeafc501abbbb8033e3c478f87ebcdba818cb3a07",
+    "gpu4pyscf/lib/ecp/type2_ang_nuc.cu": "3a95c4c70e06232bfa3a079c58356c67ff044716833bf391e71a441ce8bf64d5",
+    "gpu4pyscf/lib/gdft/CMakeLists.txt": "81f4b6983e46d856e37d982fe8fdceebbdb562b5980569a20ebfcb29704e0a96",
+    "gpu4pyscf/lib/gdft/contract_rho.cu": "27531a59700e8617a1fc382cedaa669db92a3a317d0c1663f53e18893d562e36",
+    "gpu4pyscf/lib/gdft/contract_rho.cuh": "c8e237cf619a6a1a65e46231399a74fc858c000f12f72d77c3690094a95dc360",
+    "gpu4pyscf/lib/gdft/gen_grids.cu": "f0358ea9ce066817492a03ae2091c986dd50fdd52c97e13bb50de8766d1e7fd8",
+    "gpu4pyscf/lib/gdft/libxc.cu": "51e1f4f32b23210b5c67d198d587909efb022bc6398105da71d8b216815fc5a8",
+    "gpu4pyscf/lib/gdft/libxc.h": "4ee8c83fc69eb40426cd7b68f6f1e6171b36233b3ce9d51324532e4c38751bc7",
+    "gpu4pyscf/lib/gdft/nr_eval_gto.cu": "9a8338e38b4ab6d2c89fca28e36af28fe5477e7ffb74999cbd0a36f261fb1e11",
+    "gpu4pyscf/lib/gdft/nr_eval_gto.cuh": "0ab14cf61e72547ed6913e6de31d3c7aca083a686f956ddc303df8d6568d4f4e",
+    "gpu4pyscf/lib/gdft/nr_numint_sparse.cu": "8af8b09200ae5abe98e86bfdbebdd67d748aa4cd396cc8f2278dad398ab229e7",
+    "gpu4pyscf/lib/gdft/vv10.cu": "010901eda114600ae46b2f2bee623f68c28bec016606632eb34a828baa13d76c",
+    "gpu4pyscf/lib/gint/CMakeLists.txt": "5465c362066e3d214e7176dc2f44b5df45a78fb9f6be1df27ba90e907c4fb9db",
+    "gpu4pyscf/lib/gint/bpcache.cu": "f4165a4d1982f2934ec3e2d7c98f94b2d8d83cc06d5a2ca528c2360bf932f424",
+    "gpu4pyscf/lib/gint/cart2sph.cu": "b118edd81860738e9d5fe849276ecfe702742d63002daff305776e1deffc08ff",
+    "gpu4pyscf/lib/gint/cint2e.cuh": "5c12d37c7cc10d222f4249782a624c84c08a4d781d8701fd1718054715ca893f",
+    "gpu4pyscf/lib/gint/config.h": "21268dddbe0c6bb791f2bc249c483f7525e6a8dc2335f3f98780f8628dc194ea",
+    "gpu4pyscf/lib/gint/constant.cu": "f57a5eb45eb2880f67d87fd7d638b2962955a47c1922f7eae1ec3d4fda43a0a6",
+    "gpu4pyscf/lib/gint/cuda_alloc.cuh": "e9111dcc5704f2dda64bd396733c37f130850c3c62c5b773041d07e6c3520ed6",
+    "gpu4pyscf/lib/gint/fill_ints.cu": "a524470901b7b65cf0339d1c74ce8220c776202834966149ca2ced60ff654af5",
+    "gpu4pyscf/lib/gint/g1e.cu": "56fa57be1c82f27d34c29f973632dd2070566c3f414c9092e3dc51ad79c83cc4",
+    "gpu4pyscf/lib/gint/g1e_ip_root_1.cu": "372f16b1278955cf0838e605999eca38b36d6e21732c47069da80966a8f57cd0",
+    "gpu4pyscf/lib/gint/g1e_root_1.cu": "952f70b26246841fd8dd4a819d1360cc377011c0e1abbb702886dd70f85f369b",
+    "gpu4pyscf/lib/gint/g2e.c": "33d2c425f417c8bc25d51d8b4ece4aaff85dd5cac9d899fee6f652030d33297a",
+    "gpu4pyscf/lib/gint/g2e.cu": "1c0f7c94d9098fb29e1be505a7e14765e0bf98ab9dfecb6a371d5967ba5ccd06",
+    "gpu4pyscf/lib/gint/g2e.h": "91f558d3b2c81bf93b61a352ac78814b32245b8353d72d72a44dcfed54c30646",
+    "gpu4pyscf/lib/gint/g2e_root1.cu": "37cf5586bf7aecff45e4788ca9fdfe62a5badc9b75bccd7e134b2341e1ce589d",
+    "gpu4pyscf/lib/gint/g2e_root2.cu": "f3a9b9123a0227a0aaf8b80b2e8ae1ca078a41cc842218194ffb0fc52bd9db15",
+    "gpu4pyscf/lib/gint/g2e_root3.cu": "f6a3961671fcc0171955f807afa064196fe168418666e44dfd1f056ed0112efa",
+    "gpu4pyscf/lib/gint/g2e_root_n.cu": "f001e18c277be0ff5eef031151d065d67a92e7854f01b4fe2bdcafec801403c3",
+    "gpu4pyscf/lib/gint/g3c1e.cu": "7f0268833527a009ad18335432d01b69d82bcc19c6479a5538f52848d179dc88",
+    "gpu4pyscf/lib/gint/g3c1e_ip.cu": "cf0862d3ea8dc74fd757d6bc7cbe28fc2362a42e411b7cea7d732c4184ee1994",
+    "gpu4pyscf/lib/gint/g3c1e_ipip.cu": "cd8a63f5dc8134996203728e6eafed0aa3c9319a1788aacf105d21ee4fee62d9",
+    "gpu4pyscf/lib/gint/g3c2e.cu": "5d428d447e1ccea030c1f96964d67c55cb8ecc87e35231e1144389b17cb7af2e",
+    "gpu4pyscf/lib/gint/g3c2e_ip1.cu": "c91f3f669514007c59bdec0211cd35a6e349a2e979ddd7b48c8de2d7d3894a5c",
+    "gpu4pyscf/lib/gint/g3c2e_ip1ip2.cu": "5bcf5e0b6b0b43f1f15e221e5dafade2a92ffd6bf80dc4ad71b2883c78575950",
+    "gpu4pyscf/lib/gint/g3c2e_ip2.cu": "fe05b304b0f089dac03a873fb43533492b85834a6d5f047e62b0f3ac0ec103e0",
+    "gpu4pyscf/lib/gint/g3c2e_ipip1.cu": "ad73754c34165387c545fd9042e15c826718114a2fdd3ec6236b3b9aaf7d6ef3",
+    "gpu4pyscf/lib/gint/g3c2e_ipip2.cu": "e0048112fa3999539f088b52b7f6ced010d889cc3f888042a95b36e4a288f4d4",
+    "gpu4pyscf/lib/gint/g3c2e_ipvip1.cu": "9da4eb0ef9737b2ee6d57baa8059bf03920bf13e91982ce2f96fabaca47f73aa",
+    "gpu4pyscf/lib/gint/gint.h": "7ab659c3fa7d9b06b4dd996f2c93c0a6515f1bf54f8f2123e0b2c663dc266c24",
+    "gpu4pyscf/lib/gint/gint1e.h": "834857ba78d541f17eec7ce7a1e8a33d38ef3d358916395ca8fd28ed0c38af1c",
+    "gpu4pyscf/lib/gint/gout2e.cuh": "6876712810d46d1347ee26ff179641daca5239be12bdd1de218eaf2c8ce52ff6",
+    "gpu4pyscf/lib/gint/gout3c2e.cu": "ac0034f4da79362f9670de0a6dc7c0ed91a2c24989197a4655988d143c2b3b87",
+    "gpu4pyscf/lib/gint/j_engine_matrix_reorder.c": "433519ccf4e13260268f1452e91105322f4b25aa66c4dadef4781df9e3bb57ea",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c1e.cu": "ad9d394e1abae43c6846007bc8d5f7d820765c33d1ec50604a76252f03fd82de",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c1e_ip.cu": "5d777bafe0b9d3eff0568b462bd053994129e7e676c0f99113735c1a62b49fdf",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c1e_ipip.cu": "31eb49bdc2c2c514b974a4971e5ccd851f5798fedeffc3d0783bb7fe42ea7d72",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e.cu": "6b2b8e9e4ce76bc0145d80bf37c4cd713442fcee893a743025b3a208a05b4842",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e_ip1.cu": "58cfa000744378528fba2832362736a3b7ecdea334e6a7c029f2308d08c8de22",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e_ip1ip2.cu": "58e2ec21c1ad0098756c5025a57b1d497571489972ea78df401202b895949f07",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e_ip2.cu": "d3f6feb2f96d2aa6813736b90482f8da5b9ec35e5f920aa6391cd0170e9f6569",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e_ipip1.cu": "e78091a45bb67163b63a11eebcfd98c0275cba995e4e027e7f65e5c8c859b269",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e_ipip2.cu": "8165fd9d1cc39f451d1fd3c9d62c78140a7e6247164a65acd3dce8072c56d311",
+    "gpu4pyscf/lib/gint/nr_fill_ao_int3c2e_ipvip1.cu": "bb43d034f7c16e886918b0e9be159e8c93d3ff04045ea02ed74e94cc7ecbc43a",
+    "gpu4pyscf/lib/gint/nr_fill_ao_ints.cu": "d82384d3b3400323606d851c8c4ec11ebd37a17dbff91796e2d3ba2b79ab4d8c",
+    "gpu4pyscf/lib/gint/pair_data.c": "33882ee215f4abb1057ca62f1d1d5d067192f328293fad44cbf11e9c4436970d",
+    "gpu4pyscf/lib/gint/reduction.cu": "c118d7757e210cc115c5a6c0a7c3ec127fb90f53bc288488ebb8cd59ca74c671",
+    "gpu4pyscf/lib/gint/rys_roots.cu": "01cf86c7f5ffbefab6ea6947cdecd422cadaefe9d7a7aa156870cc94ddfcd312",
+    "gpu4pyscf/lib/gint/rys_roots_dat.cu": "f6bb6a3d0bdd410576c599a3961563d26070d59b6313a7106b0cbe77ed420075",
+    "gpu4pyscf/lib/gvhf/CMakeLists.txt": "e3631b5c53e2caabfd141148c6e8447a3363b36885771f1858a8c361a428dd6a",
+    "gpu4pyscf/lib/gvhf/constant.cu": "b7a4b7b8e13fda1686bb93f962376472a4a9c5cd2fd4104245a69524939ce749",
+    "gpu4pyscf/lib/gvhf/constant.cuh": "9408630043feb4e6ec4e3677de842d1ce4f96a22c0c33d3e26b4a733cf5b5e4e",
+    "gpu4pyscf/lib/gvhf/contract_jk.cu": "f8eed39f5800d4c961527b564aeb01f8896bcfa357e8dc4f4dcc3d9f85aa531b",
+    "gpu4pyscf/lib/gvhf/g2e.cu": "ada592e9d49a3bec57a0b9563bdb777a0fef61f45a65c3f34299b56a2ca8cfaa",
+    "gpu4pyscf/lib/gvhf/g2e_get_veff_ip1.cu": "4f0b228d97be96096b98cfe08a1b4b388903805da8dda2e2db9bb9dbdce86ee5",
+    "gpu4pyscf/lib/gvhf/g2e_get_veff_ip1_root2.cu": "b3a522d6665529e1de029080ab804b2772a53e9829a6f6348b004e9ce81521d4",
+    "gpu4pyscf/lib/gvhf/g2e_ip1.cu": "5c4a75d8671b44e856269bfc3057a56753fcb17267c3b74e834a88f18ec0cadb",
+    "gpu4pyscf/lib/gvhf/g2e_ip1_root2.cu": "3cc6ee0c9a5fe0d22cf9b94bee6201fd0b067357545850be944a0d08b4d4701f",
+    "gpu4pyscf/lib/gvhf/g2e_ip1_root3.cu": "85460ac237f4d759f1d6cc835bcf8bb057acee4fddc3c6b631eee0a80b1c25d8",
+    "gpu4pyscf/lib/gvhf/g2e_root2.cu": "d0f654ebda6adf2f709973ae91fa3e37db68f4fff19c7e0ff0a7d9ee2dfcf99a",
+    "gpu4pyscf/lib/gvhf/g2e_root3.cu": "ce4154e57f18ed31dcbf884582c53a05963d32e45a8bd9930a216ed8eab2a190",
+    "gpu4pyscf/lib/gvhf/g3c2e.cuh": "310a6c4dceab8bb13d7070a01c8c8913efd97b8b56f4774887c75bee6182bf56",
+    "gpu4pyscf/lib/gvhf/g3c2e_ip1.cu": "25180767c6c590a473f9cef17851629d5d3b4a2d2a877babcf5632fa619bd23d",
+    "gpu4pyscf/lib/gvhf/g3c2e_ip2.cu": "37499f8cffbef5ca3b8e12a42aa7cf23394c59b53ec298c0740a8906ac940afd",
+    "gpu4pyscf/lib/gvhf/g3c2e_pass1.cu": "2f5f9c8d5827fec55bb75d2bbe41205b35e9f0ad9bec7b9bcd4aadd5289ce7d6",
+    "gpu4pyscf/lib/gvhf/g3c2e_pass2.cu": "b45753719bc8ace12ca214d168778642a7c2c36ba8fcb36c1506c63a6f3c9b96",
+    "gpu4pyscf/lib/gvhf/get_veff_driver_ip1.cu": "54609faef97689248a6c96084aba5a85d6d8e666e77a8c03f617ba11eb9f006d",
+    "gpu4pyscf/lib/gvhf/gvhf.h": "451f4cf11a9d0d6ab45c8ee87bae6839fb20a2a21d91a8d8173001bd44b72c2b",
+    "gpu4pyscf/lib/gvhf/nr_jk_driver.cu": "07a4abb05bca869e4b1e2fffef87b08ad8eb9a44b5d9343dbcc239703b4bfc6c",
+    "gpu4pyscf/lib/gvhf/nr_jk_driver_int3c2e_ip1.cu": "468d063805440284b66939d08e6cf657de04cd940f0342074028d8442fbd0e21",
+    "gpu4pyscf/lib/gvhf/nr_jk_driver_int3c2e_ip2.cu": "1880627ae1ed9e60445eb3092ac72ac060446b35f7343025981241006c29316e",
+    "gpu4pyscf/lib/gvhf/nr_jk_driver_int3c2e_pass1.cu": "216ba5d2617d8b5c929192902644c6ea31f79a8abc7f4d4f21a9381c3fb0fea7",
+    "gpu4pyscf/lib/gvhf/nr_jk_driver_int3c2e_pass2.cu": "97c1eefd0e4d4b8151740c03de38ec04f53d19a51da1a23c4b9895a1fc3b716b",
+    "gpu4pyscf/lib/gvhf/nr_jk_driver_ip1.cu": "7c6c6a20a25d307fd02a6851e9e799e6e07d92e76eb04ab54ce8bb94fbb4d6c4",
+    "gpu4pyscf/lib/gvhf/rys_roots_dat.cu": "f6bb6a3d0bdd410576c599a3961563d26070d59b6313a7106b0cbe77ed420075",
+    "gpu4pyscf/lib/gvhf-md/CMakeLists.txt": "b6a30dc6a6960efc0474f1246ebe448af941498b6d7120162fb51d543be5d671",
+    "gpu4pyscf/lib/gvhf-md/boys.cu": "6fc98469b9232c7f2bded65068ea2db3d9f9685d8fdb02a7dcdbf6dfbd01bd3e",
+    "gpu4pyscf/lib/gvhf-md/contract_Et.cu": "86c5ed4ad5cebf3c6cd13ffc6d2ce60e65f29fa8bef7872f84a80d43b368c9ee",
+    "gpu4pyscf/lib/gvhf-md/contract_int3c2e.cu": "fa983b8489c48cd110a9ddf15d81413b9cac9566ad0f1ddbfcb806537b6962f4",
+    "gpu4pyscf/lib/gvhf-md/md_contract_j.cu": "a8a36a753316029e490c375f302d90173db4dcf1b51b71d303bef9a8afec6dbd",
+    "gpu4pyscf/lib/gvhf-md/md_indices.cu": "e13453844227b79928866eb3fd27c2049c1106d77eca68d5c4c281c3d70392a8",
+    "gpu4pyscf/lib/gvhf-md/md_j.cuh": "4c2503b3d20f25eadc6003fd74a7f0b4db9681e48edb051288203cd6f1261872",
+    "gpu4pyscf/lib/gvhf-md/md_j_driver.cu": "7512b28d8051fed814306ff532181bc0c05eea6b3a23e6b76de794887fbd769d",
+    "gpu4pyscf/lib/gvhf-md/md_pairdata.c": "bbffcf5bd48e5250647f716122c7bdedc9a0e16d97d3ec122d7eba1e673b94b2",
+    "gpu4pyscf/lib/gvhf-md/pbc_md_contract_j.cu": "1999ce0b45250aec20e319c187d1a70d3ac5629d7236dbfe2f37ba12dd28967d",
+    "gpu4pyscf/lib/gvhf-md/unrolled_md_j.cu": "25b075b367846a66bd318023f81602c363a237bb4d704159c79fc80ef4d0cb1d",
+    "gpu4pyscf/lib/gvhf-md/unrolled_md_j_4dm.cu": "62e87faeebbe4298204e974574c5c1a434d4090e4462cfcafdcfba76dc7f315f",
+    "gpu4pyscf/lib/gvhf-rys/CMakeLists.txt": "6421b4441e89a3b43b938e148a8a242c50cc34640104d2b5190db86e4d9f160d",
+    "gpu4pyscf/lib/gvhf-rys/build_rys_gxyz.cuh": "89601182ebe6e094eccff17cce1942f23ac34ce43e6ae2e11ea7f22e126fa6f5",
+    "gpu4pyscf/lib/gvhf-rys/cart2xyz.c": "208b838fad11f0006459a826c591bc05b6f62bb6e811082da326da22413fd064",
+    "gpu4pyscf/lib/gvhf-rys/contract_int3c2e.cu": "6f0b0abda43e289fa2728a11684d858909159c59c892b7af92238a09b52dff0d",
+    "gpu4pyscf/lib/gvhf-rys/create_tasks.cu": "d50c4821fe1a834a82152c1b47e75bd48751fc502c80ddbc0d238b379174932e",
+    "gpu4pyscf/lib/gvhf-rys/decompress.cu": "1489415e4d3dbd5a8beb91cad69964f3c807609cdb06ef3ee90741c1da65cddd",
+    "gpu4pyscf/lib/gvhf-rys/e_int2c2e_ip2.cu": "9c029b940d303148ccadd0e4c472b5a368cad2ecc4843d1875871059c515e4d6",
+    "gpu4pyscf/lib/gvhf-rys/ejk_int3c2e_ip1.cu": "32b8e04ec14867577aed230393c0c430debe7da5bcf0c3c1febbab9e8df90559",
+    "gpu4pyscf/lib/gvhf-rys/ejk_int3c2e_ip2.cu": "1e674e2d339fcb8b46d7e903129f7b87c62572ed667485d1d32121465017eff3",
+    "gpu4pyscf/lib/gvhf-rys/fill_int3c2e.cu": "b64ee61a6580bce7a36b7656a878df27dc810d56ef786492d196f7c3fc0a893b",
+    "gpu4pyscf/lib/gvhf-rys/fill_int3c2e_ip1.cu": "ad2c9cf6ed8cdb282a228b2645cf57d69fb68a015a52aff45ba2fc904def804f",
+    "gpu4pyscf/lib/gvhf-rys/fill_int4c2e.cu": "061e82ffed90821fb00f15d08e0caa47e344d40502284c8a538128da55df4490",
+    "gpu4pyscf/lib/gvhf-rys/gamma_inc.cu": "63884af144554f0a8550d623a608fe3f8f20eafeec6ceaca8ab46a3d8f344d81",
+    "gpu4pyscf/lib/gvhf-rys/int3c2e_recontract.cu": "f28c5f73e5a65f13b79892ac81986346bf8209c1ae6a8d40309f399642bcf372",
+    "gpu4pyscf/lib/gvhf-rys/mole_helper.cu": "347139bc54caf9220fd1070a334020056e31756930b71e0a998238382c5b9386",
+    "gpu4pyscf/lib/gvhf-rys/nr_sr_estimator.c": "844c489d92e91dcc4e5f48110e5dca82bd9b8fd35c509dec2014bbc65118fb59",
+    "gpu4pyscf/lib/gvhf-rys/nr_sr_estimator.cu": "b002ca6f4060aba42f7d528765f941b0100c673ce5d29a704afe5fb35bc3cf56",
+    "gpu4pyscf/lib/gvhf-rys/rys_constant.cu": "a631b4775e57c38bc0113a44672dce1a1508e6f04179b3cbfc6a5d91267efffa",
+    "gpu4pyscf/lib/gvhf-rys/rys_contract_j.cu": "3882ba06045652ed508a329975f90c5494f0beda27c2109b7044af1ac0efe766",
+    "gpu4pyscf/lib/gvhf-rys/rys_contract_jk.cu": "a7681da13573e4fca84bb482fbc3dcf0dce55db465d7b3456220e03d8825d439",
+    "gpu4pyscf/lib/gvhf-rys/rys_contract_jk_ip1.cu": "311455e47bc1ce96d5b482320b127ddf40d4e6ad3e89a216da70f435a619d15e",
+    "gpu4pyscf/lib/gvhf-rys/rys_contract_jk_ip2.cu": "10347bd044969d1153a42aedd72c85336f73486eba25a03effcaba1dc960c322",
+    "gpu4pyscf/lib/gvhf-rys/rys_contract_k.cu": "3eb27dc609a4ab6aa846a0b750dd6ba13af5783d345e16adf485ec80af45054a",
+    "gpu4pyscf/lib/gvhf-rys/rys_contract_k.cuh": "abb606b78044f45c5c16e9e4344a779250dc1bc25b41bbe191d25c5ffc6db386",
+    "gpu4pyscf/lib/gvhf-rys/rys_jk_driver.cu": "d895d8409e5f2ac1b04ad1bd3ac9f9cf2bfb0607d72c6e05ce6e6d062550d312",
+    "gpu4pyscf/lib/gvhf-rys/rys_roots.cu": "adf553c868c15f8b798941b2afaba51b8e31262aa1a4a61470d74c3255f156d8",
+    "gpu4pyscf/lib/gvhf-rys/rys_roots.cuh": "c717e9a417b69b51226973769db3edcb4f5639f9897a0f50ea1321de39fb2479",
+    "gpu4pyscf/lib/gvhf-rys/rys_roots_dat.cu": "42d064e05fd7e8bf233ef295556b6ce10162053a74e778c0c39b6ac7213725d0",
+    "gpu4pyscf/lib/gvhf-rys/rys_roots_for_k.cu": "405965bb42f87ebb162a26c2e23e36958da9277dacab2fe1a7fe1bc96be0b99f",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_ejk_int3c2e_ip1.cu": "c300574bf447794f01a52e0c6ce0d6def4711a2fa08c97dbbccd0f9a91d6c4b6",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_ejk_ip1.cu": "0fa9dae62852740dda254be84b0a258fdadef924f5b4246edc58270644828df0",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_ejk_ip2_type12.cu": "06a04f79a114854035ce889835dccfe1aea29b63138c6321f1b7af3d91b96962",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_ejk_ip2_type3.cu": "95e373bfffddc9de347dbb336007403ece8c3bd9ea083d21f17a2d252bd49d79",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_int3c2e.cu": "f3e04ac6a30e87a64c7238899edd5e7f3cfcc3a9b35a75cc7a33cb58e0418ec2",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_kernels.cuh": "07806f0522ac3de4a43b46e47bc8f87695a77c851da619e8a970c2139c9514f9",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_rys_jk.cu": "03d87f10ed1eee31e77636ec7c2fd15cd26e4333a50414ff085b5207d73e7ce2",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_rys_jk_ip1.cu": "aa951cc8ebc189b85703ad7d14420037e45ff336c4074e373db16db76fb35b5a",
+    "gpu4pyscf/lib/gvhf-rys/unrolled_rys_k.cu": "5db9ba0403254ef40645596447306add70f7af4498ee0861279dcecf850ad384",
+    "gpu4pyscf/lib/gvhf-rys/utils.c": "fb2b32aa3ec4376dd3a1cbc58c76523ddc617647ac0f051cb797c2fa22fabfa6",
+    "gpu4pyscf/lib/gvhf-rys/vhf.cuh": "aebf610ef7823f580a338583ce161f935679de5a97301d6dd359a2d62672db57",
+    "gpu4pyscf/lib/multigrid/CMakeLists.txt": "087056bfe6e9824ea0e16e70cc121b6f930af940846cf02fcb23af2779ba6107",
+    "gpu4pyscf/lib/multigrid/cart2xyz.cu": "09954b2d2401fb1e8244c5acc4506914b977e88a3937ceac729716cd275ad655",
+    "gpu4pyscf/lib/multigrid/estimator.cu": "e1c1d7c296d188eeccd78ec9af7acf2c8d5f9fdb69f4cef8828a6b0d14493a8f",
+    "gpu4pyscf/lib/multigrid/eval_mat_gga.cu": "0e61ab7b8d52fe6ea8b9c4c593fe16cea6c0e31d5bde679b5cebd1d415f11c33",
+    "gpu4pyscf/lib/multigrid/eval_mat_lda.cu": "1d15c2b66436f2a9b22486c8f52194f7579023dfe1f647269e667531a86dd4be",
+    "gpu4pyscf/lib/multigrid/eval_mat_tau.cu": "1c42081db7beba61bb2c0d68b75e59b0f9f4e44b6271ff01f5cba34879a0cdee",
+    "gpu4pyscf/lib/multigrid/eval_rho.cu": "3b7254c3affb01c274e446feebdf12b04801f951e4656d5c6401c4a139dcf88f",
+    "gpu4pyscf/lib/multigrid/eval_tau.cu": "5227b42f69b4916c551d6dd31fd894b4875e214b44382f23fcd8bc77933c16c5",
+    "gpu4pyscf/lib/multigrid/loader.cu": "adeeaa68c9488bff36c3d98ff2030caee4fa2e21b6cebf757081260c61f561e4",
+    "gpu4pyscf/lib/multigrid/mg_driver.cu": "30f660abc763bfa2ae880b3642c9ca98d4757d16cbbb730fcb10c53102e1fd37",
+    "gpu4pyscf/lib/multigrid/multigrid.cuh": "08b504a6ef6cb7c7d8d3f9ccb8a9b1f32b0d14c3f2ab2609277da6b5a793e85b",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/cartesian.cuh": "025806287dc7e6a10b812f9419077643e0afd821072668f0617a7c34fc6fc197",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/constant_objects.cuh": "97c1c3d5a75a7b89e9702c53080eece6e2b6d9f47005c77fdec5378d924c8144",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/drivers.cu": "a52d00eee917d99490de985e0807a9b407c42a1b1308f35ea38cc22d92a370f2",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/eval_xc.cu": "be7e8600fc625ad1c7bbf01f20f17f5f09b94bb5db731fc7d764f69ad9523877",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/eval_xc_grad.cu": "7190985b52228f798f69ec12ba090fef79e8dc5d1723f9bf1e6df29a0284d5ae",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/evaluation.cuh": "8ddf39146540f917410e572d402198b1958b2f940f3aa1d16229ab195deac3aa",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/gradient.cuh": "c1e92b0996d57f284ae0707c94c6f9dc8741c1e1151a8d836a06c0860015a96b",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/screen.cu": "56a664c76fe205315109831899a110698d3fbe877e274545829d8b7ea21048ef",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/screening.cuh": "edd33b599ce86e111f4da2f6f80d098ea0545a5cfd480807abc3102777762ead",
+    "gpu4pyscf/lib/multigrid/multigrid_v2/utils.cuh": "a85d105c66084037d9429dcfdcfc21771524b282c8294662499faebd7ede398d",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/aft_eval_density.cu": "30546ecc56dd5bca4a1fef1ee96681824ee7f4e90d0cafa7574d60ee7dd918e7",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/aft_eval_lda_mat.cu": "13df116054591a6d2fdbcc64404e26d29051bc57ecb50307edecf8b3d163779f",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/aft_eval_mgga_mat.cu": "a8ab12cd1583578963c3450dede3cee5e3b703782b66c9335cc1194f26ef5014",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/aft_eval_tau.cu": "f9060af896d3214f1ac3bacd4ee1e943e2a2b41209f9579ce2e7b4fd5bd87a7f",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/aft_recursion.cuh": "7cd614836c6025658031c199c00a0add994342ce3aa1f749a782cd3ea54b5b5f",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/cartesian.cuh": "e6ae22c3b6ce3692b4de6a5f5efa0f968cada8b24651d314b22734700859b3a5",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/constant_objects.cuh": "e5c17174ef70cab68538946766d0b86ed201e7761aaf6aceb899053793a39c1c",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/drivers.cu": "2edfec6c0677896f582f780916612edc56c3de158eae75cee65fbb9d91b82efe",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_density.cu": "5a6856e33d696f30babe06e73674f37749c1427537c07b20a44b49ebd8255449",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_density_v2.cu": "f11b50cf05817e8cc980eeb3446e6541d19e6d3e83ee7ef1399e2a76c455d64a",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_lda_mat.cu": "9585a44e289ed27c2efbd55b8666a04ac7aefadda9fab1984409f8620f29d52c",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_lda_mat_v2.cu": "499ab192fe81dedd5457da87ce1f3bf9ec32a2d13fef1290712f93a140457971",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_lda_strain_grad.cu": "3b2bcab2c3acd514133ed899772030b112b17a8ef800e2affb781fc28f461a75",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_mgga_mat.cu": "0cfb6e18483393970923adb2873e28b752958a3177894addb22c75b57d6343e3",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_mgga_mat_v2.cu": "901506c72cea1608be93ba1899363b98477f29d73d063c6bef31b183902262b9",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_mgga_strain_grad.cu": "f1ac536d7e94f87e6f9620273aac453c46426e96b3d732baadd5027cdc62ee8b",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_tau.cu": "ea1eb089998c3f62b890443fc310a430049e0c1cd484608195e855e2c94259aa",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/eval_tau_v2.cu": "b98f15f359564cde50eea0ecba9fb585c4ac4f133c12ef01938de96516256da3",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/screen.cu": "363db808b93f2a3e5cfac9dbf3ca9c307d797ded3eb41d03474bae98733284e8",
+    "gpu4pyscf/lib/multigrid/multigrid_v3/utils.cuh": "d48cf3a275f7fb695e91abcad14c8a29868cb46083545c058aff4bf20aa15b0d",
+    "gpu4pyscf/lib/pbc/CMakeLists.txt": "9e7533d48095afa89c87a1167bb09617354d6d554bcf36e7a70fc8c6e264feb1",
+    "gpu4pyscf/lib/pbc/contract_ft_ao.cu": "212d53c95a0cf1e25d0b139f066c5f35d3f53364db0d1b0cfe7d753386b4cd38",
+    "gpu4pyscf/lib/pbc/contract_int3c2e.cu": "3518e92b6ac26448adfbd1daf5d0c3f82cdea792522a84d290147f7ae51f679f",
+    "gpu4pyscf/lib/pbc/contract_int3c2e_pvp.cu": "fe649aa032c178b5751a00e8aea22b2f6064f01e3c09b6234e72da1eded3e28e",
+    "gpu4pyscf/lib/pbc/create_tasks.cu": "3063ecbebf4f6a48c72766f56f5cfc6771951ea24b5351e5c2439b9c3f809c01",
+    "gpu4pyscf/lib/pbc/e_int2c2e_ip1.cu": "8b920ed13995dbde6988b30d025e39cdaea3b8c07cfccd6dba2c5c94a601e067",
+    "gpu4pyscf/lib/pbc/ejk_int3c2e_ip1.cu": "4525872c06e8ef0d1c38d73c006a65aed326969e0c97879fec2186f062b06fa5",
+    "gpu4pyscf/lib/pbc/fill_int2c2e.cu": "caac405097e0d3d4dfd621b1cf0d7fc60ba37b0adbe543115c6c1228de149074",
+    "gpu4pyscf/lib/pbc/fill_int2c2e_ip1.cu": "41a1f2038b0587c9a4072be40bd620d86b56a62b620c486c33ae6580078ecf31",
+    "gpu4pyscf/lib/pbc/fill_int3c2e.cu": "f93a2bea6c917b47ddb476c4edc3a89d3659e8b4f4015a72eae4c503068daa61",
+    "gpu4pyscf/lib/pbc/fill_triu.cu": "17ccfae80492e1ae0af72061f146912ceac5b8e51f1434bad3e464fa613a5be3",
+    "gpu4pyscf/lib/pbc/ft_ao.cu": "69de81e4aeb9b89e6a7425abc0d5545ba3e853073a2783b4681caba660d13915",
+    "gpu4pyscf/lib/pbc/ft_ao.cuh": "42fca8f6c2bbf0b82f49e03ee1f90296673195c5c7f46fad4c95d406eae6503d",
+    "gpu4pyscf/lib/pbc/ft_ao_ip1.cu": "90c2895a20600d0357db1e20732612e17f028a2c2865456e5939c6442cd1faad",
+    "gpu4pyscf/lib/pbc/int3c2e.cuh": "1d149ec98e88d193701965ccbecb3acd13aae1a4e586d34281a8502caa5aa990",
+    "gpu4pyscf/lib/pbc/int3c2e_create_tasks.cuh": "41abae69fff890ff6d81392bbe6ef5cff21f227143ee84d0c56ab954f15b1420",
+    "gpu4pyscf/lib/pbc/int3c2e_recontract.c": "e7ccceb67f0a705588eb9b255abf5275d37b4c457e87eb9b9b7919d64ccd3fdf",
+    "gpu4pyscf/lib/pbc/nr_eval_gto.cu": "103a5b47dfe6d9bd91dd36df5cba1e5747a1127e15f053a9e6aad54db63bd8a7",
+    "gpu4pyscf/lib/pbc/overlap.cu": "6fe68f9be77a11df97fbb156bff99a688146f303fa10bd39d14d43140d763ba7",
+    "gpu4pyscf/lib/pbc/overlap.cuh": "c2452375ffd3a0b85c632c4b10f7a452c462fe977bfe096822c9622ffd45d00e",
+    "gpu4pyscf/lib/pbc/pbc.cuh": "b72141ce650bbbea03e910ecdb7790ae5b1cbcea97f6dbdf9e80f8ab7e985085",
+    "gpu4pyscf/lib/pbc/pbc_driver.cu": "214fc68fa24309dbce10d0a7bf3a62bd8b4fea6f328ec45aa19e958828d3d240",
+    "gpu4pyscf/lib/pbc/ppnl.cu": "8315e3419e19292e9739b79be47803a1839df0b27a56d47d8f208c63e96ed120",
+    "gpu4pyscf/lib/pbc/recursion.cuh": "a46a2f2e16fd9c34b0e4170d91b008f8b745e75c2aeba5cc6e41f24818d2bd79",
+    "gpu4pyscf/lib/pbc/rys_contract_j.cu": "b9bad2d02e9a06534b23e46b0d4d6203de177122a0c2bde5508f9aa5acd01660",
+    "gpu4pyscf/lib/pbc/rys_contract_jk_ip1.cu": "652c6126b87bcb12fb5cae6de6d8ca915ff50281b1d67483c39c95753b1afdad",
+    "gpu4pyscf/lib/pbc/rys_contract_k.cu": "08303371e53a5af8287b91bce8cf092eee78d2a34d93f3fb591c878e8d81eb0e",
+    "gpu4pyscf/lib/pbc/rys_roots_dat.cu": "c22e112a06d91ffd261932f6acf4eb5b1bc5aea70a4154ed3b97bb50754b16b4",
+    "gpu4pyscf/lib/pbc/screen.cu": "13915a8fc10c38641bc4814ef4c2750bbd26ad36fdb808746be436381bf1ae85",
+    "gpu4pyscf/lib/pbc/sorting.c": "df721202bc7f57b6bb9dff1f5fc64b1ce2f130fac5ad0381973859e4f4ddf0c9",
+    "gpu4pyscf/lib/pbc/supmol_sr_estimator.cu": "bdeb49b760c8f30e80c3382674d5b90a147de83824d090c8e4e1633e69b89c83",
+    "gpu4pyscf/lib/pbc/unrolled_int3c2e.cu": "e19e91d97ffdc7c61cf1b93b614d196fa44d1fca6c0ed4f7b88ceca105e76e2f",
+    "gpu4pyscf/lib/pbc/unrolled_kernels.cuh": "fb268beb8c06cf8160ad3aec3fd4d443efea76be6a87b87544f233330b3ffba8",
+    "gpu4pyscf/lib/pbc/unrolled_rys_k.cu": "3e7e4fb745a0a8776a41e839e73906e9cafb82b22cbd92a0db919f6940d280b6",
+    "gpu4pyscf/lib/pbc/write_cderi.c": "54b86112903393a0c126c7a06bcc988d63a51d9333bcecbe5be932725fbbf293",
+    "gpu4pyscf/lib/sem/CMakeLists.txt": "097ed91800e51577b513e181fc99dd753f640e40d0ba2f260a7df78dc0741c14",
+    "gpu4pyscf/lib/sem/eri_1c2e_kernel.cu": "308954a10e13633eec2b6a9fa09af91ae0a5f36f27967e7a6713b20b5bb8ed5d",
+    "gpu4pyscf/lib/sem/eri_2c2e_kernel.cu": "241b8ee586f674c554081b5528e276b7dd37d49aa1fa2c382bf2d98d63ba3af1",
+    "gpu4pyscf/lib/sem/fock.cu": "606d46a71e20e39add82efb08705c6f9f88d2b9a057fda8496e455ee08032d2a",
+    "gpu4pyscf/lib/sem/grad_kernel.cu": "5e3603a93bc9d304b1254891b64677a5bd858305bd2b2d95fb38e8f1c41fa2d3",
+    "gpu4pyscf/lib/sem/ss_kernel.cu": "46796fc328e66862bd60e6f79de8514040be4d58758780a5eeb64ea625583838",
+    "gpu4pyscf/lib/solvent/CMakeLists.txt": "d83013f79660a916ff2825f045c55e44ce74273e30bc66ac4ba6e9eab284a3bd",
+    "gpu4pyscf/lib/solvent/pcm.cu": "596fd5ab3b13e1060e8283d6c313c86ab95c3036dc3cc2f2070286e72bb8d1d6"
+  },
+  "native_file_identities": {
+    "gpu4pyscf/lib/deps/lib/libxc.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gpu4pyscf/lib/deps/lib/libxc.so.15": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gpu4pyscf/lib/libcupy_helper.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "gpu4pyscf/lib/libgdft.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "gpu4pyscf/lib/libgecp.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgecp.so",
+      "size_bytes": 8737304,
+      "sha256": "4988447d72575951d84411305827132fad5621420fd4bde94d89be826339f37c"
+    },
+    "gpu4pyscf/lib/libgint.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgint.so",
+      "size_bytes": 9531440,
+      "sha256": "56212c45bb24ee85ed97547b6737d44c2eaa35d92429a8183b07c6d73bdcbba6"
+    },
+    "gpu4pyscf/lib/libgvhf.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf.so",
+      "size_bytes": 998672,
+      "sha256": "6c0947525c81ee465a6841a912bdf4f8a440c946997de88f9be403fad88c0a33"
+    },
+    "gpu4pyscf/lib/libgvhf_md.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_md.so",
+      "size_bytes": 4488400,
+      "sha256": "f0940fe991961e7e51003917f1ff40099c40b06280345ce3c24ad9fbb5042e29"
+    },
+    "gpu4pyscf/lib/libgvhf_rys.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    },
+    "gpu4pyscf/lib/libmgrid_v2.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libmgrid_v2.so",
+      "size_bytes": 31140024,
+      "sha256": "905d1ff73f506bfa1d226da53268c5636cf489ec7d335c3fdc7debbad466067b"
+    },
+    "gpu4pyscf/lib/libmgrid_v3.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libmgrid_v3.so",
+      "size_bytes": 6880136,
+      "sha256": "3f919e6d108e35cb99fcf4673466822dd032f00eaa13782de5ada86c8f06c52d"
+    },
+    "gpu4pyscf/lib/libpbc.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libpbc.so",
+      "size_bytes": 15791848,
+      "sha256": "739c292b5d4973ca2d2209c7a68829f464f90ce108b87c97dc12b8fb095bf068"
+    },
+    "gpu4pyscf/lib/libsem.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libsem.so",
+      "size_bytes": 2576880,
+      "sha256": "c80932d7e7e52f0a86cf44d0157660cf1272b693fb63833b113469b76a847258"
+    },
+    "gpu4pyscf/lib/libsolvent.so": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libsolvent.so",
+      "size_bytes": 1503584,
+      "sha256": "c2ff0454b8e72a3cca4c9459cb66b1a73a9e79192fafca223fb4727a6d9f56a1"
+    }
+  },
+  "helpers": {
+    "test_resident_exchange_sweep.py": "755dfc003bc03efac3577d95a42fd9bae3733ef5f56feab120ad891b1299c4cd",
+    "original_comparison.py": "2de8b8c238a16f39d16d4760e55e7a97ddff1b8e21cdc7ce22421c693f7445aa",
+    "comprehensive.py": "170c47c1a65b5c474cc89aae4ad16caa1179265073da742864b346bf05bb1358",
+    "molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "gradient_snapshot.py": "2e83736e66bbff947f2d16feaa6bb440eb7d5e0915250056875b0e3c9344bda6",
+    "seeded_reference.py": "d060341c2973e58515c17e9e10874f324abeff84a374250d5b6a7e6a2810d0f5"
+  },
+  "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+  "snapshot_cpu_comparison": {
+    "energy_error_hartree": 2.2246240405365825e-09,
+    "gradient_max_error": 6.979247402227884e-09,
+    "passed": true
+  },
+  "inputs": {
+    "geometry": {
+      "path": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/113_Taxol.xyz",
+      "size_bytes": 5545,
+      "sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1"
+    },
+    "cpu_reference": {
+      "path": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/comprehensive_results/taxol_svp_b3lyp_seeded_cpu.json",
+      "size_bytes": 16829,
+      "sha256": "10c21e5c5149b37796ce85e783fac711b4c5dda22cce4e2cdf1984a4278ba58c"
+    },
+    "corrected_profile": {
+      "path": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/optimization_results/corrected_profile.json",
+      "size_bytes": 30424,
+      "sha256": "9cf8d5e388cc70a9bdd7309a8bb4775e4b048ca9b262a29981d53310bab05b52"
+    },
+    "orbitals": {
+      "path": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/optimization_results/corrected_profile.npz",
+      "size_bytes": 10108032,
+      "sha256": "5318d5f3a8a871dd4a01af7d9814fe568905b39ada97020f1d1a0275a76bee84"
+    }
+  },
+  "tolerance": {
+    "absolute": 1e-09,
+    "relative": 0.0,
+    "require_finite": true
+  },
+  "control_block_size": 256,
+  "requested_block_sizes": [
+    128,
+    256,
+    512,
+    1024
+  ],
+  "samples": [
+    {
+      "block_size": 256,
+      "phase": "warmup",
+      "pair": null,
+      "seconds": 13.780798223800957,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 128,
+      "phase": "warmup",
+      "pair": null,
+      "seconds": 13.872930744662881,
+      "observed_get_blksize": [
+        128
+      ],
+      "observed_block_lengths": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        94
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 1.2789769243681803e-13,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.24389429049188e-13,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 512,
+      "phase": "warmup",
+      "pair": null,
+      "seconds": 13.876209081150591,
+      "observed_get_blksize": [
+        512
+      ],
+      "observed_block_lengths": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 5.684341886080802e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.6697754290362354e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 1024,
+      "phase": "warmup",
+      "pair": null,
+      "seconds": 14.12840744946152,
+      "observed_get_blksize": [
+        1024
+      ],
+      "observed_block_lengths": [
+        1024,
+        1024,
+        1024,
+        1024,
+        1024,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 4.973799150320701e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.609823799408332e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 128,
+        "index": 0,
+        "order": [
+          256,
+          128
+        ]
+      },
+      "seconds": 13.771659038960934,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 2.220446049250313e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 128,
+      "phase": "paired",
+      "pair": {
+        "candidate": 128,
+        "index": 0,
+        "order": [
+          256,
+          128
+        ]
+      },
+      "seconds": 13.873715495690703,
+      "observed_get_blksize": [
+        128
+      ],
+      "observed_block_lengths": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        94
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 1.2789769243681803e-13,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.24389429049188e-13,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 128,
+      "phase": "paired",
+      "pair": {
+        "candidate": 128,
+        "index": 1,
+        "order": [
+          128,
+          256
+        ]
+      },
+      "seconds": 13.873845787718892,
+      "observed_get_blksize": [
+        128
+      ],
+      "observed_block_lengths": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        94
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 1.2789769243681803e-13,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.24389429049188e-13,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 128,
+        "index": 1,
+        "order": [
+          128,
+          256
+        ]
+      },
+      "seconds": 13.772835911251605,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 2.220446049250313e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 128,
+        "index": 2,
+        "order": [
+          256,
+          128
+        ]
+      },
+      "seconds": 13.776166076771915,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.1102230246251565e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 128,
+      "phase": "paired",
+      "pair": {
+        "candidate": 128,
+        "index": 2,
+        "order": [
+          256,
+          128
+        ]
+      },
+      "seconds": 13.873688055202365,
+      "observed_get_blksize": [
+        128
+      ],
+      "observed_block_lengths": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        94
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 1.2789769243681803e-13,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.24389429049188e-13,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 512,
+        "index": 0,
+        "order": [
+          256,
+          512
+        ]
+      },
+      "seconds": 13.773386253975332,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 2.220446049250313e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 512,
+      "phase": "paired",
+      "pair": {
+        "candidate": 512,
+        "index": 0,
+        "order": [
+          256,
+          512
+        ]
+      },
+      "seconds": 13.87940282560885,
+      "observed_get_blksize": [
+        512
+      ],
+      "observed_block_lengths": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 5.684341886080802e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.6697754290362354e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 512,
+      "phase": "paired",
+      "pair": {
+        "candidate": 512,
+        "index": 1,
+        "order": [
+          512,
+          256
+        ]
+      },
+      "seconds": 13.878035087138414,
+      "observed_get_blksize": [
+        512
+      ],
+      "observed_block_lengths": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 5.684341886080802e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.6697754290362354e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 512,
+        "index": 1,
+        "order": [
+          512,
+          256
+        ]
+      },
+      "seconds": 13.773211701773107,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.1102230246251565e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 512,
+        "index": 2,
+        "order": [
+          256,
+          512
+        ]
+      },
+      "seconds": 13.77239349577576,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 2.220446049250313e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 512,
+      "phase": "paired",
+      "pair": {
+        "candidate": 512,
+        "index": 2,
+        "order": [
+          256,
+          512
+        ]
+      },
+      "seconds": 13.890370107255876,
+      "observed_get_blksize": [
+        512
+      ],
+      "observed_block_lengths": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 5.684341886080802e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.6697754290362354e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 1024,
+        "index": 0,
+        "order": [
+          256,
+          1024
+        ]
+      },
+      "seconds": 13.788623187690973,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.1102230246251565e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 1024,
+      "phase": "paired",
+      "pair": {
+        "candidate": 1024,
+        "index": 0,
+        "order": [
+          256,
+          1024
+        ]
+      },
+      "seconds": 14.179768920876086,
+      "observed_get_blksize": [
+        1024
+      ],
+      "observed_block_lengths": [
+        1024,
+        1024,
+        1024,
+        1024,
+        1024,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 4.973799150320701e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.609823799408332e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 1024,
+      "phase": "paired",
+      "pair": {
+        "candidate": 1024,
+        "index": 1,
+        "order": [
+          1024,
+          256
+        ]
+      },
+      "seconds": 14.125829358585179,
+      "observed_get_blksize": [
+        1024
+      ],
+      "observed_block_lengths": [
+        1024,
+        1024,
+        1024,
+        1024,
+        1024,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 4.973799150320701e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.609823799408332e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 1024,
+        "index": 1,
+        "order": [
+          1024,
+          256
+        ]
+      },
+      "seconds": 13.771918686106801,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 2.220446049250313e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 256,
+      "phase": "paired",
+      "pair": {
+        "candidate": 1024,
+        "index": 2,
+        "order": [
+          256,
+          1024
+        ]
+      },
+      "seconds": 13.771585081703961,
+      "observed_get_blksize": [
+        256
+      ],
+      "observed_block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 0.0,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 1.1102230246251565e-16,
+          "passed": true
+        }
+      },
+      "passed": true
+    },
+    {
+      "block_size": 1024,
+      "phase": "paired",
+      "pair": {
+        "candidate": 1024,
+        "index": 2,
+        "order": [
+          256,
+          1024
+        ]
+      },
+      "seconds": 14.132802474312484,
+      "observed_get_blksize": [
+        1024
+      ],
+      "observed_block_lengths": [
+        1024,
+        1024,
+        1024,
+        1024,
+        1024,
+        478
+      ],
+      "comparison": {
+        "J": {
+          "finite": true,
+          "max_abs_error": 4.973799150320701e-14,
+          "passed": true
+        },
+        "K": {
+          "finite": true,
+          "max_abs_error": 6.609823799408332e-12,
+          "passed": true
+        }
+      },
+      "passed": true
+    }
+  ],
+  "variants": {
+    "128": {
+      "effective_block_size": 128,
+      "block_lengths": [
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        128,
+        94
+      ],
+      "blocks_per_call": 44,
+      "seconds": [
+        13.873715495690703,
+        13.873845787718892,
+        13.873688055202365
+      ],
+      "paired_control_seconds": [
+        13.771659038960934,
+        13.772835911251605,
+        13.776166076771915
+      ],
+      "normalized_seconds": [
+        1.0074106145411417,
+        1.0073339925864337,
+        1.0070790362055
+      ],
+      "workspace_bytes": {
+        "dense_ao_unpack": 1291396096,
+        "occupied_transform": 259889152,
+        "sum": 1551285248
+      },
+      "median_seconds": 13.873715495690703,
+      "median_normalized_seconds": 1.0073339925864337,
+      "passed": true,
+      "max_abs_error": {
+        "J": 1.2789769243681803e-13,
+        "K": 6.24389429049188e-13
+      }
+    },
+    "256": {
+      "effective_block_size": 256,
+      "block_lengths": [
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        256,
+        222
+      ],
+      "blocks_per_call": 22,
+      "seconds": [
+        13.771659038960934,
+        13.772835911251605,
+        13.776166076771915,
+        13.773386253975332,
+        13.773211701773107,
+        13.77239349577576,
+        13.788623187690973,
+        13.771918686106801,
+        13.771585081703961
+      ],
+      "paired_control_seconds": [],
+      "normalized_seconds": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "workspace_bytes": {
+        "dense_ao_unpack": 2582792192,
+        "occupied_transform": 519778304,
+        "sum": 3102570496
+      },
+      "median_seconds": 13.772835911251605,
+      "median_normalized_seconds": 1.0,
+      "passed": true,
+      "max_abs_error": {
+        "J": 0.0,
+        "K": 2.220446049250313e-16
+      }
+    },
+    "512": {
+      "effective_block_size": 512,
+      "block_lengths": [
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        512,
+        478
+      ],
+      "blocks_per_call": 11,
+      "seconds": [
+        13.87940282560885,
+        13.878035087138414,
+        13.890370107255876
+      ],
+      "paired_control_seconds": [
+        13.773386253975332,
+        13.773211701773107,
+        13.77239349577576
+      ],
+      "normalized_seconds": [
+        1.0076972045710921,
+        1.0076106711807684,
+        1.0085661661871848
+      ],
+      "workspace_bytes": {
+        "dense_ao_unpack": 5165584384,
+        "occupied_transform": 1039556608,
+        "sum": 6205140992
+      },
+      "median_seconds": 13.87940282560885,
+      "median_normalized_seconds": 1.0076972045710921,
+      "passed": true,
+      "max_abs_error": {
+        "J": 5.684341886080802e-14,
+        "K": 1.6697754290362354e-12
+      }
+    },
+    "1024": {
+      "effective_block_size": 1024,
+      "block_lengths": [
+        1024,
+        1024,
+        1024,
+        1024,
+        1024,
+        478
+      ],
+      "blocks_per_call": 6,
+      "seconds": [
+        14.179768920876086,
+        14.125829358585179,
+        14.132802474312484
+      ],
+      "paired_control_seconds": [
+        13.788623187690973,
+        13.771918686106801,
+        13.771585081703961
+      ],
+      "normalized_seconds": [
+        1.0283672798843533,
+        1.0256979931805295,
+        1.0262291806255777
+      ],
+      "workspace_bytes": {
+        "dense_ao_unpack": 10331168768,
+        "occupied_transform": 2079113216,
+        "sum": 12410281984
+      },
+      "median_seconds": 14.132802474312484,
+      "median_normalized_seconds": 1.0262291806255777,
+      "passed": true,
+      "max_abs_error": {
+        "J": 4.973799150320701e-14,
+        "K": 6.609823799408332e-12
+      }
+    }
+  },
+  "bindings_restored": true,
+  "scope": "Fixed converged Taxol density; native resident CDERI built once. Synchronized full DF.get_jk includes factorization, unpack, occupied transform, Gram, Coulomb contractions and output assembly. Setup/build, patch installation, host copies and verification are excluded from J/K samples. One warmup per size then three pairs against 256 per candidate, alternating pair order. Ratios concern J/K only; no SCF, forces or workflow speedup is measured.",
+  "df_build_seconds": 64.78616327792406,
+  "unpatched_control_block_size": 256,
+  "nao": 1123,
+  "nocc": 226,
+  "naux": 5598,
+  "natm": 113,
+  "nelectron": 452,
+  "charge": 0,
+  "spin": 0,
+  "geometry_bohr": [
+    [
+      -7.150723655354193,
+      7.403946956045912,
+      5.829805094283215
+    ],
+    [
+      -8.71730661261863,
+      9.076354576285992,
+      5.559574258470413
+    ],
+    [
+      12.68573147420526,
+      2.3300323115887216,
+      9.252099105870542
+    ],
+    [
+      -10.586245749813477,
+      4.335031729752252,
+      7.0316709095065955
+    ],
+    [
+      -11.432843053618624,
+      1.9879918830424452,
+      7.904724379055653
+    ],
+    [
+      -9.694295019018767,
+      0.09826575847738321,
+      8.513216191165604
+    ],
+    [
+      -7.1129291328628925,
+      0.5536897544975631,
+      8.210860011235193
+    ],
+    [
+      -6.2795599119297005,
+      2.9045090534564997,
+      7.341585993935265
+    ],
+    [
+      -8.001100411408471,
+      4.8244707960146025,
+      6.751991443070966
+    ],
+    [
+      10.724195756906726,
+      1.7914603660876784,
+      7.267886675077228
+    ],
+    [
+      4.480540641343762,
+      1.6043774797557375,
+      4.968089981481548
+    ],
+    [
+      5.867599616774517,
+      -0.2381054916951978,
+      6.07735921660124
+    ],
+    [
+      1.9483076344265786,
+      2.3092453242185056,
+      6.120822917466235
+    ],
+    [
+      0.5442411238747378,
+      -0.1776342557091158,
+      6.793565417811398
+    ],
+    [
+      2.2053103873674273,
+      -2.4264083439415396,
+      7.79889971608001
+    ],
+    [
+      4.928405732865682,
+      -1.4834350077835736,
+      8.524554547912993
+    ],
+    [
+      6.491209237880987,
+      -3.7227604653931716,
+      9.701853923517028
+    ],
+    [
+      4.924626280616551,
+      0.5895945508642992,
+      10.663724520920644
+    ],
+    [
+      5.16273177231175,
+      3.0651357740445304,
+      2.588924790654135
+    ],
+    [
+      2.084367915395263,
+      -4.724315311412655,
+      5.871379069023647
+    ],
+    [
+      3.3996172980925463,
+      -4.391723513489203,
+      3.212534411760605
+    ],
+    [
+      6.251214020061224,
+      -5.236431091169786,
+      2.859155626466938
+    ],
+    [
+      6.6045928053548915,
+      -8.157947679747373,
+      3.20308578113778
+    ],
+    [
+      8.26188261659845,
+      -4.030785823697277,
+      4.56179886470006
+    ],
+    [
+      9.905944344970054,
+      -5.317689314526084,
+      5.552015353972152
+    ],
+    [
+      8.350699744453008,
+      -1.2150938980953347,
+      5.032340669716759
+    ],
+    [
+      7.039229814004855,
+      -4.42384885760681,
+      0.12850137647042423
+    ],
+    [
+      5.66350919532149,
+      -5.945078387881685,
+      -1.963425443423099
+    ],
+    [
+      2.7608898679895555,
+      -6.0754694904766735,
+      -1.5703624095135662
+    ],
+    [
+      1.6024877536311724,
+      -5.278005065910218,
+      1.0128932027668731
+    ],
+    [
+      0.5574692067466932,
+      -8.004879863657601,
+      1.2717856818322868
+    ],
+    [
+      1.923741194807233,
+      -8.58313605777451,
+      -0.9826575847738321
+    ],
+    [
+      -0.549910302248433,
+      -3.6244947069157885,
+      0.6878603093416825
+    ],
+    [
+      0.24377467006889297,
+      3.6585097771579598,
+      4.4484152972261555
+    ],
+    [
+      0.6330582517292958,
+      6.1567277138329715,
+      4.215978983904653
+    ],
+    [
+      2.2128692918656876,
+      7.345365446184395,
+      5.4046167162560765
+    ],
+    [
+      -1.07525416487752,
+      7.47008737040569,
+      2.3432603944606765
+    ],
+    [
+      -0.6141609904836451,
+      10.144049836665253,
+      2.3659371079554576
+    ],
+    [
+      -3.915512530098808,
+      6.901279806911606,
+      2.840258365221288
+    ],
+    [
+      -5.5066619269825905,
+      8.040784660024338,
+      0.6897500354662476
+    ],
+    [
+      -4.758330381654825,
+      7.984092876287385,
+      5.279894792034783
+    ],
+    [
+      -0.051022605363256666,
+      -1.405956236676406,
+      -0.43463700864996424
+    ],
+    [
+      2.0012199659144003,
+      -0.825810316434932,
+      -1.317139108821848
+    ],
+    [
+      -2.263891897228944,
+      0.366606868165622,
+      -0.6009329076116897
+    ],
+    [
+      9.728310089260937,
+      -4.4692022845963715,
+      -0.2910178231830195
+    ],
+    [
+      10.346250531993713,
+      -0.6746322264697271,
+      6.810572952932483
+    ],
+    [
+      0.9429733361579659,
+      -3.1804090676429992,
+      10.094916957426559
+    ],
+    [
+      -0.5763664679923438,
+      -5.145724237190663,
+      5.34981465864369
+    ],
+    [
+      -1.984212430793315,
+      -6.266331829057744,
+      7.1337161202331085
+    ],
+    [
+      -1.0658055342546948,
+      -7.334027089437004,
+      8.961081282687523
+    ],
+    [
+      -4.828250248263734,
+      -6.203970866947098,
+      6.827580488053568
+    ],
+    [
+      -5.916732496013208,
+      -4.862265318505904,
+      4.8244707960146025
+    ],
+    [
+      -8.539672356909515,
+      -4.782896821274171,
+      4.531563246707019
+    ],
+    [
+      -10.096806683551126,
+      -6.0660208598538485,
+      6.236096211064703
+    ],
+    [
+      -9.021552518673605,
+      -7.405836682170477,
+      8.2429853553528
+    ],
+    [
+      -6.398612657777299,
+      -7.47386682265482,
+      8.53778263078495
+    ],
+    [
+      -6.083028394974934,
+      10.620260820055648,
+      0.6935294877153777
+    ],
+    [
+      -7.522999701893511,
+      11.676617723687517,
+      -1.2547781467112011
+    ],
+    [
+      -8.40739152818996,
+      10.151608741163512,
+      -3.2219830423834304
+    ],
+    [
+      -7.846142869194137,
+      7.572132581132202,
+      -3.231431673006256
+    ],
+    [
+      -6.408061288400125,
+      6.5233345819985935,
+      -1.281234312455112
+    ],
+    [
+      9.59036008216769,
+      3.4978830565699295,
+      6.205860593071662
+    ],
+    [
+      14.467743209670113,
+      1.375720618683365,
+      8.76266003960819
+    ],
+    [
+      12.016768426109229,
+      1.6232747410013881,
+      11.088912898947784
+    ],
+    [
+      13.040999985623491,
+      4.372826252243553,
+      9.405166921960314
+    ],
+    [
+      -11.971414999119666,
+      5.776892762795394,
+      6.57057773511272
+    ],
+    [
+      -13.441621924031285,
+      1.6346130977487785,
+      8.11259425275781
+    ],
+    [
+      -10.346250531993713,
+      -1.712091868855946,
+      9.223753214002068
+    ],
+    [
+      -5.756105775425178,
+      -0.9184068965386201,
+      8.654945650507983
+    ],
+    [
+      -4.26700158926791,
+      3.21064468563604,
+      7.141275024731368
+    ],
+    [
+      2.1864131261217765,
+      3.4695371647014537,
+      7.827245607948487
+    ],
+    [
+      -0.4799904356395257,
+      -0.7369931885803741,
+      5.075804370581756
+    ],
+    [
+      -0.9221863487877502,
+      0.3136945366778003,
+      8.188183297740414
+    ],
+    [
+      5.761774953798874,
+      -4.246214601897694,
+      11.57646223908557
+    ],
+    [
+      6.459083893763381,
+      -5.472646856740419,
+      8.615261401892118
+    ],
+    [
+      8.471642216425172,
+      -3.1879679721412595,
+      10.007989555696568
+    ],
+    [
+      6.014998254490592,
+      0.06803014048434222,
+      12.355029402406375
+    ],
+    [
+      5.793900297916479,
+      2.3678268340800224,
+      10.024997090817653
+    ],
+    [
+      3.0027748119338833,
+      0.9845473108983972,
+      11.347805378013197
+    ],
+    [
+      6.71986609895336,
+      2.347039846709807,
+      1.436191854669447
+    ],
+    [
+      3.5356775790612307,
+      3.121827557781482,
+      1.2982418475761976
+    ],
+    [
+      5.6597297430723605,
+      5.009663956221979,
+      3.1180481055323517
+    ],
+    [
+      2.8194713778510723,
+      -6.485540059507292,
+      6.674512671963798
+    ],
+    [
+      3.3807200368468955,
+      -2.3716062863291523,
+      2.8572659003423735
+    ],
+    [
+      5.383829728885861,
+      -9.29934225898467,
+      1.98988160916701
+    ],
+    [
+      8.543451809158645,
+      -8.755101135109932,
+      2.7590001418649903
+    ],
+    [
+      6.237985937189269,
+      -8.736203873864282,
+      5.160842046187184
+    ],
+    [
+      9.0272216970473,
+      -0.43841646089909436,
+      3.242770029753646
+    ],
+    [
+      6.561129104489894,
+      -2.4188494394432793,
+      -0.15306781608977002
+    ],
+    [
+      6.058461955355588,
+      -5.024781765218499,
+      -3.790790605877514
+    ],
+    [
+      6.438296906393166,
+      -7.868819582688917,
+      -2.0957062721426536
+    ],
+    [
+      1.6554000851189943,
+      -5.414065346878902,
+      -3.21064468563604
+    ],
+    [
+      1.128166496365342,
+      -9.114149098777293,
+      2.934744671449541
+    ],
+    [
+      -1.4928836384063988,
+      -8.15038877524911,
+      0.9410836100334008
+    ],
+    [
+      -0.5612486589958233,
+      6.789785965562267,
+      0.4440856392727895
+    ],
+    [
+      -0.9599808712790514,
+      10.873484120747365,
+      3.9740940399603253
+    ],
+    [
+      -4.178184461413352,
+      4.837698878886559,
+      2.847817269719548
+    ],
+    [
+      -3.507331687192755,
+      7.519220249644381,
+      6.821911309679873
+    ],
+    [
+      -3.318359074736249,
+      0.37605549878844735,
+      1.188637732351424
+    ],
+    [
+      -1.6062672058803025,
+      2.297906967471115,
+      -1.003444572144048
+    ],
+    [
+      -3.5318981268121004,
+      -0.24944384844258818,
+      -2.129721342384825
+    ],
+    [
+      10.446406016595661,
+      -6.113264012967975,
+      -0.2381054916951978
+    ],
+    [
+      1.5401267915205252,
+      -4.705418050167005,
+      10.828130693757805
+    ],
+    [
+      -4.735653668160045,
+      -3.8626001986109864,
+      3.4808755214488443
+    ],
+    [
+      -9.367372399469012,
+      -3.726539917642302,
+      2.9819878245636677
+    ],
+    [
+      -12.135821171956827,
+      -6.018777706739722,
+      6.003659897743201
+    ],
+    [
+      -10.230977238395244,
+      -8.396053171442569,
+      9.573352547046603
+    ],
+    [
+      -5.591699602588018,
+      -8.516995643414733,
+      10.10625531417395
+    ],
+    [
+      -5.419734525252597,
+      11.827795813652722,
+      2.2109795657411224
+    ],
+    [
+      -7.95574698441891,
+      13.681617141851047,
+      -1.2377706115901155
+    ],
+    [
+      -9.524219667807913,
+      10.969860153100184,
+      -4.735653668160045
+    ],
+    [
+      -8.532113452411254,
+      6.383494848780779,
+      -4.756440655530261
+    ],
+    [
+      -5.997990719369506,
+      4.514555711585932,
+      -1.317139108821848
+    ]
+  ],
+  "atom_symbols": [
+    "C",
+    "O",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "O",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "O",
+    "O",
+    "O",
+    "C",
+    "O",
+    "C",
+    "O",
+    "C",
+    "C",
+    "N",
+    "C",
+    "O",
+    "C",
+    "O",
+    "O",
+    "O",
+    "O",
+    "C",
+    "O",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "C",
+    "O",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H",
+    "H"
+  ],
+  "density_sha256": "5e86c1ff2b0edc62a85da5d7150c0057c6179d30565100e7aa72898ec81251cf",
+  "snapshot_energy_hartree": -2927.3342336485075,
+  "resident_cderi": {
+    "shape": [
+      5598,
+      344997
+    ],
+    "nbytes": 15450345648
+  },
+  "workspace_scope": "FP64 dense AO unpack plus one occupied transform buffer only; excludes persistent CDERI, outputs, factors, allocator reservation and native-library workspaces."
+}

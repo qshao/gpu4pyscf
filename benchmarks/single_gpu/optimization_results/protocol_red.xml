@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="0.662" timestamp="2026-10-18T08:20:17.684582-04:00" hostname="engr6944"><testcase classname="benchmarks.single_gpu.test_acceptance_protocol" name="test_acceptance_factory_keeps_grid_pruning" time="0.593"><failure message="AssertionError: assert None is &lt;function nwchem_prune at 0xf5b1511751c0&gt;&#10; +  where None = namespace(level=3, prune=None).prune&#10; +    where namespace(level=3, prune=None) = namespace(grids=namespace(level=3, prune=None), max_cycle=50, small_rho_cutoff=0.0, conv_tol=1e-10, conv_tol_grad=1e-0.../tmp/pytest-of-qshao/pytest-434/test_acceptance_factory_keeps_0'), cderi_buffer_bytes=4294967296, cderi_cache_bytes=0)).grids">benchmarks/single_gpu/test_acceptance_protocol.py:29: in test_acceptance_factory_keeps_grid_pruning
+    driver.test_corrected_optimization_acceptance('resident',tmp_path)
+benchmarks/single_gpu/test_corrected_acceptance.py:50: in test_corrected_optimization_acceptance
+    result=molecular.run_case('B3LYP','gpu')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+benchmarks/single_gpu/test_acceptance_protocol.py:18: in inspect
+    assert mf.grids.prune is nwchem_prune
+E   AssertionError: assert None is &lt;function nwchem_prune at 0xf5b1511751c0&gt;
+E    +  where None = namespace(level=3, prune=None).prune
+E    +    where namespace(level=3, prune=None) = namespace(grids=namespace(level=3, prune=None), max_cycle=50, small_rho_cutoff=0.0, conv_tol=1e-10, conv_tol_grad=1e-0.../tmp/pytest-of-qshao/pytest-434/test_acceptance_factory_keeps_0'), cderi_buffer_bytes=4294967296, cderi_cache_bytes=0)).grids</failure></testcase></testsuite></testsuites>

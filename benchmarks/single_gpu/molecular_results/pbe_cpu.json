@@ -1,0 +1,113 @@
+{
+  "timestamp_utc": "2026-10-17T02:52:46.863153+00:00",
+  "backend": "cpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "779d3e9743b0d64ab215ba42f701ebca1ad2f4c4cee36e4bd3c5cce0946d2513",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "method": "PBE",
+  "settings": {
+    "atom": "O 0 0 0; H 0.94 0 0; H -0.24 0 0.91",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-12,
+    "conv_tol_grad": 1e-09,
+    "grid_level": 1,
+    "grid_pruning": false,
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 2
+  },
+  "converged": true,
+  "energy_hartree": -76.27038646309565,
+  "scf_seconds": 0.31168558448553085,
+  "iterations": 11,
+  "iteration_observations": [
+    {
+      "cycle": 0,
+      "seconds": 0.07309741992503405,
+      "energy_hartree": -76.1614550705185
+    },
+    {
+      "cycle": 1,
+      "seconds": 0.01332598552107811,
+      "energy_hartree": -75.95488759211331
+    },
+    {
+      "cycle": 2,
+      "seconds": 0.012609072029590607,
+      "energy_hartree": -76.27017084660083
+    },
+    {
+      "cycle": 3,
+      "seconds": 0.01585013698786497,
+      "energy_hartree": -76.27038043983502
+    },
+    {
+      "cycle": 4,
+      "seconds": 0.024997279979288578,
+      "energy_hartree": -76.27038630935603
+    },
+    {
+      "cycle": 5,
+      "seconds": 0.02492412831634283,
+      "energy_hartree": -76.27038646275331
+    },
+    {
+      "cycle": 6,
+      "seconds": 0.0247816639021039,
+      "energy_hartree": -76.27038646309381
+    },
+    {
+      "cycle": 7,
+      "seconds": 0.02478073537349701,
+      "energy_hartree": -76.27038646309562
+    },
+    {
+      "cycle": 8,
+      "seconds": 0.024405007250607014,
+      "energy_hartree": -76.27038646309579
+    },
+    {
+      "cycle": 9,
+      "seconds": 0.024935263209044933,
+      "energy_hartree": -76.27038646309575
+    },
+    {
+      "cycle": 10,
+      "seconds": 0.02471756748855114,
+      "energy_hartree": -76.27038646309568
+    }
+  ],
+  "df_build_calls_seconds": [],
+  "gradient_seconds": 0.06894643325358629,
+  "gradient_hartree_per_bohr": [
+    [
+      0.028364685450919414,
+      -1.1209676124427536e-16,
+      0.035053247462899506
+    ],
+    [
+      -0.03521921539292583,
+      9.588305231087434e-17,
+      -0.0018505957420389824
+    ],
+    [
+      0.006854529942007637,
+      7.950811262966513e-18,
+      -0.03320265172086101
+    ]
+  ],
+  "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+}

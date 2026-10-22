@@ -1,0 +1,10 @@
+# Observed component/reference environment on ARM64, Python 3.11.
+# This does not qualify a complete GPU4PySCF native installation.
+cupy-cuda13x==14.1.1
+cutensor-cu13==2.7.0
+numpy==2.4.6
+scipy==1.17.1
+h5py==3.16.0
+pyscf==2.13.1
+pyscf-dispersion==1.5.0
+pytest==9.1.1

@@ -1,0 +1,33 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0.9in]{geometry}
+\usepackage{booktabs,graphicx,amsmath,hyperref,caption,subcaption,longtable,float,array,xcolor,microtype,enumitem,pdflscape}
+\usepackage{placeins}
+\usepackage[T1]{fontenc}
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black}
+\captionsetup{font=small,labelfont=bf}
+\setlength{\parskip}{3pt}
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.1}\renewcommand{\floatpagefraction}{0.7}\setcounter{topnumber}{3}\setcounter{totalnumber}{5}
+\graphicspath{{figures/}}
+\input{macros.tex}
+\newcommand{\gnew}{\textsc{new}}
+\newcommand{\gold}{\textsc{orig}}
+
+\title{Memory-lean density-fitted GPU4PySCF on P100, V100 and A100 GPUs:\\ accuracy, speed and capacity against the original code and CPU PySCF}
+\author{Benchmark campaign on the LCC cluster}
+\date{October 22, 2026}
+
+\begin{document}
+\maketitle
+
+\input{sec_abstract.tex}
+
+\tableofcontents
+
+\input{sec_intro.tex}
+\input{sec_methods.tex}
+\input{sec_results.tex}
+\input{sec_limits.tex}
+\input{sec_conclusions.tex}
+\input{sec_appendix.tex}
+
+\end{document}

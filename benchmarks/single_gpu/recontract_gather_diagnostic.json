@@ -1,0 +1,134 @@
+{
+  "timestamp_utc": "2026-10-18T01:35:05.603630+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "basis": "cc-pvdz",
+  "case": "vitamin_c",
+  "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+  "benchmark_sha256": "d6f5a481e5e01a572514dff676f0ae4a7ff7bd1f0e9d8ef6629f6399b4d4365f",
+  "candidate_sha256": "afd295a476889f70184c539a851ce895cb873d8ad956dddfded7ed35b3db4983",
+  "factory_sha256": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+  "shape": [
+    29615,
+    1056
+  ],
+  "output_shape": [
+    19782,
+    1056
+  ],
+  "contributions": 45976,
+  "candidate_mapping_bytes": 630844,
+  "baseline_device_mapping_bytes": 735616,
+  "max_error": 6.661338147750939e-16,
+  "bitwise_repeatable": true,
+  "samples": {
+    "atomic": [
+      {
+        "wall_seconds": 0.0036220761636892953,
+        "event_seconds": 0.003618314743041992
+      },
+      {
+        "wall_seconds": 0.0037173988918463388,
+        "event_seconds": 0.0037156480153401695
+      },
+      {
+        "wall_seconds": 0.003706428532799085,
+        "event_seconds": 0.0037046934763590497
+      },
+      {
+        "wall_seconds": 0.0036802683025598526,
+        "event_seconds": 0.00367850653330485
+      },
+      {
+        "wall_seconds": 0.003561771474778652,
+        "event_seconds": 0.003560127894083659
+      },
+      {
+        "wall_seconds": 0.0036339800183971724,
+        "event_seconds": 0.003632277488708496
+      },
+      {
+        "wall_seconds": 0.003655691941579183,
+        "event_seconds": 0.003654015858968099
+      }
+    ],
+    "coalesced": [
+      {
+        "wall_seconds": 0.0019024464612205823,
+        "event_seconds": 0.0019004906018575032
+      },
+      {
+        "wall_seconds": 0.0018537103508909543,
+        "event_seconds": 0.001851871967315674
+      },
+      {
+        "wall_seconds": 0.0018947717423240344,
+        "event_seconds": 0.0018933119773864747
+      },
+      {
+        "wall_seconds": 0.0019811559468507767,
+        "event_seconds": 0.0019794880549112957
+      },
+      {
+        "wall_seconds": 0.0019518652309974034,
+        "event_seconds": 0.0019501973787943523
+      },
+      {
+        "wall_seconds": 0.0018725690121452014,
+        "event_seconds": 0.0018710506757100424
+      },
+      {
+        "wall_seconds": 0.00188701165219148,
+        "event_seconds": 0.001885269323984782
+      }
+    ]
+  },
+  "medians": {
+    "atomic": 0.003655691941579183,
+    "coalesced": 0.0018947717423240344
+  },
+  "diagnostic_ratio": 1.9293574312520039,
+  "note": "DIAGNOSTIC ONLY: concurrent CPU-reference jobs on unified-memory GB10. Not final speed qualification. Actual first recontraction batch; resident metadata on both sides, setup/H2D excluded. Atomic zero-fill included, gather overwrites each output. Seven alternating rounds after three warmups; three calls per sample. Not full-workflow speed or whole-memory measurement. Candidate retains CSR metadata for all factory batches; record here covers this batch only."
+}

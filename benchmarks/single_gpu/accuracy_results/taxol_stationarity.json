@@ -1,0 +1,68 @@
+{
+  "timestamp_utc": "2026-10-18T10:53:38.327163+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "failed",
+  "parent_sha256": "8f52369371bba8336ac794c52babb30771bcec70d36b1ff9b0c56262996018f8",
+  "benchmark_sha256": "1ad7ec8af8eea5637be6119adf71c01245e2917e5b40cb30c46cb89f9379861b",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "conv_tol": 1e-12,
+  "conv_tol_grad": 1e-10,
+  "note": "Diagnostic: fresh unextrapolated Fock at saved converged orbitals, then explicitly tighter SCF from that density. Same Hamiltonian, basis and full grid/aux response. Different, stronger SCF thresholds are recorded honestly; this is not an unchanged-settings acceptance or a speed benchmark.",
+  "initial_residual": {
+    "orbital_gradient_norm": 5.6333237797541995e-08,
+    "canonical_fock_error": 2.2262167220787887e-08,
+    "energy_hartree": -2927.3342336485075
+  },
+  "error": "",
+  "traceback": "Traceback (most recent call last):\n  File \"/home/qshao/gpu4pyscf/benchmarks/single_gpu/test_taxol_stationarity.py\", line 53, in test_taxol_stationarity\n    begin=time.perf_counter(); mf.kernel(dm0=mf.make_rdm1())\n                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/scf/hf.py\", line 391, in scf\n    _kernel(mf, mf.conv_tol, mf.conv_tol_grad,\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/scf/hf.py\", line 294, in _kernel\n    vhf = mf.get_veff(mol, dm, dm_last, vhf)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/df/df_jk.py\", line 359, in get_veff\n    n, exc, vxc = ni.nr_rks(mol, self.grids, self.xc, dm)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/qshao/gpu4pyscf/gpu4pyscf/dft/numint.py\", line 580, in nr_rks\n    with ThreadPoolExecutor(max_workers=num_devices) as executor:\n  File \"/home/qshao/miniconda3/envs/dft_oracle/lib/python3.11/concurrent/futures/_base.py\", line 647, in __exit__\n    self.shutdown(wait=True)\n  File \"/home/qshao/miniconda3/envs/dft_oracle/lib/python3.11/concurrent/futures/thread.py\", line 235, in shutdown\n    t.join()\n  File \"/home/qshao/miniconda3/envs/dft_oracle/lib/python3.11/threading.py\", line 1119, in join\n    self._wait_for_tstate_lock()\n  File \"/home/qshao/miniconda3/envs/dft_oracle/lib/python3.11/threading.py\", line 1139, in _wait_for_tstate_lock\n    if lock.acquire(block, timeout):\n       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nKeyboardInterrupt\n"
+}

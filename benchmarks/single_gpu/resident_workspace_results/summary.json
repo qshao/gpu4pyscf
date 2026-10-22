@@ -1,0 +1,163 @@
+{
+  "status": "passed",
+  "validator_sha256": "abd905b55dc5b2aac7007e8ae0359d310e95e0be8f8a968a8da2392fddc1bfe4",
+  "effective_build_workspace_bytes": 4294967296,
+  "runner_sha256": {
+    "control_profile": "7696a4788f0f5388107c62d45d564a0e427896adb1c5188db5eab4e94f1043f8",
+    "remaining_observations": "81ccb2983ca0efa672e6cd0ab2c58725d5f0b84176bfa23d57f0ee641103e5ec"
+  },
+  "excluded_preliminary_observation": {
+    "path": "/home/qshao/gpu4pyscf/benchmarks/single_gpu/resident_workspace_results/pre-runtime-budget-audit/large_candidate_memory_0.json",
+    "sha256": "dd1ad54f858b7ea7ba8f9f092221e0926e6f7b58322ebf59f355c79a68f9a961",
+    "reason": "Predates explicit effective runtime-budget assertion; rerun and excluded from statistics."
+  },
+  "workflow_median_seconds": {
+    "control": 565.2638336997479,
+    "candidate": 566.8810347039253
+  },
+  "speed_ratio": 0.9971471950812009,
+  "paired_speed_ratios": [
+    0.997238456005604,
+    0.9971471950812009,
+    0.9984007021220943
+  ],
+  "phase_median_seconds": {
+    "control": {
+      "setup": 0.3131472850218415,
+      "scf": 430.4675270700827,
+      "gradient": 134.47700658719987
+    },
+    "candidate": {
+      "setup": 0.31210569851100445,
+      "scf": 431.63959220517427,
+      "gradient": 134.9288459410891
+    }
+  },
+  "checks": {
+    "focused-tests.xml": {
+      "passed": 20,
+      "sha256": "50557146352719e812dc42b8143777881ca5a5c9a26d0313de6f8edbb0a99c17"
+    },
+    "audit-tests.xml": {
+      "passed": 13,
+      "sha256": "5c479928e7c7f8985fc2c8597b28bcd5c33e4df3e4ce3f8a597e4244d5b3b6d9"
+    }
+  },
+  "tracked_gpu_peak_bytes": {
+    "control": 30100129212,
+    "candidate": 20050847372
+  },
+  "gpu_reduction_fraction": 0.3338617508656295,
+  "phase_peaks_bytes": {
+    "control": {
+      "setup": 0,
+      "scf": 30100129212,
+      "df_build": 30100129212,
+      "gradient": 16669080260
+    },
+    "candidate": {
+      "setup": 0,
+      "scf": 20050847372,
+      "df_build": 20050847372,
+      "gradient": 16669080260
+    }
+  },
+  "host_rss_bytes": {
+    "control": 1475936256,
+    "candidate": 1475952640
+  },
+  "timing_samples_seconds": {
+    "control": [
+      565.3397146547213,
+      565.2638336997479,
+      565.1942625092342
+    ],
+    "candidate": [
+      566.9052484389395,
+      566.8810347039253,
+      566.09962443728
+    ]
+  },
+  "iterations": [
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20,
+    20
+  ],
+  "control_coarse": {
+    "scf.veff": {
+      "calls": 21,
+      "seconds": 428.33835828118026
+    },
+    "scf.jk": {
+      "calls": 21,
+      "seconds": 359.9301058938727
+    },
+    "scf.xc_quadrature": {
+      "calls": 21,
+      "seconds": 66.73344592005014
+    },
+    "scf.diagonalization": {
+      "calls": 20,
+      "seconds": 1.5790608413517475
+    },
+    "scf.df_build_nested_in_jk": {
+      "calls": 1,
+      "seconds": 63.61815179511905
+    },
+    "gradient.one_electron": {
+      "calls": 1,
+      "seconds": 0.3406844297423959
+    },
+    "gradient.two_electron": {
+      "calls": 1,
+      "seconds": 137.3748335391283
+    },
+    "gradient.df_jk_total": {
+      "calls": 1,
+      "seconds": 98.85318587627262
+    },
+    "gradient.df_jk_core_nested": {
+      "calls": 1,
+      "seconds": 98.66670542303473
+    },
+    "gradient.xc_full_response": {
+      "calls": 1,
+      "seconds": 38.5215687667951
+    }
+  },
+  "control_exchange_helpers": {
+    "_coulomb_contract": {
+      "seconds": 4.052577747963369,
+      "calls": 924
+    },
+    "_exchange_transform": {
+      "seconds": 184.36655443441123,
+      "calls": 462
+    },
+    "_symmetric_gram": {
+      "seconds": 100.05680593382567,
+      "calls": 462
+    }
+  },
+  "maximum_cpu_force_error": 2.108234564701661e-08,
+  "maximum_large_cpu_force_error": 5.903116218064497e-09,
+  "maximum_cpu_energy_error": 2.228262019343674e-09,
+  "input_sha256": {
+    "large_control_profile_0.json": "344b547608061d2dd0ea586f7a590e0eba58f5c0343eef0d81c9e816ef9e8c26",
+    "large_candidate_memory_0.json": "6e56217b4ad6c5887979c5668f051720fe547a63c28569ccd0c003c695010791",
+    "large_control_time_0.json": "6785dad688068188f9f868fbed014b3db700126bcec64208aff3123d8c42a34f",
+    "large_control_time_1.json": "c57391efd95b19df2b71aee75eecbd6c08347e3bf23a417ab2455e0122e43bf2",
+    "large_control_time_2.json": "15ee283a3e1fd7873eb8f27963570ef034455c7597ab8d08fff434457c975678",
+    "large_candidate_time_0.json": "c13d55885bbf25121aa7ec118a915ab80901fdeff2a38856ae01ee79d05fddbb",
+    "large_candidate_time_1.json": "5b66720314b7ec4eef55b2744bb7b9dddf560dece3d0f98c40be21ac4d167280",
+    "large_candidate_time_2.json": "8da4f44fd105c8da965d8aa6f6a7869c5bb81d9bf8fbbaf67444064e818a5e65",
+    "small_candidate_validation_0.json": "cda63b02dda9188254f765c950aa8af5296620f664964975b84fdc01fabbf861",
+    "medium_candidate_validation_0.json": "157e54e9754ff2fa0335e51320805b9afbee7bc2596a79abc6c30e1301cb1dbb"
+  },
+  "note": "Three alternating fresh-process timing pairs; separate fresh phase-allocation observations. Control diagnostic scopes include synchronization and must not be used as speed controls. Only the build function changes. Requested CuPy bytes exclude native/preexisting storage; host RSS is separate and neither measures total physical RAM on unified GB10. The cap applies to splittable nongeneral contractions; general contractions keep their existing path. The pre-change control profile uses its individually hash-pinned archived runner; all other accepted observations assert and record the effective 4GiB build target."
+}

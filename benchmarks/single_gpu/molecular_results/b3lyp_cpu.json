@@ -1,0 +1,150 @@
+{
+  "timestamp_utc": "2026-10-17T02:52:47.488132+00:00",
+  "backend": "cpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "779d3e9743b0d64ab215ba42f701ebca1ad2f4c4cee36e4bd3c5cce0946d2513",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "method": "B3LYP",
+  "settings": {
+    "atom": "O 0 0 0; H 0.94 0 0; H -0.24 0 0.91",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-12,
+    "conv_tol_grad": 1e-09,
+    "grid_level": 1,
+    "grid_pruning": false,
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 2
+  },
+  "converged": true,
+  "energy_hartree": -76.35698848920377,
+  "scf_seconds": 0.5252148993313313,
+  "iterations": 18,
+  "iteration_observations": [
+    {
+      "cycle": 0,
+      "seconds": 0.12353225238621235,
+      "energy_hartree": -76.26671144448167
+    },
+    {
+      "cycle": 1,
+      "seconds": 0.014471973292529583,
+      "energy_hartree": -76.18929087194437
+    },
+    {
+      "cycle": 2,
+      "seconds": 0.015580631792545319,
+      "energy_hartree": -76.35689162989661
+    },
+    {
+      "cycle": 3,
+      "seconds": 0.01806796621531248,
+      "energy_hartree": -76.35698650798629
+    },
+    {
+      "cycle": 4,
+      "seconds": 0.022811786271631718,
+      "energy_hartree": -76.35698845971002
+    },
+    {
+      "cycle": 5,
+      "seconds": 0.024228367023169994,
+      "energy_hartree": -76.35698848917892
+    },
+    {
+      "cycle": 6,
+      "seconds": 0.02449033409357071,
+      "energy_hartree": -76.35698848920352
+    },
+    {
+      "cycle": 7,
+      "seconds": 0.02373444475233555,
+      "energy_hartree": -76.35698848920379
+    },
+    {
+      "cycle": 8,
+      "seconds": 0.02443812694400549,
+      "energy_hartree": -76.35698848920374
+    },
+    {
+      "cycle": 9,
+      "seconds": 0.024418238550424576,
+      "energy_hartree": -76.3569884892038
+    },
+    {
+      "cycle": 10,
+      "seconds": 0.02444191835820675,
+      "energy_hartree": -76.35698848920379
+    },
+    {
+      "cycle": 11,
+      "seconds": 0.02321295626461506,
+      "energy_hartree": -76.35698848920372
+    },
+    {
+      "cycle": 12,
+      "seconds": 0.024317117407917976,
+      "energy_hartree": -76.3569884892038
+    },
+    {
+      "cycle": 13,
+      "seconds": 0.02333063632249832,
+      "energy_hartree": -76.35698848920389
+    },
+    {
+      "cycle": 14,
+      "seconds": 0.023092779330909252,
+      "energy_hartree": -76.35698848920366
+    },
+    {
+      "cycle": 15,
+      "seconds": 0.023044442757964134,
+      "energy_hartree": -76.35698848920389
+    },
+    {
+      "cycle": 16,
+      "seconds": 0.023111339658498764,
+      "energy_hartree": -76.35698848920372
+    },
+    {
+      "cycle": 17,
+      "seconds": 0.023055835627019405,
+      "energy_hartree": -76.35698848920379
+    }
+  ],
+  "df_build_calls_seconds": [
+    0.014367637224495411
+  ],
+  "gradient_seconds": 0.07950215600430965,
+  "gradient_hartree_per_bohr": [
+    [
+      0.022161408447335607,
+      6.342464633974206e-16,
+      0.027030693506638226
+    ],
+    [
+      -0.028141004596230257,
+      7.377037126238851e-17,
+      -0.0008936652785552363
+    ],
+    [
+      0.005979596148888877,
+      1.7100575674845455e-16,
+      -0.02613702822807884
+    ]
+  ],
+  "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+}

@@ -1,0 +1,5132 @@
+{
+ "taxol_stages": {
+  "a100/original": {
+   "scf": 22.04333844128996,
+   "gradient": 11.13584759272635,
+   "total": 33.72499455045909,
+   "stages": {
+    "scf.veff": 21.189656402915716,
+    "scf.jk": 13.20845021493733,
+    "scf.xc_quadrature": 7.7376620303839445,
+    "scf.diagonalization": 0.39810879342257977,
+    "scf.df_build_nested_in_jk": 3.010444833897054,
+    "gradient.one_electron": 0.1599442297592759,
+    "gradient.two_electron": 10.972636350430548,
+    "gradient.df_jk_total": 7.869389418512583,
+    "gradient.df_jk_core_nested": 7.788335923105478,
+    "gradient.xc_full_response": 3.103160477243364
+   },
+   "status": "failed_accuracy"
+  },
+  "a100/current": {
+   "scf": 21.85935407038778,
+   "gradient": 13.142314699478447,
+   "total": 35.493006753735244,
+   "stages": {
+    "scf.veff": 21.125007236376405,
+    "scf.jk": 13.86908580828458,
+    "scf.xc_quadrature": 7.124625800177455,
+    "scf.diagonalization": 0.4064903827384114,
+    "scf.df_build_nested_in_jk": 3.527307905256748,
+    "gradient.one_electron": 0.16173985227942467,
+    "gradient.two_electron": 12.977318719029427,
+    "gradient.df_jk_total": 10.023911150172353,
+    "gradient.df_jk_core_nested": 9.942808748222888,
+    "gradient.xc_full_response": 2.95331263076514
+   },
+   "status": "passed"
+  },
+  "v100/original": {
+   "scf": 43.70266190171242,
+   "gradient": 14.941382184624672,
+   "total": 59.095579624176025,
+   "stages": {
+    "scf.veff": 42.70016406476498,
+    "scf.jk": 32.00074450671673,
+    "scf.xc_quadrature": 10.460121110081673,
+    "scf.diagonalization": 0.48008817434310913,
+    "scf.df_build_nested_in_jk": 5.763861298561096,
+    "gradient.one_electron": 0.16650347411632538,
+    "gradient.two_electron": 14.771366000175476,
+    "gradient.df_jk_total": 10.276794508099556,
+    "gradient.df_jk_core_nested": 10.205535620450974,
+    "gradient.xc_full_response": 4.494457766413689
+   },
+   "status": "failed_accuracy"
+  },
+  "v100/current": {
+   "scf": 42.24153247475624,
+   "gradient": 17.591567799448967,
+   "total": 60.27863930165768,
+   "stages": {
+    "scf.veff": 41.25170271098614,
+    "scf.jk": 32.75902706384659,
+    "scf.xc_quadrature": 8.310990273952484,
+    "scf.diagonalization": 0.4789385348558426,
+    "scf.df_build_nested_in_jk": 6.407021671533585,
+    "gradient.one_electron": 0.1634700447320938,
+    "gradient.two_electron": 17.424933537840843,
+    "gradient.df_jk_total": 12.970541194081306,
+    "gradient.df_jk_core_nested": 12.899063721299171,
+    "gradient.xc_full_response": 4.454284131526947
+   },
+   "status": "passed"
+  }
+ },
+ "workspace_sweep": {
+  "a100/default": {
+   "gradient": 13.142314699478447,
+   "total": 35.493006753735244,
+   "aux_batch": 128
+  },
+  "a100/1": {
+   "gradient": 13.963776916265488,
+   "total": 36.4192622853443,
+   "aux_batch": 88
+  },
+  "a100/4": {
+   "gradient": 13.074182705953717,
+   "total": 35.51095125451684,
+   "aux_batch": 128
+  },
+  "a100/8": {
+   "gradient": 13.033568103797734,
+   "total": 35.354147117584944,
+   "aux_batch": 128
+  },
+  "a100/16": {
+   "gradient": 13.045461510308087,
+   "total": 35.449803775176406,
+   "aux_batch": 128
+  },
+  "a100/unlimited": {
+   "gradient": 13.005999361164868,
+   "total": 35.37015235889703,
+   "aux_batch": 128
+  },
+  "v100/default": {
+   "gradient": 17.591567799448967,
+   "total": 60.27863930165768,
+   "aux_batch": 128
+  },
+  "v100/1": {
+   "gradient": 18.371709495782852,
+   "total": 60.758509665727615,
+   "aux_batch": 88
+  },
+  "v100/4": {
+   "gradient": 17.505985110998154,
+   "total": 60.10722151398659,
+   "aux_batch": 128
+  },
+  "v100/8": {
+   "gradient": 17.56600558757782,
+   "total": 59.929087072610855,
+   "aux_batch": 128
+  },
+  "v100/16": {
+   "gradient": 17.585921958088875,
+   "total": 60.197806760668755,
+   "aux_batch": 128
+  },
+  "v100/unlimited": {
+   "gradient": 17.536201611161232,
+   "total": 59.87707023322582,
+   "aux_batch": 128
+  }
+ },
+ "storage_tiers": {
+  "v100/large/original/gpu": {
+   "status": "failed_accuracy",
+   "seconds": 59.095579624176025,
+   "scf": 43.70266190171242,
+   "gradient": 14.941382184624672,
+   "gpu_peak_scf_gb": 22.40560278,
+   "gpu_peak_gradient_gb": 29.640701808,
+   "host_rss_gb": null,
+   "error": "",
+   "gradient_error": 1.784735974474927e-05
+  },
+  "v100/large/original/host": {
+   "status": "failed_accuracy",
+   "seconds": 70.76566654443741,
+   "scf": 53.49080868065357,
+   "gradient": 16.81237904727459,
+   "gpu_peak_scf_gb": 12.506413068,
+   "gpu_peak_gradient_gb": 29.640701808,
+   "host_rss_gb": 16.59185152,
+   "error": "",
+   "gradient_error": 1.743888033090002e-05
+  },
+  "v100/large/current/gpu": {
+   "status": "passed",
+   "seconds": 60.27863930165768,
+   "scf": 42.24153247475624,
+   "gradient": 17.591567799448967,
+   "gpu_peak_scf_gb": 20.057400972,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": null,
+   "error": "",
+   "gradient_error": 5.631575206166417e-09
+  },
+  "v100/large/current/host": {
+   "status": "passed",
+   "seconds": 72.98047712445259,
+   "scf": 52.70423747599125,
+   "gradient": 19.810910820961,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": 16.5900288,
+   "error": "",
+   "gradient_error": 6.088731296927108e-09
+  },
+  "v100/large/current/disk": {
+   "status": "passed",
+   "seconds": 188.74678267538548,
+   "scf": 170.7345523685217,
+   "gradient": 17.571154713630676,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": 3.32365824,
+   "error": "",
+   "gradient_error": 5.337497555046866e-09
+  },
+  "v100/valinomycin/original/gpu": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "gradient_error": null
+  },
+  "v100/valinomycin/original/host": {
+   "status": "capacity_observation",
+   "seconds": 174.38740454614162,
+   "scf": 138.80720314383507,
+   "gradient": 34.8996429592371,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": 32.7487488,
+   "error": "",
+   "gradient_error": null
+  },
+  "v100/valinomycin/current/gpu": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "gradient_error": null
+  },
+  "v100/valinomycin/current/host": {
+   "status": "capacity_observation",
+   "seconds": 184.97461973130703,
+   "scf": 139.50911873579025,
+   "gradient": 44.75177022814751,
+   "gpu_peak_scf_gb": 8.749909948,
+   "gpu_peak_gradient_gb": 14.814673044,
+   "host_rss_gb": 32.77092864,
+   "error": "",
+   "gradient_error": null
+  },
+  "v100/valinomycin/current/disk": {
+   "status": "capacity_observation",
+   "seconds": 577.634881362319,
+   "scf": 536.5588921904564,
+   "gradient": 40.27686360478401,
+   "gpu_peak_scf_gb": 8.749909948,
+   "gpu_peak_gradient_gb": 14.814673044,
+   "host_rss_gb": 5.521391616,
+   "error": "",
+   "gradient_error": null
+  },
+  "a100/large/original/gpu": {
+   "status": "failed_accuracy",
+   "seconds": 33.72499455045909,
+   "scf": 22.04333844128996,
+   "gradient": 11.13584759272635,
+   "gpu_peak_scf_gb": 32.544703932,
+   "gpu_peak_gradient_gb": 54.943729772,
+   "host_rss_gb": null,
+   "error": "",
+   "gradient_error": 2.687839145476545e-05
+  },
+  "a100/large/original/host": {
+   "status": "failed_accuracy",
+   "seconds": 43.78329049795866,
+   "scf": 30.542306510731578,
+   "gradient": 12.728212147951126,
+   "gpu_peak_scf_gb": 31.243056972,
+   "gpu_peak_gradient_gb": 54.943729772,
+   "host_rss_gb": 16.713109504,
+   "error": "",
+   "gradient_error": 2.5713093116941366e-05
+  },
+  "a100/large/current/gpu": {
+   "status": "passed",
+   "seconds": 35.493006753735244,
+   "scf": 21.85935407038778,
+   "gradient": 13.142314699478447,
+   "gpu_peak_scf_gb": 20.063135372,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": null,
+   "error": "",
+   "gradient_error": 3.810288973227216e-09
+  },
+  "a100/large/current/host": {
+   "status": "passed",
+   "seconds": 54.45968005806208,
+   "scf": 35.06602154485881,
+   "gradient": 18.932841984555125,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": 16.708481024,
+   "error": "",
+   "gradient_error": 3.739240028721724e-09
+  },
+  "a100/large/current/disk": {
+   "status": "passed",
+   "seconds": 215.20516717247665,
+   "scf": 197.02978746872395,
+   "gradient": 17.65913779102266,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": 3.407040512,
+   "error": "",
+   "gradient_error": 3.753717336962836e-09
+  },
+  "a100/valinomycin/original/gpu": {
+   "status": "capacity_observation",
+   "seconds": 79.35402336157858,
+   "scf": 55.734238151460886,
+   "gradient": 22.573245774954557,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": 1.374826496,
+   "error": "",
+   "gradient_error": null
+  },
+  "a100/valinomycin/original/host": {
+   "status": "capacity_observation",
+   "seconds": 88.22412816435099,
+   "scf": 62.986997342668474,
+   "gradient": 24.25968201365322,
+   "gpu_peak_scf_gb": 31.557822016,
+   "gpu_peak_gradient_gb": 75.545376368,
+   "host_rss_gb": 32.890978304,
+   "error": "",
+   "gradient_error": null
+  },
+  "a100/valinomycin/current/gpu": {
+   "status": "capacity_observation",
+   "seconds": 79.09629858937114,
+   "scf": 51.61220762971789,
+   "gradient": 26.473762925714254,
+   "gpu_peak_scf_gb": 38.127357052,
+   "gpu_peak_gradient_gb": 14.814673044,
+   "host_rss_gb": 1.370128384,
+   "error": "",
+   "gradient_error": null
+  },
+  "a100/valinomycin/current/host": {
+   "status": "capacity_observation",
+   "seconds": 97.04948860127479,
+   "scf": 65.35518232453614,
+   "gradient": 30.677032043226063,
+   "gpu_peak_scf_gb": 8.749909948,
+   "gpu_peak_gradient_gb": 14.814673044,
+   "host_rss_gb": 32.89870336,
+   "error": "",
+   "gradient_error": null
+  },
+  "a100/valinomycin/current/disk": {
+   "status": "capacity_observation",
+   "seconds": 524.4116427749395,
+   "scf": 496.93588159698993,
+   "gradient": 26.332269768230617,
+   "gpu_peak_scf_gb": 8.749909948,
+   "gpu_peak_gradient_gb": 14.814673044,
+   "host_rss_gb": 5.706080256,
+   "error": "",
+   "gradient_error": null
+  },
+  "v100-review/large/current/gpu": {
+   "status": "passed",
+   "seconds": 59.28182141855359,
+   "scf": 41.22474282421172,
+   "gradient": 17.624965460970998,
+   "gpu_peak_scf_gb": 20.057400972,
+   "gpu_peak_gradient_gb": 4.065687916,
+   "host_rss_gb": 1.130430464,
+   "error": "",
+   "gradient_error": 5.277209780274461e-09
+  },
+  "v100-review/large/current/host": {
+   "status": "passed",
+   "seconds": 71.71033766120672,
+   "scf": 51.49907534942031,
+   "gradient": 19.77964535355568,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 4.065687916,
+   "host_rss_gb": 16.579588096,
+   "error": "",
+   "gradient_error": 5.2969788555401465e-09
+  },
+  "v100-review/large/current/disk": {
+   "status": "passed",
+   "seconds": 254.45131970010698,
+   "scf": 236.4180316515267,
+   "gradient": 17.620209271088243,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 4.065687916,
+   "host_rss_gb": 3.27856128,
+   "error": "",
+   "gradient_error": 5.710839801054135e-09
+  },
+  "a100-inplace/large/current/gpu": {
+   "status": "passed",
+   "seconds": 35.44902783446014,
+   "scf": 21.914647353813052,
+   "gradient": 13.029801843687892,
+   "gpu_peak_scf_gb": 20.063135372,
+   "gpu_peak_gradient_gb": 4.071422316,
+   "host_rss_gb": 1.259933696,
+   "error": "",
+   "gradient_error": 3.75569086941141e-09
+  },
+  "a100-inplace/large/current/host": {
+   "status": "passed",
+   "seconds": 46.35896956920624,
+   "scf": 30.81623199302703,
+   "gradient": 15.081701029092073,
+   "gpu_peak_scf_gb": 4.964453084,
+   "gpu_peak_gradient_gb": 4.071422316,
+   "host_rss_gb": 16.712351744,
+   "error": "",
+   "gradient_error": 4.143348775187405e-09
+  },
+  "a100-inplace/valinomycin/current/host": {
+   "status": "capacity_observation",
+   "seconds": 97.18458569329232,
+   "scf": 65.53393679764122,
+   "gradient": 30.705136071890593,
+   "gpu_peak_scf_gb": 8.749909948,
+   "gpu_peak_gradient_gb": 8.697663044,
+   "host_rss_gb": 32.890417152,
+   "error": "",
+   "gradient_error": null
+  },
+  "p100-12gb-gram/large/current/host": {
+   "status": "passed",
+   "seconds": 111.54274162650108,
+   "scf": 78.34825304150581,
+   "gradient": 32.64713841676712,
+   "gpu_peak_scf_gb": 4.369009956,
+   "gpu_peak_gradient_gb": 4.740491124,
+   "host_rss_gb": 16.271056896,
+   "error": "",
+   "gradient_error": 5.365851762917373e-09
+  },
+  "p100-12gb-gram/valinomycin/current/host": {
+   "status": "capacity_observation",
+   "seconds": 264.94203720986843,
+   "scf": 191.45841351151466,
+   "gradient": 72.52523258328438,
+   "gpu_peak_scf_gb": 4.617476416,
+   "gpu_peak_gradient_gb": 8.697666788,
+   "host_rss_gb": 32.441860096,
+   "error": "",
+   "gradient_error": null
+  },
+  "p100-16gb-gram/large/current/host": {
+   "status": "passed",
+   "seconds": 91.50627326709218,
+   "scf": 63.410016025882214,
+   "gradient": 27.625760512892157,
+   "gpu_peak_scf_gb": 4.947677916,
+   "gpu_peak_gradient_gb": 4.740491124,
+   "host_rss_gb": 16.32456704,
+   "error": "",
+   "gradient_error": 5.985167916833234e-09
+  },
+  "p100-16gb-gram/valinomycin/current/host": {
+   "status": "capacity_observation",
+   "seconds": 220.88553389091976,
+   "scf": 158.19507381902076,
+   "gradient": 61.783347103977576,
+   "gpu_peak_scf_gb": 5.533476284,
+   "gpu_peak_gradient_gb": 8.697666788,
+   "host_rss_gb": 32.482988032,
+   "error": "",
+   "gradient_error": null
+  },
+  "p100-12gb/large/original/gpu": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "gradient_error": null
+  },
+  "p100-12gb/large/original/host": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "gradient_error": null
+  },
+  "p100-12gb/large/current/gpu": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "gradient_error": null
+  },
+  "p100-12gb/large/current/host": {
+   "status": "passed",
+   "seconds": 110.34729067981243,
+   "scf": 78.36740681529045,
+   "gradient": 31.499285370111465,
+   "gpu_peak_scf_gb": 4.369009956,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": 16.26947584,
+   "error": "",
+   "gradient_error": 5.0765205372726996e-09
+  },
+  "p100-12gb/large/current/disk": {
+   "status": "passed",
+   "seconds": 243.14749827980995,
+   "scf": 213.42771795392036,
+   "gradient": 29.17716734111309,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": 2.97181184,
+   "error": "",
+   "gradient_error": 4.881073323304008e-09
+  },
+  "p100-12gb/valinomycin/original/host": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "gradient_error": null
+  },
+  "p100-12gb/valinomycin/current/host": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "gradient_error": null
+  },
+  "p100-16gb/large/original/gpu": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "gradient_error": null
+  },
+  "p100-16gb/large/original/host": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "gradient_error": null
+  },
+  "p100-16gb/large/current/gpu": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "gradient_error": null
+  },
+  "p100-16gb/large/current/host": {
+   "status": "passed",
+   "seconds": 91.26629602792673,
+   "scf": 63.446938794106245,
+   "gradient": 27.39533036504872,
+   "gpu_peak_scf_gb": 4.947677916,
+   "gpu_peak_gradient_gb": 6.568868052,
+   "host_rss_gb": 16.323694592,
+   "error": "",
+   "gradient_error": 5.6557603045348515e-09
+  },
+  "p100-16gb/large/current/disk": {
+   "status": "passed",
+   "seconds": 248.76737286988646,
+   "scf": 223.24904485000297,
+   "gradient": 25.00282554491423,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": 3.030966272,
+   "error": "",
+   "gradient_error": 5.027963823067694e-09
+  },
+  "p100-16gb/valinomycin/original/host": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "gpu_peak_scf_gb": null,
+   "gpu_peak_gradient_gb": null,
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "gradient_error": null
+  },
+  "p100-16gb/valinomycin/current/host": {
+   "status": "capacity_observation",
+   "seconds": 221.36217144690454,
+   "scf": 159.75917423097417,
+   "gradient": 60.71407309896313,
+   "gpu_peak_scf_gb": 5.533476284,
+   "gpu_peak_gradient_gb": 14.814673044,
+   "host_rss_gb": 32.485163008,
+   "error": "",
+   "gradient_error": null
+  }
+ },
+ "tamoxifen_engine_profile": {
+  "a100/cutensor/original": [
+   {
+    "total": 8.3313874527812,
+    "scf": 5.881853157654405,
+    "gradient": 2.251025816425681,
+    "stages": {
+     "scf.veff": 5.519001037813723,
+     "scf.jk": 1.0938015757128596,
+     "scf.xc_quadrature": 4.365242195315659,
+     "scf.diagonalization": 0.14079237077385187,
+     "scf.df_build_nested_in_jk": 0.4876239290460944,
+     "gradient.one_electron": 0.0929013043642044,
+     "gradient.two_electron": 2.155906306579709,
+     "gradient.df_jk_total": 1.3853274825960398,
+     "gradient.df_jk_core_nested": 1.3272328432649374,
+     "gradient.xc_full_response": 0.7704978864639997
+    }
+   },
+   {
+    "total": 8.264261276461184,
+    "scf": 5.825491870753467,
+    "gradient": 2.247611558996141,
+    "stages": {
+     "scf.veff": 5.46531299687922,
+     "scf.jk": 1.0753189250826836,
+     "scf.xc_quadrature": 4.33063222002238,
+     "scf.diagonalization": 0.14178145490586758,
+     "scf.df_build_nested_in_jk": 0.46940672025084496,
+     "gradient.one_electron": 0.0928850807249546,
+     "gradient.two_electron": 2.152450888417661,
+     "gradient.df_jk_total": 1.3757161339744925,
+     "gradient.df_jk_core_nested": 1.3173809293657541,
+     "gradient.xc_full_response": 0.7765909107401967
+    }
+   },
+   {
+    "total": 8.284726567566395,
+    "scf": 5.848007262684405,
+    "gradient": 2.242683290503919,
+    "stages": {
+     "scf.veff": 5.492059766314924,
+     "scf.jk": 1.0738289346918464,
+     "scf.xc_quadrature": 4.359271855093539,
+     "scf.diagonalization": 0.14292928203940392,
+     "scf.df_build_nested_in_jk": 0.4659301182255149,
+     "gradient.one_electron": 0.0930508803576231,
+     "gradient.two_electron": 2.1473362678661942,
+     "gradient.df_jk_total": 1.372949369251728,
+     "gradient.df_jk_core_nested": 1.314900230616331,
+     "gradient.xc_full_response": 0.7743013435974717
+    }
+   }
+  ],
+  "a100/cutensor/current": [
+   {
+    "total": 9.28306373488158,
+    "scf": 6.354354474693537,
+    "gradient": 2.6870767334476113,
+    "stages": {
+     "scf.veff": 5.8975684978067875,
+     "scf.jk": 1.1777171539142728,
+     "scf.xc_quadrature": 4.548899421468377,
+     "scf.diagonalization": 0.14280669763684273,
+     "scf.df_build_nested_in_jk": 0.5638450207188725,
+     "gradient.one_electron": 0.09410464949905872,
+     "gradient.two_electron": 2.590675256215036,
+     "gradient.df_jk_total": 1.7637979071587324,
+     "gradient.df_jk_core_nested": 1.705002648755908,
+     "gradient.xc_full_response": 0.8267865888774395
+    }
+   },
+   {
+    "total": 8.615720788948238,
+    "scf": 5.7879022331908345,
+    "gradient": 2.627828580327332,
+    "stages": {
+     "scf.veff": 5.425583769567311,
+     "scf.jk": 1.1089922208338976,
+     "scf.xc_quadrature": 4.254485756158829,
+     "scf.diagonalization": 0.14181475341320038,
+     "scf.df_build_nested_in_jk": 0.4989874456077814,
+     "gradient.one_electron": 0.09363498259335756,
+     "gradient.two_electron": 2.5319374203681946,
+     "gradient.df_jk_total": 1.7556328941136599,
+     "gradient.df_jk_core_nested": 1.6972197256982327,
+     "gradient.xc_full_response": 0.7762212185189128
+    }
+   },
+   {
+    "total": 8.651726556010544,
+    "scf": 5.765114205889404,
+    "gradient": 2.6431713616475463,
+    "stages": {
+     "scf.veff": 5.404977931641042,
+     "scf.jk": 1.1153296483680606,
+     "scf.xc_quadrature": 4.227215891703963,
+     "scf.diagonalization": 0.14063254836946726,
+     "scf.df_build_nested_in_jk": 0.5076897721737623,
+     "gradient.one_electron": 0.09380234032869339,
+     "gradient.two_electron": 2.5470617804676294,
+     "gradient.df_jk_total": 1.767217860557139,
+     "gradient.df_jk_core_nested": 1.708783713169396,
+     "gradient.xc_full_response": 0.7797633884474635
+    }
+   }
+  ],
+  "a100/cupy/original": [
+   {
+    "total": 10.277228972874582,
+    "scf": 7.636624182574451,
+    "gradient": 2.4320234479382634,
+    "stages": {
+     "scf.veff": 7.281117206439376,
+     "scf.jk": 2.871847274713218,
+     "scf.xc_quadrature": 4.3507262989878654,
+     "scf.diagonalization": 0.136339720338583,
+     "scf.df_build_nested_in_jk": 0.4797494066879153,
+     "gradient.one_electron": 0.09542434196919203,
+     "gradient.two_electron": 2.3344100890681148,
+     "gradient.df_jk_total": 1.4762111827731133,
+     "gradient.df_jk_core_nested": 1.4184173494577408,
+     "gradient.xc_full_response": 0.8581100907176733
+    }
+   },
+   {
+    "total": 12.128605972975492,
+    "scf": 9.52193498890847,
+    "gradient": 2.4132489385083318,
+    "stages": {
+     "scf.veff": 9.150739877484739,
+     "scf.jk": 3.0575215071439743,
+     "scf.xc_quadrature": 6.034890319220722,
+     "scf.diagonalization": 0.13709790725260973,
+     "scf.df_build_nested_in_jk": 0.4792473930865526,
+     "gradient.one_electron": 0.09599314257502556,
+     "gradient.two_electron": 2.314785768277943,
+     "gradient.df_jk_total": 1.4501906568184495,
+     "gradient.df_jk_core_nested": 1.391650876030326,
+     "gradient.xc_full_response": 0.864503157325089
+    }
+   },
+   {
+    "total": 10.35971797350794,
+    "scf": 7.745530330576003,
+    "gradient": 2.4131601620465517,
+    "stages": {
+     "scf.veff": 7.386629766784608,
+     "scf.jk": 2.9432063568383455,
+     "scf.xc_quadrature": 4.385960407555103,
+     "scf.diagonalization": 0.13690249901264906,
+     "scf.df_build_nested_in_jk": 0.45725640933960676,
+     "gradient.one_electron": 0.09613070636987686,
+     "gradient.two_electron": 2.3148079439997673,
+     "gradient.df_jk_total": 1.4528791159391403,
+     "gradient.df_jk_core_nested": 1.3948729550465941,
+     "gradient.xc_full_response": 0.8618404772132635
+    }
+   }
+  ],
+  "a100/cupy/current": [
+   {
+    "total": 9.279311333782971,
+    "scf": 6.312761390581727,
+    "gradient": 2.745929531753063,
+    "stages": {
+     "scf.veff": 5.900903679430485,
+     "scf.jk": 1.4611339448019862,
+     "scf.xc_quadrature": 4.283715983852744,
+     "scf.diagonalization": 0.13743630331009626,
+     "scf.df_build_nested_in_jk": 0.7281911047175527,
+     "gradient.one_electron": 0.0934995524585247,
+     "gradient.two_electron": 2.6501695262268186,
+     "gradient.df_jk_total": 1.8114088708534837,
+     "gradient.df_jk_core_nested": 1.7525074435397983,
+     "gradient.xc_full_response": 0.8386714281514287
+    }
+   },
+   {
+    "total": 8.763091761618853,
+    "scf": 5.81978555303067,
+    "gradient": 2.7475705724209547,
+    "stages": {
+     "scf.veff": 5.439025206491351,
+     "scf.jk": 1.1334402449429035,
+     "scf.xc_quadrature": 4.239681804552674,
+     "scf.diagonalization": 0.13740784209221601,
+     "scf.df_build_nested_in_jk": 0.48313893005251884,
+     "gradient.one_electron": 0.11562993563711643,
+     "gradient.two_electron": 2.629661561921239,
+     "gradient.df_jk_total": 1.8107930812984705,
+     "gradient.df_jk_core_nested": 1.7523820456117392,
+     "gradient.xc_full_response": 0.8187930090352893
+    }
+   },
+   {
+    "total": 8.734955846332014,
+    "scf": 5.8010439071804285,
+    "gradient": 2.7317504547536373,
+    "stages": {
+     "scf.veff": 5.443174423649907,
+     "scf.jk": 1.1478898664936423,
+     "scf.xc_quadrature": 4.231293534860015,
+     "scf.diagonalization": 0.13810691237449646,
+     "scf.df_build_nested_in_jk": 0.5006787106394768,
+     "gradient.one_electron": 0.09329150896519423,
+     "gradient.two_electron": 2.63619155716151,
+     "gradient.df_jk_total": 1.8142689429223537,
+     "gradient.df_jk_core_nested": 1.7557462910190225,
+     "gradient.xc_full_response": 0.8218420334160328
+    }
+   }
+  ],
+  "v100/cutensor/original": [
+   {
+    "total": 7.92835189960897,
+    "scf": 5.1817131750285625,
+    "gradient": 2.544689390808344,
+    "stages": {
+     "scf.veff": 4.765719786286354,
+     "scf.jk": 2.0243736766278744,
+     "scf.xc_quadrature": 2.672404384240508,
+     "scf.diagonalization": 0.1333597358316183,
+     "scf.df_build_nested_in_jk": 0.647569827735424,
+     "gradient.one_electron": 0.08788188733160496,
+     "gradient.two_electron": 2.454760294407606,
+     "gradient.df_jk_total": 1.4750622920691967,
+     "gradient.df_jk_core_nested": 1.423015981912613,
+     "gradient.xc_full_response": 0.979617103934288
+    }
+   },
+   {
+    "total": 7.785036167129874,
+    "scf": 5.055143607780337,
+    "gradient": 2.5339064430445433,
+    "stages": {
+     "scf.veff": 4.702490800991654,
+     "scf.jk": 1.9980665147304535,
+     "scf.xc_quadrature": 2.6373877860605717,
+     "scf.diagonalization": 0.13400931097567081,
+     "scf.df_build_nested_in_jk": 0.6218074951320887,
+     "gradient.one_electron": 0.0838706772774458,
+     "gradient.two_electron": 2.448010152205825,
+     "gradient.df_jk_total": 1.4736270289868116,
+     "gradient.df_jk_core_nested": 1.4222766272723675,
+     "gradient.xc_full_response": 0.9743052199482918
+    }
+   },
+   {
+    "total": 7.939463758841157,
+    "scf": 5.168281679973006,
+    "gradient": 2.5447228234261274,
+    "stages": {
+     "scf.veff": 4.803612470626831,
+     "scf.jk": 2.0490687713027,
+     "scf.xc_quadrature": 2.68099657073617,
+     "scf.diagonalization": 0.13392809219658375,
+     "scf.df_build_nested_in_jk": 0.6660015694797039,
+     "gradient.one_electron": 0.08632833510637283,
+     "gradient.two_electron": 2.4564999230206013,
+     "gradient.df_jk_total": 1.4713271148502827,
+     "gradient.df_jk_core_nested": 1.419295435771346,
+     "gradient.xc_full_response": 0.9850952308624983
+    }
+   }
+  ],
+  "v100/cutensor/current": [
+   {
+    "total": 8.772800471633673,
+    "scf": 5.495560504496098,
+    "gradient": 2.978852352127433,
+    "stages": {
+     "scf.veff": 5.020233351737261,
+     "scf.jk": 2.09660929068923,
+     "scf.xc_quadrature": 2.8089046142995358,
+     "scf.diagonalization": 0.1363219078630209,
+     "scf.df_build_nested_in_jk": 0.7169500924646854,
+     "gradient.one_electron": 0.08864448219537735,
+     "gradient.two_electron": 2.888019198551774,
+     "gradient.df_jk_total": 1.8677537124603987,
+     "gradient.df_jk_core_nested": 1.8158154617995024,
+     "gradient.xc_full_response": 1.020179944112897
+    }
+   },
+   {
+    "total": 8.27488100528717,
+    "scf": 5.067963780835271,
+    "gradient": 2.9834720734506845,
+    "stages": {
+     "scf.veff": 4.708076236769557,
+     "scf.jk": 2.0294828321784735,
+     "scf.xc_quadrature": 2.6073859240859747,
+     "scf.diagonalization": 0.13397086970508099,
+     "scf.df_build_nested_in_jk": 0.6522005964070559,
+     "gradient.one_electron": 0.09214607253670692,
+     "gradient.two_electron": 2.889070972800255,
+     "gradient.df_jk_total": 1.8717507161200047,
+     "gradient.df_jk_core_nested": 1.8159365747123957,
+     "gradient.xc_full_response": 1.0172368325293064
+    }
+   },
+   {
+    "total": 8.311641680076718,
+    "scf": 5.104758998379111,
+    "gradient": 2.9536427948623896,
+    "stages": {
+     "scf.veff": 4.7392733208835125,
+     "scf.jk": 2.0762590132653713,
+     "scf.xc_quadrature": 2.5937359742820263,
+     "scf.diagonalization": 0.1342308074235916,
+     "scf.df_build_nested_in_jk": 0.6933265905827284,
+     "gradient.one_electron": 0.08817072957754135,
+     "gradient.two_electron": 2.8634268790483475,
+     "gradient.df_jk_total": 1.866676164790988,
+     "gradient.df_jk_core_nested": 1.8151014186441898,
+     "gradient.xc_full_response": 0.9966662507504225
+    }
+   }
+  ],
+  "v100/cupy/original": [
+   {
+    "total": 14.255103563889861,
+    "scf": 11.335360188037157,
+    "gradient": 2.712783671915531,
+    "stages": {
+     "scf.veff": 10.98327430523932,
+     "scf.jk": 8.264299334958196,
+     "scf.xc_quadrature": 2.6539845895022154,
+     "scf.diagonalization": 0.13431012630462646,
+     "scf.df_build_nested_in_jk": 0.6135842651128769,
+     "gradient.one_electron": 0.08807871676981449,
+     "gradient.two_electron": 2.6225820686668158,
+     "gradient.df_jk_total": 1.601070400327444,
+     "gradient.df_jk_core_nested": 1.547817662358284,
+     "gradient.xc_full_response": 1.0214155428111553
+    }
+   },
+   {
+    "total": 14.27602762542665,
+    "scf": 11.37352930009365,
+    "gradient": 2.7058513294905424,
+    "stages": {
+     "scf.veff": 11.018328679725528,
+     "scf.jk": 8.271770220249891,
+     "scf.xc_quadrature": 2.6770793199539185,
+     "scf.diagonalization": 0.1343505922704935,
+     "scf.df_build_nested_in_jk": 0.6330592837184668,
+     "gradient.one_electron": 0.08505961485207081,
+     "gradient.two_electron": 2.6187832579016685,
+     "gradient.df_jk_total": 1.605954848229885,
+     "gradient.df_jk_core_nested": 1.5537975281476974,
+     "gradient.xc_full_response": 1.0127281583845615
+    }
+   },
+   {
+    "total": 14.301334151998162,
+    "scf": 11.366171963512897,
+    "gradient": 2.7231225538998842,
+    "stages": {
+     "scf.veff": 11.010793747380376,
+     "scf.jk": 8.269231727346778,
+     "scf.xc_quadrature": 2.677818952128291,
+     "scf.diagonalization": 0.13470574840903282,
+     "scf.df_build_nested_in_jk": 0.6104406733065844,
+     "gradient.one_electron": 0.08878727816045284,
+     "gradient.two_electron": 2.6322144120931625,
+     "gradient.df_jk_total": 1.6112199015915394,
+     "gradient.df_jk_core_nested": 1.5593019872903824,
+     "gradient.xc_full_response": 1.0209019426256418
+    }
+   }
+  ],
+  "v100/cupy/current": [
+   {
+    "total": 9.653694974258542,
+    "scf": 6.373266818001866,
+    "gradient": 3.0722430758178234,
+    "stages": {
+     "scf.veff": 6.011983685195446,
+     "scf.jk": 3.289766600355506,
+     "scf.xc_quadrature": 2.6411279402673244,
+     "scf.diagonalization": 0.1340435929596424,
+     "scf.df_build_nested_in_jk": 1.020299069583416,
+     "gradient.one_electron": 0.09341372549533844,
+     "gradient.two_electron": 2.976632783189416,
+     "gradient.df_jk_total": 1.9120809901505709,
+     "gradient.df_jk_core_nested": 1.8595681581646204,
+     "gradient.xc_full_response": 1.064467454329133
+    }
+   },
+   {
+    "total": 9.239655552431941,
+    "scf": 5.977213112637401,
+    "gradient": 3.0430971309542656,
+    "stages": {
+     "scf.veff": 5.616715447977185,
+     "scf.jk": 2.9007797241210938,
+     "scf.xc_quadrature": 2.645718239247799,
+     "scf.diagonalization": 0.1342056356370449,
+     "scf.df_build_nested_in_jk": 0.6775503996759653,
+     "gradient.one_electron": 0.08560510352253914,
+     "gradient.two_electron": 2.955500131472945,
+     "gradient.df_jk_total": 1.9140621479600668,
+     "gradient.df_jk_core_nested": 1.8576767463237047,
+     "gradient.xc_full_response": 1.0413569044321775
+    }
+   },
+   {
+    "total": 9.220108406618237,
+    "scf": 6.006077643483877,
+    "gradient": 3.0317658241838217,
+    "stages": {
+     "scf.veff": 5.640348924323916,
+     "scf.jk": 2.9681819323450327,
+     "scf.xc_quadrature": 2.601771093904972,
+     "scf.diagonalization": 0.13437662087380886,
+     "scf.df_build_nested_in_jk": 0.6755972616374493,
+     "gradient.one_electron": 0.09095423854887486,
+     "gradient.two_electron": 2.9386988058686256,
+     "gradient.df_jk_total": 1.904422290623188,
+     "gradient.df_jk_core_nested": 1.8531865999102592,
+     "gradient.xc_full_response": 1.034190522506833
+    }
+   }
+  ]
+ },
+ "scf_cycles": {
+  "a100_large_atom": {
+   "status": "ok",
+   "full_quality_cycles": 21,
+   "total_cycles": 21,
+   "scf_total_seconds": 22.495599491521716,
+   "guess_seconds": 0.06874702963978052,
+   "energy_error_hartree": 9.240466170012951e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_large_base": {
+   "status": "ok",
+   "full_quality_cycles": 20,
+   "total_cycles": 20,
+   "scf_total_seconds": 22.208762729540467,
+   "guess_seconds": 0.4152733404189348,
+   "energy_error_hartree": 9.258656064048409e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_large_diis12": {
+   "status": "ok",
+   "full_quality_cycles": 19,
+   "total_cycles": 19,
+   "scf_total_seconds": 21.63534883596003,
+   "guess_seconds": 0.413589796051383,
+   "energy_error_hartree": 9.240466170012951e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_large_huckel": {
+   "status": "ok",
+   "full_quality_cycles": 39,
+   "total_cycles": 39,
+   "scf_total_seconds": 36.67680539935827,
+   "guess_seconds": 0.17427332047373056,
+   "energy_error_hartree": 9.222276275977492e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_large_newton": {
+   "status": "failed",
+   "full_quality_cycles": null,
+   "total_cycles": null,
+   "scf_total_seconds": null,
+   "guess_seconds": null,
+   "energy_error_hartree": null,
+   "accepted": null,
+   "prestage": null,
+   "error": "TypeError('Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.')"
+  },
+  "a100_large_twostage": {
+   "status": "ok",
+   "full_quality_cycles": 12,
+   "total_cycles": 20,
+   "scf_total_seconds": 21.993888861499727,
+   "guess_seconds": 0.42076870892196894,
+   "energy_error_hartree": 9.276845958083868e-10,
+   "accepted": true,
+   "prestage": {
+    "seconds": 11.565468500368297,
+    "cycles": 8
+   },
+   "error": null
+  },
+  "a100_large_vsap": {
+   "status": "ok",
+   "full_quality_cycles": 39,
+   "total_cycles": 39,
+   "scf_total_seconds": 153.18348123319447,
+   "guess_seconds": 114.584506762214,
+   "energy_error_hartree": 9.222276275977492e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_medium_atom": {
+   "status": "ok",
+   "full_quality_cycles": 19,
+   "total_cycles": 19,
+   "scf_total_seconds": 5.977115115150809,
+   "guess_seconds": 0.0647906493395567,
+   "energy_error_hartree": 6.166374078020453e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_medium_base": {
+   "status": "ok",
+   "full_quality_cycles": 18,
+   "total_cycles": 18,
+   "scf_total_seconds": 6.035044942051172,
+   "guess_seconds": 0.12703295052051544,
+   "energy_error_hartree": 6.157279131002724e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_medium_diis12": {
+   "status": "ok",
+   "full_quality_cycles": 17,
+   "total_cycles": 17,
+   "scf_total_seconds": 5.711601335555315,
+   "guess_seconds": 0.12214839458465576,
+   "energy_error_hartree": 6.166374078020453e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_medium_huckel": {
+   "status": "ok",
+   "full_quality_cycles": 28,
+   "total_cycles": 28,
+   "scf_total_seconds": 7.335046271793544,
+   "guess_seconds": 0.09341836255043745,
+   "energy_error_hartree": 6.175469025038183e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_medium_newton": {
+   "status": "failed",
+   "full_quality_cycles": null,
+   "total_cycles": null,
+   "scf_total_seconds": null,
+   "guess_seconds": null,
+   "energy_error_hartree": null,
+   "accepted": null,
+   "prestage": null,
+   "error": "TypeError('Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.')"
+  },
+  "a100_medium_twostage": {
+   "status": "ok",
+   "full_quality_cycles": 12,
+   "total_cycles": 18,
+   "scf_total_seconds": 5.601240604184568,
+   "guess_seconds": 0.12437711004167795,
+   "energy_error_hartree": 6.175469025038183e-10,
+   "accepted": true,
+   "prestage": {
+    "seconds": 3.384116780012846,
+    "cycles": 6
+   },
+   "error": null
+  },
+  "a100_medium_vsap": {
+   "status": "ok",
+   "full_quality_cycles": 27,
+   "total_cycles": 27,
+   "scf_total_seconds": 24.735356551595032,
+   "guess_seconds": 17.358111904002726,
+   "energy_error_hartree": 6.175469025038183e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_small_atom": {
+   "status": "ok",
+   "full_quality_cycles": 18,
+   "total_cycles": 18,
+   "scf_total_seconds": 3.9824418099597096,
+   "guess_seconds": 0.07561181578785181,
+   "energy_error_hartree": 8.662937034387141e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_small_base": {
+   "status": "ok",
+   "full_quality_cycles": 18,
+   "total_cycles": 18,
+   "scf_total_seconds": 3.833330844528973,
+   "guess_seconds": 0.058799601159989834,
+   "energy_error_hartree": 8.662937034387141e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_small_diis12": {
+   "status": "ok",
+   "full_quality_cycles": 16,
+   "total_cycles": 16,
+   "scf_total_seconds": 3.529106130823493,
+   "guess_seconds": 0.05108113866299391,
+   "energy_error_hartree": 8.640199666842818e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_small_huckel": {
+   "status": "ok",
+   "full_quality_cycles": 24,
+   "total_cycles": 24,
+   "scf_total_seconds": 3.9372577080503106,
+   "guess_seconds": 0.059806701727211475,
+   "energy_error_hartree": 8.662937034387141e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "a100_small_newton": {
+   "status": "failed",
+   "full_quality_cycles": null,
+   "total_cycles": null,
+   "scf_total_seconds": null,
+   "guess_seconds": null,
+   "energy_error_hartree": null,
+   "accepted": null,
+   "prestage": null,
+   "error": "TypeError('Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.')"
+  },
+  "a100_small_twostage": {
+   "status": "ok",
+   "full_quality_cycles": 11,
+   "total_cycles": 18,
+   "scf_total_seconds": 3.544291337952018,
+   "guess_seconds": 0.053265923634171486,
+   "energy_error_hartree": 8.662937034387141e-11,
+   "accepted": true,
+   "prestage": {
+    "seconds": 2.7593237441033125,
+    "cycles": 7
+   },
+   "error": null
+  },
+  "a100_small_vsap": {
+   "status": "ok",
+   "full_quality_cycles": 23,
+   "total_cycles": 23,
+   "scf_total_seconds": 5.656259244307876,
+   "guess_seconds": 1.633232424966991,
+   "energy_error_hartree": 8.662937034387141e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_large_atom": {
+   "status": "ok",
+   "full_quality_cycles": 21,
+   "total_cycles": 21,
+   "scf_total_seconds": 43.72081772983074,
+   "guess_seconds": 0.0798395425081253,
+   "energy_error_hartree": 2.1464074961841106e-09,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_large_base": {
+   "status": "ok",
+   "full_quality_cycles": 20,
+   "total_cycles": 20,
+   "scf_total_seconds": 42.47551575303078,
+   "guess_seconds": 0.33346618711948395,
+   "energy_error_hartree": 2.1445885067805648e-09,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_large_diis12": {
+   "status": "ok",
+   "full_quality_cycles": 19,
+   "total_cycles": 19,
+   "scf_total_seconds": 41.167658656835556,
+   "guess_seconds": 0.32473891973495483,
+   "energy_error_hartree": 2.1500454749912024e-09,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_large_huckel": {
+   "status": "ok",
+   "full_quality_cycles": 39,
+   "total_cycles": 39,
+   "scf_total_seconds": 72.50491988658905,
+   "guess_seconds": 0.19778962433338165,
+   "energy_error_hartree": 2.1464074961841106e-09,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_large_newton": {
+   "status": "failed",
+   "full_quality_cycles": null,
+   "total_cycles": null,
+   "scf_total_seconds": null,
+   "guess_seconds": null,
+   "energy_error_hartree": null,
+   "accepted": null,
+   "prestage": null,
+   "error": "TypeError('Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.')"
+  },
+  "v100_large_twostage": {
+   "status": "ok",
+   "full_quality_cycles": 12,
+   "total_cycles": 20,
+   "scf_total_seconds": 42.160882607102394,
+   "guess_seconds": 0.33322951197624207,
+   "energy_error_hartree": 2.1500454749912024e-09,
+   "accepted": true,
+   "prestage": {
+    "seconds": 20.405207633972168,
+    "cycles": 8
+   },
+   "error": null
+  },
+  "v100_large_vsap": {
+   "status": "ok",
+   "full_quality_cycles": 40,
+   "total_cycles": 40,
+   "scf_total_seconds": 133.26898139715195,
+   "guess_seconds": 59.43044103682041,
+   "energy_error_hartree": 2.1445885067805648e-09,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_medium_atom": {
+   "status": "ok",
+   "full_quality_cycles": 19,
+   "total_cycles": 19,
+   "scf_total_seconds": 5.486411944031715,
+   "guess_seconds": 0.07159636914730072,
+   "energy_error_hartree": 1.6052581486292183e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_medium_base": {
+   "status": "ok",
+   "full_quality_cycles": 18,
+   "total_cycles": 18,
+   "scf_total_seconds": 5.295097857713699,
+   "guess_seconds": 0.09151935577392578,
+   "energy_error_hartree": 1.609805622138083e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_medium_diis12": {
+   "status": "ok",
+   "full_quality_cycles": 17,
+   "total_cycles": 17,
+   "scf_total_seconds": 5.101100936532021,
+   "guess_seconds": 0.10787816345691681,
+   "energy_error_hartree": 1.6052581486292183e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_medium_huckel": {
+   "status": "ok",
+   "full_quality_cycles": 28,
+   "total_cycles": 28,
+   "scf_total_seconds": 7.233049213886261,
+   "guess_seconds": 0.09717874228954315,
+   "energy_error_hartree": 1.6052581486292183e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_medium_newton": {
+   "status": "failed",
+   "full_quality_cycles": null,
+   "total_cycles": null,
+   "scf_total_seconds": null,
+   "guess_seconds": null,
+   "energy_error_hartree": null,
+   "accepted": null,
+   "prestage": null,
+   "error": "TypeError('Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.')"
+  },
+  "v100_medium_twostage": {
+   "status": "ok",
+   "full_quality_cycles": 12,
+   "total_cycles": 18,
+   "scf_total_seconds": 5.057463467121124,
+   "guess_seconds": 0.1115647554397583,
+   "energy_error_hartree": 1.6007106751203537e-10,
+   "accepted": true,
+   "prestage": {
+    "seconds": 2.224571853876114,
+    "cycles": 6
+   },
+   "error": null
+  },
+  "v100_medium_vsap": {
+   "status": "ok",
+   "full_quality_cycles": 27,
+   "total_cycles": 27,
+   "scf_total_seconds": 14.961546063423157,
+   "guess_seconds": 8.055686756968498,
+   "energy_error_hartree": 1.609805622138083e-10,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_small_atom": {
+   "status": "ok",
+   "full_quality_cycles": 18,
+   "total_cycles": 18,
+   "scf_total_seconds": 2.1431824266910553,
+   "guess_seconds": 0.0738840252161026,
+   "energy_error_hartree": 7.79891706770286e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_small_base": {
+   "status": "ok",
+   "full_quality_cycles": 18,
+   "total_cycles": 18,
+   "scf_total_seconds": 2.5723073184490204,
+   "guess_seconds": 0.08539021015167236,
+   "energy_error_hartree": 7.889866537880152e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_small_diis12": {
+   "status": "ok",
+   "full_quality_cycles": 16,
+   "total_cycles": 16,
+   "scf_total_seconds": 1.8670774549245834,
+   "guess_seconds": 0.061570316553115845,
+   "energy_error_hartree": 7.844391802791506e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_small_huckel": {
+   "status": "ok",
+   "full_quality_cycles": 24,
+   "total_cycles": 24,
+   "scf_total_seconds": 2.3446372151374817,
+   "guess_seconds": 0.0869980901479721,
+   "energy_error_hartree": 7.867129170335829e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  },
+  "v100_small_newton": {
+   "status": "failed",
+   "full_quality_cycles": null,
+   "total_cycles": null,
+   "scf_total_seconds": null,
+   "guess_seconds": null,
+   "energy_error_hartree": null,
+   "accepted": null,
+   "prestage": null,
+   "error": "TypeError('Implicit conversion to a NumPy array is not allowed. Please use `.get()` to construct a NumPy array explicitly.')"
+  },
+  "v100_small_twostage": {
+   "status": "ok",
+   "full_quality_cycles": 11,
+   "total_cycles": 18,
+   "scf_total_seconds": 1.9493278712034225,
+   "guess_seconds": 0.060242265462875366,
+   "energy_error_hartree": 7.844391802791506e-11,
+   "accepted": true,
+   "prestage": {
+    "seconds": 1.133640244603157,
+    "cycles": 7
+   },
+   "error": null
+  },
+  "v100_small_vsap": {
+   "status": "ok",
+   "full_quality_cycles": 23,
+   "total_cycles": 23,
+   "scf_total_seconds": 3.345700368285179,
+   "guess_seconds": 0.9987353533506393,
+   "energy_error_hartree": 7.844391802791506e-11,
+   "accepted": true,
+   "prestage": null,
+   "error": null
+  }
+ },
+ "grid_split": {
+  "a100-grid-r1_large_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.12081249989569187,
+    "grid_points": 1374976
+   },
+   "xc_seconds": 7.0978565197438,
+   "xc_calls": 21,
+   "scf": 21.552990798838437
+  },
+  "a100-grid-r1_medium_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.17990877199918032,
+    "grid_points": 679680
+   },
+   "xc_seconds": 4.414346633478999,
+   "xc_calls": 19,
+   "scf": 6.038565253838897
+  },
+  "a100-grid-r2_large_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.11755329743027687,
+    "grid_points": 1374976
+   },
+   "xc_seconds": 7.070717546157539,
+   "xc_calls": 21,
+   "scf": 21.581557764671743
+  },
+  "a100-grid-r2_medium_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.050101940520107746,
+    "grid_points": 679680
+   },
+   "xc_seconds": 4.258581045083702,
+   "xc_calls": 19,
+   "scf": 5.694015366025269
+  },
+  "v100-grid-r1_large_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.1555119175463915,
+    "grid_points": 1374976
+   },
+   "xc_seconds": 8.085303673520684,
+   "xc_calls": 21,
+   "scf": 40.306891452521086
+  },
+  "v100-grid-r1_medium_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.11138166300952435,
+    "grid_points": 679680
+   },
+   "xc_seconds": 2.837445229291916,
+   "xc_calls": 19,
+   "scf": 5.407706433907151
+  },
+  "v100-grid-r2_large_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.1584240086376667,
+    "grid_points": 1374976
+   },
+   "xc_seconds": 8.060592697933316,
+   "xc_calls": 21,
+   "scf": 40.561332672834396
+  },
+  "v100-grid-r2_medium_current_default_time": {
+   "grid": {
+    "grid_build_seconds": 0.05838457681238651,
+    "grid_points": 679680
+   },
+   "xc_seconds": 2.5472558178007603,
+   "xc_calls": 19,
+   "scf": 4.890834718942642
+  }
+ },
+ "gemm": {
+  "a100": {
+   "gpu": "a100",
+   "device": "NVIDIA A100 80GB PCIe",
+   "nao": 1123,
+   "nocc": 226,
+   "naux": 5598,
+   "free_bytes": 84530692096,
+   "blocks": [
+    {
+     "nL": 128,
+     "transform_cutensor_s": 0.004706209525465965,
+     "transform_gemm_s": 0.004823535680770874,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.004124783910810947,
+     "gram_syrk_s": 0.002889367751777172,
+     "transform_cutensor_tflops": 15.50374649262472,
+     "transform_gemm_tflops": 15.126638269697482,
+     "gram_cutensor_tflops": 17.68913984385064,
+     "gram_syrk_tflops": 25.25254162580097,
+     "K_per_cycle_cutensor_s": 0.3862179785646731,
+     "K_per_cycle_gemm_s": 0.33731901105784345
+    },
+    {
+     "nL": 256,
+     "transform_cutensor_s": 0.010137530975043774,
+     "transform_gemm_s": 0.010271619074046612,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.008930644951760769,
+     "gram_syrk_s": 0.006857478991150856,
+     "transform_cutensor_tflops": 14.39480275890056,
+     "transform_gemm_tflops": 14.20688966325834,
+     "gram_cutensor_tflops": 16.34011425112459,
+     "gram_syrk_tflops": 21.280088358463885,
+     "K_per_cycle_cutensor_s": 0.4169673782744212,
+     "K_per_cycle_gemm_s": 0.37456519909756025
+    },
+    {
+     "nL": 512,
+     "transform_cutensor_s": 0.02067834883928299,
+     "transform_gemm_s": 0.020491535775363445,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.017754873260855675,
+     "gram_syrk_s": 0.015529334545135498,
+     "transform_cutensor_tflops": 14.114062973033775,
+     "transform_gemm_tflops": 14.242735190541058,
+     "gram_cutensor_tflops": 16.43805131177458,
+     "gram_syrk_tflops": 18.793819970052905,
+     "K_per_cycle_cutensor_s": 0.420213236946438,
+     "K_per_cycle_gemm_s": 0.39383756260576774
+    },
+    {
+     "nL": 1024,
+     "transform_cutensor_s": 0.04157677572220564,
+     "transform_gemm_s": 0.041042069904506207,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.03615598473697901,
+     "gram_syrk_s": 0.034089719876646996,
+     "transform_cutensor_tflops": 14.03935310645667,
+     "transform_gemm_tflops": 14.222261127426997,
+     "gram_cutensor_tflops": 16.14424388212007,
+     "gram_syrk_tflops": 17.122787676289136,
+     "K_per_cycle_cutensor_s": 0.4249492119633942,
+     "K_per_cycle_gemm_s": 0.41073023358876526
+    }
+   ],
+   "dgemm_ceiling_tflops": 16.300748496545744
+  },
+  "v100": {
+   "gpu": "v100",
+   "device": "Tesla V100-SXM2-32GB",
+   "nao": 1123,
+   "nocc": 226,
+   "naux": 5598,
+   "free_bytes": 33748090880,
+   "blocks": [
+    {
+     "nL": 128,
+     "transform_cutensor_s": 0.012605935335159302,
+     "transform_gemm_s": 0.012539386749267578,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.011184200644493103,
+     "gram_syrk_s": 0.01065950095653534,
+     "transform_cutensor_tflops": 5.788057568445233,
+     "transform_gemm_tflops": 5.818775741027511,
+     "gram_cutensor_tflops": 6.523834983229319,
+     "gram_syrk_tflops": 6.844962041048071,
+     "K_per_cycle_cutensor_s": 1.0404467282351106,
+     "K_per_cycle_gemm_s": 1.0145888545084745
+    },
+    {
+     "nL": 256,
+     "transform_cutensor_s": 0.025311291217803955,
+     "transform_gemm_s": 0.024926677346229553,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.02468717098236084,
+     "gram_syrk_s": 0.020826831459999084,
+     "transform_cutensor_tflops": 5.765322582411539,
+     "transform_gemm_tflops": 5.854280408939992,
+     "gram_cutensor_tflops": 5.911076605426617,
+     "gram_syrk_tflops": 7.006719151123645,
+     "K_per_cycle_cutensor_s": 1.093325747642666,
+     "K_per_cycle_gemm_s": 1.0005005558487028
+    },
+    {
+     "nL": 512,
+     "transform_cutensor_s": 0.05070511996746063,
+     "transform_gemm_s": 0.050240159034729004,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.04996533691883087,
+     "gram_syrk_s": 0.05106273293495178,
+     "transform_cutensor_tflops": 5.7559378201509945,
+     "transform_gemm_tflops": 5.809207679741857,
+     "gram_cutensor_tflops": 5.841159805849441,
+     "gram_syrk_tflops": 5.71562666001037,
+     "K_per_cycle_cutensor_s": 1.1006898782216012,
+     "K_per_cycle_gemm_s": 1.107604666496627
+    },
+    {
+     "nL": 1024,
+     "transform_cutensor_s": 0.11979988217353821,
+     "transform_gemm_s": 0.11978384852409363,
+     "transform_agree": 0.0,
+     "gram_cutensor_s": 0.12619200348854065,
+     "gram_syrk_s": 0.11314454674720764,
+     "transform_cutensor_tflops": 4.872384052485588,
+     "transform_gemm_tflops": 4.873036244737043,
+     "gram_cutensor_tflops": 4.625578636169336,
+     "gram_syrk_tflops": 5.158985140451815,
+     "K_per_cycle_cutensor_s": 1.34478767181281,
+     "K_per_cycle_gemm_s": 1.2733722233679146
+    }
+   ],
+   "dgemm_ceiling_tflops": 6.7734505379085705
+  }
+ },
+ "cpu_scan": [
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 1,
+   "blas": 1,
+   "bind": "none",
+   "name": "t1",
+   "seconds": 15.274900341406465,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "none",
+   "name": "t24",
+   "seconds": 1604.3585297726095,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 2,
+   "blas": 2,
+   "bind": "none",
+   "name": "t2",
+   "seconds": 4.304864287376404,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 24,
+   "blas": 1,
+   "bind": "none",
+   "name": "t24_blas1",
+   "seconds": 20.646430909633636,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 48,
+   "blas": 1,
+   "bind": "none",
+   "name": "t48_blas1",
+   "seconds": 23.98302749544382,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 12,
+   "blas": 12,
+   "bind": "none",
+   "name": "t12",
+   "seconds": 22.25978707522154,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 12,
+   "blas": 12,
+   "bind": "none",
+   "name": "t12",
+   "seconds": 4.113628149032593,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "close",
+   "name": "t48_pinned",
+   "seconds": 1699.8203011266887,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 4,
+   "blas": 4,
+   "bind": "none",
+   "name": "t4",
+   "seconds": 6.06748878210783,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "none",
+   "name": "t48",
+   "seconds": 1717.029518937692,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "close",
+   "name": "t48_pinned",
+   "seconds": 43.23682202398777,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "none",
+   "name": "t24",
+   "seconds": 23.4695815583691,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "none",
+   "name": "t48",
+   "seconds": 17.666569398716092,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 2,
+   "blas": 2,
+   "bind": "none",
+   "name": "t2",
+   "seconds": 9.064724177122116,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "none",
+   "name": "t24",
+   "seconds": 4.582017786800861,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 48,
+   "blas": 1,
+   "bind": "none",
+   "name": "t48_blas1",
+   "seconds": 1622.2678344771266,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 4,
+   "blas": 4,
+   "bind": "none",
+   "name": "t4",
+   "seconds": 4.131973408162594,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 24,
+   "blas": 1,
+   "bind": "none",
+   "name": "t24_blas1",
+   "seconds": 1594.3310597580858,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "none",
+   "name": "t48",
+   "seconds": 55.31738508492708,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "none",
+   "name": "t48",
+   "seconds": 3.5222115321084857,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 12,
+   "blas": 12,
+   "bind": "none",
+   "name": "t12",
+   "seconds": 319.81061476515606,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 8,
+   "blas": 8,
+   "bind": "none",
+   "name": "t8",
+   "seconds": 4.326880611479282,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "none",
+   "name": "t48",
+   "seconds": 1662.9566829502583,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 1,
+   "blas": 1,
+   "bind": "none",
+   "name": "t1",
+   "seconds": 4.536003103014082,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 12,
+   "blas": 12,
+   "bind": "none",
+   "name": "t12",
+   "seconds": 4.011279821395874,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 48,
+   "blas": 1,
+   "bind": "none",
+   "name": "t48_blas1",
+   "seconds": 363.8290829882026,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 12,
+   "blas": 12,
+   "bind": "none",
+   "name": "t12",
+   "seconds": 1971.9490060061216,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 24,
+   "blas": 1,
+   "bind": "none",
+   "name": "t24_blas1",
+   "seconds": 307.06856785714626,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "none",
+   "name": "t24",
+   "seconds": 357.8343749381602,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 48,
+   "blas": 48,
+   "bind": "close",
+   "name": "t48_pinned",
+   "seconds": 946.5933384560049,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-taxol-pbe-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "close",
+   "name": "t24_pinned",
+   "seconds": 1604.286820154637,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-tamoxifen-b3lyp-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "close",
+   "name": "t24_pinned",
+   "seconds": 322.1788252154365,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-benzene-b3lyp-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "none",
+   "name": "t24",
+   "seconds": 7.801288302987814,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-vitamin_c-b3lyp-svp",
+   "omp": 24,
+   "blas": 24,
+   "bind": "close",
+   "name": "t24_pinned",
+   "seconds": 23.46678919531405,
+   "status": "cpu_timed"
+  },
+  {
+   "case": "core-h2o-b3lyp-svp",
+   "omp": 8,
+   "blas": 8,
+   "bind": "none",
+   "name": "t8",
+   "seconds": 4.116835251450539,
+   "status": "cpu_timed"
+  }
+ ],
+ "cold_start": {
+  "a100": [
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 11.26650190539658,
+    "process_seconds": 27.57918673194945
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.364564204588532,
+    "process_seconds": 27.451298801228404
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 19.602741504088044,
+    "process_seconds": 43.57505061849952
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 10.78933716751635,
+    "process_seconds": 26.229870593175292
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.9035551976412535,
+    "process_seconds": 19.69647577404976
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.9434742219746113,
+    "process_seconds": 21.212989324703813
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.627412784844637,
+    "process_seconds": 23.313982052728534
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.5485057681798935,
+    "process_seconds": 22.366890892386436
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.931365128606558,
+    "process_seconds": 18.960175985470414
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 19.164118371903896,
+    "process_seconds": 35.93429872393608
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 4.43708536028862,
+    "process_seconds": 21.882670247927308
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.66713480092585,
+    "process_seconds": 24.953247437253594
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 4.266703238710761,
+    "process_seconds": 23.3795402739197
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.62019257619977,
+    "process_seconds": 20.053655179217458
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.749421142041683,
+    "process_seconds": 19.71503326483071
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.8373317513614893,
+    "process_seconds": 19.10015003569424
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 4.4203318152576685,
+    "process_seconds": 23.498116919770837
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.551781125366688,
+    "process_seconds": 30.434989247471094
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.5795359890908,
+    "process_seconds": 23.57057952694595
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.3744499348104,
+    "process_seconds": 25.796373087912798
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.14014938287437,
+    "process_seconds": 26.376059986650944
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.8056482672691345,
+    "process_seconds": 20.137859726324677
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 17.516564071178436,
+    "process_seconds": 37.54479350335896
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 17.615022933110595,
+    "process_seconds": 33.390039378777146
+   }
+  ],
+  "v100": [
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 12.197708021849394,
+    "process_seconds": 23.72334625199437
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 7.5621896758675575,
+    "process_seconds": 18.768949514254928
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 13.04523984901607,
+    "process_seconds": 25.08005134947598
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 11.578099990263581,
+    "process_seconds": 22.552112691104412
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.0306529868394136,
+    "process_seconds": 12.4539128318429
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 0.8605215754359961,
+    "process_seconds": 11.761853348463774
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.0488876588642597,
+    "process_seconds": 13.330661727115512
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.1848176904022694,
+    "process_seconds": 13.312791164964437
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.86807276122272,
+    "process_seconds": 13.953379990532994
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 13.369960008189082,
+    "process_seconds": 24.461892487481236
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.641755996271968,
+    "process_seconds": 13.562062170356512
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 9.192978715524077,
+    "process_seconds": 20.02827361598611
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.465283837169409,
+    "process_seconds": 13.828546794131398
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.225539866834879,
+    "process_seconds": 12.832129411399364
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.3316950500011444,
+    "process_seconds": 12.600249156355858
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 0.9056054167449474,
+    "process_seconds": 12.011288791894913
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 2.5484443232417107,
+    "process_seconds": 13.623362630605698
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 7.590891735628247,
+    "process_seconds": 18.9280464630574
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 8.470684411004186,
+    "process_seconds": 19.40689019858837
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 7.633899159729481,
+    "process_seconds": 18.671592492610216
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 7.366384791210294,
+    "process_seconds": 18.644709324464202
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 0.8873669058084488,
+    "process_seconds": 12.009167263284326
+   },
+   {
+    "engine": "cutensor",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 12.603789880871773,
+    "process_seconds": 24.139159191399813
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 14.53740362264216,
+    "process_seconds": 25.5925662368536
+   }
+  ],
+  "p100_16": [
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 17.196425952017307,
+    "process_seconds": 29.473379484843463
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 17.814422264229506,
+    "process_seconds": 30.33272627275437
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.2099316376261413,
+    "process_seconds": 13.253340080846101
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.2120862659066916,
+    "process_seconds": 15.22792100487277
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.1181792449206114,
+    "process_seconds": 16.020749635994434
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.850925059057772,
+    "process_seconds": 15.736272912938148
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.693702015094459,
+    "process_seconds": 15.709475965239108
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 12.07429012376815,
+    "process_seconds": 26.01240059128031
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 11.977876143995672,
+    "process_seconds": 24.264602701645344
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 16.727962723001838,
+    "process_seconds": 29.134881063830107
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.196716070175171,
+    "process_seconds": 13.387014116160572
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 17.591821960173547,
+    "process_seconds": 30.901359539013356
+   }
+  ],
+  "p100_12": [
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 28.26864599995315,
+    "process_seconds": 44.892084296792746
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 23.001705514267087,
+    "process_seconds": 39.942363139241934
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.3497664835304022,
+    "process_seconds": 17.220496024936438
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.7532620523124933,
+    "process_seconds": 19.92911633104086
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 3.699425343424082,
+    "process_seconds": 20.069299343973398
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 4.445251816883683,
+    "process_seconds": 20.42833724245429
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-vitamin_c-b3lyp-svp",
+    "seconds": 4.301782751455903,
+    "process_seconds": 20.207926534116268
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 14.172760451212525,
+    "process_seconds": 30.22470965050161
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 14.194169407710433,
+    "process_seconds": 30.40305070951581
+   },
+   {
+    "engine": "cupy",
+    "variant": "G0",
+    "state": "warm",
+    "case": "core-tamoxifen-b3lyp-svp",
+    "seconds": 25.490131057798862,
+    "process_seconds": 42.033994022756815
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "warm",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 1.3242484033107758,
+    "process_seconds": 17.356747414916754
+   },
+   {
+    "engine": "cupy",
+    "variant": "G1",
+    "state": "cold",
+    "case": "core-h2o-b3lyp-svp",
+    "seconds": 22.374344458803535,
+    "process_seconds": 39.22752982005477
+   }
+  ]
+ },
+ "capacity": {
+  "v100/current/host/water008": {
+   "status": "capacity_observation",
+   "seconds": 282.8504317253828,
+   "scf": 220.1153075285256,
+   "gradient": 61.51499750465155,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 9.652274804,
+    "gradient": 14.724217532
+   },
+   "host_rss_gb": 33.184342016,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/large": {
+   "status": "passed",
+   "seconds": 197.8827084004879,
+   "scf": 184.34327505528927,
+   "gradient": 13.02377299964428,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.964453084,
+    "gradient": 4.071422316
+   },
+   "host_rss_gb": 3.43437312,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/original/gpu/medium": {
+   "status": "passed",
+   "seconds": 7.727586697787046,
+   "scf": 5.014279164373875,
+   "gradient": 2.537111569195986,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.349422416,
+    "gradient": 15.932888308
+   },
+   "host_rss_gb": 1.057714176,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 189.9431987851858,
+   "scf": 140.23898354172707,
+   "gradient": 34.46110945940018,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 6.43489808,
+    "gradient": 14.267111768
+   },
+   "host_rss_gb": 32.771780608,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/gly30": {
+   "status": "capacity_observation",
+   "seconds": 398.3156775087118,
+   "scf": 338.36141315475106,
+   "gradient": 57.39835781045258,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 13.998924968,
+    "gradient": 26.085716108
+   },
+   "host_rss_gb": 5.780365312,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": 6442450944
+  },
+  "p100_12/current/disk/gly30": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -8631759552 bytes is smaller than the minimum workspace 138079960 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_12/current/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/disk/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 487.46395413577557,
+   "scf": 459.94598308205605,
+   "gradient": 26.484627559781075,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 8.749909948,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 5.711294464,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 97.10173979401588,
+   "scf": 65.4003774523735,
+   "gradient": 30.736719712615013,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 8.749909948,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 32.873701376,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/host/water009": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_16/current/disk/gly30": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -5274219200 bytes is smaller than the minimum workspace 138079960 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/original/gpu/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 74.70175404846668,
+   "scf": 51.58680599927902,
+   "gradient": 22.14621226489544,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 48.90671968,
+    "gradient": 75.431617568
+   },
+   "host_rss_gb": 1.361010688,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/original/gpu/small": {
+   "status": "passed",
+   "seconds": 3.6165598640218377,
+   "scf": 2.49427491100505,
+   "gradient": 0.9479664731770754,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.413393444,
+    "gradient": 1.357021776
+   },
+   "host_rss_gb": 0.780582912,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/host/small": {
+   "status": "passed",
+   "seconds": 2.9552199840545654,
+   "scf": 2.2011614590883255,
+   "gradient": 0.6388063728809357,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.207943168,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/gpu/medium": {
+   "status": "passed",
+   "seconds": 7.957132816314697,
+   "scf": 5.253574177622795,
+   "gradient": 2.540000319480896,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.349422416,
+    "gradient": 9.068273908
+   },
+   "host_rss_gb": 1.060241408,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 264.333475522697,
+   "scf": 191.11078643798828,
+   "gradient": 72.35400173068047,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.617476416,
+    "gradient": 8.697666788
+   },
+   "host_rss_gb": 32.432201728,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/gpu/large": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/gpu/water008": {
+   "status": "capacity_observation",
+   "seconds": 116.70003083348274,
+   "scf": 80.47555363178253,
+   "gradient": 34.56601192057133,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 41.005649364,
+    "gradient": 14.724217532
+   },
+   "host_rss_gb": 1.38868736,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/original/gpu/medium": {
+   "status": "passed",
+   "seconds": 23.37724508345127,
+   "scf": 18.413294933736324,
+   "gradient": 4.717125430703163,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.34450722,
+    "gradient": 9.603117504
+   },
+   "host_rss_gb": 0.738574336,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/disk/gly30": {
+   "status": "capacity_observation",
+   "seconds": 703.610131829977,
+   "scf": 589.5384493917227,
+   "gradient": 112.88693837821484,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 8.871435176,
+    "gradient": 26.085716108
+   },
+   "host_rss_gb": 4.599296,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": 6442450944
+  },
+  "a100/original/host/small": {
+   "status": "passed",
+   "seconds": 4.728125691413879,
+   "scf": 3.986633986234665,
+   "gradient": 0.6271925568580627,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.405469124,
+    "gradient": 1.239053392
+   },
+   "host_rss_gb": 1.325314048,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/host/large": {
+   "status": "failed_accuracy",
+   "seconds": 69.58224277198315,
+   "scf": 52.77641122043133,
+   "gradient": 16.428845271468163,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 6.245572076,
+    "gradient": 14.19185304
+   },
+   "host_rss_gb": 16.582443008,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/gpu/gly40": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_12/current/disk/water008": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -1453531648 bytes is smaller than the minimum workspace 130758880 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/original/host/water008": {
+   "status": "capacity_observation",
+   "seconds": 123.51045380532742,
+   "scf": 93.19782494008541,
+   "gradient": 28.615498185157776,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 31.551613332,
+    "gradient": 75.398806072
+   },
+   "host_rss_gb": 33.317081088,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 221.79465966099997,
+   "scf": 158.81808154500004,
+   "gradient": 62.021790753999994,
+   "cycles": 20,
+   "peaks_gb": {},
+   "host_rss_gb": 32.474980352,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/original/host/water009": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/original/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 170.70675228722394,
+   "scf": 136.0876430887729,
+   "gradient": 33.88600781187415,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 12.75158528,
+    "gradient": 29.594841732
+   },
+   "host_rss_gb": 32.752631808,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/host/gly30": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -5336661900 bytes is smaller than the minimum workspace 138079960 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/original/host/large": {
+   "status": "failed_accuracy",
+   "seconds": 44.1408079713583,
+   "scf": 30.6322782933712,
+   "gradient": 12.995421409606934,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 31.243056972,
+    "gradient": 54.943729772
+   },
+   "host_rss_gb": 16.7218176,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/gpu/gly50": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -12648368729 bytes is smaller than the minimum workspace 342239560 bytes",
+   "build_budget": 5368709120,
+   "staging_budget": 4294967296
+  },
+  "v100/current/gpu/medium": {
+   "status": "passed",
+   "seconds": 8.094137620180845,
+   "scf": 4.964392967522144,
+   "gradient": 2.9689347352832556,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.349422416,
+    "gradient": 0.809638296
+   },
+   "host_rss_gb": 1.058320384,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/host/small": {
+   "status": "passed",
+   "seconds": 3.3821681990000343,
+   "scf": 2.2533142390000194,
+   "gradient": 1.0465267449999374,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.394819524,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 0.957661184,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/original/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100_16/original/gpu/small": {
+   "status": "passed",
+   "seconds": 3.57138791680336,
+   "scf": 2.6515989154577255,
+   "gradient": 0.620456799864769,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 1.239053392
+   },
+   "host_rss_gb": 1.046163456,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/gpu/small": {
+   "status": "passed",
+   "seconds": 2.9999979622662067,
+   "scf": 2.180815152823925,
+   "gradient": 0.6379864439368248,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.055219712,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 180.24224531278014,
+   "scf": 135.97296981327236,
+   "gradient": 43.57161506451666,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 8.749909948,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 32.753524736,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/original/host/valinomycin": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/original/gpu/small": {
+   "status": "passed",
+   "seconds": 5.058528959751129,
+   "scf": 4.2383249551057816,
+   "gradient": 0.617818608880043,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.405469124,
+    "gradient": 1.239053392
+   },
+   "host_rss_gb": 1.167990784,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/original/host/small": {
+   "status": "passed",
+   "seconds": 3.4243175918236375,
+   "scf": 2.361773290205747,
+   "gradient": 0.9566150400787592,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.394819524,
+    "gradient": 1.357021776
+   },
+   "host_rss_gb": 0.95739904,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/disk/large": {
+   "status": "passed",
+   "seconds": 275.01600559400003,
+   "scf": 248.991775083,
+   "gradient": 25.446164671000133,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.947677916,
+    "gradient": 4.740491124
+   },
+   "host_rss_gb": 3.019829248,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/disk/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 598.004788832739,
+   "scf": 558.0064499098808,
+   "gradient": 39.212104219943285,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 8.749909948,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 5.580869632,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/host/large": {
+   "status": "passed",
+   "seconds": 110.14249621199997,
+   "scf": 82.22464030399988,
+   "gradient": 27.512039592000065,
+   "cycles": 20,
+   "peaks_gb": {},
+   "host_rss_gb": 16.318242816,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/gly50": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -12621525184 bytes is smaller than the minimum workspace 342239560 bytes",
+   "build_budget": null,
+   "staging_budget": 15032385536
+  },
+  "v100/original/host/water008": {
+   "status": "capacity_observation",
+   "seconds": 272.6945349741727,
+   "scf": 225.71098624169827,
+   "gradient": 45.9157567769289,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 12.894749332,
+    "gradient": 29.670139136
+   },
+   "host_rss_gb": 33.219960832,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/host/gly40": {
+   "status": "capacity_observation",
+   "seconds": 612.7258978355676,
+   "scf": 459.48313743807375,
+   "gradient": 148.63168392516673,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 21.251749504,
+    "gradient": 58.483778596
+   },
+   "host_rss_gb": 43.066191872,
+   "error": "",
+   "build_budget": 7516192768,
+   "staging_budget": 4294967296
+  },
+  "v100/current/host/gly30": {
+   "status": "capacity_observation",
+   "seconds": 539.4107672069222,
+   "scf": 422.06321213953197,
+   "gradient": 115.91306765936315,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 8.871435176,
+    "gradient": 26.085716108
+   },
+   "host_rss_gb": 24.646381568,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/original/host/large": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100_16/current/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 183.05425409972668,
+   "scf": 138.1182312220335,
+   "gradient": 44.22050613164902,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 5.55025222,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 32.768794624,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/gly60": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -69005170060 bytes is smaller than the minimum workspace 477799360 bytes",
+   "build_budget": null,
+   "staging_budget": 17179869184
+  },
+  "a100/current/disk/water010": {
+   "status": "capacity_observation",
+   "seconds": 2736.116418223828,
+   "scf": 2433.5641435999423,
+   "gradient": 294.9721863605082,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 21.630488152,
+    "gradient": 81.328457928
+   },
+   "host_rss_gb": 6.323101696,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": 8589934592
+  },
+  "a100/original/host/gly30": {
+   "status": "capacity_observation",
+   "seconds": 254.4939983934164,
+   "scf": 211.22399964928627,
+   "gradient": 41.23751290142536,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 32.024272748,
+    "gradient": 76.43822018
+   },
+   "host_rss_gb": 24.719556608,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/disk/small": {
+   "status": "passed",
+   "seconds": 4.570475295186043,
+   "scf": 3.775065243244171,
+   "gradient": 0.6244962215423584,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.564648132,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.455628288,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/disk/gly30": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Disk CDERI minimum build staging requires 4706935800 bytes; budget is 4294967296",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_16/current/gpu/medium": {
+   "status": "passed",
+   "seconds": 11.905907237000065,
+   "scf": 7.2115309769999385,
+   "gradient": 4.5460136460001195,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.34450722,
+    "gradient": 1.109724684
+   },
+   "host_rss_gb": 0.794648576,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/disk/water008": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/current/gpu/large": {
+   "status": "passed",
+   "seconds": 58.307118171826005,
+   "scf": 40.45313662290573,
+   "gradient": 17.48616707138717,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 20.057400972,
+    "gradient": 4.065687916
+   },
+   "host_rss_gb": 1.14249728,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/host/gly40": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/host/water008": {
+   "status": "capacity_observation",
+   "seconds": 133.5031786262989,
+   "scf": 93.79139716923237,
+   "gradient": 38.090608313679695,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 10.990258548,
+    "gradient": 14.724217532
+   },
+   "host_rss_gb": 33.311236096,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/current/host/gly40": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -15086214028 bytes is smaller than the minimum workspace 228999760 bytes",
+   "build_budget": 7516192768,
+   "staging_budget": 4294967296
+  },
+  "a100/current/gpu/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 79.61045660078526,
+   "scf": 52.07856556773186,
+   "gradient": 26.52486616373062,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 38.127357052,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 1.34371328,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/host/large": {
+   "status": "passed",
+   "seconds": 111.0532569438219,
+   "scf": 78.14069047570229,
+   "gradient": 32.389338821172714,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.369009956,
+    "gradient": 4.740491124
+   },
+   "host_rss_gb": 16.270618624,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/disk/medium": {
+   "status": "passed",
+   "seconds": 43.69888465400027,
+   "scf": 39.006874643000174,
+   "gradient": 4.541848081000353,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 2.969461844,
+    "gradient": 1.109724684
+   },
+   "host_rss_gb": 2.416041984,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/original/host/medium": {
+   "status": "passed",
+   "seconds": 25.287077084183693,
+   "scf": 20.09813840687275,
+   "gradient": 4.93775500357151,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.34450722,
+    "gradient": 9.725699904
+   },
+   "host_rss_gb": 2.694033408,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/host/medium": {
+   "status": "passed",
+   "seconds": 11.44004437327385,
+   "scf": 7.997870892286301,
+   "gradient": 3.274609625339508,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.093793616,
+    "gradient": 0.809638296
+   },
+   "host_rss_gb": 2.999250944,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/disk/water008": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/current/disk/large": {
+   "status": "passed",
+   "seconds": 254.99697090871632,
+   "scf": 237.07763081602752,
+   "gradient": 17.470299968495965,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.964453084,
+    "gradient": 4.065687916
+   },
+   "host_rss_gb": 3.314700288,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/original/gpu/small": {
+   "status": "passed",
+   "seconds": 3.057617627084255,
+   "scf": 2.252179251983762,
+   "gradient": 0.6076823696494102,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 1.239053392
+   },
+   "host_rss_gb": 1.048059904,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/host/gly30": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -5222209830 bytes is smaller than the minimum workspace 138079960 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_12/current/host/gly30": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -8646859046 bytes is smaller than the minimum workspace 138079960 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100_16/current/gpu/small": {
+   "status": "passed",
+   "seconds": 3.040654346346855,
+   "scf": 2.2569581270217896,
+   "gradient": 0.6147409826517105,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.049759744,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/gly40": {
+   "status": "capacity_observation",
+   "seconds": 798.6202359627932,
+   "scf": 650.1895107682794,
+   "gradient": 143.8481972143054,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 21.251749504,
+    "gradient": 58.483778596
+   },
+   "host_rss_gb": 8.133496832,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": 10737418240
+  },
+  "v100/original/host/large": {
+   "status": "failed_accuracy",
+   "seconds": 68.9867255333811,
+   "scf": 52.18626103922725,
+   "gradient": 16.418979777023196,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 12.506413068,
+    "gradient": 29.595372048
+   },
+   "host_rss_gb": 16.592044032,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/water009": {
+   "status": "capacity_observation",
+   "seconds": 1194.4398756213486,
+   "scf": 1109.7938180807978,
+   "gradient": 81.02550341375172,
+   "cycles": 17,
+   "peaks_gb": {
+    "scf": 18.379223532,
+    "gradient": 31.82435636
+   },
+   "host_rss_gb": 5.87010048,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": 5368709120
+  },
+  "p100_12/current/gpu/large": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_12/current/disk/large": {
+   "status": "passed",
+   "seconds": 287.6628474444151,
+   "scf": 256.87672824412584,
+   "gradient": 30.26530372351408,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.344406748,
+    "gradient": 4.740491124
+   },
+   "host_rss_gb": 2.954665984,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/original/gpu/water008": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.92 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/gpu/gly30": {
+   "status": "capacity_observation",
+   "seconds": 212.05179026722908,
+   "scf": 151.83264353871346,
+   "gradient": 58.105780214071274,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 36.143721464,
+    "gradient": 26.085716108
+   },
+   "host_rss_gb": 1.438916608,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/disk/small": {
+   "status": "passed",
+   "seconds": 5.127983331680298,
+   "scf": 3.9729377180337906,
+   "gradient": 0.9036745056509972,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.559732932,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.133228032,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/gpu/water008": {
+   "status": "capacity_observation",
+   "seconds": 108.6909441947937,
+   "scf": 80.79561114311218,
+   "gradient": 26.29554110765457,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 49.409363124,
+    "gradient": 75.398806072
+   },
+   "host_rss_gb": 1.38110976,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/gpu/large": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100_16/current/disk/medium": {
+   "status": "passed",
+   "seconds": 26.233130559325218,
+   "scf": 23.106996044516563,
+   "gradient": 2.9463086426258087,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 2.97437704,
+    "gradient": 0.809638296
+   },
+   "host_rss_gb": 2.671960064,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/disk/gly40": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -15160033779 bytes is smaller than the minimum workspace 228999760 bytes",
+   "build_budget": null,
+   "staging_budget": 10737418240
+  },
+  "p100_12/original/gpu/small": {
+   "status": "passed",
+   "seconds": 3.9961370080709457,
+   "scf": 2.782809764146805,
+   "gradient": 0.9057422801852226,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.413393444,
+    "gradient": 1.357021776
+   },
+   "host_rss_gb": 0.733044736,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/gpu/water010": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 122.72 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_12/current/host/water008": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -1468631142 bytes is smaller than the minimum workspace 130758880 bytes",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/current/disk/medium": {
+   "status": "passed",
+   "seconds": 24.04427283257246,
+   "scf": 20.92110489681363,
+   "gradient": 2.9466688595712185,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 2.97437704,
+    "gradient": 0.809638296
+   },
+   "host_rss_gb": 2.678370304,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/original/host/medium": {
+   "status": "passed",
+   "seconds": 23.139952145982534,
+   "scf": 18.548885610885918,
+   "gradient": 4.42564343707636,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.34450722,
+    "gradient": 11.625727104
+   },
+   "host_rss_gb": 2.749632512,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/gpu/large": {
+   "status": "passed",
+   "seconds": 35.5404914021492,
+   "scf": 21.93090619146824,
+   "gradient": 13.090347573161125,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 20.063135372,
+    "gradient": 4.071422316
+   },
+   "host_rss_gb": 1.255870464,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/host/large": {
+   "status": "passed",
+   "seconds": 71.9202979952097,
+   "scf": 51.7346653342247,
+   "gradient": 19.795829460024834,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.964453084,
+    "gradient": 4.065687916
+   },
+   "host_rss_gb": 16.58929152,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/host/large": {
+   "status": "passed",
+   "seconds": 71.59404535591602,
+   "scf": 51.600123319774866,
+   "gradient": 19.60745215602219,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.964453084,
+    "gradient": 4.065687916
+   },
+   "host_rss_gb": 16.592683008,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/original/host/large": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/host/gly60": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -69058857152 bytes is smaller than the minimum workspace 477799360 bytes",
+   "build_budget": 12884901888,
+   "staging_budget": 4294967296
+  },
+  "a100/original/host/water009": {
+   "status": "capacity_observation",
+   "seconds": 274.6056002676487,
+   "scf": 207.9124725908041,
+   "gradient": 63.364202693104744,
+   "cycles": 17,
+   "peaks_gb": {
+    "scf": 32.132127232,
+    "gradient": 76.41979876
+   },
+   "host_rss_gb": 61.379067904,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/gpu/medium": {
+   "status": "passed",
+   "seconds": 8.247119173407555,
+   "scf": 5.147933930158615,
+   "gradient": 2.9200877845287323,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.349422416,
+    "gradient": 0.809638296
+   },
+   "host_rss_gb": 1.064341504,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/host/water008": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_12/original/gpu/large": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/original/host/medium": {
+   "status": "passed",
+   "seconds": 10.805084304884076,
+   "scf": 7.7878842782229185,
+   "gradient": 2.8465517684817314,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.349422416,
+    "gradient": 15.932888308
+   },
+   "host_rss_gb": 3.00034048,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/disk/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 718.044974565506,
+   "scf": 648.8013767823577,
+   "gradient": 68.34713942557573,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.154592364,
+    "gradient": 8.697666788
+   },
+   "host_rss_gb": 3.040964608,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/host/water010": {
+   "status": "capacity_observation",
+   "seconds": 1072.1258455850184,
+   "scf": 756.4768803082407,
+   "gradient": 307.6703828703612,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 21.630488152,
+    "gradient": 81.328457928
+   },
+   "host_rss_gb": 124.686585856,
+   "error": "",
+   "build_budget": 6442450944,
+   "staging_budget": 4294967296
+  },
+  "v100_16/original/host/water008": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100_16/current/disk/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 691.4938641786575,
+   "scf": 650.8586427569389,
+   "gradient": 39.91822615265846,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 5.55025222,
+    "gradient": 8.697663044
+   },
+   "host_rss_gb": 5.578182656,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/current/host/small": {
+   "status": "passed",
+   "seconds": 2.955177679657936,
+   "scf": 2.2055707685649395,
+   "gradient": 0.6468907929956913,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.207324672,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/disk/water009": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 5368709120
+  },
+  "a100/current/gpu/water009": {
+   "status": "capacity_observation",
+   "seconds": 280.7872734516859,
+   "scf": 194.17117489874363,
+   "gradient": 83.24156048893929,
+   "cycles": 17,
+   "peaks_gb": {
+    "scf": 71.663145964,
+    "gradient": 31.82435636
+   },
+   "host_rss_gb": 1.60741376,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/host/medium": {
+   "status": "passed",
+   "seconds": 16.794331619000104,
+   "scf": 11.813141317000145,
+   "gradient": 4.824525472000005,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.08887842,
+    "gradient": 1.109724684
+   },
+   "host_rss_gb": 2.740502528,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/host/gly50": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Gradient workspace budget -12650046451 bytes is smaller than the minimum workspace 342239560 bytes",
+   "build_budget": 10737418240,
+   "staging_budget": 4294967296
+  },
+  "p100_16/original/host/valinomycin": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_16/current/disk/small": {
+   "status": "passed",
+   "seconds": 4.807163209999999,
+   "scf": 3.7132439279998835,
+   "gradient": 0.9380340359998627,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.559732932,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.190539264,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/host/gly30": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/host/large": {
+   "status": "passed",
+   "seconds": 46.73682576417923,
+   "scf": 31.05639722943306,
+   "gradient": 15.18968814611435,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.964453084,
+    "gradient": 4.071422316
+   },
+   "host_rss_gb": 16.712142848,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/original/gpu/large": {
+   "status": "failed_accuracy",
+   "seconds": 56.36188107915223,
+   "scf": 41.419632222503424,
+   "gradient": 14.571713842451572,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 22.40560278,
+    "gradient": 29.595372048
+   },
+   "host_rss_gb": 1.143656448,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/gpu/medium": {
+   "status": "passed",
+   "seconds": 12.945540182292461,
+   "scf": 7.7202330976724625,
+   "gradient": 4.979646027088165,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.34450722,
+    "gradient": 1.109724684
+   },
+   "host_rss_gb": 0.74227712,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/gpu/large": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/original/host/small": {
+   "status": "passed",
+   "seconds": 2.9609577637165785,
+   "scf": 2.1855316013097763,
+   "gradient": 0.6246299725025892,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 1.239053392
+   },
+   "host_rss_gb": 1.209827328,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/host/medium": {
+   "status": "passed",
+   "seconds": 15.605271182954311,
+   "scf": 10.093250200152397,
+   "gradient": 5.26848616451025,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.08887842,
+    "gradient": 1.109724684
+   },
+   "host_rss_gb": 2.687889408,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/original/gpu/large": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 15.45 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100/original/host/gly30": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/host/medium": {
+   "status": "passed",
+   "seconds": 10.739611729979515,
+   "scf": 7.648724585771561,
+   "gradient": 2.9249818474054337,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.099528016,
+    "gradient": 0.815372696
+   },
+   "host_rss_gb": 3.141361664,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/disk/medium": {
+   "status": "passed",
+   "seconds": 44.66018088161945,
+   "scf": 39.408291056752205,
+   "gradient": 4.975095614790916,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 2.969461844,
+    "gradient": 1.109724684
+   },
+   "host_rss_gb": 2.34817536,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_16/current/host/water008": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_16/current/gpu/small": {
+   "status": "passed",
+   "seconds": 3.7585045719999925,
+   "scf": 2.5289475839999795,
+   "gradient": 0.997377368999878,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.413393444,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 0.786919424,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/gpu/gly40": {
+   "status": "capacity_observation",
+   "seconds": 589.2321679145098,
+   "scf": 439.44497814774513,
+   "gradient": 145.72979019582272,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 64.183527864,
+    "gradient": 58.483778596
+   },
+   "host_rss_gb": 1.701732352,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/original/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/gpu/small": {
+   "status": "passed",
+   "seconds": 4.731025263667107,
+   "scf": 3.918651133775711,
+   "gradient": 0.6260622441768646,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.405469124,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.171648512,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/water008": {
+   "status": "capacity_observation",
+   "seconds": 606.7026692330837,
+   "scf": 571.1721529066563,
+   "gradient": 33.8891771286726,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 10.990258548,
+    "gradient": 14.724217532
+   },
+   "host_rss_gb": 3.603881984,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/gpu/small": {
+   "status": "passed",
+   "seconds": 3.5574715957045555,
+   "scf": 2.4411357045173645,
+   "gradient": 0.8824097216129303,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.413393444,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 0.735522816,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/host/medium": {
+   "status": "passed",
+   "seconds": 11.33832255192101,
+   "scf": 7.86617118678987,
+   "gradient": 3.302914621308446,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.093793616,
+    "gradient": 0.809638296
+   },
+   "host_rss_gb": 3.01180928,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/original/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/current/host/small": {
+   "status": "passed",
+   "seconds": 4.871932178735733,
+   "scf": 4.021537438035011,
+   "gradient": 0.7095494270324707,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.405469124,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.324208128,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/gpu/gly30": {
+   "status": "capacity_observation",
+   "seconds": 190.86641182005405,
+   "scf": 150.1943537145853,
+   "gradient": 38.72632007300854,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 41.241508588,
+    "gradient": 76.43822018
+   },
+   "host_rss_gb": 1.45178624,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/disk/large": {
+   "status": "passed",
+   "seconds": 222.79851754009724,
+   "scf": 205.0840579867363,
+   "gradient": 17.332370907068253,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 4.964453084,
+    "gradient": 4.065687916
+   },
+   "host_rss_gb": 3.298291712,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/gpu/medium": {
+   "status": "passed",
+   "seconds": 8.443582728505135,
+   "scf": 5.983943775296211,
+   "gradient": 2.282227098941803,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.355156816,
+    "gradient": 18.547979508
+   },
+   "host_rss_gb": 1.18605824,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/current/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_16/current/disk/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 775.2548309900003,
+   "scf": 716.451049626,
+   "gradient": 57.88361018199976,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 5.533476284,
+    "gradient": 8.697666788
+   },
+   "host_rss_gb": 3.111583744,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/host/gly30": {
+   "status": "capacity_observation",
+   "seconds": 224.47394189238548,
+   "scf": 161.3080620765686,
+   "gradient": 61.199282586574554,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 13.998924968,
+    "gradient": 26.085716108
+   },
+   "host_rss_gb": 24.693362688,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/disk/small": {
+   "status": "passed",
+   "seconds": 4.236566314473748,
+   "scf": 3.4663991760462523,
+   "gradient": 0.6120131891220808,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.564648132,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.450606592,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/gpu/large": {
+   "status": "failed_accuracy",
+   "seconds": 33.064357072114944,
+   "scf": 21.614174529910088,
+   "gradient": 10.984042197465897,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 32.544703932,
+    "gradient": 54.943729772
+   },
+   "host_rss_gb": 1.262350336,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/current/host/small": {
+   "status": "passed",
+   "seconds": 3.596615932881832,
+   "scf": 2.5197696164250374,
+   "gradient": 0.9003705903887749,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.394819524,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 0.901722112,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "p100_12/original/host/small": {
+   "status": "passed",
+   "seconds": 3.616081841289997,
+   "scf": 2.4887886494398117,
+   "gradient": 0.9495803862810135,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.394819524,
+    "gradient": 1.357021776
+   },
+   "host_rss_gb": 0.900091904,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/host/water009": {
+   "status": "capacity_observation",
+   "seconds": 300.834782987833,
+   "scf": 210.1962053924799,
+   "gradient": 87.41468985378742,
+   "cycles": 17,
+   "peaks_gb": {
+    "scf": 18.379223532,
+    "gradient": 31.82435636
+   },
+   "host_rss_gb": 61.387948032,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/gpu/water008": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.92 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "p100_16/original/gpu/medium": {
+   "status": "passed",
+   "seconds": 16.391591837164015,
+   "scf": 12.068926692008972,
+   "gradient": 4.148166675120592,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.34450722,
+    "gradient": 11.707448704
+   },
+   "host_rss_gb": 0.794124288,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/host/water010": {
+   "status": "out_of_memory",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "cudaErrorMemoryAllocation: out of memory",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/original/gpu/water010": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 122.72 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "a100/original/host/valinomycin": {
+   "status": "capacity_observation",
+   "seconds": 88.41731385886669,
+   "scf": 62.921837240457535,
+   "gradient": 24.534897193312645,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 31.557822016,
+    "gradient": 75.477121088
+   },
+   "host_rss_gb": 32.874180608,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/gpu/water009": {
+   "status": "capacity_observation",
+   "seconds": 257.6996612250805,
+   "scf": 195.58329720795155,
+   "gradient": 58.904680982232094,
+   "cycles": 17,
+   "peaks_gb": {
+    "scf": 77.894686432,
+    "gradient": 76.41979876
+   },
+   "host_rss_gb": 1.574158336,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/original/host/medium": {
+   "status": "passed",
+   "seconds": 10.383898690342903,
+   "scf": 7.640091925859451,
+   "gradient": 2.5650084912776947,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.355156816,
+    "gradient": 18.547979508
+   },
+   "host_rss_gb": 3.12926208,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/gpu/valinomycin": {
+   "status": "failed_execution",
+   "seconds": null,
+   "scf": null,
+   "gradient": null,
+   "cycles": null,
+   "peaks_gb": {},
+   "host_rss_gb": null,
+   "error": "Not enough GPU memory. cderi size = 31.52 GB",
+   "build_budget": null,
+   "staging_budget": 4294967296
+  },
+  "v100_16/original/host/small": {
+   "status": "passed",
+   "seconds": 3.371429055929184,
+   "scf": 2.542705848813057,
+   "gradient": 0.6274454146623611,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.399734724,
+    "gradient": 1.239053392
+   },
+   "host_rss_gb": 1.202106368,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/medium": {
+   "status": "passed",
+   "seconds": 21.13226743042469,
+   "scf": 18.33959674835205,
+   "gradient": 2.6316629201173782,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 2.98011144,
+    "gradient": 0.815372696
+   },
+   "host_rss_gb": 2.804846592,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100/current/disk/water008": {
+   "status": "capacity_observation",
+   "seconds": 501.62183995358646,
+   "scf": 443.12989802099764,
+   "gradient": 57.38487273827195,
+   "cycles": 20,
+   "peaks_gb": {
+    "scf": 9.652274804,
+    "gradient": 14.724217532
+   },
+   "host_rss_gb": 3.416567808,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/disk/small": {
+   "status": "passed",
+   "seconds": 5.812286272644997,
+   "scf": 5.014471083879471,
+   "gradient": 0.6181814670562744,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 0.570382532,
+    "gradient": 0.330514752
+   },
+   "host_rss_gb": 1.570029568,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "a100/current/gpu/medium": {
+   "status": "passed",
+   "seconds": 8.699891924858093,
+   "scf": 5.90933758020401,
+   "gradient": 2.6165208518505096,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.355156816,
+    "gradient": 0.815372696
+   },
+   "host_rss_gb": 1.18489088,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  },
+  "v100_16/original/host/medium": {
+   "status": "passed",
+   "seconds": 11.06069566309452,
+   "scf": 7.9980964958667755,
+   "gradient": 2.893919676542282,
+   "cycles": 18,
+   "peaks_gb": {
+    "scf": 4.349422416,
+    "gradient": 8.986552308
+   },
+   "host_rss_gb": 3.000475648,
+   "error": "",
+   "build_budget": null,
+   "staging_budget": null
+  }
+ },
+ "gb10": {
+  "status": "completed_with_original_accuracy_failures",
+  "original_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "validator_sha256": "db44f29199670d588bdfb57eab6b5f6b60e8e881db31732ebab191949445b98b",
+  "manifest_sha256": "594ec5e27fb9a603cae3329345421460ae0c5d658c774417f7b42faed4db24e4",
+  "cases": [
+   {
+    "size": "small",
+    "case": "vitamin_svp_b3lyp",
+    "molecule": "Vitamin C",
+    "versions": {
+     "original": {
+      "medians": {
+       "workflow_seconds": 5.490209438838065,
+       "setup_seconds": 0.07676278706640005,
+       "scf_seconds": 4.0125629007816315,
+       "gradient_seconds": 1.4133411115035415
+      },
+      "samples": [
+       5.576840895228088,
+       5.446194341406226,
+       5.490209438838065
+      ],
+      "scf_iterations": [
+       18,
+       18,
+       18
+      ],
+      "peak_tracked_cupy_bytes": 1356931736,
+      "host_address_space_peak_rss_bytes": 1380306944,
+      "cpu_accuracy_passed": true,
+      "maximum_cpu_energy_error": 4.160938260611147e-11,
+      "maximum_cpu_force_error": 2.4833731515627733e-08
+     },
+     "current": {
+      "medians": {
+       "workflow_seconds": 5.277642922475934,
+       "setup_seconds": 0.07605583686381578,
+       "scf_seconds": 3.7439527716487646,
+       "gradient_seconds": 1.456556516699493
+      },
+      "samples": [
+       5.38718525506556,
+       5.246038418263197,
+       5.277642922475934
+      ],
+      "scf_iterations": [
+       18,
+       18,
+       18
+      ],
+      "peak_tracked_cupy_bytes": 526085773,
+      "host_address_space_peak_rss_bytes": 1379209216,
+      "cpu_accuracy_passed": true,
+      "maximum_cpu_energy_error": 4.1382008930668235e-11,
+      "maximum_cpu_force_error": 2.1096774105444638e-08,
+      "speedup_vs_original": 1.0402767901285765,
+      "elapsed_time_reduction_fraction": 0.038717378404259484,
+      "cupy_reduction_fraction": 0.6122975393362013,
+      "host_rss_reduction_fraction": 0.0007952781841543688,
+      "accuracy_qualified_comparison": true
+     }
+    },
+    "natm": 20,
+    "nao": 208,
+    "initial_density_sha256": "0b29705cef25550e4685f017beb8b8892d3d1e4123a0188f4253f8f96fb2c905",
+    "paired_current_speed_ratios": [
+     1.0352049597671056,
+     1.0381537280486204,
+     1.0402767901285765
+    ]
+   },
+   {
+    "size": "medium",
+    "case": "tamoxifen_svp_b3lyp",
+    "molecule": "Tamoxifen",
+    "versions": {
+     "original": {
+      "medians": {
+       "workflow_seconds": 70.54121275246143,
+       "setup_seconds": 0.1144573800265789,
+       "scf_seconds": 55.30514799710363,
+       "gradient_seconds": 15.145889868028462
+      },
+      "samples": [
+       70.54121275246143,
+       69.68556116614491,
+       70.74682093504816
+      ],
+      "scf_iterations": [
+       18,
+       18,
+       18
+      ],
+      "peak_tracked_cupy_bytes": 21105040848,
+      "host_address_space_peak_rss_bytes": 1394499584,
+      "cpu_accuracy_passed": true,
+      "maximum_cpu_energy_error": 8.185452315956354e-11,
+      "maximum_cpu_force_error": 6.777016694492488e-07
+     },
+     "current": {
+      "medians": {
+       "workflow_seconds": 48.07025501318276,
+       "setup_seconds": 0.11883656773716211,
+       "scf_seconds": 32.64992443472147,
+       "gradient_seconds": 15.295284455642104
+      },
+      "samples": [
+       48.06783535052091,
+       48.11391955241561,
+       48.07025501318276
+      ],
+      "scf_iterations": [
+       18,
+       18,
+       18
+      ],
+      "peak_tracked_cupy_bytes": 4342868816,
+      "host_address_space_peak_rss_bytes": 1394499584,
+      "cpu_accuracy_passed": true,
+      "maximum_cpu_energy_error": 8.185452315956354e-11,
+      "maximum_cpu_force_error": 1.0644524761627139e-08,
+      "speedup_vs_original": 1.4674607557858026,
+      "elapsed_time_reduction_fraction": 0.31855077142113053,
+      "cupy_reduction_fraction": 0.7942259933407545,
+      "host_rss_reduction_fraction": 0.0,
+      "accuracy_qualified_comparison": true
+     }
+    },
+    "natm": 57,
+    "nao": 537,
+    "initial_density_sha256": "be97fd51a52102d0d0427fe553a135980dffed4cc8238c27ce8f719b3ee72e89",
+    "paired_current_speed_ratios": [
+     1.4675346255569834,
+     1.4483451320200387,
+     1.471737999218989
+    ]
+   },
+   {
+    "size": "large",
+    "case": "taxol_svp_b3lyp",
+    "molecule": "Taxol",
+    "versions": {
+     "original": {
+      "medians": {
+       "workflow_seconds": 1103.1095547461882,
+       "setup_seconds": 0.3090523052960634,
+       "scf_seconds": 979.3034199895337,
+       "gradient_seconds": 123.49659692775458
+      },
+      "samples": [
+       1093.2028411775827,
+       1103.1095547461882,
+       1103.427388000302
+      ],
+      "scf_iterations": [
+       20,
+       20,
+       20
+      ],
+      "peak_tracked_cupy_bytes": 65620111264,
+      "host_address_space_peak_rss_bytes": 1475411968,
+      "cpu_accuracy_passed": false,
+      "maximum_cpu_energy_error": 2.2246240405365825e-09,
+      "maximum_cpu_force_error": 2.621194033158858e-05
+     },
+     "current": {
+      "medians": {
+       "workflow_seconds": 566.0226294565946,
+       "setup_seconds": 0.31428311485797167,
+       "scf_seconds": 430.7990052672103,
+       "gradient_seconds": 134.91880080476403
+      },
+      "samples": [
+       566.1037188628688,
+       566.0226294565946,
+       565.2405162425712
+      ],
+      "scf_iterations": [
+       20,
+       20,
+       20
+      ],
+      "peak_tracked_cupy_bytes": 30100129212,
+      "host_address_space_peak_rss_bytes": 1475211264,
+      "cpu_accuracy_passed": true,
+      "maximum_cpu_energy_error": 2.2246240405365825e-09,
+      "maximum_cpu_force_error": 5.444428907708243e-09,
+      "speedup_vs_original": 1.9488788916535362,
+      "elapsed_time_reduction_fraction": 0.4868844830313982,
+      "cupy_reduction_fraction": 0.5412971933116288,
+      "host_rss_reduction_fraction": 0.00013603251454719079,
+      "accuracy_qualified_comparison": false
+     },
+     "disk": {
+      "medians": {
+       "workflow_seconds": 582.2699490301311,
+       "setup_seconds": 0.3163098944351077,
+       "scf_seconds": 445.6504444926977,
+       "gradient_seconds": 136.16119923908263
+      },
+      "samples": [
+       582.2699490301311,
+       580.4200127562508,
+       582.4358109459281
+      ],
+      "scf_iterations": [
+       20,
+       20,
+       20
+      ],
+      "peak_tracked_cupy_bytes": 6567449156,
+      "host_address_space_peak_rss_bytes": 3622952960,
+      "cpu_accuracy_passed": true,
+      "maximum_cpu_energy_error": 2.2264430299401283e-09,
+      "maximum_cpu_force_error": 5.3371262964674315e-09,
+      "speedup_vs_original": 1.8944985166821737,
+      "elapsed_time_reduction_fraction": 0.47215582847153914,
+      "cupy_reduction_fraction": 0.8999171286135417,
+      "host_rss_reduction_fraction": -1.455553458002043,
+      "accuracy_qualified_comparison": false
+     }
+    },
+    "natm": 113,
+    "nao": 1123,
+    "initial_density_sha256": "d6b5518dce6ef1022a05deeeabde38f3bdf0ed1179fd81df21944255f224debf",
+    "paired_current_speed_ratios": [
+     1.931099911114339,
+     1.9488788916535362,
+     1.952137817959903
+    ]
+   }
+  ],
+  "audit_status": "passed",
+  "current_accuracy_passed": true,
+  "original_accuracy_passed": false,
+  "environment": {
+   "device": "NVIDIA GB10",
+   "compute_capability": "121",
+   "cupy": "14.1.1",
+   "cuda_driver": 13000,
+   "cuda_runtime": 13020,
+   "pyscf": "2.13.1",
+   "numpy": "2.4.6",
+   "cpu_libxc": "7.0.0"
+  },
+  "input_sha256": {
+   "large_current_memory_0.json": "a792b288f84c5f5929c384da2e300d62a31fd21bb237c00c0bec21a1c814c83b",
+   "large_current_time_0.json": "57c560a83a68a196cbad23d659c67008065a018353c15bea4d4c04b477820a11",
+   "large_current_time_1.json": "f2fe8df20f2eb51fcd1b64a9721b6d8d0a83eb89238794bcaabf8101ae7ebc93",
+   "large_current_time_2.json": "083c59104599de61134b2776a7a2f6db00432eb407c4a24927e06ca7ee28badd",
+   "large_disk_memory_0.json": "005114e1c90cb650461dc7efe441209546a4d50f8947d3044fa2c0d9e43d8255",
+   "large_disk_time_0.json": "01b921e9aaea8ef6aa7dd7a0162d1ad3b8cf733dc304c34b1ba783791dfe3de8",
+   "large_disk_time_1.json": "4f0c1472a40659c3d718f1d8cd311de29c6450e8c7cc17e0b1ca997faf742cba",
+   "large_disk_time_2.json": "55829cda635b40614dbc4048b84384643d1af994933bcbf29dfcc43ccd36d279",
+   "large_original_memory_0.json": "3897531c65071bcfd944480654fd8c7d7fb28d35be7147ab5b96c6f28a1fb3d8",
+   "large_original_time_0.json": "45a3bf0fb866a0753f2698f15db92b48c4c95fccc46d3fe54746ef2cb67bd146",
+   "large_original_time_1.json": "437d906a0363bcd27a59832fd96d2280889ecedea27d6464284c15756c4a0634",
+   "large_original_time_2.json": "d86b2a5bd530e055dafc3979c02a525860400ef321beb46810584b29aa965022",
+   "medium_current_memory_0.json": "a63cd78df632986a33c6f31f17b30997f1e963199276a52a7d4af08bb4cea9bc",
+   "medium_current_time_0.json": "d4b7550cb9374f5c7da3aec97a3287e3a8ffd244f441d0773ae4eee4e91d032c",
+   "medium_current_time_1.json": "57386629b0cf30a8ab86d14e80a4a1ab291e36425a0fd42f6aa76e3163a28cc4",
+   "medium_current_time_2.json": "ad802507494c048258df6381d90ef2854b5bea64ca6802b73577efaa7dfacd94",
+   "medium_original_memory_0.json": "6289fc49e7d85ae23605914e20cb8bef83d99736fc876d1b812f293d2a5ea4f1",
+   "medium_original_time_0.json": "5464a3743c7b3657c3e3e1b2d6528679015be4db17a622be93aea200a3d2408c",
+   "medium_original_time_1.json": "910dbb865be2aa62a7d5de08aa719bc28a186852296bf4660826f73b450df5ec",
+   "medium_original_time_2.json": "00b3aeefb908515a8ed45b7599b783933932a03e27b60e9df631f3bd27d945a4",
+   "small_current_memory_0.json": "b74659bbcfc1c6787d481c434e29931cd889f4e86769cf8f9fb8dcd74ceefe0c",
+   "small_current_time_0.json": "dafab46ab3831a9c6ded64e28c4c327fa4b3d043a3e529f45ee7eff9e1dbcb0f",
+   "small_current_time_1.json": "dbd520d5c6ac69567c7fc3388d1d86dd49dbfe638f1b940d91564d105fe9d025",
+   "small_current_time_2.json": "d8dadb9c4c129a7ce91cae0013fda724191c63c40bc2d87777844b4fec163765",
+   "small_original_memory_0.json": "999d0fabc2cc179f996e251b1fb0e0cf2df8044fb1b52e21ebcc2c1ea4bbb0f1",
+   "small_original_time_0.json": "4ed5cd1bcc3e76e581d43428c84aa2f50aa88ee05dffdaf03b4135a435ddd1c0",
+   "small_original_time_1.json": "06f078d86d8e487434d47d44bdde52a27d99d77733b224e391ce67a59dd25201",
+   "small_original_time_2.json": "4153344eed88b076b52a1b727a3c28b8b343ac8b6b57168f5140e26097abf65f"
+  },
+  "harness_checks": {
+   "passed": 11,
+   "xml_sha256": "65d5816aa6045d22daeeee50c5a17519ceaa95244510223093f4f17273a14c2d",
+   "sources": {
+    "test_original_comparison_config.py": "6fbd054a3bfd9c3bb649cc8e26210d4af9e5b2d9057884057174fe84d3b941de",
+    "test_original_comparison_summary.py": "daa100dda4d05dc28c399e7818c18d922921f0ff2430e4973204880e0f0b0d55"
+   }
+  },
+  "note": "Three fresh-process cold atomic-guess timing samples; medians cover setup plus fresh DF/SCF/full gradient. Separate fresh-process allocation observations are not timing samples. Original/current share native GB10-compatible libraries. CuPy peaks exclude native/preexisting storage and cannot be added to host RSS on unified memory. OS/CuPy caches are uncontrolled. An original accuracy failure is explicitly unqualified, not an equivalent-accuracy speed claim."
+ }
+}

@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "isolated": [
+    {
+      "case": "vitamin_svp",
+      "medians_seconds": {
+        "current": 3.478055221028626,
+        "layout": 3.447623391635716
+      },
+      "speedup": 1.0088269007185473,
+      "time_reduction_percent": 0.8749668265447985,
+      "paired_ratios": [
+        1.0048932994712585,
+        1.0315661541642533,
+        1.0068305502795394
+      ]
+    },
+    {
+      "case": "tamoxifen_svp",
+      "medians_seconds": {
+        "current": 49.525816682726145,
+        "layout": 42.412969392724335
+      },
+      "speedup": 1.167704534529053,
+      "time_reduction_percent": 14.36189802899841,
+      "paired_ratios": [
+        1.1674043017418312,
+        1.1861203223090737,
+        1.179508611180173
+      ]
+    }
+  ],
+  "production": {
+    "case": "tamoxifen_svp",
+    "medians_seconds": {
+      "previous": 49.53898580837995,
+      "production": 42.00486768782139
+    },
+    "speedup": 1.1793629770852236,
+    "time_reduction_percent": 15.208462582784843,
+    "paired_ratios": [
+      1.1789841423690985,
+      1.1785344084842129,
+      1.1793629770852236
+    ]
+  },
+  "checked_energy_gradient_records": 31,
+  "cpu_max_energy_error_hartree": 7.73070496506989e-11,
+  "cpu_max_gradient_error_hartree_per_bohr": 7.027609125742629e-07,
+  "paired_max_energy_difference_hartree": 1.3642420526593924e-12,
+  "paired_max_gradient_difference_hartree_per_bohr": 6.03598522275206e-08,
+  "profile_before_transform_seconds": 16.46393613424152,
+  "profile_after_transform_seconds": 9.14886280335486,
+  "profile_after_symmetric_gram": {
+    "calls": 209,
+    "seconds": 4.7449627965688705
+  },
+  "strided_gemm_calls": 190,
+  "production_phase_medians": {
+    "scf": 29.15409409161657,
+    "gradient": 12.853407613933086
+  },
+  "production_source_hashes": {
+    "gpu4pyscf/df/df_jk.py": "1b69e474e5a1f763acfc0097acd72c4f3983b8fa4a8a7607dc5a0baa2a907ff8",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642"
+  },
+  "raw_report_hashes": {
+    "exchange_layout_acceptance_results.json": "febd2b7214f2ed24117e31a581baa43e623561afb9aa0b502159a98b4fe6480d",
+    "exchange_layout_workflow_results.json": "45656d5774bd5a61be9e2bb377a93db0f705a29ed9d3de189bdce041b44c20a0",
+    "exchange_layout_components.json": "b64a4d8c797d4e155675528b26fef93b1af7ca4de7cc3b5170951244620ae91f",
+    "optimized_stage_profile_results.json": "99fa9315074b7e3ec94e66f86d10ac74ae75beeb5257e335f40bb9c6e61abb6e"
+  },
+  "note": "Previous optimized GPU baseline; same native build/shared GB10. FP64 and scientific settings unchanged. Three paired production measurements; inclusive synchronized profile includes fallback blocks and nested contractions. No cumulative original-GPU ratio inferred by multiplying campaigns."
+}

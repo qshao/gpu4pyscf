@@ -1,0 +1,5751 @@
+[
+  {
+    "id": "capacity-gly30-b3lyp-svp",
+    "system": "gly30",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/gly/gly30.xyz",
+    "geometry_sha256": "5e9eebb2309fee9220196a98e9a7c61f380d8031cdca20fa9584aab4f03c4179",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-gly30-pbe-svp",
+    "system": "gly30",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/gly/gly30.xyz",
+    "geometry_sha256": "5e9eebb2309fee9220196a98e9a7c61f380d8031cdca20fa9584aab4f03c4179",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-gly50-b3lyp-svp",
+    "system": "gly50",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/gly/gly50.xyz",
+    "geometry_sha256": "95baf535a8653f4e0d6efff30256693c42ff52857229c56217a2240aa7af51e4",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": "capacity-gly30-b3lyp-svp"
+    }
+  },
+  {
+    "id": "capacity-gly50-pbe-svp",
+    "system": "gly50",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/gly/gly50.xyz",
+    "geometry_sha256": "95baf535a8653f4e0d6efff30256693c42ff52857229c56217a2240aa7af51e4",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": "capacity-gly30-pbe-svp"
+    }
+  },
+  {
+    "id": "capacity-tamoxifen-b3lyp-svp",
+    "system": "tamoxifen",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-tamoxifen-pbe-svp",
+    "system": "tamoxifen",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-taxol-b3lyp-svp",
+    "system": "taxol",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-taxol-pbe-svp",
+    "system": "taxol",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-valinomycin-b3lyp-svp",
+    "system": "valinomycin",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/168_Valinomycin.xyz",
+    "geometry_sha256": "9fa5218fe833956502183866a15bcf307b7a4da44c5b6668e0a82bac584baff5",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-valinomycin-pbe-svp",
+    "system": "valinomycin",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/168_Valinomycin.xyz",
+    "geometry_sha256": "9fa5218fe833956502183866a15bcf307b7a4da44c5b6668e0a82bac584baff5",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-vitamin_c-b3lyp-svp",
+    "system": "vitamin_c",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "capacity-vitamin_c-pbe-svp",
+    "system": "vitamin_c",
+    "group": "capacity",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "auto",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "admission_required": true,
+      "storage_modes": [
+        "resident",
+        "auto",
+        "disk"
+      ],
+      "promote_after": null
+    }
+  },
+  {
+    "id": "core-acetate-b3lyp-svp",
+    "system": "acetate",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/acetate.xyz",
+    "geometry_sha256": "12aa3676787df1a10a100cab68714530cfd65d6689ab6344e18140a167a356ea",
+    "charge": -1,
+    "spin": 0,
+    "basis": "def2-svpd",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-acetate-pbe-svp",
+    "system": "acetate",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/acetate.xyz",
+    "geometry_sha256": "12aa3676787df1a10a100cab68714530cfd65d6689ab6344e18140a167a356ea",
+    "charge": -1,
+    "spin": 0,
+    "basis": "def2-svpd",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-b3lyp-svp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-b3lyp-tzvp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-tzvp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-hf-svp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-lda-svp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "LDA_X,LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-pbe-svp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-pbe-tzvp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-tzvp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-tpss-svp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "MGGA_X_TPSS,MGGA_C_TPSS",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene-wb97x-svp",
+    "system": "benzene",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene_dimer-b3lyp-svp",
+    "system": "benzene_dimer",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene_dimer.xyz",
+    "geometry_sha256": "39e0aae2ec0448648d126f638e97caca836bcbde75596192289d7935f99d0eef",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-benzene_dimer-pbe-svp",
+    "system": "benzene_dimer",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene_dimer.xyz",
+    "geometry_sha256": "39e0aae2ec0448648d126f638e97caca836bcbde75596192289d7935f99d0eef",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-distorted_h2o-b3lyp-svp",
+    "system": "distorted_h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/distorted_h2o.xyz",
+    "geometry_sha256": "fb07b8eb6e11063a29e38f1d3e86d7453d71b7e6c110a3dfccfee9b509d85166",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "restricted": true
+    }
+  },
+  {
+    "id": "core-h2o-b3lyp-pvdz",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "cc-pvdz",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-b3lyp-svp",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-hf-svp",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-lda-svp",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "LDA_X,LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-pbe-pvdz",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "cc-pvdz",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-pbe-svp",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-tpss-svp",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "MGGA_X_TPSS,MGGA_C_TPSS",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-h2o-wb97x-svp",
+    "system": "h2o",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-inosine-b3lyp-svp",
+    "system": "inosine",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-inosine-hf-svp",
+    "system": "inosine",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-inosine-lda-svp",
+    "system": "inosine",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "LDA_X,LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-inosine-pbe-svp",
+    "system": "inosine",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-inosine-tpss-svp",
+    "system": "inosine",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "MGGA_X_TPSS,MGGA_C_TPSS",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-inosine-wb97x-svp",
+    "system": "inosine",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-methylammonium-b3lyp-svp",
+    "system": "methylammonium",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/methylammonium.xyz",
+    "geometry_sha256": "77fff9f8d2a0f13cc595ee4851f7e14de6187b17886fe5db4cda75d9508ed8ee",
+    "charge": 1,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-methylammonium-pbe-svp",
+    "system": "methylammonium",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/methylammonium.xyz",
+    "geometry_sha256": "77fff9f8d2a0f13cc595ee4851f7e14de6187b17886fe5db4cda75d9508ed8ee",
+    "charge": 1,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-no-b3lyp-svp",
+    "system": "no",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/no.xyz",
+    "geometry_sha256": "da5e68f22dfc9e29f1634be342041b6620f348c9df2e0229e58ab266b5f5a0ec",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-no-pbe-svp",
+    "system": "no",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/no.xyz",
+    "geometry_sha256": "da5e68f22dfc9e29f1634be342041b6620f348c9df2e0229e58ab266b5f5a0ec",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-o2-b3lyp-svp",
+    "system": "o2",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/o2.xyz",
+    "geometry_sha256": "0335e6f35137e3b2ac98c2cf5ee043a49fa97395ecae37cfab706c30e5797c8b",
+    "charge": 0,
+    "spin": 2,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-o2-pbe-svp",
+    "system": "o2",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/o2.xyz",
+    "geometry_sha256": "0335e6f35137e3b2ac98c2cf5ee043a49fa97395ecae37cfab706c30e5797c8b",
+    "charge": 0,
+    "spin": 2,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-oh-b3lyp-svp",
+    "system": "oh",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/oh.xyz",
+    "geometry_sha256": "e698a94399e4b85fe3968b12e5b2f110374ad6901f134e956a2d14685c132a70",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-oh-pbe-svp",
+    "system": "oh",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/oh.xyz",
+    "geometry_sha256": "e698a94399e4b85fe3968b12e5b2f110374ad6901f134e956a2d14685c132a70",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-stretched_n2-b3lyp-svp",
+    "system": "stretched_n2",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/stretched_n2.xyz",
+    "geometry_sha256": "bb6cfeb4542d494f9a79753ab4081f787645ca7b1f9b4d482630879ed985f669",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "restricted": true
+    }
+  },
+  {
+    "id": "core-tamoxifen-b3lyp-svp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-b3lyp-tzvp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-tzvp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-hf-svp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-lda-svp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "LDA_X,LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-pbe-svp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-pbe-tzvp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-tzvp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-tpss-svp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "MGGA_X_TPSS,MGGA_C_TPSS",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-tamoxifen-wb97x-svp",
+    "system": "tamoxifen",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-taxol-b3lyp-svp",
+    "system": "taxol",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-taxol-hf-svp",
+    "system": "taxol",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-taxol-lda-svp",
+    "system": "taxol",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "LDA_X,LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-taxol-pbe-svp",
+    "system": "taxol",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-taxol-tpss-svp",
+    "system": "taxol",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "MGGA_X_TPSS,MGGA_C_TPSS",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-taxol-wb97x-svp",
+    "system": "taxol",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/113_Taxol.xyz",
+    "geometry_sha256": "50334d3f0e801183af7ecca00f400aca70675ced44aa45d330f4f8a016ee72d1",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-b3lyp-svp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-b3lyp-tzvp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-tzvp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-hf-svp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-lda-svp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "LDA_X,LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-pbe-svp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-pbe-tzvp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-tzvp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-tpss-svp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "MGGA_X_TPSS,MGGA_C_TPSS",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-vitamin_c-wb97x-svp",
+    "system": "vitamin_c",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-water_dimer-b3lyp-svp",
+    "system": "water_dimer",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/water_dimer.xyz",
+    "geometry_sha256": "b5cb31b620527841ef91ea3ec76cbce59b0ec72b2af6a0a56931d9b927bbe238",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "core-water_dimer-pbe-svp",
+    "system": "water_dimer",
+    "group": "core",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/water_dimer.xyz",
+    "geometry_sha256": "b5cb31b620527841ef91ea3ec76cbce59b0ec72b2af6a0a56931d9b927bbe238",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "direct-benzene-b3lyp",
+    "system": "benzene",
+    "group": "direct",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": null,
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "direct-benzene-hf",
+    "system": "benzene",
+    "group": "direct",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": null,
+    "xc": "HF",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "direct-benzene-pbe",
+    "system": "benzene",
+    "group": "direct",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": null,
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "direct-h2o-b3lyp",
+    "system": "h2o",
+    "group": "direct",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": null,
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "direct-h2o-hf",
+    "system": "h2o",
+    "group": "direct",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": null,
+    "xc": "HF",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "direct-h2o-pbe",
+    "system": "h2o",
+    "group": "direct",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": null,
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  },
+  {
+    "id": "ext-benzene-b3lyp-hessian",
+    "system": "benzene",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-benzene-b3lyp-tda",
+    "system": "benzene",
+    "group": "extension",
+    "family": "td",
+    "task": "tda",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-07,
+      "max_cycle": 100,
+      "conv_tol_note": "1e-9 residual is unreachable for the PySCF TDA solver (not converged at 500 iterations; identical energies to 6 digits at 1e-7); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-benzene-b3lyp-tddft",
+    "system": "benzene",
+    "group": "extension",
+    "family": "td",
+    "task": "tddft",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-06,
+      "max_cycle": 100,
+      "conv_tol_note": "the GPU TDDFT solver reports converged only for tolerances of 1e-6 or looser (CPU-GPU energy difference is 3.9e-9 Eh at every tolerance); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-benzene-dfmp2",
+    "system": "benzene",
+    "group": "extension",
+    "family": "correlation",
+    "task": "dfmp2",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-svp-ri",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "with_t2": false
+    }
+  },
+  {
+    "id": "ext-benzene-hf-hessian",
+    "system": "benzene",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-benzene-optimization",
+    "system": "benzene",
+    "group": "extension",
+    "family": "optimization",
+    "task": "optimization",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient",
+        "coordinates"
+      ],
+      "maxsteps": 50,
+      "convergence_grms": 0.0001,
+      "convergence_gmax": 0.0003
+    }
+  },
+  {
+    "id": "ext-benzene-pbe-hessian",
+    "system": "benzene",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-benzene-polarizability",
+    "system": "benzene",
+    "group": "extension",
+    "family": "properties",
+    "task": "polarizability",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "polarizability"
+      ],
+      "gauge": "static",
+      "conv_tol_cpscf": 1e-10,
+      "df_note": "CPU PySCF raises NotImplementedError for polarizability/NMR on density-fitted references, so CPU and GPU both use exact integrals (registry amended 2026-10-19 before the campaign freeze)"
+    }
+  },
+  {
+    "id": "ext-benzene-shielding",
+    "system": "benzene",
+    "group": "extension",
+    "family": "properties",
+    "task": "shielding",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "shielding"
+      ],
+      "gauge": "GIAO",
+      "conv_tol_cpscf": 1e-10,
+      "df_note": "CPU PySCF raises NotImplementedError for polarizability/NMR on density-fitted references, so CPU and GPU both use exact integrals (registry amended 2026-10-19 before the campaign freeze)"
+    }
+  },
+  {
+    "id": "ext-benzene-wb97mv",
+    "system": "benzene",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_MGGA_XC_WB97M_V",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "nlc_grid_level": 3,
+      "nlc": "VV10"
+    }
+  },
+  {
+    "id": "ext-benzene-wb97x-tda",
+    "system": "benzene",
+    "group": "extension",
+    "family": "td",
+    "task": "tda",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-07,
+      "max_cycle": 100,
+      "conv_tol_note": "1e-9 residual is unreachable for the PySCF TDA solver (not converged at 500 iterations; identical energies to 6 digits at 1e-7); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-benzene-wb97x-tddft",
+    "system": "benzene",
+    "group": "extension",
+    "family": "td",
+    "task": "tddft",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/benzene.xyz",
+    "geometry_sha256": "5598eb35e0a68954644aa4e21717f2114d0ff9a26fbaede604b620bb99d17bf9",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-06,
+      "max_cycle": 100,
+      "conv_tol_note": "the GPU TDDFT solver reports converged only for tolerances of 1e-6 or looser (CPU-GPU energy difference is 3.9e-9 Eh at every tolerance); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-ch3i-pbe-ecp",
+    "system": "ch3i",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/ch3i.xyz",
+    "geometry_sha256": "b61c46b3006907a45da9ceb55e03df61e63ba2f20ef4a3d5beb3f1393ae6a3a3",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "ecp": "def2-svp"
+    }
+  },
+  {
+    "id": "ext-formaldehyde-b3lyp-tda",
+    "system": "formaldehyde",
+    "group": "extension",
+    "family": "td",
+    "task": "tda",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/formaldehyde.xyz",
+    "geometry_sha256": "ccf6be1aab626e2e336ba3e8979204e95b837aa1d450dd8dff6eec6f33f1a0ac",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-07,
+      "max_cycle": 100,
+      "conv_tol_note": "1e-9 residual is unreachable for the PySCF TDA solver (not converged at 500 iterations; identical energies to 6 digits at 1e-7); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-formaldehyde-b3lyp-tddft",
+    "system": "formaldehyde",
+    "group": "extension",
+    "family": "td",
+    "task": "tddft",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/formaldehyde.xyz",
+    "geometry_sha256": "ccf6be1aab626e2e336ba3e8979204e95b837aa1d450dd8dff6eec6f33f1a0ac",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-06,
+      "max_cycle": 100,
+      "conv_tol_note": "the GPU TDDFT solver reports converged only for tolerances of 1e-6 or looser (CPU-GPU energy difference is 3.9e-9 Eh at every tolerance); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-formaldehyde-ccsd",
+    "system": "formaldehyde",
+    "group": "extension",
+    "family": "correlation",
+    "task": "ccsd",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/formaldehyde.xyz",
+    "geometry_sha256": "ccf6be1aab626e2e336ba3e8979204e95b837aa1d450dd8dff6eec6f33f1a0ac",
+    "charge": 0,
+    "spin": 0,
+    "basis": "cc-pvdz",
+    "auxbasis": null,
+    "xc": "HF",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "conv_tol": 1e-10,
+      "conv_tol_normt": 1e-08,
+      "max_cycle": 100
+    }
+  },
+  {
+    "id": "ext-formaldehyde-optimization",
+    "system": "formaldehyde",
+    "group": "extension",
+    "family": "optimization",
+    "task": "optimization",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/formaldehyde.xyz",
+    "geometry_sha256": "ccf6be1aab626e2e336ba3e8979204e95b837aa1d450dd8dff6eec6f33f1a0ac",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient",
+        "coordinates"
+      ],
+      "maxsteps": 50,
+      "convergence_grms": 0.0001,
+      "convergence_gmax": 0.0003
+    }
+  },
+  {
+    "id": "ext-formaldehyde-wb97x-tda",
+    "system": "formaldehyde",
+    "group": "extension",
+    "family": "td",
+    "task": "tda",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/formaldehyde.xyz",
+    "geometry_sha256": "ccf6be1aab626e2e336ba3e8979204e95b837aa1d450dd8dff6eec6f33f1a0ac",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-07,
+      "max_cycle": 100,
+      "conv_tol_note": "1e-9 residual is unreachable for the PySCF TDA solver (not converged at 500 iterations; identical energies to 6 digits at 1e-7); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-formaldehyde-wb97x-tddft",
+    "system": "formaldehyde",
+    "group": "extension",
+    "family": "td",
+    "task": "tddft",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/formaldehyde.xyz",
+    "geometry_sha256": "ccf6be1aab626e2e336ba3e8979204e95b837aa1d450dd8dff6eec6f33f1a0ac",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-06,
+      "max_cycle": 100,
+      "conv_tol_note": "the GPU TDDFT solver reports converged only for tolerances of 1e-6 or looser (CPU-GPU energy difference is 3.9e-9 Eh at every tolerance); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-h2o-b3lyp-d3bj",
+    "system": "h2o",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "dispersion": "d3bj"
+    }
+  },
+  {
+    "id": "ext-h2o-b3lyp-d4",
+    "system": "h2o",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "dispersion": "d4"
+    }
+  },
+  {
+    "id": "ext-h2o-b3lyp-hessian",
+    "system": "h2o",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-h2o-b3lyp-iefpcm",
+    "system": "h2o",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "PCM",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-h2o-b3lyp-smd",
+    "system": "h2o",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "SMD",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-h2o-ccsd",
+    "system": "h2o",
+    "group": "extension",
+    "family": "correlation",
+    "task": "ccsd",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "cc-pvdz",
+    "auxbasis": null,
+    "xc": "HF",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "conv_tol": 1e-10,
+      "conv_tol_normt": 1e-08,
+      "max_cycle": 100
+    }
+  },
+  {
+    "id": "ext-h2o-dfmp2",
+    "system": "h2o",
+    "group": "extension",
+    "family": "correlation",
+    "task": "dfmp2",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-svp-ri",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "with_t2": false
+    }
+  },
+  {
+    "id": "ext-h2o-hf-hessian",
+    "system": "h2o",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-h2o-optimization",
+    "system": "h2o",
+    "group": "extension",
+    "family": "optimization",
+    "task": "optimization",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient",
+        "coordinates"
+      ],
+      "maxsteps": 50,
+      "convergence_grms": 0.0001,
+      "convergence_gmax": 0.0003
+    }
+  },
+  {
+    "id": "ext-h2o-pbe-hessian",
+    "system": "h2o",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-h2o-polarizability",
+    "system": "h2o",
+    "group": "extension",
+    "family": "properties",
+    "task": "polarizability",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "polarizability"
+      ],
+      "gauge": "static",
+      "conv_tol_cpscf": 1e-10,
+      "df_note": "CPU PySCF raises NotImplementedError for polarizability/NMR on density-fitted references, so CPU and GPU both use exact integrals (registry amended 2026-10-19 before the campaign freeze)"
+    }
+  },
+  {
+    "id": "ext-h2o-shielding",
+    "system": "h2o",
+    "group": "extension",
+    "family": "properties",
+    "task": "shielding",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "shielding"
+      ],
+      "gauge": "GIAO",
+      "conv_tol_cpscf": 1e-10,
+      "df_note": "CPU PySCF raises NotImplementedError for polarizability/NMR on density-fitted references, so CPU and GPU both use exact integrals (registry amended 2026-10-19 before the campaign freeze)"
+    }
+  },
+  {
+    "id": "ext-h2o-wb97mv",
+    "system": "h2o",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/h2o.xyz",
+    "geometry_sha256": "26041fba31349d9aa05613a1c9bf5637761a7f6bb00a6d95dddc6623fd51690a",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_MGGA_XC_WB97M_V",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "nlc_grid_level": 3,
+      "nlc": "VV10"
+    }
+  },
+  {
+    "id": "ext-i2-pbe-ecp",
+    "system": "i2",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/i2.xyz",
+    "geometry_sha256": "1ee7c7fdb8d8dcbae62b268ab58dd878352b76b59f6801290aae46bec9c62415",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "ecp": "def2-svp"
+    }
+  },
+  {
+    "id": "ext-inosine-b3lyp-iefpcm",
+    "system": "inosine",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "PCM",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-inosine-b3lyp-smd",
+    "system": "inosine",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "SMD",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-inosine-b3lyp-tda",
+    "system": "inosine",
+    "group": "extension",
+    "family": "td",
+    "task": "tda",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-07,
+      "max_cycle": 100,
+      "conv_tol_note": "1e-9 residual is unreachable for the PySCF TDA solver (not converged at 500 iterations; identical energies to 6 digits at 1e-7); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-inosine-b3lyp-tddft",
+    "system": "inosine",
+    "group": "extension",
+    "family": "td",
+    "task": "tddft",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-06,
+      "max_cycle": 100,
+      "conv_tol_note": "the GPU TDDFT solver reports converged only for tolerances of 1e-6 or looser (CPU-GPU energy difference is 3.9e-9 Eh at every tolerance); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-inosine-wb97x-tda",
+    "system": "inosine",
+    "group": "extension",
+    "family": "td",
+    "task": "tda",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-07,
+      "max_cycle": 100,
+      "conv_tol_note": "1e-9 residual is unreachable for the PySCF TDA solver (not converged at 500 iterations; identical energies to 6 digits at 1e-7); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-inosine-wb97x-tddft",
+    "system": "inosine",
+    "group": "extension",
+    "family": "td",
+    "task": "tddft",
+    "geometry": "benchmarks/molecules/organic/031_Inosine.xyz",
+    "geometry_sha256": "1ebd04fe4944c2634b5aca041c777bd64cc1083265598b3ce3aa7dfee23e3b99",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "excitation_energy",
+        "oscillator_strength"
+      ],
+      "nstates": 5,
+      "conv_tol": 1e-06,
+      "max_cycle": 100,
+      "conv_tol_note": "the GPU TDDFT solver reports converged only for tolerances of 1e-6 or looser (CPU-GPU energy difference is 3.9e-9 Eh at every tolerance); registry amended 2026-10-19 before the campaign freeze, applied to CPU and GPU alike"
+    }
+  },
+  {
+    "id": "ext-no-dfump2",
+    "system": "no",
+    "group": "extension",
+    "family": "correlation",
+    "task": "dfump2",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/no.xyz",
+    "geometry_sha256": "da5e68f22dfc9e29f1634be342041b6620f348c9df2e0229e58ab266b5f5a0ec",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-svp-ri",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "with_t2": false
+    }
+  },
+  {
+    "id": "ext-oh-dfump2",
+    "system": "oh",
+    "group": "extension",
+    "family": "correlation",
+    "task": "dfump2",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/oh.xyz",
+    "geometry_sha256": "e698a94399e4b85fe3968b12e5b2f110374ad6901f134e956a2d14685c132a70",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-svp-ri",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "with_t2": false
+    }
+  },
+  {
+    "id": "ext-tamoxifen-b3lyp-d3bj",
+    "system": "tamoxifen",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "dispersion": "d3bj"
+    }
+  },
+  {
+    "id": "ext-tamoxifen-b3lyp-d4",
+    "system": "tamoxifen",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "dispersion": "d4"
+    }
+  },
+  {
+    "id": "ext-tamoxifen-b3lyp-iefpcm",
+    "system": "tamoxifen",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "PCM",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-tamoxifen-b3lyp-smd",
+    "system": "tamoxifen",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "SMD",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-tamoxifen-wb97mv",
+    "system": "tamoxifen",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/057_Tamoxifen.xyz",
+    "geometry_sha256": "f272e89c62e98e94a4a20ce041f02f1426d99f724f59e2a1a45b9ec95cda8cfc",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_MGGA_XC_WB97M_V",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "nlc_grid_level": 3,
+      "nlc": "VV10"
+    }
+  },
+  {
+    "id": "ext-vitamin_c-b3lyp-hessian",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-vitamin_c-b3lyp-iefpcm",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "PCM",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-vitamin_c-b3lyp-smd",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "solvent",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "solvent": {
+        "model": "SMD",
+        "method": "IEF-PCM",
+        "eps": 78.3553,
+        "solvent": "water",
+        "lebedev_order": 29
+      }
+    }
+  },
+  {
+    "id": "ext-vitamin_c-dfmp2",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "correlation",
+    "task": "dfmp2",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-svp-ri",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "with_t2": false
+    }
+  },
+  {
+    "id": "ext-vitamin_c-optimization",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "optimization",
+    "task": "optimization",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient",
+        "coordinates"
+      ],
+      "maxsteps": 50,
+      "convergence_grms": 0.0001,
+      "convergence_gmax": 0.0003
+    }
+  },
+  {
+    "id": "ext-vitamin_c-pbe-hessian",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "hessian",
+    "task": "hessian",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "hessian",
+        "frequencies"
+      ],
+      "auxbasis_response": 2,
+      "conv_tol_cpscf": 1e-10
+    }
+  },
+  {
+    "id": "ext-vitamin_c-polarizability",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "properties",
+    "task": "polarizability",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "polarizability"
+      ],
+      "gauge": "static",
+      "conv_tol_cpscf": 1e-10,
+      "df_note": "CPU PySCF raises NotImplementedError for polarizability/NMR on density-fitted references, so CPU and GPU both use exact integrals (registry amended 2026-10-19 before the campaign freeze)"
+    }
+  },
+  {
+    "id": "ext-vitamin_c-shielding",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "properties",
+    "task": "shielding",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "0.20*HF + 0.08*LDA_X + 0.72*GGA_X_B88, 0.81*GGA_C_LYP + 0.19*LDA_C_VWN",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "shielding"
+      ],
+      "gauge": "GIAO",
+      "conv_tol_cpscf": 1e-10,
+      "df_note": "CPU PySCF raises NotImplementedError for polarizability/NMR on density-fitted references, so CPU and GPU both use exact integrals (registry amended 2026-10-19 before the campaign freeze)"
+    }
+  },
+  {
+    "id": "ext-vitamin_c-wb97mv",
+    "system": "vitamin_c",
+    "group": "extension",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_MGGA_XC_WB97M_V",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ],
+      "nlc_grid_level": 3,
+      "nlc": "VV10"
+    }
+  },
+  {
+    "id": "ext-water_dimer-dfmp2",
+    "system": "water_dimer",
+    "group": "extension",
+    "family": "correlation",
+    "task": "dfmp2",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/water_dimer.xyz",
+    "geometry_sha256": "b5cb31b620527841ef91ea3ec76cbce59b0ec72b2af6a0a56931d9b927bbe238",
+    "charge": 0,
+    "spin": 0,
+    "basis": "def2-svp",
+    "auxbasis": "def2-svp-ri",
+    "xc": "HF",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "correlation_energy"
+      ],
+      "frozen": 0,
+      "with_t2": false
+    }
+  },
+  {
+    "id": "pbc-mgo-gamma",
+    "system": "mgo",
+    "group": "periodic",
+    "family": "pbc",
+    "task": "pbc_energy",
+    "charge": 0,
+    "spin": 0,
+    "basis": "gth-dzvp",
+    "auxbasis": null,
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy"
+      ],
+      "integral_algorithm": "FFTDF",
+      "df_note": "FFTDF on both CPU and GPU: agrees to 5.6e-10 Eh (Si gamma); Gaussian density fitting with each library default auxiliary basis differs by 1.8e-4 Eh; registry amended 2026-10-19 before the campaign freeze"
+    },
+    "cell": {
+      "a": [
+        [
+          0,
+          2.106,
+          2.106
+        ],
+        [
+          2.106,
+          0,
+          2.106
+        ],
+        [
+          2.106,
+          2.106,
+          0
+        ]
+      ],
+      "atom": [
+        [
+          "Mg",
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          "O",
+          [
+            2.106,
+            0,
+            0
+          ]
+        ]
+      ],
+      "basis": "gth-dzvp",
+      "pseudo": "gth-pbe",
+      "kmesh": [
+        1,
+        1,
+        1
+      ],
+      "mesh": [
+        31,
+        31,
+        31
+      ],
+      "precision": 1e-10,
+      "unit": "Angstrom"
+    }
+  },
+  {
+    "id": "pbc-si-gamma",
+    "system": "si",
+    "group": "periodic",
+    "family": "pbc",
+    "task": "pbc_energy",
+    "charge": 0,
+    "spin": 0,
+    "basis": "gth-dzvp",
+    "auxbasis": null,
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy"
+      ],
+      "integral_algorithm": "FFTDF",
+      "df_note": "FFTDF on both CPU and GPU: agrees to 5.6e-10 Eh (Si gamma); Gaussian density fitting with each library default auxiliary basis differs by 1.8e-4 Eh; registry amended 2026-10-19 before the campaign freeze"
+    },
+    "cell": {
+      "a": [
+        [
+          0,
+          2.7155,
+          2.7155
+        ],
+        [
+          2.7155,
+          0,
+          2.7155
+        ],
+        [
+          2.7155,
+          2.7155,
+          0
+        ]
+      ],
+      "atom": [
+        [
+          "Si",
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          "Si",
+          [
+            1.35775,
+            1.35775,
+            1.35775
+          ]
+        ]
+      ],
+      "basis": "gth-dzvp",
+      "pseudo": "gth-pbe",
+      "kmesh": [
+        1,
+        1,
+        1
+      ],
+      "mesh": [
+        31,
+        31,
+        31
+      ],
+      "precision": 1e-10,
+      "unit": "Angstrom"
+    }
+  },
+  {
+    "id": "pbc-si-k222",
+    "system": "si",
+    "group": "periodic",
+    "family": "pbc",
+    "task": "pbc_energy",
+    "charge": 0,
+    "spin": 0,
+    "basis": "gth-dzvp",
+    "auxbasis": null,
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy"
+      ],
+      "integral_algorithm": "FFTDF",
+      "df_note": "FFTDF on both CPU and GPU: agrees to 5.6e-10 Eh (Si gamma); Gaussian density fitting with each library default auxiliary basis differs by 1.8e-4 Eh; registry amended 2026-10-19 before the campaign freeze"
+    },
+    "cell": {
+      "a": [
+        [
+          0,
+          2.7155,
+          2.7155
+        ],
+        [
+          2.7155,
+          0,
+          2.7155
+        ],
+        [
+          2.7155,
+          2.7155,
+          0
+        ]
+      ],
+      "atom": [
+        [
+          "Si",
+          [
+            0,
+            0,
+            0
+          ]
+        ],
+        [
+          "Si",
+          [
+            1.35775,
+            1.35775,
+            1.35775
+          ]
+        ]
+      ],
+      "basis": "gth-dzvp",
+      "pseudo": "gth-pbe",
+      "kmesh": [
+        2,
+        2,
+        2
+      ],
+      "mesh": [
+        31,
+        31,
+        31
+      ],
+      "precision": 1e-10,
+      "unit": "Angstrom"
+    }
+  },
+  {
+    "id": "pbc-si-supercell-gamma",
+    "system": "si_supercell",
+    "group": "periodic",
+    "family": "pbc",
+    "task": "pbc_energy",
+    "charge": 0,
+    "spin": 0,
+    "basis": "gth-dzvp",
+    "auxbasis": null,
+    "xc": "GGA_X_PBE,GGA_C_PBE",
+    "df": false,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy"
+      ],
+      "integral_algorithm": "FFTDF",
+      "df_note": "FFTDF on both CPU and GPU: agrees to 5.6e-10 Eh (Si gamma); Gaussian density fitting with each library default auxiliary basis differs by 1.8e-4 Eh; registry amended 2026-10-19 before the campaign freeze"
+    },
+    "cell": {
+      "a": [
+        [
+          0,
+          5.431,
+          5.431
+        ],
+        [
+          5.431,
+          0,
+          5.431
+        ],
+        [
+          5.431,
+          5.431,
+          0
+        ]
+      ],
+      "atom": [
+        [
+          "Si",
+          [
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        [
+          "Si",
+          [
+            1.35775,
+            1.35775,
+            1.35775
+          ]
+        ],
+        [
+          "Si",
+          [
+            2.7155,
+            2.7155,
+            0.0
+          ]
+        ],
+        [
+          "Si",
+          [
+            4.07325,
+            4.07325,
+            1.35775
+          ]
+        ],
+        [
+          "Si",
+          [
+            2.7155,
+            0.0,
+            2.7155
+          ]
+        ],
+        [
+          "Si",
+          [
+            4.07325,
+            1.35775,
+            4.07325
+          ]
+        ],
+        [
+          "Si",
+          [
+            5.431,
+            2.7155,
+            2.7155
+          ]
+        ],
+        [
+          "Si",
+          [
+            6.78875,
+            4.07325,
+            4.07325
+          ]
+        ],
+        [
+          "Si",
+          [
+            0.0,
+            2.7155,
+            2.7155
+          ]
+        ],
+        [
+          "Si",
+          [
+            1.35775,
+            4.07325,
+            4.07325
+          ]
+        ],
+        [
+          "Si",
+          [
+            2.7155,
+            5.431,
+            2.7155
+          ]
+        ],
+        [
+          "Si",
+          [
+            4.07325,
+            6.78875,
+            4.07325
+          ]
+        ],
+        [
+          "Si",
+          [
+            2.7155,
+            2.7155,
+            5.431
+          ]
+        ],
+        [
+          "Si",
+          [
+            4.07325,
+            4.07325,
+            6.78875
+          ]
+        ],
+        [
+          "Si",
+          [
+            5.431,
+            5.431,
+            5.431
+          ]
+        ],
+        [
+          "Si",
+          [
+            6.78875,
+            6.78875,
+            6.78875
+          ]
+        ]
+      ],
+      "basis": "gth-dzvp",
+      "pseudo": "gth-pbe",
+      "kmesh": [
+        1,
+        1,
+        1
+      ],
+      "mesh": [
+        62,
+        62,
+        62
+      ],
+      "precision": 1e-10,
+      "unit": "Angstrom"
+    }
+  },
+  {
+    "id": "probe-oh-wb97x-svp",
+    "system": "oh",
+    "group": "probe",
+    "family": "scf",
+    "task": "energy_gradient",
+    "geometry": "benchmarks/single_gpu/qm_suite/fixtures/oh.xyz",
+    "geometry_sha256": "e698a94399e4b85fe3968b12e5b2f110374ad6901f134e956a2d14685c132a70",
+    "charge": 0,
+    "spin": 1,
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "xc": "HYB_GGA_XC_WB97X",
+    "df": true,
+    "settings": {
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "max_cycle": 100,
+      "grid_level": 3,
+      "prune": "nwchem",
+      "small_rho_cutoff": 0,
+      "auxbasis_response": true,
+      "grid_response": true,
+      "dtype": "float64",
+      "unit": "Angstrom",
+      "init_guess": "minao",
+      "cpu_threads": 4,
+      "storage": "resident",
+      "build_budget_bytes": 4294967296
+    },
+    "task_options": {
+      "observables": [
+        "energy",
+        "gradient"
+      ]
+    }
+  }
+]

@@ -1,0 +1,347 @@
+{
+  "timestamp_utc": "2026-10-18T01:19:20.829597+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "vitamin_svp_b3lyp",
+  "mode": "gpu",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/020_Vitamin_C.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "driver_sha256": "8dd6028c6368d90ee0cf6e58e7c33ddf06db5885884575440fccfd4b9eb75ef7",
+  "geometry_sha256": "aa5b176f9b29d23f1d6afb33f05d94429f72dc7df82b85cbac48757894e290ff",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "7e687f31dab4575256d059f306b20396030ca0d730884c789ba19f4f3e77ad8b",
+    "gpu4pyscf/df/grad/uhf.py": "69d3ac219757610aebc27ba68ff25b45ef2a778c8d120a8b6a2c379863ce7b7e",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "note": "Level3 NWChem-pruned matched grid, not a grid-convergence study. FP64, full auxiliary/grid response. GPU-resident CDERI forced; experimental cache disabled. Initial single cold control establishes scaling, not repeated speedup. Profiles synchronize inclusive nested scopes; allocation run separate. CPU references are scientific oracles, not tuned CPU timing baselines.",
+  "cpu_reference_sha256": "dd23a6a7e0dee6fd992a3b440b327c30de5253cf542f63a2e0c9f1a72fd86a31",
+  "result": {
+    "timestamp_utc": "2026-10-18T01:19:25.566800+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "B3LYP",
+    "settings": {
+      "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/020_Vitamin_C.xyz",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-10,
+      "conv_tol_grad": 1e-07,
+      "grid_level": 3,
+      "grid_pruning": "nwchem",
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 4,
+      "max_cycle": 100
+    },
+    "converged": true,
+    "energy_hartree": -684.1881402200477,
+    "scf_seconds": 3.2242098404094577,
+    "iterations": 18,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 0.6514386525377631,
+        "energy_hartree": -683.7038281098546
+      },
+      {
+        "cycle": 1,
+        "seconds": 0.14966960903257132,
+        "energy_hartree": -681.8354034904944
+      },
+      {
+        "cycle": 2,
+        "seconds": 0.1507730707526207,
+        "energy_hartree": -684.107225424825
+      },
+      {
+        "cycle": 3,
+        "seconds": 0.1516624204814434,
+        "energy_hartree": -684.1746367145804
+      },
+      {
+        "cycle": 4,
+        "seconds": 0.15094220824539661,
+        "energy_hartree": -684.1867945016834
+      },
+      {
+        "cycle": 5,
+        "seconds": 0.15136177837848663,
+        "energy_hartree": -684.1880402957397
+      },
+      {
+        "cycle": 6,
+        "seconds": 0.1528984270989895,
+        "energy_hartree": -684.1881298232481
+      },
+      {
+        "cycle": 7,
+        "seconds": 0.15249820053577423,
+        "energy_hartree": -684.1881395145376
+      },
+      {
+        "cycle": 8,
+        "seconds": 0.15130107384175062,
+        "energy_hartree": -684.1881401340218
+      },
+      {
+        "cycle": 9,
+        "seconds": 0.15219189506024122,
+        "energy_hartree": -684.18814021305
+      },
+      {
+        "cycle": 10,
+        "seconds": 0.15269989799708128,
+        "energy_hartree": -684.1881402192
+      },
+      {
+        "cycle": 11,
+        "seconds": 0.1509777596220374,
+        "energy_hartree": -684.1881402200199
+      },
+      {
+        "cycle": 12,
+        "seconds": 0.15078391786664724,
+        "energy_hartree": -684.1881402200388
+      },
+      {
+        "cycle": 13,
+        "seconds": 0.1520297024399042,
+        "energy_hartree": -684.1881402200465
+      },
+      {
+        "cycle": 14,
+        "seconds": 0.1513168979436159,
+        "energy_hartree": -684.1881402200477
+      },
+      {
+        "cycle": 15,
+        "seconds": 0.14999191369861364,
+        "energy_hartree": -684.1881402200484
+      },
+      {
+        "cycle": 16,
+        "seconds": 0.15112907346338034,
+        "energy_hartree": -684.1881402200474
+      },
+      {
+        "cycle": 17,
+        "seconds": 0.15046541951596737,
+        "energy_hartree": -684.1881402200477
+      }
+    ],
+    "df_build_calls_seconds": [
+      0.21479581482708454
+    ],
+    "gradient_seconds": 1.4208418475463986,
+    "gradient_hartree_per_bohr": [
+      [
+        0.013272773200882382,
+        -0.016417229039245917,
+        0.047346210462454685
+      ],
+      [
+        0.010903276503663406,
+        -0.03167234308429823,
+        -0.05077119731788926
+      ],
+      [
+        -0.07370707390439257,
+        -0.02426210391282324,
+        -0.024959221861326153
+      ],
+      [
+        -0.010693039195807552,
+        -0.03299140186322713,
+        -0.009555516758978477
+      ],
+      [
+        0.04698904042783081,
+        -0.0020371631730409234,
+        0.004820125662525987
+      ],
+      [
+        -0.0012778110954891064,
+        0.017086192534863986,
+        -0.017666479812724845
+      ],
+      [
+        -0.006862302003621021,
+        0.05247954052791215,
+        0.015088436376123227
+      ],
+      [
+        -0.0030937760850707208,
+        -0.003714052368609,
+        0.007733620352287085
+      ],
+      [
+        -0.060209350656206695,
+        -0.00021255935984143548,
+        -0.0163948701941925
+      ],
+      [
+        0.000784066262821792,
+        -0.0006667697680318163,
+        -0.007786558937131316
+      ],
+      [
+        0.08249964052094683,
+        0.02475072422526381,
+        0.04241348019748603
+      ],
+      [
+        0.002613879490885651,
+        0.032362861141930155,
+        -0.013056978240011397
+      ],
+      [
+        -0.0014401045584576389,
+        -0.0181548770503146,
+        0.01758089294596532
+      ],
+      [
+        -0.0006287916801328564,
+        0.014825423840164387,
+        0.033160681286590776
+      ],
+      [
+        0.0119783809548335,
+        -0.007215581231099,
+        0.00776476581544
+      ],
+      [
+        -0.0007872993443052145,
+        0.014543691166667871,
+        -0.021656645910960837
+      ],
+      [
+        -0.0047485164140805836,
+        -0.013493294659896904,
+        -0.016049062004522163
+      ],
+      [
+        0.007203671073478635,
+        -0.001589839664537518,
+        0.004859974969113612
+      ],
+      [
+        -0.016705828709563164,
+        -0.004492634746021906,
+        -0.00023654511075577034
+      ],
+      [
+        0.003909165212134358,
+        0.000871416483908094,
+        -0.0026351119196583728
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 4.1154635255225e-11,
+    "gradient_max_error": 2.3975214702431913e-08,
+    "passed": true
+  }
+}

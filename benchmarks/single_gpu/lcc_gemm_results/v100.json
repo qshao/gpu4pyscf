@@ -1,0 +1,67 @@
+{
+  "gpu": "v100",
+  "device": "Tesla V100-SXM2-32GB",
+  "nao": 1123,
+  "nocc": 226,
+  "naux": 5598,
+  "free_bytes": 33748090880,
+  "blocks": [
+    {
+      "nL": 128,
+      "transform_cutensor_s": 0.012605935335159302,
+      "transform_gemm_s": 0.012539386749267578,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.011184200644493103,
+      "gram_syrk_s": 0.01065950095653534,
+      "transform_cutensor_tflops": 5.788057568445233,
+      "transform_gemm_tflops": 5.818775741027511,
+      "gram_cutensor_tflops": 6.523834983229319,
+      "gram_syrk_tflops": 6.844962041048071,
+      "K_per_cycle_cutensor_s": 1.0404467282351106,
+      "K_per_cycle_gemm_s": 1.0145888545084745
+    },
+    {
+      "nL": 256,
+      "transform_cutensor_s": 0.025311291217803955,
+      "transform_gemm_s": 0.024926677346229553,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.02468717098236084,
+      "gram_syrk_s": 0.020826831459999084,
+      "transform_cutensor_tflops": 5.765322582411539,
+      "transform_gemm_tflops": 5.854280408939992,
+      "gram_cutensor_tflops": 5.911076605426617,
+      "gram_syrk_tflops": 7.006719151123645,
+      "K_per_cycle_cutensor_s": 1.093325747642666,
+      "K_per_cycle_gemm_s": 1.0005005558487028
+    },
+    {
+      "nL": 512,
+      "transform_cutensor_s": 0.05070511996746063,
+      "transform_gemm_s": 0.050240159034729004,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.04996533691883087,
+      "gram_syrk_s": 0.05106273293495178,
+      "transform_cutensor_tflops": 5.7559378201509945,
+      "transform_gemm_tflops": 5.809207679741857,
+      "gram_cutensor_tflops": 5.841159805849441,
+      "gram_syrk_tflops": 5.71562666001037,
+      "K_per_cycle_cutensor_s": 1.1006898782216012,
+      "K_per_cycle_gemm_s": 1.107604666496627
+    },
+    {
+      "nL": 1024,
+      "transform_cutensor_s": 0.11979988217353821,
+      "transform_gemm_s": 0.11978384852409363,
+      "transform_agree": 0.0,
+      "gram_cutensor_s": 0.12619200348854065,
+      "gram_syrk_s": 0.11314454674720764,
+      "transform_cutensor_tflops": 4.872384052485588,
+      "transform_gemm_tflops": 4.873036244737043,
+      "gram_cutensor_tflops": 4.625578636169336,
+      "gram_syrk_tflops": 5.158985140451815,
+      "K_per_cycle_cutensor_s": 1.34478767181281,
+      "K_per_cycle_gemm_s": 1.2733722233679146
+    }
+  ],
+  "dgemm_ceiling_tflops": 6.7734505379085705
+}

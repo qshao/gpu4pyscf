@@ -1,0 +1,212 @@
+{
+  "timestamp_utc": "2026-10-18T11:43:24.548651+00:00",
+  "backend": "gpu",
+  "machine": "aarch64",
+  "pyscf": "2.13.1",
+  "numpy": "2.4.6",
+  "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+  "source_dirty": true,
+  "source_hashes": {
+    "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+    "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+    "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+    "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+  },
+  "cpu_libxc": "7.0.0",
+  "gpu4pyscf_version": "1.8.1",
+  "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+  "device_name": "NVIDIA GB10",
+  "cuda_driver_version": 13000,
+  "cuda_runtime_version": 13020,
+  "native_libraries": {
+    "cupy_helper": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+      "size_bytes": 3539752,
+      "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+    },
+    "libxc": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+      "size_bytes": 46562328,
+      "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+    },
+    "gdft": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+      "size_bytes": 14031680,
+      "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+    },
+    "vhf_rys": {
+      "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+      "size_bytes": 15850504,
+      "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+    }
+  },
+  "cupy": "14.1.1",
+  "compute_capability": "121",
+  "status": "passed",
+  "case": "valinomycin_svp_b3lyp",
+  "benchmark_sha256": "f52d801918ef8833686c84609bbd50bcd4c13b89673da17a46f5f2c15fd26d54",
+  "cpu_reference_sha256": null,
+  "configuration_sha256": "170c47c1a65b5c474cc89aae4ad16caa1179265073da742864b346bf05bb1358",
+  "shared_helper_sha256": "62261c35ccfed578d1480a4f9a6be502c5d6f9a9a6b645fbeac21396ad2885ff",
+  "comparison_helper_sha256": "d060341c2973e58515c17e9e10874f324abeff84a374250d5b6a7e6a2810d0f5",
+  "candidate_sha256": "b4b733ee9a255c89466ed409eb5769bbae0f00acc0b01f76d6837730f6f57597",
+  "algorithm_source_hashes": {
+    "gpu4pyscf/df/df.py": "f8b869c0b5e7f90cfb464acf967821fc5e768bd22d2595e62e52a3564fe9d722",
+    "gpu4pyscf/df/df_jk.py": "f8e9906f7f2fc86de771a57b890e90ffceb7a839a0b38560dd57a67ed964e6c0",
+    "gpu4pyscf/df/grad/rhf.py": "e5cc64cf60706a8ae89fec55b2b2906e15b21dbfc438c02069e11b59e6d9c4a5",
+    "gpu4pyscf/df/grad/uhf.py": "bac79c8f90d6588ff1e0a2664301d13e279a0804fcaafc7b1797792f6514ec99",
+    "gpu4pyscf/df/int3c2e_bdiv.py": "88b6a739770a1929b7d9455e6bca010760faebbbacb55e700163ed66118fa2d6",
+    "gpu4pyscf/dft/numint.py": "2b59f2ae2b69f8437448f64cf29043f07c4b5f6756d287dc0a34724877cce642",
+    "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52"
+  },
+  "geometry_sha256": "9fa5218fe833956502183866a15bcf307b7a4da44c5b6668e0a82bac584baff5",
+  "settings": {
+    "atom": "/home/qshao/gpu4pyscf/benchmarks/molecules/organic/168_Valinomycin.xyz",
+    "unit": "Angstrom",
+    "basis": "def2-svp",
+    "auxbasis": "def2-universal-jkfit",
+    "conv_tol": 1e-10,
+    "conv_tol_grad": 1e-07,
+    "grid_level": 3,
+    "grid_pruning": "nwchem",
+    "small_rho_cutoff": 0.0,
+    "grid_response": true,
+    "auxbasis_response": true,
+    "cpu_threads": 4,
+    "max_cycle": 100
+  },
+  "transform_sha256": "29302eed62ba6f76a9d818c280543570e2b517b413152cd5f927b88c006fa4c2",
+  "oracle_sha256": "c52d55035ac984206b1e779eeeb904453f8747b17c3596fd16ac5763098a9cce",
+  "build_buffer_bytes": 4294967296,
+  "warmups": [
+    {
+      "variant": "baseline",
+      "seconds": 49.134156631305814,
+      "errors": [
+        0.0,
+        0.0
+      ],
+      "h2d_bytes": 31524357312,
+      "h2d_calls": 235
+    },
+    {
+      "variant": "strided",
+      "seconds": 44.42698324751109,
+      "errors": [
+        0.0,
+        4.052314039881821e-15
+      ],
+      "h2d_bytes": 31524357312,
+      "h2d_calls": 235
+    }
+  ],
+  "pairs": [
+    {
+      "baseline": {
+        "seconds": 49.036082757636905,
+        "errors": [
+          0.0,
+          3.1086244689504383e-15
+        ],
+        "h2d_bytes": 31524357312,
+        "h2d_calls": 235
+      },
+      "strided": {
+        "seconds": 44.425110349431634,
+        "errors": [
+          0.0,
+          3.74873743158588e-15
+        ],
+        "h2d_bytes": 31524357312,
+        "h2d_calls": 235
+      }
+    },
+    {
+      "strided": {
+        "seconds": 44.42294773366302,
+        "errors": [
+          0.0,
+          6.619704784327496e-15
+        ],
+        "h2d_bytes": 31524357312,
+        "h2d_calls": 235
+      },
+      "baseline": {
+        "seconds": 49.01745066791773,
+        "errors": [
+          0.0,
+          8.271161533457416e-15
+        ],
+        "h2d_bytes": 31524357312,
+        "h2d_calls": 235
+      }
+    },
+    {
+      "baseline": {
+        "seconds": 49.033203271217644,
+        "errors": [
+          0.0,
+          3.688022109926692e-15
+        ],
+        "h2d_bytes": 31524357312,
+        "h2d_calls": 235
+      },
+      "strided": {
+        "seconds": 44.42592919804156,
+        "errors": [
+          0.0,
+          7.591149930874508e-15
+        ],
+        "h2d_bytes": 31524357312,
+        "h2d_calls": 235
+      }
+    }
+  ],
+  "note": "Single molecular J/K, not converged SCF/forces. Build uses4GiB, then existing streaming-buffer setting is reduced to exactly two32-row sparse buffers. Both candidates use identical32-row blocks and storage. Three alternating pairs after two warmups, no allocation instrumentation. Full J/K checked against original GPU and selected NumPy contractions of same native GPU integrals; CPU is not an independent integral oracle. Cache zero; final memory counters are iteration-stage staging, explicitly reset after preserving build-stage peaks. No whole-SCF speed or total-RAM claim.",
+  "build_stats": {
+    "read_bytes": 0,
+    "write_bytes": 31524357312,
+    "h2d_bytes": 0,
+    "h2d_calls": 0,
+    "d2h_bytes": 31524357312,
+    "d2h_calls": 44,
+    "peak_host_buffer_bytes": 1238966400,
+    "peak_device_buffer_bytes": 3934435200,
+    "cache_hit_bytes": 0,
+    "cache_device_bytes": 0
+  },
+  "cderi_shape": [
+    7518,
+    524148
+  ],
+  "cderi_bytes": 31524357312,
+  "stream_buffer_bytes": 268363776,
+  "medians": {
+    "baseline": 49.033203271217644,
+    "strided": 44.425110349431634
+  },
+  "speedup": 1.1037272138558676,
+  "paired_ratios": [
+    1.1037920304966504,
+    1.103426340858805,
+    1.103706870207212
+  ],
+  "cpu_contraction_errors": [
+    1.1937117960769683e-12,
+    1.616484723854228e-13
+  ],
+  "stream_stats": {
+    "read_bytes": 283719215808,
+    "write_bytes": 31524357312,
+    "h2d_bytes": 252194858496,
+    "h2d_calls": 1880,
+    "d2h_bytes": 31524357312,
+    "d2h_calls": 44,
+    "peak_host_buffer_bytes": 268363776,
+    "peak_device_buffer_bytes": 268363776,
+    "cache_hit_bytes": 0,
+    "cache_device_bytes": 0
+  },
+  "scratch_clean": true
+}

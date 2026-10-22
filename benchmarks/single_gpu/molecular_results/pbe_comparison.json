@@ -1,0 +1,264 @@
+{
+  "cpu": {
+    "timestamp_utc": "2026-10-18T00:47:51.810430+00:00",
+    "backend": "cpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "method": "PBE",
+    "settings": {
+      "atom": "O 0 0 0; H 0.94 0 0; H -0.24 0 0.91",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-12,
+      "conv_tol_grad": 1e-09,
+      "grid_level": 1,
+      "grid_pruning": false,
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 2
+    },
+    "converged": true,
+    "energy_hartree": -76.27038646309565,
+    "scf_seconds": 0.20681465975940228,
+    "iterations": 11,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 0.06709547061473131,
+        "energy_hartree": -76.16145507051843
+      },
+      {
+        "cycle": 1,
+        "seconds": 0.009574919007718563,
+        "energy_hartree": -75.9548875921132
+      },
+      {
+        "cycle": 2,
+        "seconds": 0.013266725465655327,
+        "energy_hartree": -76.27017084660085
+      },
+      {
+        "cycle": 3,
+        "seconds": 0.013055524788796902,
+        "energy_hartree": -76.2703804398351
+      },
+      {
+        "cycle": 4,
+        "seconds": 0.013198725879192352,
+        "energy_hartree": -76.27038630935596
+      },
+      {
+        "cycle": 5,
+        "seconds": 0.01308717206120491,
+        "energy_hartree": -76.27038646275328
+      },
+      {
+        "cycle": 6,
+        "seconds": 0.013060981407761574,
+        "energy_hartree": -76.27038646309376
+      },
+      {
+        "cycle": 7,
+        "seconds": 0.012967427261173725,
+        "energy_hartree": -76.27038646309572
+      },
+      {
+        "cycle": 8,
+        "seconds": 0.01320173405110836,
+        "energy_hartree": -76.27038646309576
+      },
+      {
+        "cycle": 9,
+        "seconds": 0.013021156191825867,
+        "energy_hartree": -76.27038646309575
+      },
+      {
+        "cycle": 10,
+        "seconds": 0.013041012920439243,
+        "energy_hartree": -76.27038646309575
+      }
+    ],
+    "df_build_calls_seconds": [],
+    "gradient_seconds": 0.05018983408808708,
+    "gradient_hartree_per_bohr": [
+      [
+        0.028364685445567694,
+        -1.8027249853129829e-16,
+        0.0350532474667653
+      ],
+      [
+        -0.03521921538699235,
+        5.4804759592425144e-17,
+        -0.0018505957404024304
+      ],
+      [
+        0.006854529941417997,
+        1.213442715884802e-16,
+        -0.03320265172635439
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "gpu": {
+    "timestamp_utc": "2026-10-18T00:47:52.388679+00:00",
+    "backend": "gpu",
+    "machine": "aarch64",
+    "pyscf": "2.13.1",
+    "numpy": "2.4.6",
+    "source_revision": "9af748a71ca8f4881c604332c2f0cc1632e033ac",
+    "source_dirty": true,
+    "source_hashes": {
+      "benchmarks/single_gpu/molecular.py": "c24f093a127df7bcbcbc3cc6852b546479a60f55d30e59ca21abf7ba8f802ccf",
+      "benchmarks/single_gpu/test_molecular.py": "09ab0312d1fac683953ebd8638ce71da202d403066f5c173d748139f96217511",
+      "gpu4pyscf/lib/cutensor.py": "0ff0d0a0914886bc0357d4b71bc037025a444f664525c979b7af5cb9866a6c52",
+      "gpu4pyscf/lib/CMakeLists.txt": "e49cdfc340a92f6c73d4f14f9ca8a0776dac2bbb8aefa5652f541a33f4e1d96f",
+      "gpu4pyscf/lib/cmake/CudaArchitectures.cmake": "1b1ac19d076d802927ac68bc070396307288d70a4d176d4c4572b75cd3add880"
+    },
+    "cpu_libxc": "7.0.0",
+    "gpu4pyscf_version": "1.8.1",
+    "gpu4pyscf_source": "/home/qshao/gpu4pyscf/gpu4pyscf/__init__.py",
+    "device_name": "NVIDIA GB10",
+    "cuda_driver_version": 13000,
+    "cuda_runtime_version": 13020,
+    "native_libraries": {
+      "cupy_helper": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libcupy_helper.so",
+        "size_bytes": 3539752,
+        "sha256": "651f93796e96b7d8059c6772853685ac272485f36f267b37a91fe7bbeaab7332"
+      },
+      "libxc": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/deps/lib/libxc.so.15",
+        "size_bytes": 46562328,
+        "sha256": "4339707c359e3eec8706665dc287d48374770c7299e06964948e8b9116f01de7"
+      },
+      "gdft": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgdft.so",
+        "size_bytes": 14031680,
+        "sha256": "dccf27c97f0f864ffd5e8963ae62c0315d92fb1ea489f2a07d25a5daacde2c10"
+      },
+      "vhf_rys": {
+        "path": "/home/qshao/gpu4pyscf/gpu4pyscf/lib/libgvhf_rys.so",
+        "size_bytes": 15850504,
+        "sha256": "4af8e91b41512ce56b23a2f913a2fb1900bd28349c5d933a52928dbe4907efcc"
+      }
+    },
+    "cupy": "14.1.1",
+    "compute_capability": "121",
+    "method": "PBE",
+    "settings": {
+      "atom": "O 0 0 0; H 0.94 0 0; H -0.24 0 0.91",
+      "unit": "Angstrom",
+      "basis": "def2-svp",
+      "auxbasis": "def2-universal-jkfit",
+      "conv_tol": 1e-12,
+      "conv_tol_grad": 1e-09,
+      "grid_level": 1,
+      "grid_pruning": false,
+      "small_rho_cutoff": 0.0,
+      "grid_response": true,
+      "auxbasis_response": true,
+      "cpu_threads": 2
+    },
+    "converged": true,
+    "energy_hartree": -76.27038646309508,
+    "scf_seconds": 0.49206593818962574,
+    "iterations": 11,
+    "iteration_observations": [
+      {
+        "cycle": 0,
+        "seconds": 0.13870936073362827,
+        "energy_hartree": -76.16145507051793
+      },
+      {
+        "cycle": 1,
+        "seconds": 0.034641691483557224,
+        "energy_hartree": -75.95488759211322
+      },
+      {
+        "cycle": 2,
+        "seconds": 0.034333947114646435,
+        "energy_hartree": -76.27017084660022
+      },
+      {
+        "cycle": 3,
+        "seconds": 0.03340938314795494,
+        "energy_hartree": -76.27038043983453
+      },
+      {
+        "cycle": 4,
+        "seconds": 0.03668811544775963,
+        "energy_hartree": -76.27038630935536
+      },
+      {
+        "cycle": 5,
+        "seconds": 0.03756325598806143,
+        "energy_hartree": -76.27038646275261
+      },
+      {
+        "cycle": 6,
+        "seconds": 0.037477399222552776,
+        "energy_hartree": -76.27038646309317
+      },
+      {
+        "cycle": 7,
+        "seconds": 0.03669110778719187,
+        "energy_hartree": -76.27038646309506
+      },
+      {
+        "cycle": 8,
+        "seconds": 0.03391764126718044,
+        "energy_hartree": -76.27038646309514
+      },
+      {
+        "cycle": 9,
+        "seconds": 0.034093210473656654,
+        "energy_hartree": -76.27038646309514
+      },
+      {
+        "cycle": 10,
+        "seconds": 0.034484218806028366,
+        "energy_hartree": -76.27038646309508
+      }
+    ],
+    "df_build_calls_seconds": [
+      0.03716885484755039
+    ],
+    "gradient_seconds": 0.07180196978151798,
+    "gradient_hartree_per_bohr": [
+      [
+        0.0283646854930113,
+        7.022986444720058e-17,
+        0.03505324761621953
+      ],
+      [
+        -0.035219215347904065,
+        2.338020364980883e-16,
+        -0.0018505958214102142
+      ],
+      [
+        0.006854529854889324,
+        -2.5776099491082824e-16,
+        -0.03320265179481119
+      ]
+    ],
+    "timing_note": "SCF includes DF initialization; callback timings synchronize each iteration. No observed DF.build calls means setup was not separately captured."
+  },
+  "comparison": {
+    "energy_error_hartree": 5.684341886080801e-13,
+    "gradient_max_error": 1.4945422677214992e-10,
+    "passed": true
+  }
+}

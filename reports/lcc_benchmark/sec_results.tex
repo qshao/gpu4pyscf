@@ -1,0 +1,199 @@
+\section{Audit and coverage of the records}
+\label{sec:audit}
+
+All numbers in this report come from \NAuditedRecords{} immutable job records written by the campaign (six GPU strata plus the CPU timing lane), each of which was audited by a program independent of the one that produced it. The audit recomputes every accuracy statistic from the stored arrays and compares it with the stored one, checks the SHA-256 identity of the Python sources, native libraries, helper files, inputs and initial densities against the frozen campaign, verifies that every record's request (case, version, mode, attempt, scientific signature) matches its directory and result, that no timing record carries allocation or profiling instrumentation, that each timing slot is unique, and that every GPU result points to an audited CPU reference. Per stratum the audited record counts are \NRecAHund{} (A100), \NRecVHund{} (V100), \NRecPSixteen{} (P100-16), \NRecPTwelve{} (P100-12), \NRecAHundCupy{} (A100, CuPy engine) and \NRecVHundCupy{} (V100, CuPy engine).
+
+Table~\ref{tab:coverage} and Figure~\ref{fig:status} give the outcome of the memory-mode run of each (case, code version) pair. About 87--88\% of outcomes on the A100 and V100 are \emph{qualified}: the result reproduces the independent CPU result within the declared gate. The rest are explained in Section~\ref{sec:accuracy}: non-converged cases, accuracy failures (the original code on Taxol, and two job types that fail identically in both code versions) and, on the two P100 cards, genuine memory limits.
+
+\input{tables/tab_coverage.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.82\textwidth]{fig_status.pdf}
+\caption{Outcome of the memory-mode run of each case and code version on each stratum. ``No record'' are the four cases whose CPU reference did not converge and the pre-launch rejections noted in Section~\ref{sec:limits}.}
+\label{fig:status}
+\end{figure}
+
+\section{Accuracy}
+\label{sec:accuracy}
+
+\paragraph{Qualified results.} Among all qualified GPU results the largest deviation from CPU PySCF, for both code versions, was $8.6\times10^{-9}$~Eh in the SCF energy (the gate is $10^{-8}$), $9.0\times10^{-7}$~Eh/Bohr in a gradient component (gate $10^{-6}$), $9.6\times10^{-7}$~Eh/Bohr$^2$ in a Hessian element (gate $10^{-5}$), $2.1\times10^{-8}$~Eh in an excitation energy (gate $10^{-6}$), $2.8\times10^{-9}$~Eh in a correlation energy, $2.3\times10^{-7}$ in a polarizability component (gate $10^{-5}$) and $5.3\times10^{-5}$~ppm in a shielding. Figure~\ref{fig:accuracy} shows the distribution. The new code is not less accurate than the original: its worst qualified gradient error ($8.5\times10^{-8}$~Eh/Bohr, for NO with B3LYP on the P100-16) is an order of magnitude below the original's worst ($9.0\times10^{-7}$, tamoxifen B3LYP/def2-TZVP on the V100 with the CuPy engine), and over the 1314 pairs of error values compared the new code's error is smaller in 606, larger in 466 and equal in 242 (median ratio 1.00), so the two versions differ by no more than noise.
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_accuracy.pdf}
+\caption{Accuracy against the independent CPU result. Left: SCF energy and maximum gradient error of every energy-plus-gradient case that was run, for both code versions and all strata (red lines: gates; points beyond them are the failures listed in Table~\ref{tab:failures}). Right: log of the maximum error per observable over qualified results (red: gate).}
+\label{fig:accuracy}
+\end{figure}
+
+\paragraph{Failures.} Table~\ref{tab:failures} lists every group of results that did not qualify. Two of them affect \emph{both} code versions identically on every card, so they are properties of the shared native stack or of the GPU methods and not of the changes under test: wB97M-V with its non-local correlation reproduces the CPU energy only to $2$--$6\times10^{-8}$~Eh for benzene, vitamin C and tamoxifen (it passes for H$_2$O at $6.6\times10^{-9}$), and the periodic MgO case differs by $6.4\times10^{-2}$~Eh while periodic silicon agrees to $5\times10^{-10}$~Eh. The wB97M-V offset grows with system size and is identical for the original and new code to the precision recorded; its cause was not investigated here.
+
+\begin{table}[!htbp]
+\centering\small
+\begin{tabular}{p{4.6cm}p{2.2cm}p{6.7cm}}
+\toprule
+group & affects & observation \\
+\midrule
+Taxol HF, B3LYP, wB97X gradients & original only & maximum gradient error about $2\times10^{-5}$~Eh/Bohr against the gate $10^{-6}$; the new code passes (about $5\times10^{-9}$). No equal-accuracy ratio exists for these cases. \\
+wB97M-V (benzene, vitamin C, tamoxifen) & both & energy error $2.6\times10^{-8}$, $2.0\times10^{-8}$, $6.4\times10^{-8}$~Eh (gate $10^{-8}$); gradients within the gate. \\
+periodic MgO, $\Gamma$ point & both & energy differs by $6.4\times10^{-2}$~Eh on every card. \\
+OH (B3LYP, PBE), NO (PBE), OH wB97X probe & all & CPU reference did not converge in 100 cycles from the MINAO guess; excluded. \\
+benzene TDA and TDDFT & both & two of five roots flagged non-converged by the GPU solver at the declared tolerance; excitation energies agree with CPU to $1.2\times10^{-9}$~Eh (diagnostic). \\
+NO, B3LYP, 48-thread CPU repetitions & CPU lane & two of three repetitions differ from the 24-thread reference by $1.1$ and $1.3\times10^{-8}$~Eh; an ill-conditioned case. \\
+CCSD on Pascal (P100) & both & native kernel launch error \texttt{fill\_int4c2e}; cause not diagnosed. \\
+Taxol and tamoxifen/TZVP hybrids on P100 & both & GPU memory exhausted (Section~\ref{sec:memory}). \\
+\bottomrule
+\end{tabular}
+\caption{Groups of results that did not qualify. ``Both'' means the original and the new code behave identically.}
+\label{tab:failures}
+\end{table}
+
+\section{Speed on the datacenter GPUs with cuTENSOR}
+\label{sec:speed}
+
+With cuTENSOR installed (the default on the V100 and A100), the new code is \emph{not faster} than the original. Over the 110 cases for which both versions qualified, the median ratio of original to new time is \MedianAllAHund{} on the A100 (range \MinAllAHund--\MaxAllAHund) and \MedianAllVHund{} on the V100 (range \MinAllVHund--\MaxAllVHund); restricting to the \NBigAHund{} (A100) and \NBigVHund{} (V100) cases where the new code takes at least five seconds, so that start-up costs matter less, gives medians of \MedianBigAHund{} and \MedianBigVHund{} (Figure~\ref{fig:violin}). Every job family is within $\pm3\%$ of unity on both cards (Table~\ref{tab:families}): SCF geometric mean 1.00, Hessians 1.00--1.01, TDA/TDDFT 1.00, DF-MP2 and CCSD 0.97--1.01, properties 1.00--1.01, geometry optimizations 1.00--1.01, solvated calculations 0.99--1.00.
+
+\input{tables/tab_families.tex}
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_speed_ratio_vs_size.pdf}
+\caption{Time of the original code divided by time of the new code for every case in which both versions qualified, against the number of basis functions (marker shape = job family). Left: cuTENSOR engine. Right: CuPy fallback engine.}
+\label{fig:ratio}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.8\textwidth]{fig_speed_violin.pdf}
+\caption{Distribution of the original/new time ratio over cases where the new code takes at least five seconds, per stratum (dots: individual cases).}
+\label{fig:violin}
+\end{figure}
+
+The larger cases (Table~\ref{tab:large_cutensor}) show where the small differences occur. With the pure functionals LDA, PBE and TPSS the ratios are 1.00--1.09 (Taxol PBE: 1.03 on the A100 and 1.09 on the V100). For hybrid functionals the new code is slightly \emph{slower}: tamoxifen/B3LYP 0.96, tamoxifen/wB97X 0.94, tamoxifen/B3LYP in the larger def2-TZVP basis 0.92 (A100) and 0.96 (V100), and the PCM and SMD solvation cases 0.97. These differences of 3--8\% are small but reproducible between cards; they correspond to the larger gradient cost of the memory-saving gradient (Section~\ref{sec:profile}).
+
+\input{tables/tab_large_cutensor.tex}
+
+\section{Speed without cuTENSOR: the CuPy fallback and the P100 cards}
+\label{sec:engine}
+
+The picture changes when contractions run through the CuPy \texttt{einsum} fallback, which is the only engine on the P100 cards and was forced on the V100 and A100 for a complete second stratum. The new code's Fock-build and gradient contractions use cuBLAS GEMM, GEMV and SYRK directly on this path, whereas the original code calls \texttt{einsum} and pays its repacking and temporaries. Over all cases the median original/new ratio is then \MedianAllAHundCupy{} (A100), \MedianAllVHundCupy{} (V100), \MedianAllPSixteen{} (P100-16) and \MedianAllPTwelve{} (P100-12); over the cases where the new code takes at least five seconds it is \MedianBigAHundCupy{}, \MedianBigVHundCupy{}, \MedianBigPSixteen{} and \MedianBigPTwelve{}, and the SCF family geometric mean is 1.05--1.09 (Table~\ref{tab:families}). The gain is concentrated in hybrid-functional cases of intermediate size (Table~\ref{tab:large_cupy}): tamoxifen with B3LYP 1.31 (A100) to 1.77 (P100-12), with wB97X 1.27--1.64, with PCM or SMD 1.20--1.53, and tamoxifen/B3LYP in def2-TZVP \MaxAllAHundCupy{} on the A100 and 1.76 on the V100; the pure-functional cases gain little (PBE 1.00--1.04) and Taxol with TPSS gains 1.05--1.21. The largest ratio observed in any stratum is \MaxAllAHundCupy{} (A100, CuPy engine).
+
+\input{tables/tab_large_cupy.tex}
+
+Figure~\ref{fig:engine} shows why. For tamoxifen with B3LYP the original code takes 8.3 s with cuTENSOR on the A100 and 10.4 s with the CuPy engine (7.9 and 14.3 s on the V100), while the new code takes 8.7 and 8.8 s on the A100 (8.3 and 9.2 s on the V100): the new code makes the fallback engine as fast as cuTENSOR, but with cuTENSOR installed its fast paths are bypassed and it gains nothing. Put differently, the changes remove a penalty that only the fallback engine pays. This is the regime of the earlier GB10 study (Appendix~\ref{sec:gb10}), where speed-ups of 1.47 (tamoxifen) and 1.95 (Taxol) were measured without cuTENSOR; the cluster data reproduce the direction and show that it depends on the engine, but with smaller factors (1.2--1.8 for tamoxifen hybrids).
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.85\textwidth]{fig_engine_profile.pdf}
+\caption{Stage times of tamoxifen B3LYP/def2-SVP (median of three, synchronized timers) for the original and new code with each engine. With cuTENSOR both versions take about 8--9 s; with the CuPy fallback the original code is slower (10.4 s on the A100, 14.3 s on the V100) and the new code is unchanged.}
+\label{fig:engine}
+\end{figure}
+
+\section{Where the time goes and what did not help}
+\label{sec:profile}
+
+\paragraph{Stage profile.} Figure~\ref{fig:taxol} splits the Taxol B3LYP/def2-SVP workflow (20 SCF cycles) into stages. On the A100 the SCF takes 21.9 s (new code), of which the Fock build is 13.9 s (including 3.5 s to build the fitted integrals once), the XC quadrature 7.1 s and the diagonalization 0.4 s; the gradient takes 13.0 s, 76\% of it in the DF Coulomb and exchange derivatives. On the V100 the Fock build dominates even more (32.7 of 42.2 s SCF), as expected from its lower double-precision rate. The grid itself is built in about 0.1 s.
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_taxol_stages.pdf}
+\caption{Stage times of Taxol B3LYP/def2-SVP on the A100 and V100 with cuTENSOR, original (orig.) and new code. The new code's gradient is 2--3 s slower, the price of its much smaller gradient memory.}
+\label{fig:taxol}
+\end{figure}
+
+\paragraph{The matrix products are near the hardware ceiling.} A micro-benchmark of the exchange-build contractions at the real Taxol shapes (Figure~\ref{fig:gemm}) shows both the cuTENSOR path and the cuBLAS GEMM/SYRK path running at 14--15 TFLOPS on the A100 (the measured cuBLAS ceiling is 16.3) and 5.8 TFLOPS on the V100 (ceiling 6.8), i.e.\ 85--90\% of peak; the GEMM/SYRK path is 0--13\% faster per cycle. There is little left to gain from tuning these products.
+
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.95\textwidth]{fig_gemm.pdf}
+\caption{Estimated exchange-build time per SCF cycle for Taxol (one block of auxiliary functions timed, scaled to the full auxiliary basis) for the cuTENSOR contraction and the cuBLAS GEMM/SYRK path.}
+\label{fig:gemm}
+\end{figure}
+
+\paragraph{Experiments that did not pay.}
+\begin{itemize}[leftmargin=*,itemsep=1pt]
+\item \emph{Gradient workspace cap.} Sweeping the fixed workspace budget of the new gradient (1, 2, 4, 8, 16\,GiB and unlimited) changed the Taxol gradient time by less than 1\% above 2\,GiB (13.0--13.1 s on the A100, 17.5--17.6 s on the V100), and by 8\% at 1\,GiB. The planner already chooses the same batch size at the default.
+\item \emph{SCF cycle count.} Table~\ref{tab:cycles} and Figure~\ref{fig:cycles}: other starting guesses are equal (atomic densities) or much worse (H\"uckel, VSAP); a DIIS space of 12 saves one or two cycles; a two-stage scheme (coarse grid first) reduces the full-quality cycles from 20 to 12 for Taxol but its cheap pre-cycles cost as much (22.0 s against 22.2 s). Second-order SCF failed in all runs with a CuPy-to-NumPy conversion error.
+\item \emph{Cached staging buffers for the disk tier} (a code-review suggestion): an alternating A/B/A/B comparison gave 265, 239~s (without) against 254, 280~s (with); the run-to-run spread exceeds any difference and the change was reverted.
+\end{itemize}
+
+\input{tables/tab_cycles.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=.75\textwidth]{fig_scf_cycles.pdf}
+\caption{SCF cycles at full quality for different starting guesses and convergence strategies on the A100.}
+\label{fig:cycles}
+\end{figure}
+
+\section{First-process (cold start) cost}
+\label{sec:cold}
+
+CuPy compiles some kernels at run time. The first process on a node with an empty kernel cache therefore takes much longer than a repeat (Table~\ref{tab:cold} and Figure~\ref{fig:cold}): the H$_2$O B3LYP workflow takes 12.6--23.0 s the first time and 0.9--1.9 s with a populated cache, an overhead of 11--22 s that is the same for the original and the new code and is largest on the P100. The principal timings of this report use a persistent cache; the figure matters mainly for short jobs and for users whose cache is not preserved between runs.
+
+\input{tables/tab_cold.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_cold_start.pdf}
+\caption{H$_2$O B3LYP/def2-SVP workflow time in the first process after the kernel cache was emptied and in a repeat.}
+\label{fig:cold}
+\end{figure}
+
+\section{CPU baseline and the GPU speed-up over the CPU}
+\label{sec:cpu}
+
+The study optimizes the GPU code, so the CPU is required only to be a fair baseline. The first CPU timing lane used a whole 48-core node with 48 OpenMP and BLAS threads, as requested. For mid-size systems this turned out to be a poor configuration: tamoxifen B3LYP/def2-SVP took 1654 s at 48 threads but 519 s in the 24-thread reference run, with identical SCF iterations and energies. Over the complete 24-thread lane the same pattern holds: the 24-thread, one-BLAS-thread run was the faster lane in 120 of 127 cases; for the 65 cases that take at least 20\,s on 48 threads it is faster by a median of 2.0$\times$, and by up to 33$\times$ for the finite-difference benzene HF Hessian (4614 s against 141 s). A thread scan on the five representative cases (Table~\ref{tab:cpuscan}, Figure~\ref{fig:cpuscan}) found the cause: with 48 OpenMP threads each thread's BLAS calls spawn 48 more, oversubscribing the node. Setting BLAS threads to one restores the performance (tamoxifen 364 s at 48 threads, 307 s at 24 threads; vitamin C 24 s and 21 s against 55 s), pinning helps little, and for small molecules fewer threads are better still: benzene is fastest with 12 threads (4.0 s against 17.7 s with 48). For Taxol with PBE the spread is small (1594--1972 s). A second lane with 24 threads and one BLAS thread was therefore run for every case, and the fair CPU baseline of each case is the faster of the two lanes.
+
+\input{tables/tab_cpu_scan.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_cpu_scan.pdf}
+\caption{CPU thread scaling. Left: time relative to the best configuration against thread count (BLAS threads equal to OpenMP threads). Right: threading configurations for the three larger cases.}
+\label{fig:cpuscan}
+\end{figure}
+
+Table~\ref{tab:cpugpu} and Figure~\ref{fig:cpugpu} compare the CPU with the new GPU code. For the cases in which the CPU needs at least 20 s (\CPUNBestAHund{} on the A100, \CPUNBestVHund{} on the V100, \CPUNBestPSixteen{} on the P100-16) the median speed-up of the A100, V100 and P100-16 is \CPUMedBestAHund, \CPUMedBestVHund{} and \CPUMedBestPSixteen{} against the best CPU lane, with maxima of \CPUMaxBestAHund, \CPUMaxBestVHund{} and \CPUMaxBestPSixteen; the largest ratios belong to the finite-difference Hessians, which the CPU computes from many gradients. For the smallest molecules (a few seconds on the CPU) the GPU gains only 1--3$\times$ or nothing: about a dozen cases with sub-second to few-second CPU times (H$_2$O with HF, direct SCF, DF-MP2, CCSD, polarizability and shielding, and the formaldehyde wB97X TDA) are as fast or faster on the CPU, dominated by GPU start-up and by small kernels. The CPU baseline columns of the table state which lane was used.
+
+\CPULaneNote
+
+\input{tables/tab_cpu_gpu.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_cpu_vs_gpu.pdf}
+\caption{CPU time divided by new-GPU time against system size. Left: CPU baseline from the 48-thread whole-node lane only. Right: baseline from the faster of the available CPU lanes.}
+\label{fig:cpugpu}
+\end{figure}
+
+\section{Memory and capacity}
+\label{sec:memory}
+
+\subsection{GPU memory of the workflow}
+
+The new code needs less GPU memory for every case that contains an exchange build and a gradient (Figure~\ref{fig:memory} and Table~\ref{tab:memory}). Over the \MemN{} cases with an original peak above 0.3~GB the median reduction is \MemMedian$\times$ (range \MemMin--\MemMax$\times$): tamoxifen B3LYP falls from 15.9 to 4.4~GB (3.7$\times$), PCM and SMD cases 2.9--3.7$\times$, tamoxifen in def2-TZVP from 24.3 to 11.6~GB (2.1$\times$), and Taxol with the pure functionals LDA, PBE and TPSS 3.5--4.8$\times$ (from about 5 to 1--1.5~GB). Taxol with the hybrid functionals falls from 29.5 to 20.0~GB (HF, B3LYP; 1.5$\times$) and, for wB97X, from 29.6 to 25.9~GB (1.1$\times$). Hessians, TDA/TDDFT and DF-MP2 are unchanged (1.00$\times$): the changes do not touch their code paths.
+
+\input{tables/tab_memory.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_memory.pdf}
+\caption{Tracked GPU memory peak of the new against the original code. Left: every case with an original peak above 0.2~GB on three strata (diagonal: equal; dotted: 2$\times$ and 4$\times$ less). Right: selected cases on the V100.}
+\label{fig:memory}
+\end{figure}
+
+\subsection{Storage tiers}
+
+The fitted integrals can be kept on the GPU, in pinned host memory, or (new code only) in a file read back in bounded blocks. Table~\ref{tab:storage} and Figure~\ref{fig:storage} give time and GPU memory for Taxol (which has a CPU reference and passes the accuracy gate in every tier for the new code) and for valinomycin (1542 basis functions, a capacity observation). Taxol on the V100 takes 59.3 s resident on the GPU, 71.7 s with the integrals in host memory (+21\%) and 254.5 s from disk, while the gradient-phase GPU peak falls to 4.1~GB in every tier; the original code needs 29.6~GB for the gradient even with the integrals in host memory, and 54.9~GB on the A100. On the A100 the host tier costs +31\% (46.4 s against 35.4 s) because the faster card hides less of the transfer. On the 12 and 16~GB P100 cards neither the original code nor the GPU-resident new code can start Taxol (the 15.5~GB fitted-integral tensor alone does not fit), but the new code with host memory completes it in 111.5 and 91.5 s using 4.7~GB of GPU memory. Valinomycin does not fit the 32~GB V100 in either code version when resident (31.5~GB tensor); with host memory the original code needs 75.5~GB of GPU memory for its gradient (A100) while the new code needs 8.7~GB, so valinomycin runs on both P100 cards (265 s on the 12~GB and 221 s on the 16~GB card). The disk tier is 3--6$\times$ slower than host memory; its times depend on the shared filesystem (Section~\ref{sec:limits}).
+
+\input{tables/tab_storage.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_storage_tiers.pdf}
+\caption{Time (top) and gradient-phase GPU memory (bottom) of Taxol (left) and valinomycin (right) by storage tier and card.}
+\label{fig:storage}
+\end{figure}
+
+\subsection{Capacity ladder}
+
+Table~\ref{tab:capacity} and Figure~\ref{fig:capacity} give the largest system each code version and tier completed with a B3LYP/def2-SVP energy and full-response gradient. The new code completes a cluster of 139 water molecules (\BiggestAtoms{} atoms, \BiggestAOs{} basis functions) on the A100 in 17.9 min with host memory and 45.6 min from disk, against 300 atoms (2400 functions) for the original code; on the 32~GB V100 it reaches a 213-atom glycine chain (2154 functions) against 228 atoms (1824 functions) for the original with host memory, while resident on the GPU both versions stop at Taxol (1123 functions); on the two P100 cards it reaches valinomycin (168 atoms, 1542 functions) against tamoxifen (57 atoms, 537 functions) for the original, so a 12~GB card treats a system roughly three times larger; the 16~GB V100 reaches valinomycin with both versions (the original with host memory). These are capacity observations without a CPU reference.
+
+\input{tables/tab_capacity.tex}
+\begin{figure}[!htbp]
+\centering\includegraphics[width=\textwidth]{fig_capacity.pdf}
+\caption{Left: largest system completed by card, code version and storage tier. Right: workflow time on the A100 against system size.}
+\label{fig:capacity}
+\end{figure}
+
+\paragraph{What limits larger systems.} Beyond these rungs the limit is not the fitted-integral tensor but a tensor of $N_\mathrm{aux}N_\mathrm{occ}^2$ elements ($N_\mathrm{aux}$ counted in Cartesian functions) that the analytic gradient holds on the GPU whichever storage tier is used. It is 2.7~GB for Taxol, 6.4~GB for valinomycin, 26.6~GB for the 100-water cluster, 50.1~GB for the 40-residue glycine chain, 71.4~GB for the 139-water cluster, and 97.3~GB for the 50-residue chain, which exceeds the 80~GB of the A100 and ends the ladder there. The storage tiers of the fitted integrals are therefore exhausted at about 3300 basis functions on the largest card; going further requires the gradient to hold this tensor in host memory in blocks, which is not implemented.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{What the changes buy.} (i) \emph{Memory}: a median 2.1$\times$ and up to 4.8$\times$ less GPU memory for SCF energy-plus-gradient work with an exchange build, which together with the new disk tier and the host tier lets a 12~GB GPU treat systems of about 1500 basis functions and an 80~GB GPU systems of about 3300. (ii) \emph{Speed on the fallback engine}: 1.2--1.8$\times$ for intermediate-size hybrid-functional jobs, up to 2.4$\times$. (iii) \emph{No loss of accuracy}: the worst qualified errors are the same or smaller than for the original code. The changes do \emph{not} accelerate jobs that already use cuTENSOR, where the new code is on average 0--1\% different from the original and 3--8\% slower for hybrid functionals in mid-size cases, nor jobs whose code paths are not modified (Hessians, TDDFT, MP2, CCSD, properties, optimizations, periodic).
+
+\paragraph{Relation to the earlier GB10 study.} The earlier study reported 1.47$\times$ for tamoxifen and 1.95$\times$ for Taxol (Table~\ref{tab:gb10}). Here the same direction appears only without cuTENSOR and with smaller factors; with cuTENSOR it disappears. The GB10 had no cuTENSOR bindings, much lower double-precision throughput and unified memory, so its result describes cards and installations without a working cuTENSOR (for example consumer GPUs) rather than datacenter GPUs.
+
+\paragraph{Recommendations.} (1) Keep cuTENSOR as the default engine where available: without it the original code is slower by a median of 1.12--1.14$\times$ and by up to 2.57$\times$ (tamoxifen B3LYP/def2-TZVP on the A100), while the new code is slower by a median of 1.02--1.06$\times$ and at most 1.30$\times$. (2) Treat the new code's value on such systems as memory and capacity, and on fallback-engine systems also speed. (3) The next memory limit is the gradient tensor; offloading it to host memory in auxiliary blocks would extend all tiers. (4) The remaining time is dominated by the exchange build near the double-precision ceiling and, for mid-size systems, by the XC quadrature (73\% of the tamoxifen SCF on the A100), which is where further speed work would have to focus; neither start-up costs (Section~\ref{sec:cold}) nor the SCF cycle count offer large gains.
