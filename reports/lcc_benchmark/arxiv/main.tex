@@ -11,10 +11,8 @@
 \emergencystretch=2em
 \graphicspath{{figures/}}
 \input{macros.tex}
-\newcommand{\gnew}{\textsc{new}}
-\newcommand{\gold}{\textsc{orig}}
 
-\title{Memory-lean density-fitted GPU4PySCF on P100, V100 and A100 GPUs:\\ accuracy, speed and capacity against the original code and CPU PySCF}
+\title{Memory-lean density-fitted GPU4PySCF on\\ P100, V100 and A100 GPUs:\\ accuracy, speed and capacity compared with the original code}
 \author{Qing Shao\\\small Department of Chemical and Materials Engineering, University of Kentucky\\\small \texttt{qshao@uky.edu}}
 \date{October 2026}
 
@@ -32,7 +30,7 @@
 \input{sec_conclusions.tex}
 
 \section*{Data and code availability}
-The code changes, the benchmark suite, the campaign drivers, the audited summary data and the sources of this manuscript are available at \url{https://github.com/qshao/gpu4pyscf} (branch \texttt{improve-single-gpu}). The frozen campaign is identified by the SHA-256 digest given in Appendix~\ref{sec:repro}. The raw per-job records (about 66\,GB) are not included in the repository and are available from the authors on request.
+The code changes, the benchmark suite, the campaign drivers, the audited summary data and the sources of this manuscript are available at \url{https://github.com/qshao/gpu4pyscf} (branch \texttt{improve-single-gpu}). The audited summary data are in \texttt{reports/lcc\_benchmark/data} and the audit and comparison programs in \texttt{benchmarks/single\_gpu/qm\_suite}. The frozen campaign is identified by the SHA-256 digest given in Appendix~\ref{sec:repro}. The raw per-job records (about 66\,GB) are not included in the repository and are available from the authors on request.
 
 \input{sec_appendix.tex}
 
@@ -46,6 +44,7 @@ The code changes, the benchmark suite, the campaign drivers, the audited summary
 \bibitem{vahtras1993} O.~Vahtras, J.~Almlöf, M.~W.~Feyereisen, Integral approximations for LCAO-SCF calculations, \emph{Chem.\ Phys.\ Lett.}\ \textbf{213}, 514 (1993).
 \bibitem{weigend2005} F.~Weigend, R.~Ahlrichs, Balanced basis sets of split valence, triple zeta valence and quadruple zeta valence quality for H to Rn, \emph{Phys.\ Chem.\ Chem.\ Phys.}\ \textbf{7}, 3297 (2005).
 \bibitem{weigend2006} F.~Weigend, Accurate Coulomb-fitting basis sets for H to Rn, \emph{Phys.\ Chem.\ Chem.\ Phys.}\ \textbf{8}, 1057 (2006).
+\bibitem{weigend2008} F.~Weigend, Hartree--Fock exchange fitting basis sets for H to Rn, \emph{J.\ Comput.\ Chem.}\ \textbf{29}, 167 (2008).
 \bibitem{lehtola2018libxc} S.~Lehtola, C.~Steigemann, M.~J.~T.~Oliveira, M.~A.~L.~Marques, Recent developments in Libxc --- a comprehensive library of functionals for density functional theory, \emph{SoftwareX} \textbf{7}, 1 (2018).
 \bibitem{okuta2017cupy} R.~Okuta, Y.~Unno, D.~Nishino, S.~Hido, C.~Loomis, CuPy: a NumPy-compatible library for NVIDIA GPU calculations, in \emph{Proc.\ Workshop on Machine Learning Systems (LearningSys) at NIPS} (2017).
 \bibitem{cutensor} NVIDIA Corporation, cuTENSOR: a high-performance CUDA library for tensor primitives, \url{https://developer.nvidia.com/cutensor}.

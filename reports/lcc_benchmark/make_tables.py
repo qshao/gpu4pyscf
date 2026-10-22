@@ -219,7 +219,7 @@ for cid in CPUSEL:
     cell = lambda card: (f_time(CARDS[card][cid]['G1'].get('median_s')) if cid in CARDS.get(card, {}) else '--')
     body.append([tt(cid.replace('core-', '').replace('ext-', '')), str(r.get('nao', '')), f_time(c48), f_time(best) + (f" ({tex(r.get('CPU_best_config'))})" if r.get('CPU_best_config') and len(cfg) > 1 else ''),
                  cell('a100'), cell('v100'), cell('p100_16'),
-                 f"{best / r['G1']['median_s']:.0f}" if best and r['G1'].get('median_s') else '--'])
+                 (f"{best / r['G1']['median_s']:.1f}" if best / r['G1']['median_s'] < 10 else f"{best / r['G1']['median_s']:.0f}") if best and r['G1'].get('median_s') else '--'])
 write('tab_cpu_gpu.tex', table(['case', 'AOs', 'CPU 48 thr (s)', 'CPU best (s)', 'A100 new (s)', 'V100 new (s)', 'P100-16 new (s)', 'speed-up A100'],
                                body, 'lrrrrrrr',
                                'CPU wall time against the new GPU code. CPU 48 thr: whole 48-core node as requested; CPU best: the faster of the available CPU lanes '
