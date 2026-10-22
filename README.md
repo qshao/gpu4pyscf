@@ -3,6 +3,102 @@ GPU plugin for PySCF
 ![nightly](https://github.com/pyscf/gpu4pyscf/actions/workflows/nightly_build.yml/badge.svg)
 [![PyPI version](https://badge.fury.io/py/gpu4pyscf-cuda11x.svg)](https://badge.fury.io/py/gpu4pyscf-cuda11x)
 
+Memory-lean single-GPU density fitting: highlighted results
+-----------------------------------------------------------
+
+> [!NOTE]
+> This is the `improve-single-gpu` branch of a fork of [pyscf/gpu4pyscf](https://github.com/pyscf/gpu4pyscf).
+> It changes the density-fitted (DF) single-GPU path: a bounded fitted-integral build workspace, a disk tier next to the
+> host-memory tier, cuBLAS contraction fast paths, and a lower-memory analytic gradient. The installation instructions
+> below are those of the upstream project. The full study is in the
+> [preprint](reports/lcc_benchmark/GPU4PySCF_preprint.pdf) (LaTeX sources in [`reports/lcc_benchmark/arxiv`](reports/lcc_benchmark/arxiv)).
+
+We compared this version with the unmodified upstream code (commit `9af748a`) and with CPU PySCF 2.14.0 in 127 benchmark
+cases (SCF energies and gradients from H<sub>2</sub>O to Taxol with six methods, Hessians, TDA/TDDFT, DF-MP2, CCSD,
+polarizabilities, NMR shielding, solvation, dispersion, ECPs, geometry optimizations, periodic systems) on P100 (12 and 16 GB),
+V100 (16 and 32 GB) and A100 (80 GB) GPUs, with the cuTENSOR and CuPy contraction engines and three storage tiers for the
+fitted integrals. All 14,648 records were audited by an independent program that recomputes every accuracy statistic.
+
+### Summary
+
+| Question | Result |
+|---|---|
+| Same answer as CPU PySCF? | Yes, for every result that qualified: worst energy error 8.6e-9 Eh (gate 1e-8), worst gradient error 8.5e-8 Eh/Bohr for this version (gate 1e-6). Failures that remain are shared with the original code (wB97M-V, periodic MgO) or are the original code's own (Taxol gradients with hybrid functionals, about 2e-5 Eh/Bohr). |
+| Faster with cuTENSOR? | No: median original/new time ratio 1.00 on the A100 and V100, per-case range 0.88-1.09. |
+| Faster without cuTENSOR (CuPy `einsum` fallback, P100 cards)? | Yes: 1.2-1.8x for intermediate-size hybrid-functional jobs, up to 2.39x (tamoxifen B3LYP/def2-TZVP, A100, CuPy engine). |
+| Less GPU memory? | Median about 2x less tracked memory (up to 4.8x on the V100, 8.6x on the A100). |
+| Larger systems? | 1542 basis functions on 12 and 16 GB P100 cards (original: 537), 3336 basis functions (417 atoms) on an 80 GB A100 (original: 2400). |
+| Against the CPU? | Median 46x (A100), 36x (V100), 23x (P100-16) faster than the best CPU lane for jobs that take the CPU at least 20 s; up to 328x (A100) for finite-difference Hessians. |
+
+### Accuracy
+
+![Accuracy against the CPU result](docs/images/fig_accuracy.png)
+
+Every GPU result is compared with an independent CPU result. Original and new code agree with the CPU to within the gates
+declared before any performance run, and they cannot be distinguished from each other in accuracy at this level.
+
+### Speed
+
+Original/new time ratio (above 1 means this version is faster; per-case range in brackets, all cases where both versions qualified):
+
+| Stratum | Engine | Median | Range |
+|---|---|---|---|
+| A100 80 GB | cuTENSOR | 1.00 | 0.88-1.04 |
+| V100 32 GB | cuTENSOR | 1.00 | 0.91-1.09 |
+| A100 80 GB | CuPy fallback | 1.01 | 0.95-2.39 |
+| V100 32 GB | CuPy fallback | 1.01 | 0.91-1.76 |
+| P100 16 GB | CuPy fallback | 1.01 | 0.97-1.63 |
+| P100 12 GB | CuPy fallback | 1.02 | 0.90-2.26 |
+
+![Original/new time ratio against system size](docs/images/fig_speed_ratio_vs_size.png)
+
+With cuTENSOR installed the new fast paths are bypassed and the speed is unchanged; the benefit is the removal of a
+penalty that only the CuPy fallback engine pays. Slowdowns of up to 12% occur in individual Hartree-Fock and
+hybrid-functional cases of tamoxifen size.
+
+### GPU memory
+
+| Case (V100, def2-SVP unless noted) | Original | This version | Reduction |
+|---|---|---|---|
+| Tamoxifen B3LYP | 15.9 GB | 4.4 GB | 3.7x |
+| Tamoxifen B3LYP, def2-TZVP | 24.3 GB | 11.6 GB | 2.1x |
+| Taxol LDA / PBE / TPSS | about 5 GB | 1-1.5 GB | 3.5-4.8x |
+| Taxol HF / B3LYP | 29.5 GB | 20.0 GB | 1.5x |
+| Taxol gradient, any storage tier | 29.6 GB (54.9 GB on A100) | 4.1 GB | 7x (13x on A100) |
+
+![Tracked GPU memory, new against original code](docs/images/fig_memory.png)
+
+The figures are peaks of live CuPy storage, not total device memory. The original code sizes its gradient workspace from the
+free memory of the card, so its peak depends on the card.
+
+### Storage tiers and capacity
+
+Taxol B3LYP/def2-SVP, V100: 59.3 s with the fitted integrals on the GPU, 71.7 s in pinned host memory (+21%), 254.5 s from disk,
+with a 4.1 GB gradient peak in every tier.
+
+![Storage tiers](docs/images/fig_storage_tiers.png)
+
+Largest system completed with a B3LYP/def2-SVP energy and full-response gradient:
+
+| Card | Original (best tier) | This version (best tier) |
+|---|---|---|
+| P100 12 GB | tamoxifen, 537 basis functions | valinomycin, 1542 (host) |
+| P100 16 GB | tamoxifen, 537 | valinomycin, 1542 (host) |
+| V100 16 GB | valinomycin, 1542 (host) | valinomycin, 1542 (host) |
+| V100 32 GB | 76 waters, 1824 (host) | glycine chain, 2154 (host) |
+| A100 80 GB | 100 waters, 2400 | 139 waters, 3336 (host: 17.9 min; disk: 45.6 min) |
+
+![Capacity ladder](docs/images/fig_capacity.png)
+
+Beyond these rungs the limit is a tensor of N<sub>aux</sub>N<sub>occ</sub><sup>2</sup> elements held by the analytic gradient on the GPU;
+offloading it to host memory is the next step.
+
+### Reproducing
+
+The benchmark suite is in [`benchmarks/single_gpu/qm_suite`](benchmarks/single_gpu/qm_suite) and its [description](benchmarks/single_gpu/qm_suite/BENCHMARK_SUITE.md);
+the audited summary data and the scripts that build the tables and figures are in [`reports/lcc_benchmark`](reports/lcc_benchmark).
+Raw per-job records (about 66 GB) are not in the repository.
+
 Installation
 --------
 
